@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		51ED5B58178026AF3ADCE160 /* Pods_Foobar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */; };
+		BB2BB0FC238E73FF00EC127B /* CALayerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2BB0FB238E73FF00EC127B /* CALayerExtentions.swift */; };
 		BB91D2BF238E35130048D384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB91D2BE238E35130048D384 /* AppDelegate.swift */; };
 		BB91D2C1238E35130048D384 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB91D2C0238E35130048D384 /* SceneDelegate.swift */; };
 		BB91D2C3238E35130048D384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB91D2C2238E35130048D384 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		2BCD74F1A55A7280F3DB3800 /* Pods-Foobar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.release.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.release.xcconfig"; sourceTree = "<group>"; };
 		B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foobar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB2BB0FB238E73FF00EC127B /* CALayerExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtentions.swift; sourceTree = "<group>"; };
 		BB91D2BB238E35130048D384 /* Foobar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foobar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB91D2BE238E35130048D384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB91D2C0238E35130048D384 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				BB91D2DF238E451E0048D384 /* UIViewExtentions.swift */,
+				BB2BB0FB238E73FF00EC127B /* CALayerExtentions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			files = (
 				BB91D2C3238E35130048D384 /* ViewController.swift in Sources */,
 				BB91D2E0238E451E0048D384 /* UIViewExtentions.swift in Sources */,
+				BB2BB0FC238E73FF00EC127B /* CALayerExtentions.swift in Sources */,
 				BB91D2BF238E35130048D384 /* AppDelegate.swift in Sources */,
 				BB91D2DA238E44A50048D384 /* FBTestView.swift in Sources */,
 				BB91D2C1238E35130048D384 /* SceneDelegate.swift in Sources */,
