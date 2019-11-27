@@ -12,7 +12,14 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+
+    let tv = FBTestView.extLoadFromNib()
+    if let v = tv as? FBTestView {
+      v.doit()
+      view.addSubview(v)
+      v.frame = CGRect(x: 50, y: 50, width: 50, height: 50)
+    }
+
   }
 
 
