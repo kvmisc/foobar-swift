@@ -14,14 +14,19 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    print("\(UIView.LayerName.RoundedLayer)")
+//    let name = "The"
+//    print("H\(name.extSubstring(from: 2))H")
+//    print("H\(name.extSubstring(to: 2))H")
 
-    var ary: [Int]? = nil
-    ary = [1, 3, 5]
-    print("\(ary?[2])")
 
-    let map = ["a":1, "b":3, "c":5]
-    print("\(map["c"])")
+//    print("\(UIView.LayerName.RoundedLayer)")
+
+//    var ary: [Int]? = nil
+//    ary = [1, 3, 5]
+//    print("\(ary?[2])")
+//
+//    let map = ["a":1, "b":3, "c":5]
+//    print("\(map["c"])")
     
     let tv = FBTestView.extLoadFromNib()
     if let v = tv as? FBTestView {
@@ -32,23 +37,23 @@ class ViewController: UIViewController {
 //      v.extSetShadowColor(opacity: 0.1, radius: 4)
 //      v.extSetRoundedCorner(20)
 
-      var l = CALayer()
-      v.layer.addSublayer(l)
-      l.backgroundColor = UIColor.purple.cgColor
-      l.frame = CGRect(x: 50, y: 50, width: 25, height: 25)
-      l.name = "aa"
-
-      l = CALayer()
-      v.layer.addSublayer(l)
-      l.backgroundColor = UIColor.brown.cgColor
-      l.frame = CGRect(x: 100, y: 100, width: 25, height: 25)
-      l.name = "bb"
-
-      var r = v.layer.extSublayerNamed("bb")
-      print("\(r)")
-      v.layer.extRemoveSublayerNamed("bb")
-      var a = v.layer.extSublayerNamed("bb")
-      print("\(a)")
+//      var l = CALayer()
+//      v.layer.addSublayer(l)
+//      l.backgroundColor = UIColor.purple.cgColor
+//      l.frame = CGRect(x: 50, y: 50, width: 25, height: 25)
+//      l.name = "aa"
+//
+//      l = CALayer()
+//      v.layer.addSublayer(l)
+//      l.backgroundColor = UIColor.brown.cgColor
+//      l.frame = CGRect(x: 100, y: 100, width: 25, height: 25)
+//      l.name = "bb"
+//
+//      var r = v.layer.extSublayerNamed("bb")
+//      print("\(r)")
+//      v.layer.extRemoveSublayerNamed("bb")
+//      var a = v.layer.extSublayerNamed("bb")
+//      print("\(a)")
 
 
 //      let gradient = CAGradientLayer()
@@ -75,6 +80,34 @@ class ViewController: UIViewController {
       v.extAddGradientLayer(gradient)
 
       v.extSetBorderWidth()
+
+      let str = "abcd"
+      print("A\(str.extBase64Encode())A")
+
+      let abc = "YWJjZA=="
+      print("\(abc.extBase64Decode())")
+
+      let base = "Z29kIGlzIGEgZ2lybA=="
+
+      let dat = Data.extFromBase64String(base)
+      print("\(dat)")
+
+//      let path = Foobar.pathDocument("abc.txt")
+//      print(path)
+//      var url = URL(fileURLWithPath: path)
+//      do { try dat.write(to: url) } catch {}
+
+      let dat2 = str.data(using: .utf8)
+      if let dt = dat2 {
+        print("\(dt.extToBase64String())")
+      }
+
+      let dat3 = base.extToUTF8Data()
+      let dt3 = Data.extFromBase64Data(dat3)
+      let path = Foobar.pathDocument("ccc.txt")
+      print(path)
+      var url = URL(fileURLWithPath: path)
+      do { try dt3.write(to: url) } catch {}
     }
 
   }
