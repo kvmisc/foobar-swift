@@ -32,7 +32,7 @@ extension UIView {
                            backgroundColor: UIColor = .white) {
     self.backgroundColor = .clear
 
-    let roundedLayerName = "com.firefly.layer.rounded.rounded_layer"
+    let roundedLayerName = "com.firefly.layer.rounded_layer"
 
     self.layer.extRemoveSublayerNamed(roundedLayerName)
 
@@ -49,5 +49,13 @@ extension UIView {
     roundedLayer.mask = shapeLayer
 
     self.layer.addSublayer(roundedLayer)
+  }
+
+  func extSetGradientLayer(_ gradientLayer: CAGradientLayer) {
+    let roundedLayerName = "com.firefly.layer.rounded_layer"
+
+    let roundedLayer = self.layer.extSublayerNamed(roundedLayerName)
+    gradientLayer.frame = self.bounds
+    (roundedLayer ?? self.layer).addSublayer(gradientLayer)
   }
 }

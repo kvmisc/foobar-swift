@@ -35,8 +35,9 @@ class FBTestView: FBBaseView {
   override func setup() {
     print("in child")
     backgroundColor = .white
-//    addSubview(redView)
-//    redView.frame = CGRect(x: 10, y: 10, width: 20, height: 20)
+    addSubview(redView)
+    redView.frame = CGRect(x: 50, y: 50, width: 50, height: 50)
+    redView.layer.zPosition = 1000
   }
 
   func doit() {
