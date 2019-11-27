@@ -1,0 +1,11 @@
+Foobar.xcodeproj/*
+!Foobar.xcodeproj/project.pbxproj
+
+Foobar.xcworkspace/*
+!Foobar.xcworkspace/contents.xcworkspacedata
+!Foobar.xcworkspace/xcshareddata
+
+Pods/Pods.xcodeproj/*
+!Pods/Pods.xcodeproj/project.pbxproj
+
+.DS_Store
