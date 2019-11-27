@@ -15,8 +15,7 @@ extension CALayer {
     guard self.sublayers != nil else { return nil }
 
     for it in self.sublayers! {
-      let layerName = it.name ?? ""
-      if layerName==name {
+      if let layerName = it.name, layerName == name {
         return it
       }
     }
@@ -28,8 +27,7 @@ extension CALayer {
     guard self.sublayers != nil else { return }
 
     for it in self.sublayers! {
-      let layerName = it.name ?? ""
-      if layerName==name {
+      if let layerName = it.name, layerName == name {
         it.removeFromSuperlayer()
       }
     }

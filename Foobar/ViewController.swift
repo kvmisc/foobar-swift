@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    UIImage(named: "fals")
+    print("\(UIView.LayerName.RoundedLayer)")
+
+    var ary: [Int]? = nil
+    ary = [1, 3, 5]
+    print("\(ary?[2])")
+
+    let map = ["a":1, "b":3, "c":5]
+    print("\(map["c"])")
     
     let tv = FBTestView.extLoadFromNib()
     if let v = tv as? FBTestView {
@@ -24,20 +32,23 @@ class ViewController: UIViewController {
 //      v.extSetShadowColor(opacity: 0.1, radius: 4)
 //      v.extSetRoundedCorner(20)
 
-//      var l = CALayer()
-//      v.layer.addSublayer(l)
-//      l.backgroundColor = UIColor.purple.cgColor
-//      l.frame = CGRect(x: 50, y: 50, width: 25, height: 25)
-//      l.name = "aa"
-//
-//      l = CALayer()
-//      v.layer.addSublayer(l)
-//      l.backgroundColor = UIColor.brown.cgColor
-//      l.frame = CGRect(x: 100, y: 100, width: 25, height: 25)
-//      l.name = "bb"
+      var l = CALayer()
+      v.layer.addSublayer(l)
+      l.backgroundColor = UIColor.purple.cgColor
+      l.frame = CGRect(x: 50, y: 50, width: 25, height: 25)
+      l.name = "aa"
 
-//      var r = v.layer.extSublayerNamed("asdf")
-//      print("\(r)")
+      l = CALayer()
+      v.layer.addSublayer(l)
+      l.backgroundColor = UIColor.brown.cgColor
+      l.frame = CGRect(x: 100, y: 100, width: 25, height: 25)
+      l.name = "bb"
+
+      var r = v.layer.extSublayerNamed("bb")
+      print("\(r)")
+      v.layer.extRemoveSublayerNamed("bb")
+      var a = v.layer.extSublayerNamed("bb")
+      print("\(a)")
 
 
 //      let gradient = CAGradientLayer()
@@ -61,7 +72,9 @@ class ViewController: UIViewController {
       gradient.startPoint = CGPoint(x: 0, y: 0.5)
       gradient.endPoint = CGPoint(x: 1, y: 1)
 //      roundedLayer.addSublayer(gradient)
-      v.extSetGradientLayer(gradient)
+      v.extAddGradientLayer(gradient)
+
+      v.extSetBorderWidth()
     }
 
   }
