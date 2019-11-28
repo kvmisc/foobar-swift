@@ -63,18 +63,10 @@ extension String {
     }
   }
 
-  // 去掉前 xxx 个字符
-  func extSubstring(trimLeading: Int) -> String {
-    return self.extSubstring(trimLeading: trimLeading, trimTrailing: 0)
-  }
-  // 去掉后 xxx 个字符
-  func extSubstring(trimTrailing: Int) -> String {
-    return self.extSubstring(trimLeading: 0, trimTrailing: trimTrailing)
-  }
   // 去掉前 xxx 个字符, 后 xxx 个字符
-  func extSubstring(trimLeading: Int, trimTrailing: Int) -> String {
-    let fromIndex = self.extLeadingIndex(trimLeading, self.endIndex)
-    let toIndex = self.extTrailingIndex(trimTrailing, fromIndex)
+  func extSubstring(trimLeading: Int = 0, trimTrailing: Int = 0) -> String {
+    let fromIndex = extLeadingIndex(trimLeading, self.endIndex)
+    let toIndex = extTrailingIndex(trimTrailing, fromIndex)
     return String(self[fromIndex..<toIndex])
   }
 
@@ -85,17 +77,17 @@ extension String {
         // from -1, to 0
       } else {
         let begin = max(from, 0)
-        return self.extSubstring(from: begin, length: to-begin)
+        return extSubstring(from: begin, length: to-begin)
       }
     }
     return ""
   }
-  // 从 xxx, 长度 xxx, 仅当长度不足时, 返回长度才会变小, 当起点为负, 从 0 开始数长度
+  // 从 xxx 开始, 长度 xxx, 仅当长度不足时, 返回长度才会变小, 当起点为负, 从 0 开始数长度
   func extSubstring(from: Int, length: Int) -> String {
     if length > 0 {
       let begin = max(from, 0)
-      let fromIndex = self.extLeadingIndex(begin, self.endIndex)
-      let toIndex = self.extLeadingIndex(begin+length, self.endIndex)
+      let fromIndex = extLeadingIndex(begin, self.endIndex)
+      let toIndex = extLeadingIndex(begin+length, self.endIndex)
 
       return String(self[fromIndex..<toIndex])
     }

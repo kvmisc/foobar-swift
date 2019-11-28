@@ -11,24 +11,24 @@ import UIKit
 extension CALayer {
 
   func extSublayerNamed(_ name: String) -> CALayer? {
-    guard !(name.isEmpty) else { return nil }
-    guard self.sublayers != nil else { return nil }
-
-    for it in self.sublayers! {
-      if let layerName = it.name, layerName == name {
-        return it
+    if name.isEmpty { return nil }
+    if let layerAry = self.sublayers {
+      for item in layerAry {
+        if let layerName = item.name, layerName == name {
+          return item
+        }
       }
     }
     return nil
   }
 
   func extRemoveSublayerNamed(_ name: String) {
-    guard !(name.isEmpty) else { return }
-    guard self.sublayers != nil else { return }
-
-    for it in self.sublayers! {
-      if let layerName = it.name, layerName == name {
-        it.removeFromSuperlayer()
+    if name.isEmpty { return }
+    if let layerAry = self.sublayers {
+      for item in layerAry {
+        if let layerName = item.name, layerName == name {
+          item.removeFromSuperlayer()
+        }
       }
     }
   }

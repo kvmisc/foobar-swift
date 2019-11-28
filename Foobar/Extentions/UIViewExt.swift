@@ -14,6 +14,16 @@ extension UIView {
     return Bundle.main.loadNibNamed(String(describing: self), owner: nil, options: nil)?.last as? UIView
   }
 
+  struct LayerName {
+    static let RoundedLayer = "com.firefly.layer.rounded_layer"
+    static let GradientLayer = "com.firefly.layer.gradient_layer"
+  }
+
+  func extSetBorderWidth(_ width: Double = 1.0, color: UIColor = .black) {
+    self.layer.borderWidth = CGFloat(width)
+    self.layer.borderColor = color.cgColor
+  }
+
   func extSetShadowColor(_ color: UIColor = .black,
                          opacity: Double = 0.1,
                          radius: Double = 4.0,
@@ -25,11 +35,6 @@ extension UIView {
     self.layer.shadowOpacity = Float(opacity)
     self.layer.shadowRadius = CGFloat(radius);
     self.layer.shadowOffset = offset;
-  }
-
-  struct LayerName {
-    static let RoundedLayer = "com.firefly.layer.rounded_layer"
-    static let GradientLayer = "com.firefly.layer.gradient_layer"
   }
 
   func extSetRoundedCorner(_ radius: Double = 4.0,
@@ -53,13 +58,6 @@ extension UIView {
     roundedLayer.mask = shapeLayer
 
     self.layer.addSublayer(roundedLayer)
-  }
-
-  func extSetBorderWidth(_ width: Double = 1.0,
-                    color: UIColor = .black)
-  {
-    self.layer.borderWidth = CGFloat(width)
-    self.layer.borderColor = color.cgColor
   }
 
   func extAddGradientLayer(_ gradientLayer: CAGradientLayer) {
