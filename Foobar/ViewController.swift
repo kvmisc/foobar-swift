@@ -14,18 +14,70 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    print(Foobar.Path.bundle(.main, ""))
-    print(Foobar.Path.bundle(.main, "aa"))
-    print(Foobar.Path.bundle(.main, "/aa"))
-    print(Foobar.Path.bundle(.main, "/aa/bb"))
+//    var str = "cafe"
+//    print("\(str.count)")
 
-    print(Foobar.Path.document(""))
-    print(Foobar.Path.document("aa"))
-    print(Foobar.Path.document("/aa"))
-    print(Foobar.Path.document("/aa/bb"))
-//    let name = "The"
-//    print("H\(name.extSubstring(from: 2))H")
-//    print("H\(name.extSubstring(to: 2))H")
+    var word = "c中国ae"
+//    print("the number of characters in \(word) is \(word.count)")
+//    // 打印输出“the number of characters in cafe is 4”
+//
+    word += "\u{301}"    // 拼接一个重音，U+0301
+//
+//    print("the number of characters in \(word) is \(word.count)")
+//    // 打印输出“the number of characters in café is 4”
+
+    let str = "abcd"
+//    print("[\(word.extSubstring(leading: -1))]")
+//    print("[\(word.extSubstring(leading: 0))]")
+//    print("[\(word.extSubstring(leading: 1))]")
+//    print("[\(word.extSubstring(leading: 2))]")
+//    print("[\(word.extSubstring(leading: 3))]")
+//    print("[\(word.extSubstring(leading: 4))]")
+//    print("[\(word.extSubstring(leading: 5))]")
+//    print("[\(word.extSubstring(leading: 6))]")
+
+//    print("[\(word.extSubstring(trailing: -1))]")
+//    print("[\(word.extSubstring(trailing: 0))]")
+//    print("[\(word.extSubstring(trailing: 1))]")
+//    print("[\(word.extSubstring(trailing: 2))]")
+//    print("[\(word.extSubstring(trailing: 3))]")
+//    print("[\(word.extSubstring(trailing: 4))]")
+//    print("[\(word.extSubstring(trailing: 5))]")
+//    print("[\(word.extSubstring(trailing: 6))]")
+
+//    print("[\(word.extSubstring(trimLeading: -1))]")
+//    print("[\(word.extSubstring(trimLeading: 0))]")
+//    print("[\(word.extSubstring(trimLeading: 1))]")
+//    print("[\(word.extSubstring(trimLeading: 2))]")
+//    print("[\(word.extSubstring(trimLeading: 3))]")
+//    print("[\(word.extSubstring(trimLeading: 4))]")
+//    print("[\(word.extSubstring(trimLeading: 5))]")
+//    print("[\(word.extSubstring(trimLeading: 6))]")
+
+//    print("[\(word.extSubstring(trimTrailing: -1))]")
+//    print("[\(word.extSubstring(trimTrailing: 0))]")
+//    print("[\(word.extSubstring(trimTrailing: 1))]")
+//    print("[\(word.extSubstring(trimTrailing: 2))]")
+//    print("[\(word.extSubstring(trimTrailing: 3))]")
+//    print("[\(word.extSubstring(trimTrailing: 4))]")
+//    print("[\(word.extSubstring(trimTrailing: 5))]")
+//    print("[\(word.extSubstring(trimTrailing: 6))]")
+
+//    print("[\(word.extSubstring(trimLeading: -1, trimTrailing: -1))]")
+//    print("[\(word.extSubstring(trimLeading: 0, trimTrailing: 0))]")
+//    print("[\(word.extSubstring(trimLeading: 1, trimTrailing: 0))]")
+//    print("[\(word.extSubstring(trimLeading: 0, trimTrailing: 1))]")
+//    print("[\(word.extSubstring(trimLeading: 1, trimTrailing: 1))]")
+//    print("[\(word.extSubstring(trimLeading: 50, trimTrailing: 1))]")
+//    print("[\(word.extSubstring(trimLeading: 1, trimTrailing: 50))]")
+//    print("[\(word.extSubstring(trimLeading: 50, trimTrailing: 50))]")
+
+    print("[\(word.extSubstring(from: -1, length: 2))]")
+    print("[\(word.extSubstring(from: 0, length: 2))]")
+    print("[\(word.extSubstring(from: 1, length: 2))]")
+    print("[\(word.extSubstring(from: 2, length: 3))]")
+    print("[\(word.extSubstring(from: 2, length: 4))]")
+    print("[\(word.extSubstring(from: 12, length: 5))]")
 
 
 //    print("\(UIView.LayerName.RoundedLayer)")
