@@ -34,6 +34,8 @@ class ViewController: UIViewController {
       view.addSubview(v)
       v.frame = CGRect(x: 50, y: 50, width: 300, height: 500)
 
+      print("\(v)")
+
 //      v.extSetShadowColor(opacity: 0.1, radius: 4)
 //      v.extSetRoundedCorner(20)
 
@@ -81,33 +83,46 @@ class ViewController: UIViewController {
 
       v.extSetBorderWidth()
 
-      let str = "abcd"
-      print("A\(str.extBase64Encode())A")
+//      let rawStr = "abcd"
+//      let rawDat = rawStr.extToUTF8Data()
+//      print("A\(Foobar.Base64.encodeString(rawStr))A")
+//      print("A\(Foobar.Base64.encodeString(rawDat))A")
+//      print("A\(Foobar.Base64.encodeData(rawStr).extToUTF8String())A")
+//      print("A\(Foobar.Base64.encodeData(rawDat).extToUTF8String())A")
+//
+//      let encodedStr = "Z29kIGlzIGEgZ2lybA=="
+//      let encodedDat = encodedStr.extToUTF8Data()
+//      print("A\(Foobar.Base64.decodeString(encodedStr))A")
+//      print("A\(Foobar.Base64.decodeString(encodedDat))A")
+//      print("A\(Foobar.Base64.decodeData(encodedStr).extToUTF8String())A")
+//      print("A\(Foobar.Base64.decodeData(encodedDat).extToUTF8String())A")
 
-      let abc = "YWJjZA=="
-      print("\(abc.extBase64Decode())")
 
-      let base = "Z29kIGlzIGEgZ2lybA=="
 
-      let dat = Data.extFromBase64String(base)
-      print("\(dat)")
-
-//      let path = Foobar.pathDocument("abc.txt")
+//      let abc = "YWJjZA=="
+//      print("\(abc.extBase64Decode())")
+//
+//      let base = "Z29kIGlzIGEgZ2lybA=="
+//
+//      let dat = Data.extFromBase64String(base)
+//      print("\(dat)")
+//
+////      let path = Foobar.pathDocument("abc.txt")
+////      print(path)
+////      var url = URL(fileURLWithPath: path)
+////      do { try dat.write(to: url) } catch {}
+//
+//      let dat2 = str.data(using: .utf8)
+//      if let dt = dat2 {
+//        print("\(dt.extToBase64String())")
+//      }
+//
+//      let dat3 = base.extToUTF8Data()
+//      let dt3 = Data.extFromBase64Data(dat3)
+//      let path = Foobar.pathDocument("ccc.txt")
 //      print(path)
 //      var url = URL(fileURLWithPath: path)
-//      do { try dat.write(to: url) } catch {}
-
-      let dat2 = str.data(using: .utf8)
-      if let dt = dat2 {
-        print("\(dt.extToBase64String())")
-      }
-
-      let dat3 = base.extToUTF8Data()
-      let dt3 = Data.extFromBase64Data(dat3)
-      let path = Foobar.pathDocument("ccc.txt")
-      print(path)
-      var url = URL(fileURLWithPath: path)
-      do { try dt3.write(to: url) } catch {}
+//      do { try dt3.write(to: url) } catch {}
     }
 
   }

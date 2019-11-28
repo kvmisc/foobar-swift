@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A533039238EBBEC009B5375 /* FBBase64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A533038238EBBEC009B5375 /* FBBase64.swift */; };
 		0A53303B238EC957009B5375 /* DataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303A238EC957009B5375 /* DataExt.swift */; };
 		0A53303D238EC965009B5375 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303C238EC965009B5375 /* StringExt.swift */; };
 		0A53303F238ECB60009B5375 /* Foobar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303E238ECB60009B5375 /* Foobar.swift */; };
@@ -22,10 +21,10 @@
 		BB91D2DA238E44A50048D384 /* FBTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB91D2D8238E44A50048D384 /* FBTestView.swift */; };
 		BB91D2DB238E44A50048D384 /* FBTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB91D2D9238E44A50048D384 /* FBTestView.xib */; };
 		BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB91D2DF238E451E0048D384 /* UIViewExt.swift */; };
+		BBB32240238F53B000392176 /* FoobarBase64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB3223F238F53B000392176 /* FoobarBase64.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A533038238EBBEC009B5375 /* FBBase64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBBase64.swift; sourceTree = "<group>"; };
 		0A53303A238EC957009B5375 /* DataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExt.swift; sourceTree = "<group>"; };
 		0A53303C238EC965009B5375 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		0A53303E238ECB60009B5375 /* Foobar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foobar.swift; sourceTree = "<group>"; };
@@ -43,6 +42,7 @@
 		BB91D2D8238E44A50048D384 /* FBTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBTestView.swift; sourceTree = "<group>"; };
 		BB91D2D9238E44A50048D384 /* FBTestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBTestView.xib; sourceTree = "<group>"; };
 		BB91D2DF238E451E0048D384 /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		BBB3223F238F53B000392176 /* FoobarBase64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoobarBase64.swift; sourceTree = "<group>"; };
 		F83B494BE851057FCED14615 /* Pods-Foobar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.debug.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				0A53303E238ECB60009B5375 /* Foobar.swift */,
-				0A533038238EBBEC009B5375 /* FBBase64.swift */,
+				BBB3223F238F53B000392176 /* FoobarBase64.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -110,12 +110,12 @@
 				BB91D2C2238E35130048D384 /* ViewController.swift */,
 				BB91D2D8238E44A50048D384 /* FBTestView.swift */,
 				BB91D2D9238E44A50048D384 /* FBTestView.xib */,
-				BB91D2DE238E451E0048D384 /* Extentions */,
-				0A533037238EBBEC009B5375 /* Core */,
 				BB91D2C4238E35130048D384 /* Main.storyboard */,
 				BB91D2C7238E35160048D384 /* Assets.xcassets */,
 				BB91D2C9238E35160048D384 /* LaunchScreen.storyboard */,
 				BB91D2CC238E35160048D384 /* Info.plist */,
+				BB91D2DE238E451E0048D384 /* Extentions */,
+				0A533037238EBBEC009B5375 /* Core */,
 			);
 			path = Foobar;
 			sourceTree = "<group>";
@@ -247,7 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A533039238EBBEC009B5375 /* FBBase64.swift in Sources */,
+				BBB32240238F53B000392176 /* FoobarBase64.swift in Sources */,
 				BB91D2C3238E35130048D384 /* ViewController.swift in Sources */,
 				BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */,
 				0A53303B238EC957009B5375 /* DataExt.swift in Sources */,
