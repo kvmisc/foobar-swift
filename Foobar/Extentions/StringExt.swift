@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+// MARK: Common
 extension String {
 
   func extToUTF8Data() -> Data {
@@ -41,26 +41,83 @@ extension String {
     }
   }
 
+  func localized(comment: String = "") -> String {
+    return NSLocalizedString(self, comment: comment)
+  }
+
+  func extContains(_ string: String, caseSensitive: Bool = true) -> Bool {
+    if !caseSensitive {
+      return self.range(of: string, options: .caseInsensitive) != nil
+    }
+    return self.range(of: string) != nil
+  }
+
+  static func extRandom(ofLength length: Int) -> String {
+    if length > 0 {
+      let base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+      var result = ""
+      for _ in 1...length {
+        result.append(base.randomElement()!)
+      }
+      return result
+    }
+    return ""
+  }
+
 }
 
-// Substring
+// MARK: URL encoding
 extension String {
+  var extURLEncodedString: String {
+    if let encoded = self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
+      return encoded
+    }
+    return ""
+  }
+  var extURLDecodedString: String {
+    if let decoded = self.removingPercentEncoding {
+      return decoded
+    }
+    return ""
+  }
+  mutating func extURLEncode() -> String {
+    if let encoded = self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
+      self = encoded
+    }
+    return self
+  }
+  mutating func extURLDecode() -> String {
+    if let decoded = self.removingPercentEncoding {
+      self = decoded
+    }
+    return self
+  }
+}
+
+// MARK: Substring
+extension String {
+
+  // 第 xxx 个字符, 第一个字符序号是 0
+  func extSubstring(at: Int) -> String {
+    if at >= 0 {
+      return extSubstring(from: at, length: 1)
+    }
+    return ""
+  }
 
   // 前 xxx 个字符
   func extSubstring(leading: Int) -> String {
     if leading > 0 {
       return String(self.prefix(leading))
-    } else {
-      return ""
     }
+    return ""
   }
   // 后 xxx 个字符
   func extSubstring(trailing: Int) -> String {
     if trailing > 0 {
       return String(self.suffix(trailing))
-    } else {
-      return ""
     }
+    return ""
   }
 
   // 去掉前 xxx 个字符, 后 xxx 个字符
