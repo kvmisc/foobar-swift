@@ -21,38 +21,8 @@ extension String {
     return String(decoding: data, as: UTF8.self)
   }
 
-  func extAppendingPathComponent(_ path: String) -> String {
-    if path.isEmpty {
-      return self
-    }
 
-    if self.hasSuffix("/") {
-      if path.hasPrefix("/") {
-        return self + path.extSubstring(trimLeading: 1)
-      } else {
-        return self + path
-      }
-    } else {
-      if path.hasPrefix("/") {
-        return self + path
-      } else {
-        return self + "/" + path
-      }
-    }
-  }
-
-  func localized(comment: String = "") -> String {
-    return NSLocalizedString(self, comment: comment)
-  }
-
-  func extContains(_ string: String, caseSensitive: Bool = true) -> Bool {
-    if !caseSensitive {
-      return self.range(of: string, options: .caseInsensitive) != nil
-    }
-    return self.range(of: string) != nil
-  }
-
-  static func extRandom(ofLength length: Int) -> String {
+  static func extRandomString(_ length: Int) -> String {
     if length > 0 {
       let base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
       var result = ""
@@ -64,33 +34,77 @@ extension String {
     return ""
   }
 
+  // "123" -> true
+  // "1.3" -> false
+  // "abc" -> false
+  var extIsDigits: Bool {
+    return CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: self))
+  }
+  // "123" -> true
+  // "1.3" -> true (en_US)
+  // "1,3" -> true (fr_FR)
+  // "abc" -> false
+  var extIsNumeric: Bool {
+    let scanner = Scanner(string: self)
+    scanner.locale = NSLocale.current
+    return scanner.scanDecimal(nil) && scanner.isAtEnd
+  }
+
+  // http://emailregex.com/
+  var extIsValidEmail: Bool {
+    let regex = "^(?:[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[\\p{L}0-9](?:[a-z0-9-]*[\\p{L}0-9])?\\.)+[\\p{L}0-9](?:[\\p{L}0-9-]*[\\p{L}0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[\\p{L}0-9-]*[\\p{L}0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])$"
+    return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
+  }
+
+  var extToInt: Int? {
+    return Int(self)
+  }
+  func extToDouble() -> Double? {
+    let formatter = NumberFormatter()
+    formatter.locale = .current
+    return formatter.number(from: self)?.doubleValue
+  }
+
+  func extLocalized(comment: String = "") -> String {
+    return NSLocalizedString(self, comment: comment)
+  }
+
+  var extTrimmedString: String {
+    return self.trimmingCharacters(in: .whitespacesAndNewlines)
+  }
+
+  func extContains(_ string: String, caseSensitive: Bool = true) -> Bool {
+    if !caseSensitive {
+      return self.range(of: string, options: .caseInsensitive) != nil
+    }
+    return self.range(of: string) != nil
+  }
+}
+
+// MARK: Path
+extension String {
+  func extLastPathComponent() -> String {
+    return (self as NSString).lastPathComponent
+  }
+  func extAppendingPathComponent(_ string: String) -> String {
+    return (self as NSString).appendingPathComponent(string)
+  }
+  func extDeletingLastPathComponent() -> String {
+    return (self as NSString).deletingLastPathComponent
+  }
+
+  func extPathExtension() -> String {
+    return (self as NSString).pathExtension
+  }
 }
 
 // MARK: URL encoding
 extension String {
   var extURLEncodedString: String {
-    if let encoded = self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
-      return encoded
-    }
-    return ""
+    return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self
   }
   var extURLDecodedString: String {
-    if let decoded = self.removingPercentEncoding {
-      return decoded
-    }
-    return ""
-  }
-  mutating func extURLEncode() -> String {
-    if let encoded = self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
-      self = encoded
-    }
-    return self
-  }
-  mutating func extURLDecode() -> String {
-    if let decoded = self.removingPercentEncoding {
-      self = decoded
-    }
-    return self
+    return self.removingPercentEncoding ?? self
   }
 }
 
@@ -145,7 +159,6 @@ extension String {
       let begin = max(from, 0)
       let fromIndex = extLeadingIndex(begin, self.endIndex)
       let toIndex = extLeadingIndex(begin+length, self.endIndex)
-
       return String(self[fromIndex..<toIndex])
     }
     return ""
