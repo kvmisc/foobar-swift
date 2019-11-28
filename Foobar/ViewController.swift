@@ -14,6 +14,15 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    print(Foobar.Path.bundle(.main, ""))
+    print(Foobar.Path.bundle(.main, "aa"))
+    print(Foobar.Path.bundle(.main, "/aa"))
+    print(Foobar.Path.bundle(.main, "/aa/bb"))
+
+    print(Foobar.Path.document(""))
+    print(Foobar.Path.document("aa"))
+    print(Foobar.Path.document("/aa"))
+    print(Foobar.Path.document("/aa/bb"))
 //    let name = "The"
 //    print("H\(name.extSubstring(from: 2))H")
 //    print("H\(name.extSubstring(to: 2))H")

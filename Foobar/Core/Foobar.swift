@@ -8,23 +8,28 @@
 
 import UIKit
 
-class Foobar {
+class Foobar {}
 
-  static func pathBundle(_ bundle: Bundle,
-                         _ path: String = "")
-    -> String
-  {
-    if let bundlePath = bundle.resourcePath {
-      return bundlePath.extAppendingPathComponent(path)
+
+extension Foobar {
+
+  class Path {
+    static func bundle(_ bundle: Bundle,
+                       _ path: String = "")
+      -> String
+    {
+      if let bundlePath = bundle.resourcePath {
+        return bundlePath.extAppendingPathComponent(path)
+      }
+      return ""
     }
-    return ""
-  }
-  static func pathDocument(_ path: String = "") -> String {
-    let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-    if !(paths.isEmpty) {
-      return paths[0].extAppendingPathComponent(path)
+    static func document(_ path: String = "") -> String {
+      let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+      if !(paths.isEmpty) {
+        return paths[0].extAppendingPathComponent(path)
+      }
+      return ""
     }
-    return ""
   }
 
 }
