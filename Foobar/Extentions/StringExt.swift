@@ -136,9 +136,17 @@ extension String {
 
   // 去掉前 xxx 个字符, 后 xxx 个字符
   func extSubstring(trimLeading: Int = 0, trimTrailing: Int = 0) -> String {
-    let fromIndex = extLeadingIndex(trimLeading, self.endIndex)
-    let toIndex = extTrailingIndex(trimTrailing, fromIndex)
-    return String(self[fromIndex..<toIndex])
+    var result = self
+    if trimLeading > 0 {
+      result = String(result.dropFirst(trimLeading))
+    }
+    if trimTrailing > 0 {
+      result = String(result.dropLast(trimTrailing))
+    }
+    return result
+//    let fromIndex = extLeadingIndex(trimLeading, self.endIndex)
+//    let toIndex = extTrailingIndex(trimTrailing, fromIndex)
+//    return String(self[fromIndex..<toIndex])
   }
 
   // 从 xxx 到 xxx, 返回区间内的
@@ -157,9 +165,16 @@ extension String {
   func extSubstring(from: Int, length: Int) -> String {
     if length > 0 {
       let begin = max(from, 0)
-      let fromIndex = extLeadingIndex(begin, self.endIndex)
-      let toIndex = extLeadingIndex(begin+length, self.endIndex)
+      var fromIndex = self.startIndex
+      self.formIndex(&fromIndex, offsetBy: begin, limitedBy: self.endIndex)
+      var toIndex = fromIndex
+      self.formIndex(&toIndex, offsetBy: length, limitedBy: self.endIndex)
       return String(self[fromIndex..<toIndex])
+
+//      let begin = max(from, 0)
+//      let fromIndex = extLeadingIndex(begin, self.endIndex)
+//      let toIndex = extLeadingIndex(begin+length, self.endIndex)
+//      return String(self[fromIndex..<toIndex])
     }
     return ""
   }
