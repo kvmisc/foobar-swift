@@ -8,7 +8,7 @@
 
 import UIKit
 
-// MARK: Common
+// MARK: xxx
 extension String {
 
   func extToUTF8Data() -> Data {
@@ -73,7 +73,10 @@ extension String {
   func extLocalized(comment: String = "") -> String {
     return NSLocalizedString(self, comment: comment)
   }
+}
 
+// MARK: Common
+extension String {
   func extReversedString() -> String {
     return String(self.reversed())
   }
@@ -177,16 +180,9 @@ extension String {
   func extSubstring(from: Int, length: Int) -> String {
     if length > 0 {
       let begin = max(from, 0)
-      var fromIndex = self.startIndex
-      self.formIndex(&fromIndex, offsetBy: begin, limitedBy: self.endIndex)
-      var toIndex = fromIndex
-      self.formIndex(&toIndex, offsetBy: length, limitedBy: self.endIndex)
+      let fromIndex = extLeadingIndex(begin, self.endIndex)
+      let toIndex = extLeadingIndex(begin+length, self.endIndex)
       return String(self[fromIndex..<toIndex])
-
-//      let begin = max(from, 0)
-//      let fromIndex = extLeadingIndex(begin, self.endIndex)
-//      let toIndex = extLeadingIndex(begin+length, self.endIndex)
-//      return String(self[fromIndex..<toIndex])
     }
     return ""
   }
