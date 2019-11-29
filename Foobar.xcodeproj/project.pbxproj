@@ -21,6 +21,7 @@
 		BB91D2DB238E44A50048D384 /* FBTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB91D2D9238E44A50048D384 /* FBTestView.xib */; };
 		BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB91D2DF238E451E0048D384 /* UIViewExt.swift */; };
 		BBB32240238F53B000392176 /* FoobarBase64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB3223F238F53B000392176 /* FoobarBase64.swift */; };
+		BBB404422391381500222569 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB404412391381500222569 /* UITableViewExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		BB91D2D9238E44A50048D384 /* FBTestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBTestView.xib; sourceTree = "<group>"; };
 		BB91D2DF238E451E0048D384 /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		BBB3223F238F53B000392176 /* FoobarBase64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoobarBase64.swift; sourceTree = "<group>"; };
+		BBB404412391381500222569 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
 		F83B494BE851057FCED14615 /* Pods-Foobar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.debug.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 			children = (
 				BB91D2DF238E451E0048D384 /* UIViewExt.swift */,
 				BB2BB0FB238E73FF00EC127B /* CALayerExt.swift */,
+				BBB404412391381500222569 /* UITableViewExt.swift */,
 				0A53303A238EC957009B5375 /* DataExt.swift */,
 				0A53303C238EC965009B5375 /* StringExt.swift */,
 			);
@@ -251,6 +254,7 @@
 				0A53303F238ECB60009B5375 /* Foobar.swift in Sources */,
 				0A53303D238EC965009B5375 /* StringExt.swift in Sources */,
 				BB2BB0FC238E73FF00EC127B /* CALayerExt.swift in Sources */,
+				BBB404422391381500222569 /* UITableViewExt.swift in Sources */,
 				BB91D2BF238E35130048D384 /* AppDelegate.swift in Sources */,
 				BB91D2DA238E44A50048D384 /* FBTestView.swift in Sources */,
 			);

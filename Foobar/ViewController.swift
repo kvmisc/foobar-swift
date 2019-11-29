@@ -14,6 +14,17 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+//    Alamofire
+//    JSON
+//    GCD
+//
+//    SwiftEntryKit
+//    SwiftDrop
+//    SwiftTheme
+//
+//    SKPhotoBrowser
+//    SGPagingView
+    Reusable
 
 //    if let aa = str1[safe: 1..<2] {
 //      print(aa)
