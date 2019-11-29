@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF4082391530D00F914C5 /* FBRootVC.swift */; };
+		0A2CF40B2391530D00F914C5 /* FBRootVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CF4092391530D00F914C5 /* FBRootVC.xib */; };
+		0A2CF40F239157AF00F914C5 /* FBRedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF40E239157AF00F914C5 /* FBRedView.swift */; };
+		0A2CF411239157C200F914C5 /* FBRedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CF410239157C200F914C5 /* FBRedView.xib */; };
+		0A2CF413239158FF00F914C5 /* FBGreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF412239158FF00F914C5 /* FBGreenView.swift */; };
+		0A2CF4152391590B00F914C5 /* FBGreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CF4142391590B00F914C5 /* FBGreenView.xib */; };
 		0A53303B238EC957009B5375 /* DataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303A238EC957009B5375 /* DataExt.swift */; };
 		0A53303D238EC965009B5375 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303C238EC965009B5375 /* StringExt.swift */; };
 		0A53303F238ECB60009B5375 /* Foobar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303E238ECB60009B5375 /* Foobar.swift */; };
@@ -25,6 +31,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A2CF4082391530D00F914C5 /* FBRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRootVC.swift; sourceTree = "<group>"; };
+		0A2CF4092391530D00F914C5 /* FBRootVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBRootVC.xib; sourceTree = "<group>"; };
+		0A2CF40E239157AF00F914C5 /* FBRedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRedView.swift; sourceTree = "<group>"; };
+		0A2CF410239157C200F914C5 /* FBRedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBRedView.xib; sourceTree = "<group>"; };
+		0A2CF412239158FF00F914C5 /* FBGreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBGreenView.swift; sourceTree = "<group>"; };
+		0A2CF4142391590B00F914C5 /* FBGreenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBGreenView.xib; sourceTree = "<group>"; };
+		0A2CF4162391675A00F914C5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0A53303A238EC957009B5375 /* DataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExt.swift; sourceTree = "<group>"; };
 		0A53303C238EC965009B5375 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		0A53303E238ECB60009B5375 /* Foobar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foobar.swift; sourceTree = "<group>"; };
@@ -105,7 +118,14 @@
 		BB91D2BD238E35130048D384 /* Foobar */ = {
 			isa = PBXGroup;
 			children = (
+				0A2CF4162391675A00F914C5 /* README.md */,
 				BB91D2BE238E35130048D384 /* AppDelegate.swift */,
+				0A2CF4082391530D00F914C5 /* FBRootVC.swift */,
+				0A2CF4092391530D00F914C5 /* FBRootVC.xib */,
+				0A2CF40E239157AF00F914C5 /* FBRedView.swift */,
+				0A2CF410239157C200F914C5 /* FBRedView.xib */,
+				0A2CF412239158FF00F914C5 /* FBGreenView.swift */,
+				0A2CF4142391590B00F914C5 /* FBGreenView.xib */,
 				BB91D2C2238E35130048D384 /* ViewController.swift */,
 				BB91D2D8238E44A50048D384 /* FBTestView.swift */,
 				BB91D2D9238E44A50048D384 /* FBTestView.xib */,
@@ -191,7 +211,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A2CF411239157C200F914C5 /* FBRedView.xib in Resources */,
 				BB91D2CB238E35160048D384 /* LaunchScreen.storyboard in Resources */,
+				0A2CF40B2391530D00F914C5 /* FBRootVC.xib in Resources */,
+				0A2CF4152391590B00F914C5 /* FBGreenView.xib in Resources */,
 				BB91D2C8238E35160048D384 /* Assets.xcassets in Resources */,
 				BB91D2DB238E44A50048D384 /* FBTestView.xib in Resources */,
 				BB91D2C6238E35130048D384 /* Main.storyboard in Resources */,
@@ -247,12 +270,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A2CF413239158FF00F914C5 /* FBGreenView.swift in Sources */,
+				0A2CF40F239157AF00F914C5 /* FBRedView.swift in Sources */,
 				BBB32240238F53B000392176 /* FoobarBase64.swift in Sources */,
 				BB91D2C3238E35130048D384 /* ViewController.swift in Sources */,
 				BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */,
 				0A53303B238EC957009B5375 /* DataExt.swift in Sources */,
 				0A53303F238ECB60009B5375 /* Foobar.swift in Sources */,
 				0A53303D238EC965009B5375 /* StringExt.swift in Sources */,
+				0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */,
 				BB2BB0FC238E73FF00EC127B /* CALayerExt.swift in Sources */,
 				BBB404422391381500222569 /* UITableViewExt.swift in Sources */,
 				BB91D2BF238E35130048D384 /* AppDelegate.swift in Sources */,

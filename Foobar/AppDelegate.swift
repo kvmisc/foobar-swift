@@ -11,19 +11,18 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+  var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
 
-    var str = "12a"
-    //print("\(str.extSubstring(trimLeading: 1, trimTrailing: 1)) \(str)")
-    //print("\(str.removeFirst()) \(str)")
-    print("\(str.extDouble)")
+    let window = UIWindow()
+    window.rootViewController = FBRootVC()
+    window.makeKeyAndVisible()
+
+    self.window = window
 
     return true
   }
-
 
 }
 
