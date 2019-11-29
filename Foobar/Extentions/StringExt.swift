@@ -56,12 +56,17 @@ extension String {
     return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
   }
 
-  var extToInt: Int? {
+  // 12 -> 12
+  // 2a -> nil
+  var extInt: Int? {
     return Int(self)
   }
-  func extToDouble() -> Double? {
+  // 120 -> 120.0
+  // 1.2 -> 1.2
+  // 12a -> nil
+  var extDouble: Double? {
     let formatter = NumberFormatter()
-    formatter.locale = .current
+    formatter.locale = NSLocale.current
     return formatter.number(from: self)?.doubleValue
   }
 
@@ -69,9 +74,16 @@ extension String {
     return NSLocalizedString(self, comment: comment)
   }
 
-  var extTrimmedString: String {
+  func extReversedString() -> String {
+    return String(self.reversed())
+  }
+  func extShuffledString() -> String {
+    return String(self.shuffled())
+  }
+  func extTrimmedString() -> String {
     return self.trimmingCharacters(in: .whitespacesAndNewlines)
   }
+
 
   func extContains(_ string: String, caseSensitive: Bool = true) -> Bool {
     if !caseSensitive {
