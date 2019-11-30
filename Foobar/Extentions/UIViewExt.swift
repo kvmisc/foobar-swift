@@ -10,10 +10,6 @@ import UIKit
 
 extension UIView {
 
-  static func extLoadFromNib() -> UIView? {
-    return Bundle.main.loadNibNamed(String(describing: self), owner: nil, options: nil)?.last as? UIView
-  }
-
   struct LayerName {
     static let RoundedLayer = "com.firefly.layer.rounded_layer"
     static let GradientLayer = "com.firefly.layer.gradient_layer"

@@ -7,39 +7,45 @@
 //
 
 import UIKit
-import Then
+import Alamofire
 
 class FBRootVC: UIViewController {
 
-  var frame = CGSize().with {
-    print("ggg")
-    $0.width = 10
-  }
-
-  let iv = UIView().then {
-    print("ggg")
+  let frame = UIView().then {
     $0.backgroundColor = .red
   }
+
+  @IBOutlet weak var tableView: UITableView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    self.view.backgroundColor = .lightGray
+    tableView.register(cellType: FBRootCell.self)
+    tableView.rowHeight = 44
 
-    frame.do {
-      $0.equalTo(CGSize.zero)
-    }
-    print(frame)
+    let sm = SessionManager.default
+    print(sm.session.configuration.httpAdditionalHeaders)
+    sm.session.configuration.httpAdditionalHeaders = ["aa":"bb"]
+    sm.request("https://www.baidu.com/",
+               method: .get,
+               parameters: nil,
+               encoding: URLEncoding.queryString,
+               headers: nil)
 
-//    let iv = UIView().then {
-//      print("ggg")
-//      $0.backgroundColor = .red
-//    }
-    print(iv)
+  }
 
-    let gv = FBGreenView.loadFromNib()
-    //let gv = FBGreenView.extLoadFromNib() as! FBGreenView
-    self.view.addSubview(gv)
-    gv.frame = CGRect(x: 10, y: 100, width: 300, height: 500)
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+  }
+}
+
+extension FBRootVC : UITableViewDataSource, UITableViewDelegate {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 5
+  }
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell: FBRootCell = tableView.dequeueReusableCell(for: indexPath)
+    cell.titleLabel.text = "asdf"
+    return cell
   }
 }

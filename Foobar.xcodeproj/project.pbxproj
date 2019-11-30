@@ -13,6 +13,9 @@
 		0A2CF411239157C200F914C5 /* FBRedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CF410239157C200F914C5 /* FBRedView.xib */; };
 		0A2CF413239158FF00F914C5 /* FBGreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF412239158FF00F914C5 /* FBGreenView.swift */; };
 		0A2CF4152391590B00F914C5 /* FBGreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CF4142391590B00F914C5 /* FBGreenView.xib */; };
+		0A2CF41923916DA400F914C5 /* FBRootCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF41723916DA400F914C5 /* FBRootCell.swift */; };
+		0A2CF41A23916DA400F914C5 /* FBRootCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CF41823916DA400F914C5 /* FBRootCell.xib */; };
+		0A2CF41C23916F9F00F914C5 /* GlobalImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF41B23916F9F00F914C5 /* GlobalImport.swift */; };
 		0A53303B238EC957009B5375 /* DataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303A238EC957009B5375 /* DataExt.swift */; };
 		0A53303D238EC965009B5375 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303C238EC965009B5375 /* StringExt.swift */; };
 		0A53303F238ECB60009B5375 /* Foobar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303E238ECB60009B5375 /* Foobar.swift */; };
@@ -38,6 +41,9 @@
 		0A2CF412239158FF00F914C5 /* FBGreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBGreenView.swift; sourceTree = "<group>"; };
 		0A2CF4142391590B00F914C5 /* FBGreenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBGreenView.xib; sourceTree = "<group>"; };
 		0A2CF4162391675A00F914C5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0A2CF41723916DA400F914C5 /* FBRootCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRootCell.swift; sourceTree = "<group>"; };
+		0A2CF41823916DA400F914C5 /* FBRootCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBRootCell.xib; sourceTree = "<group>"; };
+		0A2CF41B23916F9F00F914C5 /* GlobalImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalImport.swift; sourceTree = "<group>"; };
 		0A53303A238EC957009B5375 /* DataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExt.swift; sourceTree = "<group>"; };
 		0A53303C238EC965009B5375 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		0A53303E238ECB60009B5375 /* Foobar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foobar.swift; sourceTree = "<group>"; };
@@ -122,6 +128,8 @@
 				BB91D2BE238E35130048D384 /* AppDelegate.swift */,
 				0A2CF4082391530D00F914C5 /* FBRootVC.swift */,
 				0A2CF4092391530D00F914C5 /* FBRootVC.xib */,
+				0A2CF41723916DA400F914C5 /* FBRootCell.swift */,
+				0A2CF41823916DA400F914C5 /* FBRootCell.xib */,
 				0A2CF40E239157AF00F914C5 /* FBRedView.swift */,
 				0A2CF410239157C200F914C5 /* FBRedView.xib */,
 				0A2CF412239158FF00F914C5 /* FBGreenView.swift */,
@@ -133,6 +141,7 @@
 				BB91D2C7238E35160048D384 /* Assets.xcassets */,
 				BB91D2C9238E35160048D384 /* LaunchScreen.storyboard */,
 				BB91D2CC238E35160048D384 /* Info.plist */,
+				0A2CF41B23916F9F00F914C5 /* GlobalImport.swift */,
 				BB91D2DE238E451E0048D384 /* Extentions */,
 				0A533037238EBBEC009B5375 /* Core */,
 			);
@@ -214,6 +223,7 @@
 				0A2CF411239157C200F914C5 /* FBRedView.xib in Resources */,
 				BB91D2CB238E35160048D384 /* LaunchScreen.storyboard in Resources */,
 				0A2CF40B2391530D00F914C5 /* FBRootVC.xib in Resources */,
+				0A2CF41A23916DA400F914C5 /* FBRootCell.xib in Resources */,
 				0A2CF4152391590B00F914C5 /* FBGreenView.xib in Resources */,
 				BB91D2C8238E35160048D384 /* Assets.xcassets in Resources */,
 				BB91D2DB238E44A50048D384 /* FBTestView.xib in Resources */,
@@ -278,9 +288,11 @@
 				0A53303B238EC957009B5375 /* DataExt.swift in Sources */,
 				0A53303F238ECB60009B5375 /* Foobar.swift in Sources */,
 				0A53303D238EC965009B5375 /* StringExt.swift in Sources */,
+				0A2CF41C23916F9F00F914C5 /* GlobalImport.swift in Sources */,
 				0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */,
 				BB2BB0FC238E73FF00EC127B /* CALayerExt.swift in Sources */,
 				BBB404422391381500222569 /* UITableViewExt.swift in Sources */,
+				0A2CF41923916DA400F914C5 /* FBRootCell.swift in Sources */,
 				BB91D2BF238E35130048D384 /* AppDelegate.swift in Sources */,
 				BB91D2DA238E44A50048D384 /* FBTestView.swift in Sources */,
 			);
