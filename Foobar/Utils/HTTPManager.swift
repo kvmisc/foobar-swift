@@ -8,9 +8,12 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
-enum HTTPStatus: Error {
-  case HTTPError(code: Int)
+enum HTTPError: Error {
+  case RequestError(code: Int)
+  case ResponseEmpty
+  case JSONInvalid
   case AuthrizationFailed
 }
 
@@ -20,89 +23,7 @@ class HTTPManager: NSObject {
 
   var managers = NSMutableArray()
 
-
-  func requestData(_ url: String,
-                   method: HTTPMethod = .get,
-                   parameters: Parameters = [:],
-                   encoding: ParameterEncoding = URLEncoding.methodDependent,
-                   headers: HTTPHeaders = [:],
-                   context: Any? = nil,
-                   completion: @escaping ((_ response: DataResponse<Data>?, _ result: Result<Data>, _ context: Any?) -> Void))
-  {
-    let manager = makeSessionManager()
-    configSessionManager(manager)
-    managers.add(manager)
-
-    manager.request(url,
-                    method: method,
-                    parameters: parameters,
-                    encoding: encoding,
-                    headers: headers).validate().responseData { [weak self](response) in
-                      guard let myself = self else { return }
-
-                      switch response.result {
-
-                      case .success(let data):
-
-                        completion(response, .success(data), context)
-
-                      case .failure:
-
-                        var statusCode = 0
-                        if let code = response.response?.statusCode {
-                          statusCode = code
-                        }
-
-                        completion(response, .failure(HTTPStatus.HTTPError(code: statusCode)), context)
-
-                      }
-
-                      myself.managers.remove(manager)
-    }
-  }
-
-  func requestJSON(_ url: String,
-                   method: HTTPMethod = .get,
-                   parameters: Parameters = [:],
-                   encoding: ParameterEncoding = URLEncoding.methodDependent,
-                   headers: HTTPHeaders = [:],
-                   context: Any? = nil,
-                   completion: @escaping ((_ response: DataResponse<[Any]>?, _ result: Result<[String:Any]>, _ context: Any?) -> Void))
-  {
-    let manager = makeSessionManager()
-    configSessionManager(manager)
-    managers.add(manager)
-
-    manager.request(url,
-                    method: method,
-                    parameters: parameters,
-                    encoding: encoding,
-                    headers: headers).validate().responseJSON { [weak self](response) in
-                      guard let myself = self else { return }
-
-
-//                      switch response.result {
-//
-//                      case .success(let data):
-//
-//                        completion(response, .success(data), context)
-//
-//                      case .failure:
-//
-//                        var statusCode = 0
-//                        if let code = response.response?.statusCode {
-//                          statusCode = code
-//                        }
-//
-//                        completion(response, .failure(HTTPStatus.HTTPError(code: statusCode)), context)
-//
-//                      }
-
-                      myself.managers.remove(manager)
-    }
-  }
-
-
+  typealias CompletionHandler = (DataResponse<Data>?, Result<JSON>, Any?) -> Void
 
 
   func makeSessionManager() -> SessionManager {
@@ -114,6 +35,63 @@ class HTTPManager: NSObject {
 
     return manager
   }
-  func configSessionManager(_ manager: SessionManager) {
+
+  func request(_ url: String,
+                   method: HTTPMethod = .get,
+                   parameters: Parameters = [:],
+                   encoding: ParameterEncoding = URLEncoding.methodDependent,
+                   headers: HTTPHeaders = [:],
+                   context: Any? = nil,
+                   completion: @escaping CompletionHandler)
+  {
+    let manager = makeSessionManager()
+    managers.add(manager)
+
+    manager.request(url,
+                    method: method,
+                    parameters: parameters,
+                    encoding: encoding,
+                    headers: headers).validate().responseData() { [weak self](response) in
+                      guard let myself = self else { return }
+
+                      switch response.result {
+
+                      case .success(let data):
+                        myself.handleResponse(response: response,
+                                              data: data,
+                                              context: context,
+                                              completion: completion)
+
+                      case .failure:
+
+                        let status = HTTPError.RequestError(code: response.response?.statusCode ?? 0)
+                        completion(response, .failure(status), context)
+
+                      }
+
+                      myself.managers.remove(manager)
+    }
+  }
+
+  func handleResponse(response: DataResponse<Data>?,
+                      data: Data,
+                      context: Any?,
+                      completion: CompletionHandler)
+  {
+    if data.isEmpty {
+      completion(response, .failure(HTTPError.ResponseEmpty), context)
+    } else {
+      do {
+        let object: Any = try JSONSerialization.jsonObject(with: data, options: [])
+        let json = JSON(object)
+        if json["code"].intValue == 200 {
+          completion(response, .success(json), context)
+        } else if json["code"].intValue == 201 {
+          completion(response, .failure(HTTPError.AuthrizationFailed), context)
+        }
+      } catch {
+        completion(response, .failure(HTTPError.JSONInvalid), context)
+      }
+    }
   }
 }

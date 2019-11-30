@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class FBRootVC: UIViewController {
 
@@ -17,11 +18,35 @@ class FBRootVC: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
 
+  func aaa(ad: HTTPManager.CompletionHandler) {
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
     tableView.register(cellType: FBRootCell.self)
     tableView.rowHeight = 44
+
+//    let str = """
+//{"name":"kevin","age":18}
+//"""
+
+    let str = """
+["aa","bb","22"]
+"""
+
+    let json = JSON(str.extToUTF8Data())
+    for (key,value):(String,JSON) in json {
+      print("\(key) \(value)")
+    }
+    for (index,subJson):(String, JSON) in json {
+      print("\(index) \(subJson)")
+    }
+
+//    print(str)
+//    //let json = JSON(data: str.extToUTF8Data())
+//    let json = JSON("".extToUTF8Data())
+//    print(json["name"].stringValue)
 
 //    let status = HTTPStatus.Failed(code: 1, message: "adf")
 //    switch status {
@@ -31,23 +56,38 @@ class FBRootVC: UIViewController {
 //      print("\(value)")
 //    }
 
-    HTTPManager.shared.requestData("https://httpstat.us/200?sleep=3000", context: "101") { (response, result, context)  in
 
-      print(response)
+//    HTTPManager.shared.request("http://www.mocky.io/v2/5de2a50e3000005a00e9c924") { (response, result, context) in
+//
+//      switch result {
+//
+//      case .success(let json):
+//        print(json["name"].stringValue)
+//
+//      case .failure(let error):
+//        print(error)
+//
+//      }
+//
+//    }
 
-      print(context)
-
-      switch result {
-
-      case .success(let data):
-        print(data.extToUTF8String())
-
-      case .failure(let error):
-        print(error)
-
-      }
-
-    }
+//    HTTPManager.shared.request("https://httpstat.us/200?sleep=3000", context: "101") { (response, result, context)  in
+//
+//      print(response)
+//
+//      print(context)
+//
+//      switch result {
+//
+//      case .success(let data):
+//        print(data.extToUTF8String())
+//
+//      case .failure(let error):
+//        print(error)
+//
+//      }
+//
+//    }
 
 //    let config = URLSessionConfiguration.default
 //    sm = SessionManager(configuration: config)
