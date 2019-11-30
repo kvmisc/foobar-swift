@@ -23,20 +23,48 @@ class FBRootVC: UIViewController {
     tableView.register(cellType: FBRootCell.self)
     tableView.rowHeight = 44
 
-    let sm = SessionManager.default
-    print(sm.session.configuration.httpAdditionalHeaders)
-    sm.session.configuration.httpAdditionalHeaders = ["aa":"bb"]
-    sm.request("https://www.baidu.com/",
-               method: .get,
-               parameters: nil,
-               encoding: URLEncoding.queryString,
-               headers: nil)
+//    let status = HTTPStatus.Failed(code: 1, message: "adf")
+//    switch status {
+//    case let .Failed(code, message):
+//      print("\(code) \(message)")
+//    case let .Success(value):
+//      print("\(value)")
+//    }
+
+    HTTPManager.shared.requestData("https://httpstat.us/200?sleep=3000", context: "101") { (response, result, context)  in
+
+      print(response)
+
+      print(context)
+
+      switch result {
+
+      case .success(let data):
+        print(data.extToUTF8String())
+
+      case .failure(let error):
+        print(error)
+
+      }
+
+    }
+
+//    let config = URLSessionConfiguration.default
+//    sm = SessionManager(configuration: config)
+//    sm?.request("https://httpstat.us/200?sleep=5000",
+//               method: .get,
+//               parameters: nil,
+//               encoding: URLEncoding.queryString,
+//               headers: nil).validate().responseString { (response) in
+//                print(Thread.isMainThread)
+//                print(response.result.value)
+//    }
 
   }
 
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-  }
+//  override func viewDidAppear(_ animated: Bool) {
+//    super.viewDidAppear(animated)
+//  }
 }
 
 extension FBRootVC : UITableViewDataSource, UITableViewDelegate {

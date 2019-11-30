@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01F7682392400800A6E5E6 /* HTTPManager.swift */; };
 		0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF4082391530D00F914C5 /* FBRootVC.swift */; };
 		0A2CF40B2391530D00F914C5 /* FBRootVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CF4092391530D00F914C5 /* FBRootVC.xib */; };
 		0A2CF40F239157AF00F914C5 /* FBRedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF40E239157AF00F914C5 /* FBRedView.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A01F7682392400800A6E5E6 /* HTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
 		0A2CF4082391530D00F914C5 /* FBRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRootVC.swift; sourceTree = "<group>"; };
 		0A2CF4092391530D00F914C5 /* FBRootVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBRootVC.xib; sourceTree = "<group>"; };
 		0A2CF40E239157AF00F914C5 /* FBRedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRedView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A01F7672392400800A6E5E6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0A01F7682392400800A6E5E6 /* HTTPManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		0A533037238EBBEC009B5375 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +154,7 @@
 				0A2CF41B23916F9F00F914C5 /* GlobalImport.swift */,
 				BB91D2DE238E451E0048D384 /* Extentions */,
 				0A533037238EBBEC009B5375 /* Core */,
+				0A01F7672392400800A6E5E6 /* Utils */,
 			);
 			path = Foobar;
 			sourceTree = "<group>";
@@ -287,6 +298,7 @@
 				BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */,
 				0A53303B238EC957009B5375 /* DataExt.swift in Sources */,
 				0A53303F238ECB60009B5375 /* Foobar.swift in Sources */,
+				0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */,
 				0A53303D238EC965009B5375 /* StringExt.swift in Sources */,
 				0A2CF41C23916F9F00F914C5 /* GlobalImport.swift in Sources */,
 				0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */,
