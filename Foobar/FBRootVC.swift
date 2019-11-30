@@ -27,27 +27,6 @@ class FBRootVC: UIViewController {
     tableView.register(cellType: FBRootCell.self)
     tableView.rowHeight = 44
 
-//    let str = """
-//{"name":"kevin","age":18}
-//"""
-
-    let str = """
-["aa","bb","22"]
-"""
-
-    let json = JSON(str.extToUTF8Data())
-    for (key,value):(String,JSON) in json {
-      print("\(key) \(value)")
-    }
-    for (index,subJson):(String, JSON) in json {
-      print("\(index) \(subJson)")
-    }
-
-//    print(str)
-//    //let json = JSON(data: str.extToUTF8Data())
-//    let json = JSON("".extToUTF8Data())
-//    print(json["name"].stringValue)
-
 //    let status = HTTPStatus.Failed(code: 1, message: "adf")
 //    switch status {
 //    case let .Failed(code, message):

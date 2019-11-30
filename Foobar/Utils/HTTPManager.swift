@@ -10,13 +10,6 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-enum HTTPError: Error {
-  case RequestError(code: Int)
-  case ResponseEmpty
-  case JSONInvalid
-  case AuthrizationFailed
-}
-
 class HTTPManager: NSObject {
 
   static let shared = HTTPManager()
@@ -25,6 +18,12 @@ class HTTPManager: NSObject {
 
   typealias CompletionHandler = (DataResponse<Data>?, Result<JSON>, Any?) -> Void
 
+  enum RequestFailureReason: Error {
+    case HTTPError(code: Int)
+    case ResponseEmpty
+    case JSONInvalid
+    case AuthrizationFailed
+  }
 
   func makeSessionManager() -> SessionManager {
     let configuration = URLSessionConfiguration.default
@@ -37,12 +36,12 @@ class HTTPManager: NSObject {
   }
 
   func request(_ url: String,
-                   method: HTTPMethod = .get,
-                   parameters: Parameters = [:],
-                   encoding: ParameterEncoding = URLEncoding.methodDependent,
-                   headers: HTTPHeaders = [:],
-                   context: Any? = nil,
-                   completion: @escaping CompletionHandler)
+               method: HTTPMethod = .get,
+               parameters: Parameters = [:],
+               encoding: ParameterEncoding = URLEncoding.methodDependent,
+               headers: HTTPHeaders = [:],
+               context: Any? = nil,
+               completion: @escaping CompletionHandler)
   {
     let manager = makeSessionManager()
     managers.add(manager)
@@ -63,9 +62,8 @@ class HTTPManager: NSObject {
                                               completion: completion)
 
                       case .failure:
-
-                        let status = HTTPError.RequestError(code: response.response?.statusCode ?? 0)
-                        completion(response, .failure(status), context)
+                        let code = response.response?.statusCode ?? 0
+                        completion(response, .failure(RequestFailureReason.HTTPError(code: code)), context)
 
                       }
 
@@ -79,18 +77,24 @@ class HTTPManager: NSObject {
                       completion: CompletionHandler)
   {
     if data.isEmpty {
-      completion(response, .failure(HTTPError.ResponseEmpty), context)
+      completion(response, .failure(RequestFailureReason.ResponseEmpty), context)
     } else {
       do {
         let object: Any = try JSONSerialization.jsonObject(with: data, options: [])
         let json = JSON(object)
-        if json["code"].intValue == 200 {
+
+        let code = json["code"].intValue
+        switch code {
+        case 200:
           completion(response, .success(json), context)
-        } else if json["code"].intValue == 201 {
-          completion(response, .failure(HTTPError.AuthrizationFailed), context)
+        case 201:
+          completion(response, .failure(RequestFailureReason.AuthrizationFailed), context)
+        default:
+          break
         }
+
       } catch {
-        completion(response, .failure(HTTPError.JSONInvalid), context)
+        completion(response, .failure(RequestFailureReason.JSONInvalid), context)
       }
     }
   }
