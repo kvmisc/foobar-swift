@@ -11,4 +11,6 @@ target 'Foobar' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
 
+  pod 'SwiftyDrop'
+
 end

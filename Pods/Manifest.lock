@@ -5,12 +5,14 @@ PODS:
     - Reusable/View (= 4.1.0)
   - Reusable/Storyboard (4.1.0)
   - Reusable/View (4.1.0)
+  - SwiftyDrop (4.2.0)
   - SwiftyJSON (5.0.0)
   - Then (2.6.0)
 
 DEPENDENCIES:
   - Alamofire
   - Reusable
+  - SwiftyDrop
   - SwiftyJSON
   - Then
 
@@ -18,15 +20,17 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Reusable
+    - SwiftyDrop
     - SwiftyJSON
     - Then
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Reusable: 82be188f29d96dc5eff0db7b2393bcc08d2cdd5b
+  SwiftyDrop: c5b306082dfbd7d6b9c1e569dcdd2ab13306e552
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
 
-PODFILE CHECKSUM: 523c73c10e7c6ced68ca813c4705fa509e928057
+PODFILE CHECKSUM: c6a14baa2d9e32ea88213854f37468dab2bc6deb
 
 COCOAPODS: 1.8.4
