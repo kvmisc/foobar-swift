@@ -29,7 +29,6 @@ target 'Foobar' do
   pod 'SnapKit'
   pod 'Reusable'
   pod 'WLEmptyState'
-  pod "KRProgressHUD"
   pod 'SwiftyDrop'
 
   pod 'Alamofire'
