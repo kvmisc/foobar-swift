@@ -2,11 +2,15 @@ PODS:
   - Alamofire (4.9.1)
   - AppVersionMonitor (1.4.0)
   - Closures (0.7)
+  - KRActivityIndicatorView (3.0.4)
+  - KRProgressHUD (3.4.4):
+    - KRActivityIndicatorView (= 3.0.4)
   - Reusable (4.1.0):
     - Reusable/Storyboard (= 4.1.0)
     - Reusable/View (= 4.1.0)
   - Reusable/Storyboard (4.1.0)
   - Reusable/View (4.1.0)
+  - SMIconLabel (0.5.0)
   - SnapKit (5.0.1)
   - SwiftyDrop (4.2.0)
   - SwiftyJSON (5.0.0)
@@ -17,7 +21,9 @@ DEPENDENCIES:
   - Alamofire
   - AppVersionMonitor
   - Closures
+  - KRProgressHUD
   - Reusable
+  - SMIconLabel
   - SnapKit
   - SwiftyDrop
   - SwiftyJSON
@@ -29,7 +35,10 @@ SPEC REPOS:
     - Alamofire
     - AppVersionMonitor
     - Closures
+    - KRActivityIndicatorView
+    - KRProgressHUD
     - Reusable
+    - SMIconLabel
     - SnapKit
     - SwiftyDrop
     - SwiftyJSON
@@ -40,13 +49,16 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AppVersionMonitor: 0227cbd70c78b787190afd5e959c0280718bac8e
   Closures: a83b9892a5b1c4125a9dfcd53e2754db5d7f6d22
+  KRActivityIndicatorView: 549db10b9578d58bac73db063d8b544e8970f7f2
+  KRProgressHUD: c3b9a48a0ee4824ea13212ac3f1efa50dca021e3
   Reusable: 82be188f29d96dc5eff0db7b2393bcc08d2cdd5b
+  SMIconLabel: 979cdbe5b1cda89bff21eeb3c8f4cbc2aad8e3b1
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyDrop: c5b306082dfbd7d6b9c1e569dcdd2ab13306e552
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
   WLEmptyState: 2bbb3970f62c0b9252029d34a8f74cb3d436eeea
 
-PODFILE CHECKSUM: 358d1ed20d91ceb6e8ea46946df8fd4dcfbfbaf8
+PODFILE CHECKSUM: ebfa6011ee2c2460a07174f6f14883d0559590fc
 
 COCOAPODS: 1.8.4

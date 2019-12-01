@@ -11,6 +11,7 @@ import Alamofire
 import SnapKit
 import SwiftyJSON
 import WLEmptyState
+import KRProgressHUD
 
 class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 
@@ -36,32 +37,48 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 
 //    var emptyView = WLEmptyState.EmptyStateView(frame: .zero)
 
-    view.addSubview(stackView)
-    stackView.alignment = .fill
-    stackView.distribution = .equalSpacing
-    stackView.spacing = 20
+//    view.addSubview(stackView)
+//    stackView.alignment = .fill
+//    stackView.distribution = .equalSpacing
+//    stackView.spacing = 20
+//
+//    let item1 = FBItemView()
+//    item1.backgroundColor = .red
+//    stackView.addArrangedSubview(item1)
+//
+//    let item2 = FBItemView()
+//    item2.backgroundColor = .green
+//    stackView.addArrangedSubview(item2)
+//
+//    let item3 = FBItemView()
+//    item3.backgroundColor = .blue
+//    stackView.addArrangedSubview(item3)
+//
+//    stackView.snp.makeConstraints { (make) in
+//      make.center.equalToSuperview()
+//    }
 
-    let item1 = FBItemView()
-    item1.backgroundColor = .red
-    stackView.addArrangedSubview(item1)
+//    let iconView = SMIconLabel()
+//    iconView.icon = UIImage(named: "settings")
+//    iconView.text = "asdf"
+//    iconView.iconPosition = (.left, .center)
+//    iconView.iconPadding = 5.0
 
-    let item2 = FBItemView()
-    item2.backgroundColor = .green
-    stackView.addArrangedSubview(item2)
 
-    let item3 = FBItemView()
-    item3.backgroundColor = .blue
-    stackView.addArrangedSubview(item3)
 
-    stackView.snp.makeConstraints { (make) in
-      make.center.equalToSuperview()
+//    WLEmptyState.configure()
+//    tableView.emptyStateDataSource = self
+//    tableView.emptyStateDelegate = self
+
+
+    KRProgressHUD.show()
+
+    DispatchQueue.main.asyncAfter(deadline: .now()+5) {
+      KRProgressHUD.dismiss()
     }
 
 
-    WLEmptyState.configure()
-    tableView.emptyStateDataSource = self
-    tableView.emptyStateDelegate = self
-
+    tableView.isHidden = true
     tableView.register(cellType: FBRootCell.self)
     tableView.rowHeight = 44
 

@@ -1,6 +1,10 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '10.0'
 
+# UI:
+# Alert: 各种弹窗
+# Button: 各种按钮
+# Form: 复杂表单
 # Label: 各种文字控件
 # Menu: 各种菜单、抽屉等
 # Pagination: 分页控件和分页控制器
@@ -25,8 +29,8 @@ target 'Foobar' do
   pod 'SnapKit'
   pod 'Reusable'
   pod 'WLEmptyState'
-  pod 'SMIconLabel'
   pod "KRProgressHUD"
+  pod 'SwiftyDrop'
 
   pod 'Alamofire'
   pod 'SwiftyJSON'
@@ -34,7 +38,5 @@ target 'Foobar' do
 
 
   pod 'Closures'
-
-  pod 'SwiftyDrop'
 
 end
