@@ -7,6 +7,7 @@ target 'Foobar' do
 
   pod 'Then'
   pod 'Reusable'
+  pod "AppVersionMonitor"
 
   pod 'Alamofire'
   pod 'SwiftyJSON'

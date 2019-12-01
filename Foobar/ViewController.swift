@@ -14,6 +14,10 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    // App Routing
+    // Cache
+    // Color
+
 //    Alamofire
 //    JSON
 //    GCD
