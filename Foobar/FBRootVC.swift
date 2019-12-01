@@ -8,9 +8,11 @@
 
 import UIKit
 import Alamofire
+import SnapKit
 import SwiftyJSON
+import WLEmptyState
 
-class FBRootVC: UIViewController {
+class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 
   let frame = UIView().then {
     $0.backgroundColor = .red
@@ -18,11 +20,47 @@ class FBRootVC: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
 
-  func aaa(ad: HTTPManager.CompletionHandler) {
+//  let emptyView = WLEmptyState.Em
+
+  let stackView: UIStackView = {
+    let ret = UIStackView()
+    return ret
+  }()
+
+  func enableScrollForEmptyState() -> Bool {
+    return false
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+//    var emptyView = WLEmptyState.EmptyStateView(frame: .zero)
+
+    view.addSubview(stackView)
+    stackView.alignment = .fill
+    stackView.distribution = .equalSpacing
+    stackView.spacing = 20
+
+    let item1 = FBItemView()
+    item1.backgroundColor = .red
+    stackView.addArrangedSubview(item1)
+
+    let item2 = FBItemView()
+    item2.backgroundColor = .green
+    stackView.addArrangedSubview(item2)
+
+    let item3 = FBItemView()
+    item3.backgroundColor = .blue
+    stackView.addArrangedSubview(item3)
+
+    stackView.snp.makeConstraints { (make) in
+      make.center.equalToSuperview()
+    }
+
+
+    WLEmptyState.configure()
+    tableView.emptyStateDataSource = self
+    tableView.emptyStateDelegate = self
 
     tableView.register(cellType: FBRootCell.self)
     tableView.rowHeight = 44
@@ -88,7 +126,7 @@ class FBRootVC: UIViewController {
 
 extension FBRootVC : UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5
+    return 0
   }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: FBRootCell = tableView.dequeueReusableCell(for: indexPath)

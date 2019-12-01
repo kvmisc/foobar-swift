@@ -1,40 +1,52 @@
 PODS:
   - Alamofire (4.9.1)
   - AppVersionMonitor (1.4.0)
+  - Closures (0.7)
   - Reusable (4.1.0):
     - Reusable/Storyboard (= 4.1.0)
     - Reusable/View (= 4.1.0)
   - Reusable/Storyboard (4.1.0)
   - Reusable/View (4.1.0)
+  - SnapKit (5.0.1)
   - SwiftyDrop (4.2.0)
   - SwiftyJSON (5.0.0)
   - Then (2.6.0)
+  - WLEmptyState (3.1.0)
 
 DEPENDENCIES:
   - Alamofire
   - AppVersionMonitor
+  - Closures
   - Reusable
+  - SnapKit
   - SwiftyDrop
   - SwiftyJSON
   - Then
+  - WLEmptyState
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AppVersionMonitor
+    - Closures
     - Reusable
+    - SnapKit
     - SwiftyDrop
     - SwiftyJSON
     - Then
+    - WLEmptyState
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AppVersionMonitor: 0227cbd70c78b787190afd5e959c0280718bac8e
+  Closures: a83b9892a5b1c4125a9dfcd53e2754db5d7f6d22
   Reusable: 82be188f29d96dc5eff0db7b2393bcc08d2cdd5b
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyDrop: c5b306082dfbd7d6b9c1e569dcdd2ab13306e552
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
+  WLEmptyState: 2bbb3970f62c0b9252029d34a8f74cb3d436eeea
 
-PODFILE CHECKSUM: 3d2c0b706eee7721a212b5170932358c5a267282
+PODFILE CHECKSUM: 358d1ed20d91ceb6e8ea46946df8fd4dcfbfbaf8
 
 COCOAPODS: 1.8.4

@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FBRootVC" customModule="Foobar" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="7fG-5T-cdh" id="9K2-vG-unU"/>
+                <outlet property="tableView" destination="aHP-1c-llt" id="WjB-9B-4kv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,21 +19,21 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7fG-5T-cdh">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aHP-1c-llt">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="9RM-OE-EBy"/>
-                        <outlet property="delegate" destination="-1" id="1hr-bH-CTu"/>
+                        <outlet property="dataSource" destination="-1" id="lr0-4M-7Bl"/>
+                        <outlet property="delegate" destination="-1" id="KRp-Zc-zej"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="7fG-5T-cdh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="20j-Ng-uf9"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7fG-5T-cdh" secondAttribute="bottom" id="Kob-eq-axK"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7fG-5T-cdh" secondAttribute="trailing" id="L4B-Ze-k6R"/>
-                <constraint firstItem="7fG-5T-cdh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bgg-Ks-NHR"/>
+                <constraint firstItem="aHP-1c-llt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1Hk-1k-IMB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aHP-1c-llt" secondAttribute="trailing" id="dKM-DC-RrJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="aHP-1c-llt" secondAttribute="bottom" id="lfU-5Y-soV"/>
+                <constraint firstItem="aHP-1c-llt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="x55-9y-42a"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="132" y="80"/>

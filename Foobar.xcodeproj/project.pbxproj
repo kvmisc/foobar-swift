@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01F7682392400800A6E5E6 /* HTTPManager.swift */; };
+		0A08EC362393A29400464066 /* FBItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08EC352393A29400464066 /* FBItemView.swift */; };
 		0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF4082391530D00F914C5 /* FBRootVC.swift */; };
 		0A2CF40B2391530D00F914C5 /* FBRootVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CF4092391530D00F914C5 /* FBRootVC.xib */; };
 		0A2CF40F239157AF00F914C5 /* FBRedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF40E239157AF00F914C5 /* FBRedView.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		0A01F7682392400800A6E5E6 /* HTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
+		0A08EC352393A29400464066 /* FBItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBItemView.swift; sourceTree = "<group>"; };
 		0A2CF4082391530D00F914C5 /* FBRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRootVC.swift; sourceTree = "<group>"; };
 		0A2CF4092391530D00F914C5 /* FBRootVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBRootVC.xib; sourceTree = "<group>"; };
 		0A2CF40E239157AF00F914C5 /* FBRedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRedView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				0A2CF410239157C200F914C5 /* FBRedView.xib */,
 				0A2CF412239158FF00F914C5 /* FBGreenView.swift */,
 				0A2CF4142391590B00F914C5 /* FBGreenView.xib */,
+				0A08EC352393A29400464066 /* FBItemView.swift */,
 				BB91D2C2238E35130048D384 /* ViewController.swift */,
 				BB91D2D8238E44A50048D384 /* FBTestView.swift */,
 				BB91D2D9238E44A50048D384 /* FBTestView.xib */,
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A08EC362393A29400464066 /* FBItemView.swift in Sources */,
 				0A2CF413239158FF00F914C5 /* FBGreenView.swift in Sources */,
 				0A2CF40F239157AF00F914C5 /* FBRedView.swift in Sources */,
 				BBB32240238F53B000392176 /* FoobarBase64.swift in Sources */,
