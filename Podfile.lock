@@ -14,6 +14,7 @@ PODS:
   - SwiftyJSON (5.0.0)
   - Then (2.6.0)
   - WLEmptyState (3.1.0)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - Alamofire
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - SwiftyJSON
   - Then
   - WLEmptyState
+  - YYModel
 
 SPEC REPOS:
   trunk:
@@ -41,6 +43,7 @@ SPEC REPOS:
     - SwiftyJSON
     - Then
     - WLEmptyState
+    - YYModel
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -54,7 +57,8 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
   WLEmptyState: 2bbb3970f62c0b9252029d34a8f74cb3d436eeea
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 61fcf19dcb8305ea2c24bd780e218c27e41b75d7
+PODFILE CHECKSUM: 3ad92d4b361b999edb1ac97e86ef258c3952d1b2
 
 COCOAPODS: 1.8.4

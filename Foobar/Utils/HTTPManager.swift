@@ -10,6 +10,27 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+//HTTPManager.shared.request("http://www.mocky.io/v2/5de4c9d73000000e009f7b23") { (response, result, context) in
+//
+//  switch result {
+//
+//  case .success(let json):
+//
+//    let array = json["data"]
+//    if array.type == .array {
+//      let list = NSArray.yy_modelArray(with: FBPersonModel.self, json: array.rawValue) as! [FBPersonModel]
+//      for it in list {
+//        print("\(it.name) \(it.age) \(it.isHigh)")
+//      }
+//      print(list)
+//    }
+//
+//  case .failure(let error):
+//    print(error)
+//  }
+//
+//}
+
 class HTTPManager: NSObject {
 
   static let shared = HTTPManager()

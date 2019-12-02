@@ -36,6 +36,7 @@ target 'Foobar' do
 
   pod 'MBProgressHUD'
   pod 'MJRefresh'
+  pod 'YYModel'
 
   pod 'Closures'
 
