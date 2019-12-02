@@ -44,9 +44,17 @@ class HTTPManager: NSObject {
 
   var managers = NSMutableArray()
 
+  let reachability: NetworkReachabilityManager? = {
+    let ret = NetworkReachabilityManager(host: "baidu.com")
+    ret?.listener = { (status) in print("network: \(status)") }
+    ret?.startListening()
+    return ret
+  }()
+
   typealias CompletionHandler = (DataResponse<Data>?, Result<[String:Any]>, Any?) -> Void
 
   enum FailureReason: Error {
+    case NetworkError
     case HTTPError(code: Int)
     case ResponseEmpty(message: String)
     case JSONInvalid(message: String)
@@ -90,8 +98,21 @@ class HTTPManager: NSObject {
                                               completion: completion)
 
                       case .failure:
-                        let code = response.response?.statusCode ?? 0
-                        completion(response, .failure(FailureReason.HTTPError(code: code)), context)
+                        if let reachability = myself.reachability {
+                          if reachability.isReachable {
+                            // HTTP 错误
+                            let reason = FailureReason.HTTPError(code: response.response?.statusCode ?? 0)
+                            completion(response, .failure(reason), context)
+                          } else {
+                            // 网络错误
+                            let reason = FailureReason.NetworkError
+                            completion(response, .failure(reason), context)
+                          }
+                        } else {
+                          // HTTP 错误
+                          let reason = FailureReason.HTTPError(code: response.response?.statusCode ?? 0)
+                          completion(response, .failure(reason), context)
+                        }
 
                       }
 
@@ -115,23 +136,28 @@ class HTTPManager: NSObject {
             case 200:
               completion(response, .success(object), context)
             case 201:
-              completion(response, .failure(FailureReason.AuthrizationFailed(message: "")), context)
+              let reason = FailureReason.AuthrizationFailed(message: "")
+              completion(response, .failure(reason), context)
             default:
               break
               // should not be here
             }
 
           } else {
-            completion(response, .failure(FailureReason.JSONInvalid(message: "")), context)
+            let reason = FailureReason.JSONInvalid(message: "")
+            completion(response, .failure(reason), context)
           }
         } else {
-          completion(response, .failure(FailureReason.JSONInvalid(message: "")), context)
+          let reason = FailureReason.JSONInvalid(message: "")
+          completion(response, .failure(reason), context)
         }
       } catch {
-        completion(response, .failure(FailureReason.JSONInvalid(message: "")), context)
+        let reason = FailureReason.JSONInvalid(message: "")
+        completion(response, .failure(reason), context)
       }
     } else {
-      completion(response, .failure(FailureReason.ResponseEmpty(message: "")), context)
+      let reason = FailureReason.ResponseEmpty(message: "")
+      completion(response, .failure(reason), context)
     }
   }
 }
