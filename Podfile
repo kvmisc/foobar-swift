@@ -26,15 +26,16 @@ target 'Foobar' do
   pod 'AppVersionMonitor'
   pod 'Then'
 
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+
   pod 'SnapKit'
   pod 'Reusable'
   pod 'WLEmptyState'
   pod 'SwiftyDrop'
 
-  pod 'Alamofire'
-  pod 'SwiftyJSON'
-
-
+  pod 'MBProgressHUD'
+  pod 'MJRefresh'
 
   pod 'Closures'
 

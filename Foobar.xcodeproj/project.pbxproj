@@ -33,6 +33,7 @@
 		BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB91D2DF238E451E0048D384 /* UIViewExt.swift */; };
 		BBB32240238F53B000392176 /* FoobarBase64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB3223F238F53B000392176 /* FoobarBase64.swift */; };
 		BBB404422391381500222569 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB404412391381500222569 /* UITableViewExt.swift */; };
+		BBF9DF4E23949BC400A59356 /* FBPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9DF4D23949BC400A59356 /* FBPopupVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		BB91D2DF238E451E0048D384 /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		BBB3223F238F53B000392176 /* FoobarBase64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoobarBase64.swift; sourceTree = "<group>"; };
 		BBB404412391381500222569 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
+		BBF9DF4D23949BC400A59356 /* FBPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBPopupVC.swift; sourceTree = "<group>"; };
 		F83B494BE851057FCED14615 /* Pods-Foobar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.debug.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 				BB91D2C2238E35130048D384 /* ViewController.swift */,
 				BB91D2D8238E44A50048D384 /* FBTestView.swift */,
 				BB91D2D9238E44A50048D384 /* FBTestView.xib */,
+				BBF9DF4D23949BC400A59356 /* FBPopupVC.swift */,
 				BB91D2C4238E35130048D384 /* Main.storyboard */,
 				BB91D2C7238E35160048D384 /* Assets.xcassets */,
 				BB91D2C9238E35160048D384 /* LaunchScreen.storyboard */,
@@ -303,6 +306,7 @@
 				0A53303B238EC957009B5375 /* DataExt.swift in Sources */,
 				0A53303F238ECB60009B5375 /* Foobar.swift in Sources */,
 				0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */,
+				BBF9DF4E23949BC400A59356 /* FBPopupVC.swift in Sources */,
 				0A53303D238EC965009B5375 /* StringExt.swift in Sources */,
 				0A2CF41C23916F9F00F914C5 /* GlobalImport.swift in Sources */,
 				0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */,

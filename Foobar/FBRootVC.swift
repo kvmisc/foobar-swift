@@ -11,7 +11,7 @@ import Alamofire
 import SnapKit
 import SwiftyJSON
 import WLEmptyState
-import KRProgressHUD
+import MBProgressHUD
 
 class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 
@@ -21,19 +21,48 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 
   @IBOutlet weak var tableView: UITableView!
 
-//  let emptyView = WLEmptyState.Em
-
   let stackView: UIStackView = {
     let ret = UIStackView()
     return ret
   }()
 
+
+  let keyWindow: UIWindow = {
+    let ret = UIWindow(frame: UIScreen.main.bounds)
+    ret.windowLevel = .normal + 100
+    ret.backgroundColor = UIColor.clear
+//    let vc = UIViewController()
+//    vc.view.backgroundColor = .lightGray
+    ret.rootViewController = FBPopupVC()
+    return ret
+  }()
+  func show() {
+    //previousWindow = UIApplication.shared.keyWindow
+    keyWindow.makeKeyAndVisible()
+  }
+
   func enableScrollForEmptyState() -> Bool {
     return false
   }
 
+  @objc func buttonClicked(sender: UIButton) {
+    print("in show")
+//    show()
+    MBProgressHUD.showAdded(to: self.view, animated: true)
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    let bt = UIButton(type: .system)
+    bt.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
+    bt.backgroundColor = .red
+    self.view.addSubview(bt)
+    bt.snp.makeConstraints { (make) in
+      make.center.equalToSuperview()
+      make.size.equalTo(CGSize(width: 200, height: 200))
+    }
+
 
 //    var emptyView = WLEmptyState.EmptyStateView(frame: .zero)
 
@@ -71,14 +100,14 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 //    tableView.emptyStateDelegate = self
 
 
-    KRProgressHUD.show()
+//    KRProgressHUD.show()
+//
+//    DispatchQueue.main.asyncAfter(deadline: .now()+5) {
+//      KRProgressHUD.dismiss()
+//    }
 
-    DispatchQueue.main.asyncAfter(deadline: .now()+5) {
-      KRProgressHUD.dismiss()
-    }
 
-
-    tableView.isHidden = true
+    //tableView.isHidden = true
     tableView.register(cellType: FBRootCell.self)
     tableView.rowHeight = 44
 
@@ -143,7 +172,7 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 
 extension FBRootVC : UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
+    return 5
   }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: FBRootCell = tableView.dequeueReusableCell(for: indexPath)
