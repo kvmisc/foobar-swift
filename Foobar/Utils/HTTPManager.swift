@@ -17,7 +17,7 @@ import Alamofire
 //    print(json)
 //
 ////    if let array = json["data"] as? [Any] {
-////      let list = NSArray.yy_modelArray(with: FBPersonModel.self, json: array) as? [FBPersonModel]
+////      let list = NSArray.yy_modelArray(with: XXXModel.self, json: array) as? [FBPersonModel]
 ////      if let list = list {
 ////        for it in list {
 ////          print("\(it.name) \(it.age) \(it.isHigh) \(it.desc)")
@@ -26,7 +26,7 @@ import Alamofire
 ////    }
 //
 ////    if let dictionry = json["data"] as? [String:Any] {
-////      let person = FBPersonModel.yy_model(with: dictionry)
+////      let person = XXXModel.yy_model(with: dictionry)
 ////      if let person = person {
 ////        print("\(person.name) \(person.age) \(person.isHigh) \(person.desc)")
 ////      }
