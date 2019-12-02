@@ -25,8 +25,8 @@ import Alamofire
 ////      }
 ////    }
 //
-////    if let dictionry = json["data"] as? [String:Any] {
-////      let person = XXXModel.yy_model(with: dictionry)
+////    if let dictionary = json["data"] as? [String:Any] {
+////      let person = XXXModel.yy_model(with: dictionary)
 ////      if let person = person {
 ////        print("\(person.name) \(person.age) \(person.isHigh) \(person.desc)")
 ////      }
@@ -46,11 +46,11 @@ class HTTPManager: NSObject {
 
   typealias CompletionHandler = (DataResponse<Data>?, Result<[String:Any]>, Any?) -> Void
 
-  enum RequestFailureReason: Error {
+  enum FailureReason: Error {
     case HTTPError(code: Int)
-    case ResponseEmpty
-    case JSONInvalid
-    case AuthrizationFailed
+    case ResponseEmpty(message: String)
+    case JSONInvalid(message: String)
+    case AuthrizationFailed(message: String)
   }
 
   func makeSessionManager() -> SessionManager {
@@ -91,7 +91,7 @@ class HTTPManager: NSObject {
 
                       case .failure:
                         let code = response.response?.statusCode ?? 0
-                        completion(response, .failure(RequestFailureReason.HTTPError(code: code)), context)
+                        completion(response, .failure(FailureReason.HTTPError(code: code)), context)
 
                       }
 
@@ -115,23 +115,23 @@ class HTTPManager: NSObject {
             case 200:
               completion(response, .success(object), context)
             case 201:
-              completion(response, .failure(RequestFailureReason.AuthrizationFailed), context)
+              completion(response, .failure(FailureReason.AuthrizationFailed(message: "")), context)
             default:
               break
               // should not be here
             }
 
           } else {
-            completion(response, .failure(RequestFailureReason.JSONInvalid), context)
+            completion(response, .failure(FailureReason.JSONInvalid(message: "")), context)
           }
         } else {
-          completion(response, .failure(RequestFailureReason.JSONInvalid), context)
+          completion(response, .failure(FailureReason.JSONInvalid(message: "")), context)
         }
       } catch {
-        completion(response, .failure(RequestFailureReason.JSONInvalid), context)
+        completion(response, .failure(FailureReason.JSONInvalid(message: "")), context)
       }
     } else {
-      completion(response, .failure(RequestFailureReason.ResponseEmpty), context)
+      completion(response, .failure(FailureReason.ResponseEmpty(message: "")), context)
     }
   }
 }
