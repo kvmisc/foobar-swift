@@ -138,21 +138,28 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 //    }
 
 
-    HTTPManager.shared.request("http://www.mocky.io/v2/5de4c9d73000000e009f7b23") { (response, result, context) in
+    HTTPManager.shared.request("http://www.mocky.io/v2/5de516b22e0000890031fb89") { (response, result, context) in
 
       switch result {
 
       case .success(let json):
         print(json)
 
-//        let array = json["data"]
-//        if array.type == .array {
-//          let list = NSArray.yy_modelArray(with: FBPersonModel.self, json: array.rawValue) as! [FBPersonModel]
-//          for it in list {
-//            print("\(it.name) \(it.age) \(it.isHigh)")
-//          }
-//          print(list)
-//        }
+        if let array = json["data"] as? [Any] {
+          let list = NSArray.yy_modelArray(with: FBPersonModel.self, json: array) as? [FBPersonModel]
+          if let list = list {
+            for it in list {
+              print("\(it.name) \(it.age) \(it.isHigh) \(it.desc)")
+            }
+          }
+        }
+
+        if let dictionry = json["data"] as? [String:Any] {
+          let person = FBPersonModel.yy_model(with: dictionry)
+          if let person = person {
+            print("\(person.name) \(person.age) \(person.isHigh) \(person.desc)")
+          }
+        }
 
       case .failure(let error):
         print(error)

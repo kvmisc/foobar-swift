@@ -12,4 +12,5 @@ class FBPersonModel: NSObject {
   @objc var name = ""
   @objc var age = 0
   @objc var isHigh = false
+  @objc var desc = ""
 }
