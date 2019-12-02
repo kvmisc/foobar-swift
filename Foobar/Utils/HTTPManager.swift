@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import SwiftyJSON
 
 //HTTPManager.shared.request("http://www.mocky.io/v2/5de4c9d73000000e009f7b23") { (response, result, context) in
 //
@@ -37,7 +36,7 @@ class HTTPManager: NSObject {
 
   var managers = NSMutableArray()
 
-  typealias CompletionHandler = (DataResponse<Data>?, Result<JSON>, Any?) -> Void
+  typealias CompletionHandler = (DataResponse<Data>?, Result<[String:Any]>, Any?) -> Void
 
   enum RequestFailureReason: Error {
     case HTTPError(code: Int)
@@ -97,26 +96,34 @@ class HTTPManager: NSObject {
                       context: Any?,
                       completion: CompletionHandler)
   {
-    if data.isEmpty {
-      completion(response, .failure(RequestFailureReason.ResponseEmpty), context)
-    } else {
+    if !(data.isEmpty) {
       do {
-        let object: Any = try JSONSerialization.jsonObject(with: data, options: [])
-        let json = JSON(object)
+        let json: Any = try JSONSerialization.jsonObject(with: data, options: [])
 
-        let code = json["code"].intValue
-        switch code {
-        case 200:
-          completion(response, .success(json), context)
-        case 201:
-          completion(response, .failure(RequestFailureReason.AuthrizationFailed), context)
-        default:
-          break
+        if let object = json as? [String:Any] {
+          if let code = object["code"] as? Int {
+
+            switch code {
+            case 200:
+              completion(response, .success(object), context)
+            case 201:
+              completion(response, .failure(RequestFailureReason.AuthrizationFailed), context)
+            default:
+              break
+              // should not be here
+            }
+
+          } else {
+            completion(response, .failure(RequestFailureReason.JSONInvalid), context)
+          }
+        } else {
+          completion(response, .failure(RequestFailureReason.JSONInvalid), context)
         }
-
       } catch {
         completion(response, .failure(RequestFailureReason.JSONInvalid), context)
       }
+    } else {
+      completion(response, .failure(RequestFailureReason.ResponseEmpty), context)
     }
   }
 }

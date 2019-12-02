@@ -143,15 +143,16 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
       switch result {
 
       case .success(let json):
+        print(json)
 
-        let array = json["data"]
-        if array.type == .array {
-          let list = NSArray.yy_modelArray(with: FBPersonModel.self, json: array.rawValue) as! [FBPersonModel]
-          for it in list {
-            print("\(it.name) \(it.age) \(it.isHigh)")
-          }
-          print(list)
-        }
+//        let array = json["data"]
+//        if array.type == .array {
+//          let list = NSArray.yy_modelArray(with: FBPersonModel.self, json: array.rawValue) as! [FBPersonModel]
+//          for it in list {
+//            print("\(it.name) \(it.age) \(it.isHigh)")
+//          }
+//          print(list)
+//        }
 
       case .failure(let error):
         print(error)
