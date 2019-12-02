@@ -11,12 +11,31 @@ import MBProgressHUD
 
 class HUD: NSObject {
 
+  static weak var window: UIWindow? = nil
+
   typealias CompletionHandler = () -> Void
 
-  static func showActivity(inView: UIView, info: String? = nil) {
-    MBProgressHUD(for: inView)?.hide(animated: false)
 
-    let hud = MBProgressHUD(view: inView)
+  static func showActivity(inView: UIView? = nil, info: String? = nil) {
+
+    var view: UIView? = nil
+
+    if let inView = inView {
+      view = inView
+    } else {
+      if let oldWindow = window {
+        MBProgressHUD(for: oldWindow)?.hide(animated: false)
+      }
+      window = topmostWindow()
+      view = window
+    }
+
+    guard let containerView = view else { return }
+
+
+    MBProgressHUD(for: containerView)?.hide(animated: false)
+
+    let hud = MBProgressHUD(view: containerView)
 
     hud.mode = .customView
     hud.removeFromSuperViewOnHide = true
@@ -45,14 +64,30 @@ class HUD: NSObject {
     hud.label.textColor = .white
     hud.label.text = info
 
-    inView.addSubview(hud)
+    containerView.addSubview(hud)
     hud.show(animated: true)
   }
 
-  static func showInfo(inView: UIView, info: String, completion: CompletionHandler? = nil) {
-    MBProgressHUD(for: inView)?.hide(animated: false)
+  static func showInfo(inView: UIView? = nil, info: String, completion: CompletionHandler? = nil) {
 
-    let hud = MBProgressHUD(view: inView)
+    var view: UIView? = nil
+
+    if let inView = inView {
+      view = inView
+    } else {
+      if let oldWindow = window {
+        MBProgressHUD(for: oldWindow)?.hide(animated: false)
+      }
+      window = topmostWindow()
+      view = window
+    }
+
+    guard let containerView = view else { return }
+
+
+    MBProgressHUD(for: containerView)?.hide(animated: false)
+
+    let hud = MBProgressHUD(view: containerView)
 
     hud.mode = .text
     hud.removeFromSuperViewOnHide = true
@@ -70,13 +105,27 @@ class HUD: NSObject {
 
     hud.completionBlock = completion
 
-    inView.addSubview(hud)
+    containerView.addSubview(hud)
     hud.show(animated: true)
     hud.hide(animated: true, afterDelay: 2.0)
   }
 
-  static func hide(inView: UIView, animated: Bool = false) {
-    let hud = MBProgressHUD(for: inView)
-    hud?.hide(animated: animated)
+  static func hide(inView: UIView? = nil, animated: Bool = false) {
+    if let inView = inView {
+      MBProgressHUD(for: inView)?.hide(animated: animated)
+    } else {
+      if let oldWindow = window {
+        MBProgressHUD(for: oldWindow)?.hide(animated: false)
+      }
+    }
+  }
+
+  fileprivate static func topmostWindow() -> UIWindow? {
+    for window in UIApplication.shared.windows.reversed() {
+      if !(window.isHidden) && (window.alpha>0.0) {
+        return window
+      }
+    }
+    return nil
   }
 }
