@@ -48,7 +48,24 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
   @objc func buttonClicked(sender: UIButton) {
     print("in show")
 //    show()
-    MBProgressHUD.showAdded(to: self.view, animated: true)
+//    MBProgressHUD.showAdded(to: self.view, animated: true)
+
+//    HUD.showActivity(inView: self.view)
+    HUD.showActivity(inView: self.view, info: "加载中...")
+
+
+//    HUD.showInfo(inView: self.view, info: "加载失败")
+//    HUD.showInfo(inView: self.view, info: "加载完成") {
+//      print("in complete 1")
+//    }
+
+    DispatchQueue.main.asyncAfter(wallDeadline: .now()+1.0) {
+      HUD.showInfo(inView: self.view, info: "加载成功")
+      //HUD.hide(inView: self.view)
+//      HUD.showInfo(inView: self.view, info: "加载xx") {
+//        print("in complete 2")
+//      }
+    }
   }
 
   override func viewDidLoad() {
