@@ -25,6 +25,8 @@ target 'Foobar' do
 
   pod 'AppVersionMonitor'
   pod 'Then'
+  pod "AsyncSwift"
+  pod 'SwiftyTimer'
 
   pod 'Alamofire'
   pod 'SwiftyJSON'

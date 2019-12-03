@@ -8,7 +8,8 @@
 
 import UIKit
 import AppVersionMonitor
-
+import Async
+import SwiftyTimer
 
 
 @UIApplicationMain
@@ -25,6 +26,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.window = window
 
     AppVersionMonitor.sharedMonitor.startup()
+
+//    let group = AsyncGroup()
+//    group.background {
+//      print("aa")
+//    }
+//    group.utility {
+//      print("bb")
+//    }
+//    group.wait()
+//    print("cc")
+
+//    Async.userInitiated {
+//      print("aa \(Thread.isMainThread)")
+//    }.main {
+//      print("bb \(Thread.isMainThread)")
+//    }.background {
+//      print("cc \(Thread.isMainThread)")
+//    }.main {
+//      print("dd \(Thread.isMainThread)")
+//    }
+
+    Timer.every(1.seconds) {
+      print("aa")
+    }
+
+    Timer.after(5.seconds) {
+      print("bb")
+    }
 
 
 //    VersionTracker.shared.track()
