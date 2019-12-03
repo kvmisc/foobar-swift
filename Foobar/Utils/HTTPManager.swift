@@ -54,12 +54,12 @@ class HTTPManager: NSObject {
   typealias CompletionHandler = (DataResponse<Data>?, Result<[String:Any]>, Any?) -> Void
 
   enum FailureReason: Error {
-    case Cancelled(message: String)
-    case NetworkError(message: String)
-    case HTTPError(code: Int)
-    case ResponseEmpty(message: String)
-    case JSONInvalid(message: String)
-    case AuthrizationFailed(message: String)
+    case Cancelled(String)
+    case NetworkError(String)
+    case HTTPError(String)
+    case ResponseEmpty(String)
+    case JSONInvalid(String)
+    case AuthrizationFailed(String)
   }
 
   func request(_ url: String,
@@ -99,23 +99,19 @@ class HTTPManager: NSObject {
                             case .failure:
                               if let error = response.result.error as NSError?, error.code == NSURLErrorCancelled {
                                 // 因取消产生的错误
-                                let reason = FailureReason.Cancelled(message: "qrw")
-                                completion(response, .failure(reason), context)
+                                completion(response, .failure(FailureReason.Cancelled("qrw")), context)
                               } else {
                                 if let reachability = myself.reachability {
                                   if reachability.isReachable {
                                     // HTTP 错误
-                                    let reason = FailureReason.HTTPError(code: response.response?.statusCode ?? 0)
-                                    completion(response, .failure(reason), context)
+                                    completion(response, .failure(FailureReason.HTTPError("")), context)
                                   } else {
                                     // 网络错误
-                                    let reason = FailureReason.NetworkError(message: "")
-                                    completion(response, .failure(reason), context)
+                                    completion(response, .failure(FailureReason.NetworkError("")), context)
                                   }
                                 } else {
                                   // HTTP 错误
-                                  let reason = FailureReason.HTTPError(code: response.response?.statusCode ?? 0)
-                                  completion(response, .failure(reason), context)
+                                  completion(response, .failure(FailureReason.HTTPError("")), context)
                                 }
                               }
 
@@ -141,28 +137,23 @@ class HTTPManager: NSObject {
             case 200:
               completion(response, .success(object), context)
             case 201:
-              let reason = FailureReason.AuthrizationFailed(message: "")
-              completion(response, .failure(reason), context)
+              completion(response, .failure(FailureReason.AuthrizationFailed("")), context)
             default:
               break
               // should not be here
             }
 
           } else {
-            let reason = FailureReason.JSONInvalid(message: "")
-            completion(response, .failure(reason), context)
+            completion(response, .failure(FailureReason.JSONInvalid("")), context)
           }
         } else {
-          let reason = FailureReason.JSONInvalid(message: "")
-          completion(response, .failure(reason), context)
+          completion(response, .failure(FailureReason.JSONInvalid("")), context)
         }
       } catch {
-        let reason = FailureReason.JSONInvalid(message: "")
-        completion(response, .failure(reason), context)
+        completion(response, .failure(FailureReason.JSONInvalid("")), context)
       }
     } else {
-      let reason = FailureReason.ResponseEmpty(message: "")
-      completion(response, .failure(reason), context)
+      completion(response, .failure(FailureReason.ResponseEmpty("")), context)
     }
   }
 }
