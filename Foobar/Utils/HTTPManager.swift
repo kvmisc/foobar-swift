@@ -9,33 +9,13 @@
 import UIKit
 import Alamofire
 
-//HTTPManager.shared.request("http://www.mocky.io/v2/5de516b22e0000890031fb89") { (response, result, context) in
-//
-//  switch result {
-//
-//  case .success(let json):
-//    print(json)
-//
-////    if let array = json["data"] as? [Any] {
-////      let list = NSArray.yy_modelArray(with: XXXModel.self, json: array) as? [FBPersonModel]
-////      if let list = list {
-////        for it in list {
-////          print("\(it.name) \(it.age) \(it.isHigh) \(it.desc)")
-////        }
-////      }
-////    }
-//
-////    if let dictionary = json["data"] as? [String:Any] {
-////      let person = XXXModel.yy_model(with: dictionary)
-////      if let person = person {
-////        print("\(person.name) \(person.age) \(person.isHigh) \(person.desc)")
-////      }
-////    }
-//
-//  case .failure(let error):
+//_ = HTTPManager.shared.request("https://httpstat.us/200?sleep=5000")
+//{ (response, result, error, context) in
+//  if let error = error {
 //    print(error)
+//  } else {
+//    print(result)
 //  }
-//
 //}
 
 class HTTPManager: NSObject {
@@ -51,16 +31,18 @@ class HTTPManager: NSObject {
     return ret
   }()
 
-  typealias CompletionHandler = (DataResponse<Data>?, Result<[String:Any]>, Any?) -> Void
-
-  enum FailureReason: Error {
-    case Cancelled(String)
-    case NetworkError(String)
-    case HTTPError(String)
-    case ResponseEmpty(String)
-    case JSONInvalid(String)
-    case AuthrizationFailed(String)
+  enum FailureReason: String {
+    case Unknown        = "unknown"
+    case Cancelled      = "cancelled"
+    case NetworkError   = "network_error"
+    case HTTPError      = "http_error"
+    case ResponseEmpty  = "response_empty"
+    case FormatError    = "format_error"    // not json
+    case DataError      = "data_error"      // not dictionary
+    case CodeError      = "code_error"      // has no code
   }
+
+  typealias CompletionHandler = (DataResponse<Data>, [String:Any], NSError?, Any?) -> Void
 
   func request(_ url: String,
                method: HTTPMethod = .get,
@@ -69,7 +51,8 @@ class HTTPManager: NSObject {
                headers: HTTPHeaders = [:],
                timeout: Double = 10.0,
                context: Any? = nil,
-               completion: @escaping CompletionHandler) -> DataRequest
+               completion: @escaping CompletionHandler)
+    -> DataRequest
   {
     let configuration = URLSessionConfiguration.default
 
@@ -81,6 +64,7 @@ class HTTPManager: NSObject {
 
     managers.add(manager)
 
+
     return manager.request(url,
                            method: method,
                            parameters: parameters,
@@ -91,27 +75,24 @@ class HTTPManager: NSObject {
                             switch response.result {
 
                             case .success(let data):
-                              myself.handleResponse(response: response,
-                                                    data: data,
-                                                    context: context,
-                                                    completion: completion)
+                              myself.parseResponse(response: response,
+                                                   data: data,
+                                                   context: context,
+                                                   completion: completion)
 
                             case .failure:
                               if let error = response.result.error as NSError?, error.code == NSURLErrorCancelled {
-                                // 因取消产生的错误
-                                completion(response, .failure(FailureReason.Cancelled("qrw")), context)
+                                // 因取消而产生的错误
+                                completion(response, [:], myself.makeError(reason: FailureReason.Cancelled.rawValue), context)
                               } else {
-                                if let reachability = myself.reachability {
-                                  if reachability.isReachable {
-                                    // HTTP 错误
-                                    completion(response, .failure(FailureReason.HTTPError("")), context)
-                                  } else {
-                                    // 网络错误
-                                    completion(response, .failure(FailureReason.NetworkError("")), context)
-                                  }
+                                if let reachability = myself.reachability,
+                                  reachability.networkReachabilityStatus != .unknown,
+                                  !(reachability.isReachable)
+                                {
+                                  // 有 reachability, 有状态, 状态是无法访问网络
+                                  completion(response, [:], myself.makeError(reason: FailureReason.NetworkError.rawValue), context)
                                 } else {
-                                  // HTTP 错误
-                                  completion(response, .failure(FailureReason.HTTPError("")), context)
+                                  completion(response, [:], myself.makeError(reason: FailureReason.HTTPError.rawValue), context)
                                 }
                               }
 
@@ -121,10 +102,10 @@ class HTTPManager: NSObject {
     }
   }
 
-  func handleResponse(response: DataResponse<Data>?,
-                      data: Data,
-                      context: Any?,
-                      completion: CompletionHandler)
+  func parseResponse(response: DataResponse<Data>,
+                     data: Data,
+                     context: Any?,
+                     completion: CompletionHandler)
   {
     if !(data.isEmpty) {
       do {
@@ -135,25 +116,36 @@ class HTTPManager: NSObject {
 
             switch code {
             case 200:
-              completion(response, .success(object), context)
-            case 201:
-              completion(response, .failure(FailureReason.AuthrizationFailed("")), context)
+              completion(response, object, nil, context)
+            //case 201:
+            //  show login page
+            //case xxx:
+            //  do something else
             default:
-              break
-              // should not be here
+              completion(response, [:], makeError(description: object["message"] as? String), context)
             }
 
           } else {
-            completion(response, .failure(FailureReason.JSONInvalid("")), context)
+            completion(response, [:], makeError(reason: FailureReason.CodeError.rawValue), context)
           }
         } else {
-          completion(response, .failure(FailureReason.JSONInvalid("")), context)
+          completion(response, [:], makeError(reason: FailureReason.DataError.rawValue), context)
         }
       } catch {
-        completion(response, .failure(FailureReason.JSONInvalid("")), context)
+        completion(response, [:], makeError(reason: FailureReason.FormatError.rawValue), context)
       }
     } else {
-      completion(response, .failure(FailureReason.ResponseEmpty("")), context)
+      completion(response, [:], makeError(reason: FailureReason.ResponseEmpty.rawValue), context)
     }
+  }
+
+  func makeError(description: String? = nil, reason: String? = nil) -> NSError {
+    let userInfo = [
+      NSLocalizedDescriptionKey:description ?? "请求错误",
+      NSLocalizedFailureReasonErrorKey:reason ?? FailureReason.Unknown.rawValue
+    ]
+    return NSError(domain: "com.firefly.http",
+                   code: 0,
+                   userInfo: userInfo)
   }
 }

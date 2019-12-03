@@ -140,29 +140,40 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 
     var request: DataRequest? = nil
 
-    print("start request")
-    request = HTTPManager.shared.request("https://httpstat.us/200?sleep=5000") { (response, result, context) in
+    //print(HTTPManager.shared.reachability)
 
-      switch result {
-
-      case .success(let json):
-        print(json)
-
-      case .failure(let error):
-        switch error {
-        case HTTPManager.FailureReason.Cancelled(let asdf):
-          print("xx cancelled \(asdf)")
-        default:
-          print("xx other")
-        }
+    _ = HTTPManager.shared.request("https://httpstat.us/200?sleep=5000")
+    { (response, result, error, context) in
+      if let error = error {
+        print(error)
+      } else {
+        print(result)
       }
-
     }
 
-    Async.main(after: 2) {
-      print("to cancel")
-      request?.cancel()
-    }
+//    print("start request")
+//    request = HTTPManager.shared.request("https://httpstat.us/200?sleep=5000") { (response, result, context) in
+//
+//      switch result {
+//
+//      case .success(let json):
+//        print(json)
+//
+//      case .failure(let error):
+//        switch error {
+//        case HTTPManager.FailureReason.Cancelled(let asdf):
+//          print("xx cancelled \(asdf)")
+//        default:
+//          print("xx other")
+//        }
+//      }
+//
+//    }
+//
+//    Async.main(after: 2) {
+//      print("to cancel")
+//      request?.cancel()
+//    }
 
 
 
