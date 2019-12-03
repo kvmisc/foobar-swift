@@ -54,21 +54,12 @@ class HTTPManager: NSObject {
   typealias CompletionHandler = (DataResponse<Data>?, Result<[String:Any]>, Any?) -> Void
 
   enum FailureReason: Error {
-    case NetworkError
+    case Cancelled(message: String)
+    case NetworkError(message: String)
     case HTTPError(code: Int)
     case ResponseEmpty(message: String)
     case JSONInvalid(message: String)
     case AuthrizationFailed(message: String)
-  }
-
-  func makeSessionManager() -> SessionManager {
-    let configuration = URLSessionConfiguration.default
-
-    let manager = SessionManager(configuration: configuration,
-                                 delegate: SessionDelegate(),
-                                 serverTrustPolicyManager: nil)
-
-    return manager
   }
 
   func request(_ url: String,
@@ -76,47 +67,61 @@ class HTTPManager: NSObject {
                parameters: Parameters = [:],
                encoding: ParameterEncoding = URLEncoding.methodDependent,
                headers: HTTPHeaders = [:],
+               timeout: Double = 10.0,
                context: Any? = nil,
-               completion: @escaping CompletionHandler)
+               completion: @escaping CompletionHandler) -> DataRequest
   {
-    let manager = makeSessionManager()
+    let configuration = URLSessionConfiguration.default
+
+    configuration.timeoutIntervalForRequest = timeout
+
+    let manager = SessionManager(configuration: configuration,
+                                 delegate: SessionDelegate(),
+                                 serverTrustPolicyManager: nil)
+
     managers.add(manager)
 
-    manager.request(url,
-                    method: method,
-                    parameters: parameters,
-                    encoding: encoding,
-                    headers: headers).validate().responseData() { [weak self](response) in
-                      guard let myself = self else { return }
+    return manager.request(url,
+                           method: method,
+                           parameters: parameters,
+                           encoding: encoding,
+                           headers: headers).validate().responseData() { [weak self](response) in
+                            guard let myself = self else { return }
 
-                      switch response.result {
+                            switch response.result {
 
-                      case .success(let data):
-                        myself.handleResponse(response: response,
-                                              data: data,
-                                              context: context,
-                                              completion: completion)
+                            case .success(let data):
+                              myself.handleResponse(response: response,
+                                                    data: data,
+                                                    context: context,
+                                                    completion: completion)
 
-                      case .failure:
-                        if let reachability = myself.reachability {
-                          if reachability.isReachable {
-                            // HTTP 错误
-                            let reason = FailureReason.HTTPError(code: response.response?.statusCode ?? 0)
-                            completion(response, .failure(reason), context)
-                          } else {
-                            // 网络错误
-                            let reason = FailureReason.NetworkError
-                            completion(response, .failure(reason), context)
-                          }
-                        } else {
-                          // HTTP 错误
-                          let reason = FailureReason.HTTPError(code: response.response?.statusCode ?? 0)
-                          completion(response, .failure(reason), context)
-                        }
+                            case .failure:
+                              if let error = response.result.error as NSError?, error.code == NSURLErrorCancelled {
+                                // 因取消产生的错误
+                                let reason = FailureReason.Cancelled(message: "qrw")
+                                completion(response, .failure(reason), context)
+                              } else {
+                                if let reachability = myself.reachability {
+                                  if reachability.isReachable {
+                                    // HTTP 错误
+                                    let reason = FailureReason.HTTPError(code: response.response?.statusCode ?? 0)
+                                    completion(response, .failure(reason), context)
+                                  } else {
+                                    // 网络错误
+                                    let reason = FailureReason.NetworkError(message: "")
+                                    completion(response, .failure(reason), context)
+                                  }
+                                } else {
+                                  // HTTP 错误
+                                  let reason = FailureReason.HTTPError(code: response.response?.statusCode ?? 0)
+                                  completion(response, .failure(reason), context)
+                                }
+                              }
 
-                      }
+                            }
 
-                      myself.managers.remove(manager)
+                            myself.managers.remove(manager)
     }
   }
 

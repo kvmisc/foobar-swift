@@ -47,13 +47,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //      print("dd \(Thread.isMainThread)")
 //    }
 
-    Timer.every(1.seconds) {
-      print("aa")
-    }
-
-    Timer.after(5.seconds) {
-      print("bb")
-    }
+//    Timer.every(1.seconds) {
+//      print("aa")
+//    }
+//
+//    Timer.after(5.seconds) {
+//      print("bb")
+//    }
 
 
 //    VersionTracker.shared.track()

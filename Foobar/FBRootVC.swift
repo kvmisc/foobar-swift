@@ -13,6 +13,7 @@ import SwiftyJSON
 import WLEmptyState
 import MBProgressHUD
 import YYModel
+import Async
 
 class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 
@@ -137,23 +138,30 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 //      print("\(value)")
 //    }
 
-    HTTPManager.shared
+    var request: DataRequest? = nil
 
-    DispatchQueue.main.asyncAfter(deadline: .now()+3.0) {
+    print("start request")
+    request = HTTPManager.shared.request("https://httpstat.us/200?sleep=5000") { (response, result, context) in
 
-      HTTPManager.shared.request("http://www.mocky.io/v2/5de519f62e00005a0031fbb7") { (response, result, context) in
+      switch result {
 
-        switch result {
+      case .success(let json):
+        print(json)
 
-        case .success(let json):
-          print(json)
-
-        case .failure(let error):
-          print(error)
+      case .failure(let error):
+        switch error {
+        case HTTPManager.FailureReason.Cancelled(let asdf):
+          print("xx cancelled \(asdf)")
+        default:
+          print("xx other")
         }
-
       }
 
+    }
+
+    Async.main(after: 2) {
+      print("to cancel")
+      request?.cancel()
     }
 
 
