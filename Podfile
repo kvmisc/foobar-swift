@@ -1,7 +1,8 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '10.0'
 
-# UI:
+#Events
+#Images
 # Alert: 各种弹窗
 # Button: 各种按钮
 # Form: 复杂表单
@@ -26,11 +27,13 @@ target 'Foobar' do
   pod 'AppVersionMonitor'
   pod 'Then'
   pod "AsyncSwift"
+  pod 'DeviceKit'
 
   pod 'SnapKit'
   pod 'Reusable'
   pod 'WLEmptyState'
   pod 'IHKeyboardAvoiding'
+  pod 'TextAttributes'
 
   pod 'Alamofire'
   pod 'SwiftyDrop'
@@ -40,5 +43,7 @@ target 'Foobar' do
   pod 'SwiftyJSON'
 
   pod 'Closures'
+
+
 
 end
