@@ -14,7 +14,6 @@ PODS:
   - SnapKit (5.0.1)
   - SwiftyDrop (4.2.0)
   - SwiftyJSON (5.0.0)
-  - SwiftyTimer (2.1.0)
   - Then (2.6.0)
   - WLEmptyState (3.1.0)
   - YYModel (1.0.4)
@@ -31,7 +30,6 @@ DEPENDENCIES:
   - SnapKit
   - SwiftyDrop
   - SwiftyJSON
-  - SwiftyTimer
   - Then
   - WLEmptyState
   - YYModel
@@ -49,7 +47,6 @@ SPEC REPOS:
     - SnapKit
     - SwiftyDrop
     - SwiftyJSON
-    - SwiftyTimer
     - Then
     - WLEmptyState
     - YYModel
@@ -66,11 +63,10 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyDrop: c5b306082dfbd7d6b9c1e569dcdd2ab13306e552
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
-  SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
   WLEmptyState: 2bbb3970f62c0b9252029d34a8f74cb3d436eeea
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: ffda9929fda3b158d91fd84c7d55b5efe922afe1
+PODFILE CHECKSUM: 4ceca4ab82127c33e8f17799c7d3c140a5961f70
 
 COCOAPODS: 1.8.4
