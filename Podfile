@@ -26,14 +26,14 @@ target 'Foobar' do
 
   pod 'AppVersionMonitor'
   pod 'Then'
-  pod "AsyncSwift"
   pod 'DeviceKit'
+  pod "AsyncSwift"
 
   pod 'SnapKit'
   pod 'Reusable'
   pod 'WLEmptyState'
-  pod 'IHKeyboardAvoiding'
   pod 'TextAttributes'
+  pod 'IHKeyboardAvoiding'
 
   pod 'Alamofire'
   pod 'SwiftyDrop'
@@ -43,7 +43,5 @@ target 'Foobar' do
   pod 'SwiftyJSON'
 
   pod 'Closures'
-
-
 
 end
