@@ -28,6 +28,8 @@ target 'Foobar' do
   pod "AsyncSwift"
   pod 'SwiftyTimer'
 
+  pod 'IHKeyboardAvoiding'
+
   pod 'Alamofire'
   pod 'SwiftyJSON'
 

@@ -14,6 +14,7 @@ import WLEmptyState
 import MBProgressHUD
 import YYModel
 import Async
+import IHKeyboardAvoiding
 
 class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 
@@ -69,66 +70,28 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 //      }
     }
   }
-
+  @IBOutlet weak var grayView: UIView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let bt = UIButton(type: .system)
-    bt.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
-    bt.backgroundColor = .red
-    self.view.addSubview(bt)
-    bt.snp.makeConstraints { (make) in
-      make.center.equalToSuperview()
-      make.size.equalTo(CGSize(width: 200, height: 200))
-    }
+    KeyboardAvoiding.avoidingView = grayView
+    KeyboardAvoiding.padding = 5
+    KeyboardAvoiding.paddingForCurrentAvoidingView = 20
 
-
-//    var emptyView = WLEmptyState.EmptyStateView(frame: .zero)
-
-//    view.addSubview(stackView)
-//    stackView.alignment = .fill
-//    stackView.distribution = .equalSpacing
-//    stackView.spacing = 20
-//
-//    let item1 = FBItemView()
-//    item1.backgroundColor = .red
-//    stackView.addArrangedSubview(item1)
-//
-//    let item2 = FBItemView()
-//    item2.backgroundColor = .green
-//    stackView.addArrangedSubview(item2)
-//
-//    let item3 = FBItemView()
-//    item3.backgroundColor = .blue
-//    stackView.addArrangedSubview(item3)
-//
-//    stackView.snp.makeConstraints { (make) in
+//    let bt = UIButton(type: .system)
+//    bt.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
+//    bt.backgroundColor = .red
+//    self.view.addSubview(bt)
+//    bt.snp.makeConstraints { (make) in
 //      make.center.equalToSuperview()
-//    }
-
-//    let iconView = SMIconLabel()
-//    iconView.icon = UIImage(named: "settings")
-//    iconView.text = "asdf"
-//    iconView.iconPosition = (.left, .center)
-//    iconView.iconPadding = 5.0
-
-
-
-//    WLEmptyState.configure()
-//    tableView.emptyStateDataSource = self
-//    tableView.emptyStateDelegate = self
-
-
-//    KRProgressHUD.show()
-//
-//    DispatchQueue.main.asyncAfter(deadline: .now()+5) {
-//      KRProgressHUD.dismiss()
+//      make.size.equalTo(CGSize(width: 200, height: 200))
 //    }
 
 
     //tableView.isHidden = true
-    tableView.register(cellType: FBRootCell.self)
-    tableView.rowHeight = 44
+//    tableView.register(cellType: FBRootCell.self)
+//    tableView.rowHeight = 44
 
 //    let status = HTTPStatus.Failed(code: 1, message: "adf")
 //    switch status {
@@ -151,66 +114,7 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
       }
     }
 
-//    print("start request")
-//    request = HTTPManager.shared.request("https://httpstat.us/200?sleep=5000") { (response, result, context) in
-//
-//      switch result {
-//
-//      case .success(let json):
-//        print(json)
-//
-//      case .failure(let error):
-//        switch error {
-//        case HTTPManager.FailureReason.Cancelled(let asdf):
-//          print("xx cancelled \(asdf)")
-//        default:
-//          print("xx other")
-//        }
-//      }
-//
-//    }
-//
-//    Async.main(after: 2) {
-//      print("to cancel")
-//      request?.cancel()
-//    }
-
-
-
-//    HTTPManager.shared.request("https://httpstat.us/200?sleep=3000", context: "101") { (response, result, context)  in
-//
-//      print(response)
-//
-//      print(context)
-//
-//      switch result {
-//
-//      case .success(let data):
-//        print(data.extToUTF8String())
-//
-//      case .failure(let error):
-//        print(error)
-//
-//      }
-//
-//    }
-
-//    let config = URLSessionConfiguration.default
-//    sm = SessionManager(configuration: config)
-//    sm?.request("https://httpstat.us/200?sleep=5000",
-//               method: .get,
-//               parameters: nil,
-//               encoding: URLEncoding.queryString,
-//               headers: nil).validate().responseString { (response) in
-//                print(Thread.isMainThread)
-//                print(response.result.value)
-//    }
-
   }
-
-//  override func viewDidAppear(_ animated: Bool) {
-//    super.viewDidAppear(animated)
-//  }
 }
 
 extension FBRootVC : UITableViewDataSource, UITableViewDelegate {

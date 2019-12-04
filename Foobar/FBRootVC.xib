@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FBRootVC" customModule="Foobar" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="aHP-1c-llt" id="WjB-9B-4kv"/>
+                <outlet property="grayView" destination="ABB-4P-XIq" id="iSC-Xa-kkc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,24 +19,23 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aHP-1c-llt">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="lr0-4M-7Bl"/>
-                        <outlet property="delegate" destination="-1" id="KRp-Zc-zej"/>
-                    </connections>
-                </tableView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABB-4P-XIq" customClass="KeyboardDismissingView" customModule="IHKeyboardAvoiding">
+                    <rect key="frame" x="56" y="394" width="303" height="190"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yp-Sy-Rfg">
+                            <rect key="frame" x="94" y="134" width="97" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="aHP-1c-llt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1Hk-1k-IMB"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aHP-1c-llt" secondAttribute="trailing" id="dKM-DC-RrJ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="aHP-1c-llt" secondAttribute="bottom" id="lfU-5Y-soV"/>
-                <constraint firstItem="aHP-1c-llt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="x55-9y-42a"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="80"/>
+            <point key="canvasLocation" x="-105.79710144927537" y="78.348214285714278"/>
         </view>
     </objects>
 </document>
