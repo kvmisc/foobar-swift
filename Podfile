@@ -27,6 +27,9 @@ target 'Foobar' do
   pod 'DeviceKit'
   pod "AsyncSwift"
 
+  pod 'SwiftDate'
+  pod 'SQLite.swift'
+
   pod 'SnapKit'
   pod 'Reusable'
   pod 'WLEmptyState'

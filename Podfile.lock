@@ -14,6 +14,10 @@ PODS:
   - Reusable/Storyboard (4.1.0)
   - Reusable/View (4.1.0)
   - SnapKit (5.0.1)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
+  - SwiftDate (6.1.0)
   - SwiftEntryKit (1.2.3):
     - QuickLayout (= 3.0.0)
   - SwiftyDrop (4.2.0)
@@ -34,6 +38,8 @@ DEPENDENCIES:
   - MJRefresh
   - Reusable
   - SnapKit
+  - SQLite.swift
+  - SwiftDate
   - SwiftEntryKit
   - SwiftyDrop
   - SwiftyJSON
@@ -55,6 +61,8 @@ SPEC REPOS:
     - QuickLayout
     - Reusable
     - SnapKit
+    - SQLite.swift
+    - SwiftDate
     - SwiftEntryKit
     - SwiftyDrop
     - SwiftyJSON
@@ -75,6 +83,8 @@ SPEC CHECKSUMS:
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   Reusable: 82be188f29d96dc5eff0db7b2393bcc08d2cdd5b
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+  SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
   SwiftEntryKit: 340713c2e4a6662c5149629990bf1088bf5f0389
   SwiftyDrop: c5b306082dfbd7d6b9c1e569dcdd2ab13306e552
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
@@ -83,6 +93,6 @@ SPEC CHECKSUMS:
   WLEmptyState: 2bbb3970f62c0b9252029d34a8f74cb3d436eeea
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 577561a75f881ac617a4dd472eef691d5e97346e
+PODFILE CHECKSUM: f2374630e5f18b670643c28db14116e4f458bf54
 
 COCOAPODS: 1.8.4

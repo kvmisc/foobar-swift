@@ -9,6 +9,7 @@
 import UIKit
 import AppVersionMonitor
 import Async
+import SQLite
 
 
 @UIApplicationMain
