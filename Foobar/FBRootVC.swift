@@ -102,21 +102,21 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 //      print("\(value)")
 //    }
 
-    let param = ["bb":"22","cc":"33"]
-    _ = HTTPManager.shared.request("http://baidu.com/?sleep=5000&aa=bb", parameters: param)
-    { (response, result, error, context) in
-      if let error = error {
-        print(error)
-      } else {
-        print(result)
-      }
-    }
-
-    HUD.showInfo(inView: self.view, info: "asdf") {
-      print("xxx")
-    }
-
-    print(Device.current.hasNotch)
+//    let param = ["bb":"22","cc":"33"]
+//    _ = HTTPManager.shared.request("http://baidu.com/?sleep=5000&aa=bb", parameters: param)
+//    { (response, result, error, context) in
+//      if let error = error {
+//        print(error)
+//      } else {
+//        print(result)
+//      }
+//    }
+//
+//    HUD.showInfo(inView: self.view, info: "asdf") {
+//      print("xxx")
+//    }
+//
+//    print(Device.current.hasNotch)
 
   }
 }

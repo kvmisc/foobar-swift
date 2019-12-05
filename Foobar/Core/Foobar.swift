@@ -10,6 +10,9 @@ import UIKit
 
 class Foobar {
 
+  class Common {
+  }
+
   class Path {
     static func create(_ path: String) -> Bool {
       var isDirectory = ObjCBool(false)
@@ -54,6 +57,40 @@ class Foobar {
       path = (path as NSString).appendingPathComponent(relativePath)
       return path
     }
+  }
+
+
+  class Date {
+    static let full_01: DateFormatter = {
+      let ret = DateFormatter()
+      ret.locale = Locale(identifier: "en_US_POSIX")
+      ret.timeZone = TimeZone.current
+      ret.dateFormat = "yyyy-MM-dd HH:mm:ss"
+      return ret
+    }()
+
+    static let date_01: DateFormatter = {
+      let ret = DateFormatter()
+      ret.locale = Locale(identifier: "en_US_POSIX")
+      ret.timeZone = TimeZone.current
+      ret.dateFormat = "yyyy-MM-dd"
+      return ret
+    }()
+    static let date_02: DateFormatter = {
+      let ret = DateFormatter()
+      ret.locale = Locale(identifier: "en_US_POSIX")
+      ret.timeZone = TimeZone.current
+      ret.dateFormat = "yyyy/MM/dd"
+      return ret
+    }()
+
+    static let time_01: DateFormatter = {
+      let ret = DateFormatter()
+      ret.locale = Locale(identifier: "en_US_POSIX")
+      ret.timeZone = TimeZone.current
+      ret.dateFormat = "HH:mm:ss"
+      return ret
+    }()
   }
 
 

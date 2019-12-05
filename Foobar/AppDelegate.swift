@@ -10,6 +10,7 @@ import UIKit
 import AppVersionMonitor
 import Async
 import SQLite
+import SwiftDate
 
 
 @UIApplicationMain
@@ -25,9 +26,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     self.window = window
 
-    print(Foobar.Path.user(uid: "123", relativePath: "a/b.txt"))
+    let rome = Region(calendar: Calendars.gregorian, zone: Zones.asiaTokyo, locale: Locales.italian)
+//    let date1 = DateInRegion("2019-12-05 23:11:02", region: rome)!
+//    print(date1.date)
+//    print(Date())
+//    print(TimeZone.current)
 
-    Foobar.Path.create(Foobar.Path.document("aa"))
+    let now = Date()
+//    let df1 = DateFormatter()
+//    let tz1 = TimeZone(identifier: "Asia/Bangkok")
+//    print(tz1)
+//    df1.timeZone = tz1
+//    df1.dateFormat = "dd MMM"
+//    df1.locale = Locale(identifier: "it")
+//    print(df1.string(from: now))
+
+    print("afs")
+    Async.main(after: 3.0) {
+      print(Foobar.Date.full_01.string(from: now))
+    }
+
+    print(SCREEN_TAL)
+
+
+
 
 //    let group = AsyncGroup()
 //    group.background {
