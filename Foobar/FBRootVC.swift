@@ -15,6 +15,7 @@ import MBProgressHUD
 import YYModel
 import Async
 import IHKeyboardAvoiding
+import DeviceKit
 
 class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 
@@ -114,6 +115,8 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
     HUD.showInfo(inView: self.view, info: "asdf") {
       print("xxx")
     }
+
+    print(Device.current.hasNotch)
 
   }
 }

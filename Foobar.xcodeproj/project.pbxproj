@@ -35,6 +35,7 @@
 		BBB14E7C2394A21800E6E5D9 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB14E7B2394A21800E6E5D9 /* HUD.swift */; };
 		BBB32240238F53B000392176 /* FoobarBase64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB3223F238F53B000392176 /* FoobarBase64.swift */; };
 		BBB404422391381500222569 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB404412391381500222569 /* UITableViewExt.swift */; };
+		BBBE442F23991EE7000EAEF2 /* DeviceKitExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE442E23991EE7000EAEF2 /* DeviceKitExt.swift */; };
 		BBF9DF4E23949BC400A59356 /* FBPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9DF4D23949BC400A59356 /* FBPopupVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		BBB14E7B2394A21800E6E5D9 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		BBB3223F238F53B000392176 /* FoobarBase64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoobarBase64.swift; sourceTree = "<group>"; };
 		BBB404412391381500222569 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
+		BBBE442E23991EE7000EAEF2 /* DeviceKitExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceKitExt.swift; sourceTree = "<group>"; };
 		BBF9DF4D23949BC400A59356 /* FBPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBPopupVC.swift; sourceTree = "<group>"; };
 		F83B494BE851057FCED14615 /* Pods-Foobar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.debug.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +168,7 @@
 				BB9D5CEC2394FC3D00FB4BD1 /* FBPersonModel.swift */,
 				BB91D2DE238E451E0048D384 /* Extentions */,
 				0A533037238EBBEC009B5375 /* Core */,
+				BBBE442D23991EE7000EAEF2 /* Podext */,
 				0A01F7672392400800A6E5E6 /* Utils */,
 			);
 			path = Foobar;
@@ -197,6 +200,14 @@
 				BBB14E7B2394A21800E6E5D9 /* HUD.swift */,
 			);
 			name = HUD;
+			sourceTree = "<group>";
+		};
+		BBBE442D23991EE7000EAEF2 /* Podext */ = {
+			isa = PBXGroup;
+			children = (
+				BBBE442E23991EE7000EAEF2 /* DeviceKitExt.swift */,
+			);
+			path = Podext;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +332,7 @@
 			files = (
 				0A08EC362393A29400464066 /* FBItemView.swift in Sources */,
 				0A2CF413239158FF00F914C5 /* FBGreenView.swift in Sources */,
+				BBBE442F23991EE7000EAEF2 /* DeviceKitExt.swift in Sources */,
 				0A2CF40F239157AF00F914C5 /* FBRedView.swift in Sources */,
 				BBB14E7C2394A21800E6E5D9 /* HUD.swift in Sources */,
 				BBB32240238F53B000392176 /* FoobarBase64.swift in Sources */,
