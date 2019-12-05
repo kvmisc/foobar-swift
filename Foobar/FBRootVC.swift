@@ -111,6 +111,10 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
       }
     }
 
+    HUD.showInfo(inView: self.view, info: "asdf") {
+      print("xxx")
+    }
+
   }
 }
 

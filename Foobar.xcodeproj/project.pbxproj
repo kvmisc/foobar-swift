@@ -18,7 +18,7 @@
 		0A2CF41923916DA400F914C5 /* FBRootCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF41723916DA400F914C5 /* FBRootCell.swift */; };
 		0A2CF41A23916DA400F914C5 /* FBRootCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CF41823916DA400F914C5 /* FBRootCell.xib */; };
 		0A2CF41C23916F9F00F914C5 /* GlobalImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF41B23916F9F00F914C5 /* GlobalImport.swift */; };
-		0A53303B238EC957009B5375 /* DataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303A238EC957009B5375 /* DataExt.swift */; };
+		0A53303B238EC957009B5375 /* DataStringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303A238EC957009B5375 /* DataStringExt.swift */; };
 		0A53303D238EC965009B5375 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303C238EC965009B5375 /* StringExt.swift */; };
 		0A53303F238ECB60009B5375 /* Foobar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303E238ECB60009B5375 /* Foobar.swift */; };
 		51ED5B58178026AF3ADCE160 /* Pods_Foobar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */; };
@@ -51,7 +51,7 @@
 		0A2CF41723916DA400F914C5 /* FBRootCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRootCell.swift; sourceTree = "<group>"; };
 		0A2CF41823916DA400F914C5 /* FBRootCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBRootCell.xib; sourceTree = "<group>"; };
 		0A2CF41B23916F9F00F914C5 /* GlobalImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalImport.swift; sourceTree = "<group>"; };
-		0A53303A238EC957009B5375 /* DataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExt.swift; sourceTree = "<group>"; };
+		0A53303A238EC957009B5375 /* DataStringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStringExt.swift; sourceTree = "<group>"; };
 		0A53303C238EC965009B5375 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		0A53303E238ECB60009B5375 /* Foobar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foobar.swift; sourceTree = "<group>"; };
 		2BCD74F1A55A7280F3DB3800 /* Pods-Foobar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.release.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 				BB91D2DF238E451E0048D384 /* UIViewExt.swift */,
 				BB2BB0FB238E73FF00EC127B /* CALayerExt.swift */,
 				BBB404412391381500222569 /* UITableViewExt.swift */,
-				0A53303A238EC957009B5375 /* DataExt.swift */,
+				0A53303A238EC957009B5375 /* DataStringExt.swift */,
 				0A53303C238EC965009B5375 /* StringExt.swift */,
 			);
 			path = Extentions;
@@ -326,7 +326,7 @@
 				BBB32240238F53B000392176 /* FoobarBase64.swift in Sources */,
 				BB91D2C3238E35130048D384 /* ViewController.swift in Sources */,
 				BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */,
-				0A53303B238EC957009B5375 /* DataExt.swift in Sources */,
+				0A53303B238EC957009B5375 /* DataStringExt.swift in Sources */,
 				0A53303F238ECB60009B5375 /* Foobar.swift in Sources */,
 				0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */,
 				BBF9DF4E23949BC400A59356 /* FBPopupVC.swift in Sources */,

@@ -11,17 +11,6 @@ import UIKit
 // MARK: xxx
 extension String {
 
-  func extToUTF8Data() -> Data {
-    if let dat = self.data(using: .utf8) {
-      return dat
-    }
-    return Data()
-  }
-  static func extFromUTF8Data(_ data: Data) -> String {
-    return String(decoding: data, as: UTF8.self)
-  }
-
-
   static func extRandomString(_ length: Int) -> String {
     if length > 0 {
       let base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"

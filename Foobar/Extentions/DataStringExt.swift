@@ -21,3 +21,16 @@ extension Data {
   }
 
 }
+
+extension String {
+
+  func extToUTF8Data() -> Data {
+    if let dat = self.data(using: .utf8) {
+      return dat
+    }
+    return Data()
+  }
+  static func extFromUTF8Data(_ data: Data) -> String {
+    return String(decoding: data, as: UTF8.self)
+  }
+}

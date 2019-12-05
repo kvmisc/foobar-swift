@@ -13,9 +13,6 @@ class HUD: NSObject {
 
   static weak var window: UIWindow? = nil
 
-  typealias CompletionHandler = () -> Void
-
-
   static func showActivity(inView: UIView? = nil, info: String? = nil) {
 
     var view: UIView? = nil
@@ -45,7 +42,7 @@ class HUD: NSObject {
     hud.margin = 15.0
 
     //hud.bezelView.layer.cornerRadius = 0.0
-    hud.bezelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
+    hud.bezelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
 
     if #available(iOS 13, *) {
       let aiv = UIActivityIndicatorView(style: .large)
@@ -68,7 +65,7 @@ class HUD: NSObject {
     hud.show(animated: true)
   }
 
-  static func showInfo(inView: UIView? = nil, info: String, completion: CompletionHandler? = nil) {
+  static func showInfo(inView: UIView? = nil, info: String, completion: (()->Void)? = nil) {
 
     var view: UIView? = nil
 
