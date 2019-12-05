@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.9.1)
   - AppVersionMonitor (1.4.0)
   - AsyncSwift (2.0.4)
+  - Cache (5.2.0)
   - Closures (0.7)
   - DeviceKit (2.3.0)
   - IHKeyboardAvoiding (4.7)
@@ -31,6 +32,7 @@ DEPENDENCIES:
   - Alamofire
   - AppVersionMonitor
   - AsyncSwift
+  - Cache
   - Closures
   - DeviceKit
   - IHKeyboardAvoiding
@@ -53,6 +55,7 @@ SPEC REPOS:
     - Alamofire
     - AppVersionMonitor
     - AsyncSwift
+    - Cache
     - Closures
     - DeviceKit
     - IHKeyboardAvoiding
@@ -75,6 +78,7 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AppVersionMonitor: 0227cbd70c78b787190afd5e959c0280718bac8e
   AsyncSwift: 65775a7b32e740609b24969ece3de58723b9dc3e
+  Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
   Closures: a83b9892a5b1c4125a9dfcd53e2754db5d7f6d22
   DeviceKit: da103891aa928d89f64ea8dd8aca738c5f3d8ac0
   IHKeyboardAvoiding: 4cae0880c3975feffa278495df894c5166e71ad0
@@ -93,6 +97,6 @@ SPEC CHECKSUMS:
   WLEmptyState: 2bbb3970f62c0b9252029d34a8f74cb3d436eeea
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: f2374630e5f18b670643c28db14116e4f458bf54
+PODFILE CHECKSUM: 78ba918e5a4df75d910c2af8650e1f5a2673adf4
 
 COCOAPODS: 1.8.4

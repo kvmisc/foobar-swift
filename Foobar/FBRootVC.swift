@@ -101,11 +101,8 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 //      print("\(value)")
 //    }
 
-    var request: DataRequest? = nil
-
-    //print(HTTPManager.shared.reachability)
-
-    _ = HTTPManager.shared.request("https://httpstat.us/200?sleep=5000")
+    let param = ["bb":"22","cc":"33"]
+    _ = HTTPManager.shared.request("http://baidu.com/?sleep=5000&aa=bb", parameters: param)
     { (response, result, error, context) in
       if let error = error {
         print(error)

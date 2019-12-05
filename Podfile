@@ -1,6 +1,9 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '10.0'
 
+#Animation
+#App Routing
+#JSON
 #Dependency Injection
 #Events
 #Images
@@ -27,6 +30,7 @@ target 'Foobar' do
   pod 'DeviceKit'
   pod "AsyncSwift"
 
+  pod 'Cache'
   pod 'SwiftDate'
   pod 'SQLite.swift'
 
