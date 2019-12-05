@@ -14,6 +14,21 @@ class Foobar {}
 extension Foobar {
 
   class Path {
+    static func create(path: String) -> Bool {
+
+      return false
+    }
+    static func delete(path: String)  -> Bool {
+      return false
+    }
+
+    static func global(relativePath: String = "") -> String {
+      return ""
+    }
+    static func user(relativePath: String = "") -> String {
+      return ""
+    }
+
     static func bundle(_ path: String = "", _ bundle: Bundle = Bundle.main) -> String {
       if let bundlePath = bundle.resourcePath {
         return bundlePath.extAppendingPathComponent(path)
