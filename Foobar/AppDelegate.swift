@@ -9,7 +9,6 @@
 import UIKit
 import AppVersionMonitor
 import Async
-import SwiftyTimer
 
 
 @UIApplicationMain

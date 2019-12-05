@@ -1,6 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '10.0'
 
+#Dependency Injection
 #Events
 #Images
 # Alert: 各种弹窗
@@ -16,9 +17,6 @@ platform :ios, '10.0'
 # UITableView
 # Walkthrough: 引导页
 # Validation: 验证输入
-########################################
-# pod 'CallbackURLKit'
-# pod 'Closures'
 
 target 'Foobar' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -34,9 +32,10 @@ target 'Foobar' do
   pod 'WLEmptyState'
   pod 'TextAttributes'
   pod 'IHKeyboardAvoiding'
+  pod 'SwiftEntryKit'
+  pod 'SwiftyDrop'
 
   pod 'Alamofire'
-  pod 'SwiftyDrop'
   pod 'MBProgressHUD'
   pod 'MJRefresh'
   pod 'YYModel'
