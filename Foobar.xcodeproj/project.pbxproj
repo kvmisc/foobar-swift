@@ -33,7 +33,6 @@
 		BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB91D2DF238E451E0048D384 /* UIViewExt.swift */; };
 		BB9D5CED2394FC3D00FB4BD1 /* FBPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D5CEC2394FC3D00FB4BD1 /* FBPersonModel.swift */; };
 		BBB14E7C2394A21800E6E5D9 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB14E7B2394A21800E6E5D9 /* HUD.swift */; };
-		BBB32240238F53B000392176 /* FoobarBase64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB3223F238F53B000392176 /* FoobarBase64.swift */; };
 		BBB404422391381500222569 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB404412391381500222569 /* UITableViewExt.swift */; };
 		BBBE442F23991EE7000EAEF2 /* DeviceKitExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE442E23991EE7000EAEF2 /* DeviceKitExt.swift */; };
 		BBF9DF4E23949BC400A59356 /* FBPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9DF4D23949BC400A59356 /* FBPopupVC.swift */; };
@@ -70,7 +69,6 @@
 		BB91D2DF238E451E0048D384 /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		BB9D5CEC2394FC3D00FB4BD1 /* FBPersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBPersonModel.swift; sourceTree = "<group>"; };
 		BBB14E7B2394A21800E6E5D9 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
-		BBB3223F238F53B000392176 /* FoobarBase64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoobarBase64.swift; sourceTree = "<group>"; };
 		BBB404412391381500222569 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
 		BBBE442E23991EE7000EAEF2 /* DeviceKitExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceKitExt.swift; sourceTree = "<group>"; };
 		BBF9DF4D23949BC400A59356 /* FBPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBPopupVC.swift; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				0A53303E238ECB60009B5375 /* Foobar.swift */,
-				BBB3223F238F53B000392176 /* FoobarBase64.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -335,7 +332,6 @@
 				BBBE442F23991EE7000EAEF2 /* DeviceKitExt.swift in Sources */,
 				0A2CF40F239157AF00F914C5 /* FBRedView.swift in Sources */,
 				BBB14E7C2394A21800E6E5D9 /* HUD.swift in Sources */,
-				BBB32240238F53B000392176 /* FoobarBase64.swift in Sources */,
 				BB91D2C3238E35130048D384 /* ViewController.swift in Sources */,
 				BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */,
 				0A53303B238EC957009B5375 /* DataStringExt.swift in Sources */,

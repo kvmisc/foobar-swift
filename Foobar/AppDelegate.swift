@@ -25,7 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     self.window = window
 
-    AppVersionMonitor.sharedMonitor.startup()
+    print(Foobar.Path.user(uid: "123", relativePath: "a/b.txt"))
+
+    Foobar.Path.create(Foobar.Path.document("aa"))
 
 //    let group = AsyncGroup()
 //    group.background {

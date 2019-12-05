@@ -8,39 +8,95 @@
 
 import UIKit
 
-class Foobar {}
-
-
-extension Foobar {
+class Foobar {
 
   class Path {
-    static func create(path: String) -> Bool {
+    static func create(_ path: String) -> Bool {
+      var isDirectory = ObjCBool(false)
+      if FileManager.default.fileExists(atPath: path, isDirectory: &isDirectory) {
+        return isDirectory.boolValue
+      }
+      do {
+        try FileManager.default.createDirectory(atPath: path,
+                                                withIntermediateDirectories: true,
+                                                attributes: nil)
+        return true
+      } catch {
+        return false
+      }
+    }
+    static func delete(_ path: String) -> Bool {
+      do {
+        try FileManager.default.removeItem(atPath: path)
+        return true
+      } catch {
+        return false
+      }
+    }
 
-      return false
-    }
-    static func delete(path: String)  -> Bool {
-      return false
-    }
-
-    static func global(relativePath: String = "") -> String {
-      return ""
-    }
-    static func user(relativePath: String = "") -> String {
-      return ""
-    }
-
-    static func bundle(_ path: String = "", _ bundle: Bundle = Bundle.main) -> String {
+    static func bundle(_ relativePath: String = "", bundle: Bundle = .main) -> String {
       if let bundlePath = bundle.resourcePath {
-        return bundlePath.extAppendingPathComponent(path)
+        return (bundlePath as NSString).appendingPathComponent(relativePath)
       }
       return ""
     }
-    static func document(_ path: String = "") -> String {
+    static func document(_ relativePath: String = "") -> String {
       let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
       if !(paths.isEmpty) {
-        return paths[0].extAppendingPathComponent(path)
+        return (paths[0] as NSString).appendingPathComponent(relativePath)
       }
       return ""
+    }
+    static func user(uid: String, relativePath: String = "") -> String {
+      var path = self.document()
+      path = (path as NSString).appendingPathComponent("Users")
+      path = (path as NSString).appendingPathComponent(uid)
+      path = (path as NSString).appendingPathComponent(relativePath)
+      return path
+    }
+  }
+
+
+  class Base64 {
+
+    static func encodedString(_ from: Data) -> String {
+      return from.base64EncodedString(options: [])
+    }
+    static func encodedString(_ from: String) -> String {
+      return from.extToUTF8Data().base64EncodedString(options: [])
+    }
+
+    static func encodedData(_ from: Data) -> Data {
+      return from.base64EncodedData(options: [])
+    }
+    static func encodedData(_ from: String) -> Data {
+      return from.extToUTF8Data().base64EncodedData(options: [])
+    }
+
+    static func decodedString(_ from: Data) -> String {
+      if let dat = Data(base64Encoded: from, options: []) {
+        return dat.extToUTF8String()
+      }
+      return ""
+    }
+    static func decodedString(_ from: String) -> String {
+      if let dat = Data(base64Encoded: from, options: []) {
+        return dat.extToUTF8String()
+      }
+      return ""
+    }
+
+    static func decodedData(_ from: Data) -> Data {
+      if let dat = Data(base64Encoded: from, options: []) {
+        return dat
+      }
+      return Data()
+    }
+    static func decodedData(_ from: String) -> Data {
+      if let dat = Data(base64Encoded: from, options: []) {
+        return dat
+      }
+      return Data()
     }
   }
 
