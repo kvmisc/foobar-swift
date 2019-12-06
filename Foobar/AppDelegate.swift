@@ -52,6 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     self.window = window
 
+    let rt = CGRect(
+
+
     let rome = Region(calendar: Calendars.gregorian, zone: Zones.asiaTokyo, locale: Locales.italian)
 //    let date1 = DateInRegion("2019-12-05 23:11:02", region: rome)!
 //    print(date1.date)
