@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-//_ = HTTPManager.shared.request("https://httpstat.us/200?sleep=5000")
+//HTTPManager.shared.request("https://httpstat.us/200?sleep=5000")
 //{ (response, result, error, context) in
 //  if let error = error {
 //    print(error)
@@ -44,6 +44,7 @@ class HTTPManager: NSObject {
 
   typealias CompletionHandler = (DataResponse<Data>, [String:Any], NSError?, Any?) -> Void
 
+  @discardableResult
   func request(_ url: String,
                method: HTTPMethod = .get,
                parameters: Parameters = [:],
