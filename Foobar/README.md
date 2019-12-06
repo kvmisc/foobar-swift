@@ -7,4 +7,17 @@ do 无返回值，可用于 `调用方法`、`修改属性`，主要为了节省
 
 ## 其它
 
-为何 Alamofire 每次要导入而有些库不用？
+1. 为何 Alamofire 每次要导入而有些库不用？
+
+2. 为何 cc 不用加 mutating？
+struct Stt {
+var aa = 0
+var bb = 0
+var cc: Int {
+get { return aa }
+set { aa = newValue }
+}
+mutating func dd(value: Int) {
+aa = value
+}
+}

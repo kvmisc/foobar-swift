@@ -12,28 +12,32 @@ import Async
 import SQLite
 import SwiftDate
 
-struct Stt {
-  var name = 0
-  var height = 0
-  mutating func up(v: Int) {
-    name = v
-  }
-}
+//struct Stt {
+//  var aa = 0
+//  var bb = 0
+//  var cc: Int {
+//    get { return aa }
+//    set { aa = newValue }
+//  }
+//  mutating func dd(value: Int) {
+//    aa = value
+//  }
+//}
 
-struct Stb {
-  var aa = 0
-  var bb = 0
-  var cc = Stt(name: 1, height: 1)
-  mutating func down(v: Int) {
-    self.cc.height = v
-  }
-  var xx: Int {
-    get { return cc.name }
-    set {
-      cc.name = newValue
-    }
-  }
-}
+//struct Stb {
+//  var aa = 0
+//  var bb = 0
+//  var cc = Stt(name: 1, height: 1)
+//  mutating func down(v: Int) {
+//    self.cc.height = v
+//  }
+//  var xx: Int {
+//    get { return cc.name }
+//    set {
+//      cc.name = newValue
+//    }
+//  }
+//}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -76,6 +80,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    print(rect)
 //    rect.x = 100
 //    print(rect)
+
+
+//    var size = CGSize(10, 20)
+//    print(size.with(height: 30).with(width: 50))
+//    print(size)
+
+    var rect = CGRect(1,2,3,4)
+    print(rect.minY)
+    print(rect.midY)
+    print(rect.maxY)
 
 
 

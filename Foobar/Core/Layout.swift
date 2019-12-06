@@ -11,104 +11,135 @@ import UIKit
 extension UIView {
 
   var min: CGPoint {
-    get { return self.frame.origin }
-    set { self.frame.origin = newValue }
+    get { return frame.origin }
+    set { frame.origin = newValue }
   }
   var minX: CGFloat {
-    get { return self.frame.origin.x }
-    set { self.frame.origin.x = newValue }
+    get { return frame.minX }
+    set { frame.origin.x = newValue }
   }
   var minY: CGFloat {
-    get { return self.frame.origin.y }
-    set { self.frame.origin.y = newValue }
+    get { return frame.minY }
+    set { frame.origin.y = newValue }
   }
 
   var mid: CGPoint {
-    get { return CGPoint(x: midX, y: midY) }
-    set {
-      var rect = self.frame
-      rect.origin.x = newValue.x - width / 2.0
-      rect.origin.y = newValue.y - height / 2.0
-      self.frame = rect
-    }
+    get { return CGPoint(x: frame.midX, y: frame.midY) }
+    set { frame.origin = CGPoint(x: newValue.x - frame.width / 2.0, y: newValue.y - frame.height / 2.0) }
   }
   var midX: CGFloat {
-    get { return minX + width / 2.0 }
-    set { self.frame.origin.x = newValue - width / 2.0 }
+    get { return frame.midX }
+    set { frame.origin.x = newValue - frame.width / 2.0 }
   }
   var midY: CGFloat {
-    get { return minY + height / 2.0 }
-    set { self.frame.origin.y = newValue - height / 2.0 }
+    get { return frame.midY }
+    set { frame.origin.y = newValue - frame.height / 2.0 }
   }
 
   var max: CGPoint {
-    get { return CGPoint(x: maxX, y: maxY) }
-    set {
-      var rect = self.frame
-      rect.origin.x = newValue.x - width
-      rect.origin.y = newValue.y - height
-      self.frame = rect
-    }
+    get { return CGPoint(x: frame.maxX, y: frame.maxY) }
+    set { frame.origin = CGPoint(x: newValue.x - frame.width, y: newValue.y - frame.height) }
   }
   var maxX: CGFloat {
-    get { return minX + width }
-    set { self.frame.origin.x = newValue - width }
+    get { return frame.maxX }
+    set { frame.origin.x = newValue - frame.width }
   }
   var maxY: CGFloat {
-    get { return minY + height }
-    set { self.frame.origin.y = newValue - height }
+    get { return frame.maxY }
+    set { frame.origin.y = newValue - frame.height }
   }
 
 
   var size: CGSize {
-    get { return self.frame.size }
-    set {
-      var rect = self.frame
-      rect.size.width = newValue.width
-      rect.size.height = newValue.height
-      self.frame = rect
-    }
+    get { return frame.size }
+    set { frame.size = newValue }
   }
   var width: CGFloat {
-    get { return self.frame.size.width }
-    set { self.frame.size.width = newValue }
+    get { return frame.size.width }
+    set { frame.size.width = newValue }
   }
   var height: CGFloat {
-    get { return self.frame.size.height }
-    set { self.frame.size.height = newValue }
+    get { return frame.size.height }
+    set { frame.size.height = newValue }
   }
 
 }
 
 extension UIScrollView {
   var contentWidth: CGFloat {
-    get { return self.contentSize.width }
-    set { self.contentSize.width = newValue }
+    get { return contentSize.width }
+    set { contentSize.width = newValue }
   }
   var contentHeight: CGFloat {
-    get { return self.contentSize.height }
-    set { self.contentSize.height = newValue }
+    get { return contentSize.height }
+    set { contentSize.height = newValue }
   }
 
   var viewportTop: CGFloat {
-    get { return self.contentOffset.y }
-    set { self.contentOffset.y = newValue }
+    get { return contentOffset.y }
+    set { contentOffset.y = newValue }
   }
   var viewportLeft: CGFloat {
-    get { return self.contentOffset.x }
-    set { self.contentOffset.x = newValue }
+    get { return contentOffset.x }
+    set { contentOffset.x = newValue }
   }
   var viewportBottom: CGFloat {
-    get { return self.contentOffset.y + height }
-    set { self.contentOffset.y = newValue - height }
+    get { return contentOffset.y + frame.height }
+    set { contentOffset.y = newValue - frame.height }
   }
   var viewportRight: CGFloat {
-    get { return self.contentOffset.x + width }
-    set { self.contentOffset.x = newValue - width }
+    get { return contentOffset.x + frame.width }
+    set { contentOffset.x = newValue - frame.width }
   }
 }
 
-//extension CGRect {
-//  init(_ x: CGFloat, _ y: CGFloat, _ w: CGFloat, _ h: CGFloat) {
-//  }
-//}
+extension CGPoint {
+  init(_ x: CGFloat, _ y: CGFloat) {
+    self.init(x: x, y: y)
+  }
+
+  func with(x: CGFloat) -> CGPoint {
+    return CGPoint(x: x, y: y)
+  }
+  func with(y: CGFloat) -> CGPoint {
+    return CGPoint(x: x, y: y)
+  }
+}
+
+extension CGSize {
+  init(_ width: CGFloat, _ height: CGFloat) {
+    self.init(width: width, height: height)
+  }
+
+  func with(width: CGFloat) -> CGSize {
+    return CGSize(width: width, height: height)
+  }
+  func with(height: CGFloat) -> CGSize {
+    return CGSize(width: width, height: height)
+  }
+}
+
+extension CGRect {
+  init(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) {
+    self.init(x: x, y: y, width: width, height: height)
+  }
+
+  func with(x: CGFloat, y: CGFloat) -> CGRect {
+    return CGRect(x: x, y: y, width: size.width, height: size.height)
+  }
+  func with(x: CGFloat) -> CGRect {
+    return CGRect(x: x, y: origin.y, width: size.width, height: size.height)
+  }
+  func with(y: CGFloat) -> CGRect {
+    return CGRect(x: origin.x, y: y, width: size.width, height: size.height)
+  }
+  func with(width: CGFloat, height: CGFloat) -> CGRect {
+    return CGRect(x: origin.x, y: origin.y, width: width, height: height)
+  }
+  func with(width: CGFloat) -> CGRect {
+    return CGRect(x: origin.x, y: origin.y, width: width, height: size.height)
+  }
+  func with(height: CGFloat) -> CGRect {
+    return CGRect(x: origin.x, y: origin.y, width: size.width, height: height)
+  }
+}
