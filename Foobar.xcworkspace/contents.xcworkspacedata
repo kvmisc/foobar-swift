@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Base64.swift">
+   </FileRef>
+   <FileRef
       location = "group:Foobar.xcodeproj">
    </FileRef>
    <FileRef

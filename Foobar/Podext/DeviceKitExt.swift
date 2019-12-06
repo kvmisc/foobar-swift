@@ -8,10 +8,10 @@
 
 import DeviceKit
 
-extension Device {
-
-  var hasNotch: Bool {
-    return isOneOf(Device.allXSeriesDevices) || isOneOf(Device.allSimulatorXSeriesDevices)
-  }
-
-}
+//extension Device {
+//
+//  var hasNotch: Bool {
+//    return isOneOf(Device.allXSeriesDevices) || isOneOf(Device.allSimulatorXSeriesDevices)
+//  }
+//
+//}

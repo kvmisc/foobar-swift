@@ -9,7 +9,6 @@
 import UIKit
 
 extension Data {
-
   func extToUTF8String() -> String {
     return String(decoding: self, as: UTF8.self)
   }
@@ -19,11 +18,9 @@ extension Data {
     }
     return Data()
   }
-
 }
 
 extension String {
-
   func extToUTF8Data() -> Data {
     if let dat = self.data(using: .utf8) {
       return dat

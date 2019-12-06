@@ -20,13 +20,13 @@ import DeviceKit
 // 5/5s/SE      {320, 568}  {640, 1136}   2.0   2.0
 // 6 /6s /7 /8  {375, 667}  {750, 1334}   2.0   2.0
 // 6P/6sP/7P/8P {414, 736}  {1242, 2208}  3.0   3.0
-// X/XS         {375, 812}  {1125, 2436}  3.0   3.0
-// XR           {414, 896}  {828, 1792}   2.0   2.0
-// XSM          {414, 896}  {1242, 2688}  3.0   3.0
+// X/XS/11P     {375, 812}  {1125, 2436}  3.0   3.0
+// XR/11        {414, 896}  {828, 1792}   2.0   2.0
+// XSM/11PM     {414, 896}  {1242, 2688}  3.0   3.0
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-let HAS_NOTCH: Bool =
+let SCREEN_HAS_NOTCH: Bool =
   Device.current.isOneOf(Device.allXSeriesDevices)
     || Device.current.isOneOf(Device.allSimulatorXSeriesDevices)
 
@@ -42,14 +42,14 @@ let SCREEN_SRT: Int = min(SCREEN_WID, SCREEN_HET)
 /// Status Bar & Safe Area
 ///-----------------------
 
-let STATUS_BAR_HET: Int = HAS_NOTCH ? 44 : 20
+let STATUS_BAR_HET: Int = SCREEN_HAS_NOTCH ? 44 : 20
 
 // In Portrait
 //     44pt
 // 00pt    00pt
 //     34pt
-let SAFE_AREA_TOP: Int = HAS_NOTCH ? 44 : 0
-let SAFE_AREA_BOT: Int = HAS_NOTCH ? 34 : 0
+let SAFE_AREA_TOP: Int = SCREEN_HAS_NOTCH ? 44 : 0
+let SAFE_AREA_BOT: Int = SCREEN_HAS_NOTCH ? 34 : 0
 let SAFE_AREA_LFT: Int = 0
 let SAFE_AREA_RIT: Int = 0
 
@@ -58,6 +58,6 @@ let SAFE_AREA_RIT: Int = 0
 // 44pt    44pt
 //     21pt
 let SAFE_AREA_LANDSCAPE_TOP: Int = 0
-let SAFE_AREA_LANDSCAPE_BOT: Int = HAS_NOTCH ? 21 : 0
-let SAFE_AREA_LANDSCAPE_LFT: Int = HAS_NOTCH ? 44 : 0
-let SAFE_AREA_LANDSCAPE_RIT: Int = HAS_NOTCH ? 44 : 0
+let SAFE_AREA_LANDSCAPE_BOT: Int = SCREEN_HAS_NOTCH ? 21 : 0
+let SAFE_AREA_LANDSCAPE_LFT: Int = SCREEN_HAS_NOTCH ? 44 : 0
+let SAFE_AREA_LANDSCAPE_RIT: Int = SCREEN_HAS_NOTCH ? 44 : 0

@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     print("afs")
     Async.main(after: 3.0) {
-      print(Foobar.Date.full_01.string(from: now))
+      print(Formatter.datetime_01.string(from: now))
     }
 
     print(SCREEN_TAL)
