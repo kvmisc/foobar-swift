@@ -72,13 +72,16 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
     }
   }
   @IBOutlet weak var grayView: UIView!
+  @IBOutlet weak var scrollView: UIScrollView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    KeyboardAvoiding.avoidingView = grayView
-    KeyboardAvoiding.padding = 5
-    KeyboardAvoiding.paddingForCurrentAvoidingView = 20
+    let redView = UIView()
+    redView.translatesAutoresizingMaskIntoConstraints = true
+    redView.backgroundColor = .red
+    redView.frame = CGRect(x: 50, y: 50, width: 50, height: 50)
+    self.view.addSubview(redView)
 
 //    let bt = UIButton(type: .system)
 //    bt.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)

@@ -12,6 +12,28 @@ import Async
 import SQLite
 import SwiftDate
 
+struct Stt {
+  var name = 0
+  var height = 0
+  mutating func up(v: Int) {
+    name = v
+  }
+}
+
+struct Stb {
+  var aa = 0
+  var bb = 0
+  var cc = Stt(name: 1, height: 1)
+  mutating func down(v: Int) {
+    self.cc.height = v
+  }
+  var xx: Int {
+    get { return cc.name }
+    set {
+      cc.name = newValue
+    }
+  }
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -49,6 +71,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     print(SCREEN_TAL)
+
+//    var rect = CGRect(x: 10, y: 20, width: 30, height: 40)
+//    print(rect)
+//    rect.x = 100
+//    print(rect)
 
 
 
