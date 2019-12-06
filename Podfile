@@ -48,4 +48,6 @@ target 'Foobar' do
   pod 'YYModel'
   pod 'SwiftyJSON'
 
+  pod 'ManualLayout'
+
 end

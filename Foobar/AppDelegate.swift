@@ -41,6 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    df1.locale = Locale(identifier: "it")
 //    print(df1.string(from: now))
 
+    Path.create("adf")
+    
     print("afs")
     Async.main(after: 3.0) {
       print(Formatter.datetime_01.string(from: now))

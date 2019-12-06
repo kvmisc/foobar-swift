@@ -9,6 +9,7 @@
 import UIKit
 
 class Path {
+  @discardableResult
   static func create(_ path: String) -> Bool {
     var isDirectory = ObjCBool(false)
     if FileManager.default.fileExists(atPath: path, isDirectory: &isDirectory) {
@@ -23,6 +24,7 @@ class Path {
       return false
     }
   }
+  @discardableResult
   static func delete(_ path: String) -> Bool {
     do {
       try FileManager.default.removeItem(atPath: path)
