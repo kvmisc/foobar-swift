@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01F7682392400800A6E5E6 /* HTTPManager.swift */; };
 		0A08EC362393A29400464066 /* FBItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08EC352393A29400464066 /* FBItemView.swift */; };
+		0A19DCD4239B449500CA5D24 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19DCD3239B449500CA5D24 /* HUD.swift */; };
+		0A19DCDB239B465300CA5D24 /* IconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19DCDA239B465300CA5D24 /* IconLabel.swift */; };
 		0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF4082391530D00F914C5 /* FBRootVC.swift */; };
 		0A2CF40B2391530D00F914C5 /* FBRootVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CF4092391530D00F914C5 /* FBRootVC.xib */; };
 		0A2CF40F239157AF00F914C5 /* FBRedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF40E239157AF00F914C5 /* FBRedView.swift */; };
@@ -36,15 +38,15 @@
 		BB91D2DB238E44A50048D384 /* FBTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB91D2D9238E44A50048D384 /* FBTestView.xib */; };
 		BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB91D2DF238E451E0048D384 /* UIViewExt.swift */; };
 		BB9D5CED2394FC3D00FB4BD1 /* FBPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D5CEC2394FC3D00FB4BD1 /* FBPersonModel.swift */; };
-		BBB14E7C2394A21800E6E5D9 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB14E7B2394A21800E6E5D9 /* HUD.swift */; };
 		BBB404422391381500222569 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB404412391381500222569 /* UITableViewExt.swift */; };
-		BBBE442F23991EE7000EAEF2 /* DeviceKitExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE442E23991EE7000EAEF2 /* DeviceKitExt.swift */; };
 		BBF9DF4E23949BC400A59356 /* FBPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9DF4D23949BC400A59356 /* FBPopupVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A01F7682392400800A6E5E6 /* HTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
 		0A08EC352393A29400464066 /* FBItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBItemView.swift; sourceTree = "<group>"; };
+		0A19DCD3239B449500CA5D24 /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		0A19DCDA239B465300CA5D24 /* IconLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLabel.swift; sourceTree = "<group>"; };
 		0A2CF4082391530D00F914C5 /* FBRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRootVC.swift; sourceTree = "<group>"; };
 		0A2CF4092391530D00F914C5 /* FBRootVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBRootVC.xib; sourceTree = "<group>"; };
 		0A2CF40E239157AF00F914C5 /* FBRedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRedView.swift; sourceTree = "<group>"; };
@@ -76,9 +78,7 @@
 		BB91D2D9238E44A50048D384 /* FBTestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBTestView.xib; sourceTree = "<group>"; };
 		BB91D2DF238E451E0048D384 /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		BB9D5CEC2394FC3D00FB4BD1 /* FBPersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBPersonModel.swift; sourceTree = "<group>"; };
-		BBB14E7B2394A21800E6E5D9 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		BBB404412391381500222569 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
-		BBBE442E23991EE7000EAEF2 /* DeviceKitExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceKitExt.swift; sourceTree = "<group>"; };
 		BBF9DF4D23949BC400A59356 /* FBPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBPopupVC.swift; sourceTree = "<group>"; };
 		F83B494BE851057FCED14615 /* Pods-Foobar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.debug.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,10 +98,34 @@
 		0A01F7672392400800A6E5E6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				BBB14E782394A1D000E6E5D9 /* HUD */,
 				BBB14E772394A1C400E6E5D9 /* Network */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		0A19DCD0239B447F00CA5D24 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0A19DCD5239B44A800CA5D24 /* Message */,
+				0A19DCDA239B465300CA5D24 /* IconLabel.swift */,
+				0A19DCD6239B44BB00CA5D24 /* FlowView */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0A19DCD5239B44A800CA5D24 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				0A19DCD3239B449500CA5D24 /* HUD.swift */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		0A19DCD6239B44BB00CA5D24 /* FlowView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FlowView;
 			sourceTree = "<group>";
 		};
 		0A533037238EBBEC009B5375 /* Core */ = {
@@ -177,7 +201,7 @@
 				BB9D5CEC2394FC3D00FB4BD1 /* FBPersonModel.swift */,
 				BB91D2DE238E451E0048D384 /* Extentions */,
 				0A533037238EBBEC009B5375 /* Core */,
-				BBBE442D23991EE7000EAEF2 /* Podext */,
+				0A19DCD0239B447F00CA5D24 /* Common */,
 				0A01F7672392400800A6E5E6 /* Utils */,
 			);
 			path = Foobar;
@@ -201,22 +225,6 @@
 				0A01F7682392400800A6E5E6 /* HTTPManager.swift */,
 			);
 			name = Network;
-			sourceTree = "<group>";
-		};
-		BBB14E782394A1D000E6E5D9 /* HUD */ = {
-			isa = PBXGroup;
-			children = (
-				BBB14E7B2394A21800E6E5D9 /* HUD.swift */,
-			);
-			name = HUD;
-			sourceTree = "<group>";
-		};
-		BBBE442D23991EE7000EAEF2 /* Podext */ = {
-			isa = PBXGroup;
-			children = (
-				BBBE442E23991EE7000EAEF2 /* DeviceKitExt.swift */,
-			);
-			path = Podext;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,15 +349,14 @@
 			files = (
 				0A08EC362393A29400464066 /* FBItemView.swift in Sources */,
 				0A2CF413239158FF00F914C5 /* FBGreenView.swift in Sources */,
-				BBBE442F23991EE7000EAEF2 /* DeviceKitExt.swift in Sources */,
 				0A2CF40F239157AF00F914C5 /* FBRedView.swift in Sources */,
 				0A768A4E239955A90027A68A /* Metrics.swift in Sources */,
 				BB8D53DE2399F931008BA419 /* Layout.swift in Sources */,
-				BBB14E7C2394A21800E6E5D9 /* HUD.swift in Sources */,
 				BB8D53D62399E07D008BA419 /* Formatter.swift in Sources */,
 				BB91D2C3238E35130048D384 /* ViewController.swift in Sources */,
 				BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */,
 				0A53303B238EC957009B5375 /* DataStringExt.swift in Sources */,
+				0A19DCDB239B465300CA5D24 /* IconLabel.swift in Sources */,
 				BB8D53D42399E04A008BA419 /* Base64.swift in Sources */,
 				0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */,
 				BBF9DF4E23949BC400A59356 /* FBPopupVC.swift in Sources */,
@@ -361,6 +368,7 @@
 				BB2BB0FC238E73FF00EC127B /* CALayerExt.swift in Sources */,
 				BBB404422391381500222569 /* UITableViewExt.swift in Sources */,
 				0A2CF41923916DA400F914C5 /* FBRootCell.swift in Sources */,
+				0A19DCD4239B449500CA5D24 /* HUD.swift in Sources */,
 				BB91D2BF238E35130048D384 /* AppDelegate.swift in Sources */,
 				BB91D2DA238E44A50048D384 /* FBTestView.swift in Sources */,
 			);

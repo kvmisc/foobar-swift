@@ -24,14 +24,14 @@
                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NG8-xC-oUB">
-                    <rect key="frame" x="184" y="433" width="46" height="30"/>
+                    <rect key="frame" x="284" y="633" width="46" height="30"/>
                     <state key="normal" title="Button"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="NG8-xC-oUB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2Ov-G8-gYi"/>
-                <constraint firstItem="NG8-xC-oUB" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="DEz-Om-pLy"/>
+                <constraint firstItem="NG8-xC-oUB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="100" id="2Ov-G8-gYi"/>
+                <constraint firstItem="NG8-xC-oUB" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="200" id="DEz-Om-pLy"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="-105.79710144927537" y="78.348214285714278"/>

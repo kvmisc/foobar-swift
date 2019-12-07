@@ -151,4 +151,18 @@ extension CGRect {
   func with(height: CGFloat) -> CGRect {
     return CGRect(x: origin.x, y: origin.y, width: size.width, height: height)
   }
+
+  func inset(_ top: CGFloat, _ left: CGFloat, _ bottom: CGFloat, _ right: CGFloat) -> CGRect {
+    return CGRect(x: origin.x+left,
+                  y: origin.y+top,
+                  width: size.width-left-right,
+                  height: size.height-top-bottom)
+  }
+  func offset(_ x: CGFloat, _ y: CGFloat) -> CGRect {
+    return CGRect(x: origin.x+x,
+                  y: origin.y+y,
+                  width: size.width,
+                  height: size.height)
+  }
+
 }

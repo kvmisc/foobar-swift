@@ -52,7 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     self.window = window
 
-    let rt = CGRect(
 
 
     let rome = Region(calendar: Calendars.gregorian, zone: Zones.asiaTokyo, locale: Locales.italian)
@@ -89,10 +88,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    print(size.with(height: 30).with(width: 50))
 //    print(size)
 
-    var rect = CGRect(1,2,3,4)
-    print(rect.minY)
-    print(rect.midY)
-    print(rect.maxY)
 
 
 

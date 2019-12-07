@@ -77,29 +77,21 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let redView = UIView()
-    redView.translatesAutoresizingMaskIntoConstraints = true
-    redView.backgroundColor = .red
-    redView.frame = CGRect(x: 50, y: 50, width: 50, height: 50)
+    let redView = IconLabel()
+    //redView.translatesAutoresizingMaskIntoConstraints = true
+    //redView.backgroundColor = .red
     self.view.addSubview(redView)
+    redView.iconView.image = UIImage(named: "start")
+    //redView.valueLabel.text = "101"
+    redView.snp.makeConstraints { (make) in
+      make.center.equalToSuperview()
+    }
 
 
     Async.main(after: 2.0) {
-//      redView.min = CGPoint(10, 20)
-//      redView.minX = 30
-//      redView.minY = 30
-
-//      redView.mid = CGPoint(30, 30)
-//      redView.midX = 30
-//      redView.midY = 30
-
-//      redView.max = CGPoint(55, 55)
-//      redView.maxX = 55
-//      redView.maxY = 55
-
-//      redView.size = CGSize(30, 30)
-//      redView.width = 30
-//      redView.height = 30
+      //redView.stackView.spacing = 20
+//      redView.iconView.image = UIImage(named: "settings")
+      //redView.valueLabel.text = "jfajdfo"
     }
 
 //    let bt = UIButton(type: .system)
