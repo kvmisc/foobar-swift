@@ -36,22 +36,38 @@ class Path {
 
   static func bundle(_ relativePath: String = "", bundle: Bundle = .main) -> String {
     if let bundlePath = bundle.resourcePath {
-      return (bundlePath as NSString).appendingPathComponent(relativePath)
+      return bundlePath.extAppendingPathComponent(relativePath)
     }
     return ""
   }
   static func document(_ relativePath: String = "") -> String {
     let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
     if !(paths.isEmpty) {
-      return (paths[0] as NSString).appendingPathComponent(relativePath)
+      return paths[0].extAppendingPathComponent(relativePath)
     }
     return ""
   }
   static func user(uid: String, relativePath: String = "") -> String {
     var path = self.document()
-    path = (path as NSString).appendingPathComponent("Users")
-    path = (path as NSString).appendingPathComponent(uid)
-    path = (path as NSString).appendingPathComponent(relativePath)
+    path = path.extAppendingPathComponent("Users")
+    path = path.extAppendingPathComponent(uid)
+    path = path.extAppendingPathComponent(relativePath)
     return path
+  }
+}
+
+extension String {
+  func extLastPathComponent() -> String {
+    return (self as NSString).lastPathComponent
+  }
+  func extAppendingPathComponent(_ string: String) -> String {
+    return (self as NSString).appendingPathComponent(string)
+  }
+  func extDeletingLastPathComponent() -> String {
+    return (self as NSString).deletingLastPathComponent
+  }
+
+  func extPathExtension() -> String {
+    return (self as NSString).pathExtension
   }
 }

@@ -44,6 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
+  func test(_ a: Float, _ b: Double, _ c: CGFloat, _ d: Int) {
+  }
+
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     let window = UIWindow()
@@ -51,6 +54,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window.makeKeyAndVisible()
 
     self.window = window
+
+    var a1: Double = 1.1234567891234562
+    var a2: Double = 1.1234567891234563
+//    if a1 == a2 {
+//      print("true \(a1) \(a2)")
+//    } else {
+//      print("false \(a1) \(a2)")
+//    }
+
+
+    //String.extTestNumber()
+
+    var a = 0.1 + 0.2
+    var b = 0.3
+
+    //print(a > b)
+
+    print(a.extEqual(b))
+    print(a1.extEqual(a2))
+
+//    if fabs(a1-a2) < Double.ulpOfOne {
+//      print("true")
+//    }
+
+//    if a1 === a2 {
+//      print("xxx")
+//    }
+
+
+
+
 
 
 
@@ -69,14 +103,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    df1.locale = Locale(identifier: "it")
 //    print(df1.string(from: now))
 
-    Path.create("adf")
-    
-    print("afs")
-    Async.main(after: 3.0) {
-      print(Formatter.datetime_01.string(from: now))
-    }
-
-    print(SCREEN_TAL)
 
 //    var rect = CGRect(x: 10, y: 20, width: 30, height: 40)
 //    print(rect)

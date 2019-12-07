@@ -23,98 +23,79 @@ extension String {
     return ""
   }
 
-  // "123" -> true
-  // "1.3" -> false
-  // "abc" -> false
-  var extIsDigits: Bool {
+  func extLocalized(comment: String = "") -> String {
+    return NSLocalizedString(self, comment: comment)
+  }
+
+}
+
+// MARK: Common
+extension String {
+  func extReversedString() -> String {
+    return String(reversed())
+  }
+  func extShuffledString() -> String {
+    return String(shuffled())
+  }
+  func extTrimmedString() -> String {
+    return trimmingCharacters(in: .whitespacesAndNewlines)
+  }
+
+
+  func extContains(_ string: String, caseSensitive: Bool = true) -> Bool {
+    if !caseSensitive {
+      return range(of: string, options: .caseInsensitive) != nil
+    }
+    return range(of: string) != nil
+  }
+
+  func extMatchs(regex: String) -> Bool {
+    return range(of: regex, options: .regularExpression) != nil
+  }
+}
+
+// MARK: Validation
+extension String {
+  // 纯数字, 不包括小数点
+  var extIsNumber: Bool {
     return CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: self))
   }
   // "123" -> true
   // "1.3" -> true (en_US)
   // "1,3" -> true (fr_FR)
   // "abc" -> false
+  // 是否数字
   var extIsNumeric: Bool {
     let scanner = Scanner(string: self)
     scanner.locale = NSLocale.current
     return scanner.scanDecimal(nil) && scanner.isAtEnd
   }
+  // 纯字母
+  var extIsAlpha: Bool {
+    return false
+  }
+
+
 
   // http://emailregex.com/
   var extIsValidEmail: Bool {
     let regex = "^(?:[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[\\p{L}0-9](?:[a-z0-9-]*[\\p{L}0-9])?\\.)+[\\p{L}0-9](?:[\\p{L}0-9-]*[\\p{L}0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[\\p{L}0-9-]*[\\p{L}0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])$"
-    return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
-  }
-
-  // 12 -> 12
-  // 2a -> nil
-  var extInt: Int? {
-    return Int(self)
-  }
-  // 120 -> 120.0
-  // 1.2 -> 1.2
-  // 12a -> nil
-  var extDouble: Double? {
-    let formatter = NumberFormatter()
-    formatter.locale = NSLocale.current
-    return formatter.number(from: self)?.doubleValue
-  }
-
-  func extLocalized(comment: String = "") -> String {
-    return NSLocalizedString(self, comment: comment)
-  }
-}
-
-// MARK: Common
-extension String {
-  func extReversedString() -> String {
-    return String(self.reversed())
-  }
-  func extShuffledString() -> String {
-    return String(self.shuffled())
-  }
-  func extTrimmedString() -> String {
-    return self.trimmingCharacters(in: .whitespacesAndNewlines)
-  }
-
-
-  func extContains(_ string: String, caseSensitive: Bool = true) -> Bool {
-    if !caseSensitive {
-      return self.range(of: string, options: .caseInsensitive) != nil
-    }
-    return self.range(of: string) != nil
-  }
-}
-
-// MARK: Path
-extension String {
-  func extLastPathComponent() -> String {
-    return (self as NSString).lastPathComponent
-  }
-  func extAppendingPathComponent(_ string: String) -> String {
-    return (self as NSString).appendingPathComponent(string)
-  }
-  func extDeletingLastPathComponent() -> String {
-    return (self as NSString).deletingLastPathComponent
-  }
-
-  func extPathExtension() -> String {
-    return (self as NSString).pathExtension
+    return extMatchs(regex: regex)
   }
 }
 
 // MARK: URL encoding
 extension String {
   var extURLEncodedString: String {
-    return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self
+    return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self
   }
   var extURLDecodedString: String {
-    return self.removingPercentEncoding ?? self
+    return removingPercentEncoding ?? self
   }
 }
 
 // MARK: Substring
 extension String {
-
   // 第 xxx 个字符, 第一个字符序号是 0
   func extSubstring(at: Int) -> String {
     if at >= 0 {
@@ -126,14 +107,14 @@ extension String {
   // 前 xxx 个字符
   func extSubstring(leading: Int) -> String {
     if leading > 0 {
-      return String(self.prefix(leading))
+      return String(prefix(leading))
     }
     return ""
   }
   // 后 xxx 个字符
   func extSubstring(trailing: Int) -> String {
     if trailing > 0 {
-      return String(self.suffix(trailing))
+      return String(suffix(trailing))
     }
     return ""
   }
@@ -148,9 +129,6 @@ extension String {
       result = String(result.dropLast(trimTrailing))
     }
     return result
-//    let fromIndex = extLeadingIndex(trimLeading, self.endIndex)
-//    let toIndex = extTrailingIndex(trimTrailing, fromIndex)
-//    return String(self[fromIndex..<toIndex])
   }
 
   // 从 xxx 到 xxx, 返回区间内的
@@ -168,36 +146,44 @@ extension String {
   // 从 xxx 开始, 长度 xxx, 仅当长度不足时, 返回长度才会变小, 当起点为负, 从 0 开始数长度
   func extSubstring(from: Int, length: Int) -> String {
     if length > 0 {
-      let begin = max(from, 0)
-      let fromIndex = extLeadingIndex(begin, self.endIndex)
-      let toIndex = extLeadingIndex(begin+length, self.endIndex)
-      return String(self[fromIndex..<toIndex])
+      if let fromIndex = index(startIndex, offsetBy: max(from, 0), limitedBy: endIndex) {
+        if let toIndex = index(fromIndex, offsetBy: length, limitedBy: endIndex) {
+          return String(self[fromIndex..<toIndex])
+        } else {
+          return String(self[fromIndex..<endIndex])
+        }
+      }
     }
     return ""
   }
 
+  #if DEBUG
+  static func extTestSubstring() {
+    let str = "abcdef"
+    print("leading:")
+    print(str.extSubstring(leading: 1))
+    print(str.extSubstring(leading: 2))
+    print(str.extSubstring(leading: 20))
 
-  func extLeadingIndex(_ offset: Int, _ limit: String.Index) -> String.Index {
-    if offset <= 0 {
-      return self.startIndex
-    } else {
-      if let index = self.index(self.startIndex, offsetBy: offset, limitedBy: limit) {
-        return index
-      } else {
-        return limit
-      }
-    }
-  }
-  func extTrailingIndex(_ offset: Int, _ limit: String.Index) -> String.Index {
-    if offset <= 0 {
-      return self.endIndex
-    } else {
-      if let index = self.index(self.endIndex, offsetBy: -offset, limitedBy: limit) {
-        return index
-      } else {
-        return limit
-      }
-    }
-  }
+    print("trailing:")
+    print(str.extSubstring(trailing: 1))
+    print(str.extSubstring(trailing: 2))
+    print(str.extSubstring(trailing: 20))
 
+    print("trim:")
+    print(str.extSubstring(trimLeading: 2, trimTrailing: 2))
+    print("H\(str.extSubstring(trimLeading: 20, trimTrailing: 2))H")
+    print("H\(str.extSubstring(trimLeading: 2, trimTrailing: 20))H")
+
+    print("from length:")
+    //print(str.extSubstring(from: 0, length: 2))
+    print(str.extSubstring(from: 0, length: 20))
+    print(str.extSubstring(from: 1, length: 2))
+    print(str.extSubstring(from: 1, length: 20))
+    print(str.extSubstring(from: 2, length: 2))
+    print(str.extSubstring(from: 2, length: 20))
+    print("H\(str.extSubstring(from: 6, length: 20))H")
+    print("H\(str.extSubstring(from: 9, length: 20))H")
+  }
+  #endif
 }

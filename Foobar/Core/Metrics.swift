@@ -30,10 +30,10 @@ let SCREEN_HAS_NOTCH: Bool =
   Device.current.isOneOf(Device.allXSeriesDevices)
     || Device.current.isOneOf(Device.allSimulatorXSeriesDevices)
 
-// 屏幕宽和高的数值，根据横竖屏变化
+// 屏幕宽和高的数值, 根据横竖屏变化
 let SCREEN_WID: Int = Int(UIScreen.main.bounds.size.width)
 let SCREEN_HET: Int = Int(UIScreen.main.bounds.size.height)
-// 屏幕高和矮的数值，不管横竖屏
+// 屏幕高和矮的数值, 不管横竖屏
 let SCREEN_TAL: Int = max(SCREEN_WID, SCREEN_HET)
 let SCREEN_SRT: Int = min(SCREEN_WID, SCREEN_HET)
 
