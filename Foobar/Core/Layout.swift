@@ -158,6 +158,7 @@ extension CGRect {
                   width: size.width-left-right,
                   height: size.height-top-bottom)
   }
+
   func offset(_ x: CGFloat, _ y: CGFloat) -> CGRect {
     return CGRect(x: origin.x+x,
                   y: origin.y+y,
