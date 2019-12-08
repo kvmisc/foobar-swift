@@ -14,6 +14,40 @@ extension UIButton {
     removeTarget(nil, action: nil, for: .allEvents)
   }
 
+  func extSet(image: UIImage? = nil,
+              backgroundImage: UIImage? = nil,
+              title: String? = nil,
+              titleColor: UIColor? = nil,
+              attributedTitle: NSAttributedString? = nil,
+              state: UIControl.State = .normal)
+  {
+    setImage(image, for: state)
+    setBackgroundImage(backgroundImage, for: state)
+    setTitle(title, for: state)
+    setTitleColor(titleColor, for: state)
+    setAttributedTitle(attributedTitle, for: state)
+  }
+
+  func extSetImage(_ image: UIImage?, _ state: UIControl.State = .normal) {
+    setImage(image, for: state)
+  }
+  func extSetBackgroundImage(_ image: UIImage?, _ state: UIControl.State = .normal) {
+    setBackgroundImage(image, for: state)
+  }
+
+  func extSetTitle(_ title: String?, _ state: UIControl.State = .normal) {
+    setTitle(title, for: state)
+  }
+  func extSetTitleColor(_ color: UIColor?, _ state: UIControl.State = .normal) {
+    setTitleColor(color, for: state)
+  }
+  func extSetAttributedTitle(_ title: NSAttributedString?, _ state: UIControl.State = .normal) {
+    setAttributedTitle(title, for: state)
+  }
+}
+
+extension UIButton {
+
   func extCenterHorizontally(_ spacing: CGFloat, _ swap: Bool = false) {
     if swap {
       let imageWidth = imageView?.frame.size.width ?? 0.0
