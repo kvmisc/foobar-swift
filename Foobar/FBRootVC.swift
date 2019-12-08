@@ -47,11 +47,13 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 //    boxView.extSetShadow()
 
     let contentView = UIView()
-    contentView.backgroundColor = .clear
+    contentView.backgroundColor = .red
     contentView.frame = ccr(100, 100, 50, 40)
     view.addSubview(contentView)
-    contentView.extAddRoundedLayer(radius: 10, corners: [.topLeft, .topRight], color: .brown)
-    contentView.extSetShadow(opacity: 1.0)
+    contentView.extAddRoundedCorner(radius: 10, corners: [.topLeft, .topRight])
+//    contentView.extAddRoundedBorder(radius: 10, corners: [.topLeft, .topRight], width: 1, color: .white)
+//    contentView.extAddRoundedLayer(radius: 10, corners: [.topLeft, .topRight], color: .brown)
+    contentView.extSetShadow(color: .blue, opacity: 1.0)
 
 
     Async.main(after: 3.0) {

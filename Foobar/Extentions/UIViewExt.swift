@@ -33,9 +33,6 @@ extension UIView {
                                   cornerRadii: CGSize(width: radius, height: radius))
     shapeLayer.path = bezierPath.cgPath
     layer.mask = shapeLayer
-
-    shapeLayer.borderWidth = 2.0
-    shapeLayer.borderColor = UIColor.red.cgColor
   }
   func extRemoveRoundedCorder() {
     layer.mask = nil
