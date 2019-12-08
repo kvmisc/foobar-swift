@@ -136,15 +136,43 @@ extension String {
   }
   #if DEBUG
   static func extTestNumber() {
+    print("exInt() ============")
+    print("1234".extInt())
     print(" 123".extInt())
-    print(" 12a".extInt())
     print("a123".extInt())
+    print("123a".extInt())
     print("0x12".extInt())
+    print("-123".extInt())
+    print(" -12".extInt())
 
+    print("Int() ==============")
+    print(Int("1234") ?? 0)
+    print(Int(" 123") ?? 0)
+    print(Int("a123") ?? 0)
+    print(Int("123a") ?? 0)
+    print(Int("0x12") ?? 0)
+    print(Int("-123") ?? 0)
+    print(Int(" -12") ?? 0)
+
+    print("exDouble() =========")
+    print("1.23".extDouble())
     print(" 1.2".extDouble())
-    print(" .2a".extDouble())
-    print(" 123".extDouble())
-    print("a123".extDouble())
+    print(".234".extDouble())
+    print("a1.2".extDouble())
+    print("1234".extDouble())
+    print("123a".extDouble())
+    print("-1.2".extDouble())
+    print(" -12".extDouble())
+
+    print("Double() ===========")
+    print(Double("1.23") ?? 0.0)
+    print(Double(" 1.2") ?? 0.0)
+    print(Double(".234") ?? 0.0)
+    print(Double("a1.2") ?? 0.0)
+    print(Double("1234") ?? 0.0)
+    print(Double("123a") ?? 0.0)
+    print(Double("-1.2") ?? 0.0)
+    print(Double(" -12") ?? 0.0)
   }
   #endif
 }

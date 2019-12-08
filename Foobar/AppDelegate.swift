@@ -55,13 +55,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     self.window = window
 
+    String.extTestNumber()
 
-    let font = ccf(14)
-    print(font.lineHeight)
-    print(font.lineSpacing())
-    print(font.lineHeight())
-    print(font.lineSpacing(0.45))
-    print(font.lineHeight(0.45))
+    window.extSetRoundedCorner()
+    window.extSetRoundedCorner()
+
+//    let aa: Double = window.midX * 1.2
+//    print(aa)
+//    print(window.midX * 1.2)
+
+//    let font = ccf(14)
+//    print(font.lineHeight)
+//    print(font.lineSpacing())
+//    print(font.lineHeight())
+//    print(font.lineSpacing(0.45))
+//    print(font.lineHeight(0.45))
     
 
 

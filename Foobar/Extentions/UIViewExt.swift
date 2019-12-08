@@ -10,64 +10,64 @@ import UIKit
 
 extension UIView {
 
-  struct LayerName {
-    static let RoundedLayer = "com.firefly.layer.rounded_layer"
-    static let GradientLayer = "com.firefly.layer.gradient_layer"
+  func extSetBorder(width: Double = 1.0, color: UIColor = .black) {
+    layer.borderWidth = CGFloat(width)
+    layer.borderColor = color.cgColor
   }
 
-  func extSetBorderWidth(_ width: Double = 1.0, color: UIColor = .black) {
-    self.layer.borderWidth = CGFloat(width)
-    self.layer.borderColor = color.cgColor
-  }
-
-  func extSetShadowColor(_ color: UIColor = .black,
-                         opacity: Double = 0.1,
-                         radius: Double = 4.0,
-                         offset: CGSize = .zero)
+  func extSetShadow(color: UIColor = .black,
+                    opacity: Double = 0.1,
+                    radius: Double = 4.0,
+                    offset: CGSize = .zero)
   {
-    self.layer.masksToBounds = false
+    layer.masksToBounds = false
 
-    self.layer.shadowColor = color.cgColor;
-    self.layer.shadowOpacity = Float(opacity)
-    self.layer.shadowRadius = CGFloat(radius);
-    self.layer.shadowOffset = offset;
+    layer.shadowColor = color.cgColor;
+    layer.shadowOpacity = Float(opacity)
+    layer.shadowRadius = CGFloat(radius);
+    layer.shadowOffset = offset;
   }
 
-  func extSetRoundedCorner(_ radius: Double = 4.0,
+  enum LayerName: String {
+    case RoundedLayer = "rounded_layer"
+    case GradientLayer = "gradient_layer"
+  }
+
+  func extSetRoundedCorner(radius: Double = 4.0,
                            corners: UIRectCorner = .allCorners,
-                           backgroundColor: UIColor = .white)
+                           color: UIColor = .white)
   {
-    self.backgroundColor = .clear
+    backgroundColor = .clear
 
-    self.layer.extRemoveSublayerNamed(LayerName.RoundedLayer)
+    layer.sublayers?.first { $0.name == LayerName.RoundedLayer.rawValue }?.removeFromSuperlayer()
 
     let roundedLayer = CALayer()
-    roundedLayer.name = LayerName.RoundedLayer
-    roundedLayer.frame = self.bounds
-    roundedLayer.backgroundColor = backgroundColor.cgColor
+    roundedLayer.name = LayerName.RoundedLayer.rawValue
+    roundedLayer.frame = bounds
+    roundedLayer.backgroundColor = color.cgColor
 
     let shapeLayer = CAShapeLayer()
-    let bezierPath = UIBezierPath(roundedRect: self.bounds,
+    let bezierPath = UIBezierPath(roundedRect: bounds,
                                   byRoundingCorners: corners,
                                   cornerRadii: CGSize(width: radius, height: radius))
     shapeLayer.path = bezierPath.cgPath
     roundedLayer.mask = shapeLayer
 
-    self.layer.addSublayer(roundedLayer)
+    layer.addSublayer(roundedLayer)
   }
 
   func extAddGradientLayer(_ gradientLayer: CAGradientLayer) {
-    let roundedLayer = self.layer.extSublayerNamed(LayerName.RoundedLayer)
-    let contentLayer = roundedLayer ?? self.layer
-    contentLayer.extRemoveSublayerNamed(LayerName.GradientLayer)
+    let roundedLayer = layer.sublayers?.first { $0.name == LayerName.RoundedLayer.rawValue }
+    let contentLayer = roundedLayer ?? layer
+    contentLayer.sublayers?.first { $0.name == LayerName.GradientLayer.rawValue }?.removeFromSuperlayer()
 
-    gradientLayer.frame = self.bounds
-    gradientLayer.name = LayerName.GradientLayer
+    gradientLayer.frame = bounds
+    gradientLayer.name = LayerName.GradientLayer.rawValue
     contentLayer.addSublayer(gradientLayer)
   }
   func extRemoveGradientLayer() {
-    let roundedLayer = self.layer.extSublayerNamed(LayerName.RoundedLayer)
-    let contentLayer = roundedLayer ?? self.layer
-    contentLayer.extRemoveSublayerNamed(LayerName.GradientLayer)
+    let roundedLayer = layer.sublayers?.first { $0.name == LayerName.RoundedLayer.rawValue }
+    let contentLayer = roundedLayer ?? layer
+    contentLayer.sublayers?.first { $0.name == LayerName.GradientLayer.rawValue }?.removeFromSuperlayer()
   }
 }
