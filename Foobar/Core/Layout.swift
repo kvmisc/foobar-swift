@@ -10,55 +10,55 @@ import UIKit
 
 extension UIView {
 
-  var min: CGPoint {
+  var extMin: CGPoint {
     get { return frame.origin }
     set { frame.origin = newValue }
   }
-  var minX: CGFloat {
+  var extMinX: CGFloat {
     get { return frame.minX }
     set { frame.origin.x = newValue }
   }
-  var minY: CGFloat {
+  var extMinY: CGFloat {
     get { return frame.minY }
     set { frame.origin.y = newValue }
   }
 
-  var mid: CGPoint {
+  var extMid: CGPoint {
     get { return CGPoint(x: frame.midX, y: frame.midY) }
     set { frame.origin = CGPoint(x: newValue.x - frame.width / 2.0, y: newValue.y - frame.height / 2.0) }
   }
-  var midX: CGFloat {
+  var extMidX: CGFloat {
     get { return frame.midX }
     set { frame.origin.x = newValue - frame.width / 2.0 }
   }
-  var midY: CGFloat {
+  var extMidY: CGFloat {
     get { return frame.midY }
     set { frame.origin.y = newValue - frame.height / 2.0 }
   }
 
-//  var max: CGPoint {
-//    get { return CGPoint(x: frame.maxX, y: frame.maxY) }
-//    set { frame.origin = CGPoint(x: newValue.x - frame.width, y: newValue.y - frame.height) }
-//  }
-  var maxX: CGFloat {
+  var extMax: CGPoint {
+    get { return CGPoint(x: frame.maxX, y: frame.maxY) }
+    set { frame.origin = CGPoint(x: newValue.x - frame.width, y: newValue.y - frame.height) }
+  }
+  var extMaxX: CGFloat {
     get { return frame.maxX }
     set { frame.origin.x = newValue - frame.width }
   }
-  var maxY: CGFloat {
+  var extMaxY: CGFloat {
     get { return frame.maxY }
     set { frame.origin.y = newValue - frame.height }
   }
 
 
-  var size: CGSize {
+  var extSize: CGSize {
     get { return frame.size }
     set { frame.size = newValue }
   }
-  var width: CGFloat {
+  var extWidth: CGFloat {
     get { return frame.size.width }
     set { frame.size.width = newValue }
   }
-  var height: CGFloat {
+  var extHeight: CGFloat {
     get { return frame.size.height }
     set { frame.size.height = newValue }
   }
@@ -66,28 +66,28 @@ extension UIView {
 }
 
 extension UIScrollView {
-  var contentWidth: CGFloat {
+  var extContentWidth: CGFloat {
     get { return contentSize.width }
     set { contentSize.width = newValue }
   }
-  var contentHeight: CGFloat {
+  var extContentHeight: CGFloat {
     get { return contentSize.height }
     set { contentSize.height = newValue }
   }
 
-  var viewportTop: CGFloat {
+  var extViewportTop: CGFloat {
     get { return contentOffset.y }
     set { contentOffset.y = newValue }
   }
-  var viewportLeft: CGFloat {
+  var extViewportLeft: CGFloat {
     get { return contentOffset.x }
     set { contentOffset.x = newValue }
   }
-  var viewportBottom: CGFloat {
+  var extViewportBottom: CGFloat {
     get { return contentOffset.y + frame.height }
     set { contentOffset.y = newValue - frame.height }
   }
-  var viewportRight: CGFloat {
+  var extViewportRight: CGFloat {
     get { return contentOffset.x + frame.width }
     set { contentOffset.x = newValue - frame.width }
   }

@@ -28,7 +28,6 @@
 		0A53303D238EC965009B5375 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303C238EC965009B5375 /* StringExt.swift */; };
 		0A768A4E239955A90027A68A /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A768A4D239955A90027A68A /* Metrics.swift */; };
 		51ED5B58178026AF3ADCE160 /* Pods_Foobar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */; };
-		BB2BB0FC238E73FF00EC127B /* CALayerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2BB0FB238E73FF00EC127B /* CALayerExt.swift */; };
 		BB8D53D22399DFFB008BA419 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D53D12399DFFB008BA419 /* Path.swift */; };
 		BB8D53D42399E04A008BA419 /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D53D32399E04A008BA419 /* Base64.swift */; };
 		BB8D53D62399E07D008BA419 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D53D52399E07D008BA419 /* Formatter.swift */; };
@@ -70,7 +69,6 @@
 		0A768A4D239955A90027A68A /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		2BCD74F1A55A7280F3DB3800 /* Pods-Foobar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.release.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.release.xcconfig"; sourceTree = "<group>"; };
 		B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foobar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB2BB0FB238E73FF00EC127B /* CALayerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExt.swift; sourceTree = "<group>"; };
 		BB8D53D12399DFFB008BA419 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		BB8D53D32399E04A008BA419 /* Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64.swift; sourceTree = "<group>"; };
 		BB8D53D52399E07D008BA419 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 		BB91D2DE238E451E0048D384 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
-				BB2BB0FB238E73FF00EC127B /* CALayerExt.swift */,
 				BBB404412391381500222569 /* UITableViewExt.swift */,
 				0A53303A238EC957009B5375 /* DataStringExt.swift */,
 				0A53303C238EC965009B5375 /* StringExt.swift */,
@@ -379,7 +376,6 @@
 				0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */,
 				BB9D5CED2394FC3D00FB4BD1 /* FBPersonModel.swift in Sources */,
 				0A300D25239D04F00025FC04 /* UIButtonExt.swift in Sources */,
-				BB2BB0FC238E73FF00EC127B /* CALayerExt.swift in Sources */,
 				0A300D23239CBB470025FC04 /* UIViewControllerExt.swift in Sources */,
 				BBB404422391381500222569 /* UITableViewExt.swift in Sources */,
 				0A2CF41923916DA400F914C5 /* FBRootCell.swift in Sources */,
