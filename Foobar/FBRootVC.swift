@@ -25,112 +25,34 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 
   @IBOutlet weak var tableView: UITableView!
 
-  let stackView: UIStackView = {
-    let ret = UIStackView()
-    return ret
-  }()
-
-
-  let keyWindow: UIWindow = {
-    let ret = UIWindow(frame: UIScreen.main.bounds)
-    ret.windowLevel = .normal + 100
-    ret.backgroundColor = UIColor.clear
-//    let vc = UIViewController()
-//    vc.view.backgroundColor = .lightGray
-    ret.rootViewController = FBPopupVC()
-    return ret
-  }()
-  func show() {
-    //previousWindow = UIApplication.shared.keyWindow
-    keyWindow.makeKeyAndVisible()
-  }
-
-  func enableScrollForEmptyState() -> Bool {
-    return false
-  }
-
-  @objc func buttonClicked(sender: UIButton) {
-    print("in show")
-//    show()
-//    MBProgressHUD.showAdded(to: self.view, animated: true)
-
-//    HUD.showActivity(inView: self.view)
-    HUD.showActivity(inView: self.view, info: "加载中...")
-
-
-//    HUD.showInfo(inView: self.view, info: "加载失败")
-//    HUD.showInfo(inView: self.view, info: "加载完成") {
-//      print("in complete 1")
-//    }
-
-    DispatchQueue.main.asyncAfter(wallDeadline: .now()+1.0) {
-      HUD.showInfo(inView: self.view, info: "加载成功")
-      //HUD.hide(inView: self.view)
-//      HUD.showInfo(inView: self.view, info: "加载xx") {
-//        print("in complete 2")
-//      }
-    }
-  }
-  @IBOutlet weak var grayView: UIView!
-  @IBOutlet weak var scrollView: UIScrollView!
-  
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let redView = IconLabel()
-    //redView.translatesAutoresizingMaskIntoConstraints = true
-    //redView.backgroundColor = .red
-    self.view.addSubview(redView)
-    redView.iconView.image = UIImage(named: "start")
-    //redView.valueLabel.text = "101"
-    redView.snp.makeConstraints { (make) in
-      make.center.equalToSuperview()
+//    view.backgroundColor = .darkGray
+
+    let redView = UIImageView()
+    redView.image = cci("grass")
+    redView.contentMode = .scaleToFill
+//    redView.backgroundColor = .red
+    view.addSubview(redView)
+    redView.frame = ccr(50, 100, 200, 100)
+
+//    redView.extSetCorner(radius: 10.0)
+//    redView.extSetBorder()
+//    redView.clipsToBounds = true
+//    redView.extAddRoundedLayer(radius: 30, corners: [.topLeft, .topRight], color: .brown)
+//    redView.extAddRoundedBorder(radius: 30,
+//                                corners: [.topLeft,.topRight],
+//                                fillColor: .clear,
+//                                borderWidth: 1.0,
+//                                borderColor: .red)
+
+    redView.extAddRoundedCorner(radius: 30.0, corners: [.topLeft,.topRight])
+
+    Async.main(after: 3.0) {
+//      redView.extRemoveRoundedCorder()
+//      redView.extRemoveRoundedBorder()
     }
-
-
-    Async.main(after: 2.0) {
-      //redView.stackView.spacing = 20
-//      redView.iconView.image = UIImage(named: "settings")
-      //redView.valueLabel.text = "jfajdfo"
-    }
-
-//    let bt = UIButton(type: .system)
-//    bt.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
-//    bt.backgroundColor = .red
-//    self.view.addSubview(bt)
-//    bt.snp.makeConstraints { (make) in
-//      make.center.equalToSuperview()
-//      make.size.equalTo(CGSize(width: 200, height: 200))
-//    }
-
-
-    //tableView.isHidden = true
-//    tableView.register(cellType: FBRootCell.self)
-//    tableView.rowHeight = 44
-
-//    let status = HTTPStatus.Failed(code: 1, message: "adf")
-//    switch status {
-//    case let .Failed(code, message):
-//      print("\(code) \(message)")
-//    case let .Success(value):
-//      print("\(value)")
-//    }
-
-//    let param = ["bb":"22","cc":"33"]
-//    _ = HTTPManager.shared.request("http://baidu.com/?sleep=5000&aa=bb", parameters: param)
-//    { (response, result, error, context) in
-//      if let error = error {
-//        print(error)
-//      } else {
-//        print(result)
-//      }
-//    }
-//
-//    HUD.showInfo(inView: self.view, info: "asdf") {
-//      print("xxx")
-//    }
-//
-//    print(Device.current.hasNotch)
 
   }
 }

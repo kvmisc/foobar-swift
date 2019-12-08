@@ -55,54 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     self.window = window
 
-    String.extTestNumber()
-
-    window.extSetRoundedCorner()
-    window.extSetRoundedCorner()
-
-//    let aa: Double = window.midX * 1.2
-//    print(aa)
-//    print(window.midX * 1.2)
-
-//    let font = ccf(14)
-//    print(font.lineHeight)
-//    print(font.lineSpacing())
-//    print(font.lineHeight())
-//    print(font.lineSpacing(0.45))
-//    print(font.lineHeight(0.45))
-    
-
-
-
-    let rome = Region(calendar: Calendars.gregorian, zone: Zones.asiaTokyo, locale: Locales.italian)
-//    let date1 = DateInRegion("2019-12-05 23:11:02", region: rome)!
-//    print(date1.date)
-//    print(Date())
-//    print(TimeZone.current)
-
-    let now = Date()
-//    let df1 = DateFormatter()
-//    let tz1 = TimeZone(identifier: "Asia/Bangkok")
-//    print(tz1)
-//    df1.timeZone = tz1
-//    df1.dateFormat = "dd MMM"
-//    df1.locale = Locale(identifier: "it")
-//    print(df1.string(from: now))
-
-
-//    var rect = CGRect(x: 10, y: 20, width: 30, height: 40)
-//    print(rect)
-//    rect.x = 100
-//    print(rect)
-
-
-//    var size = CGSize(10, 20)
-//    print(size.with(height: 30).with(width: 50))
-//    print(size)
-
-
-
-
 
 //    let group = AsyncGroup()
 //    group.background {
