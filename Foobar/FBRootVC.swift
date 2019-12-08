@@ -30,24 +30,29 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 
 //    view.backgroundColor = .darkGray
 
-    let redView = UIImageView()
-    redView.image = cci("grass")
-    redView.contentMode = .scaleToFill
-//    redView.backgroundColor = .red
-    view.addSubview(redView)
-    redView.frame = ccr(50, 100, 200, 100)
 
-//    redView.extSetCorner(radius: 10.0)
-//    redView.extSetBorder()
-//    redView.clipsToBounds = true
-//    redView.extAddRoundedLayer(radius: 30, corners: [.topLeft, .topRight], color: .brown)
-//    redView.extAddRoundedBorder(radius: 30,
-//                                corners: [.topLeft,.topRight],
-//                                fillColor: .clear,
-//                                borderWidth: 1.0,
-//                                borderColor: .red)
 
-    redView.extAddRoundedCorner(radius: 30.0, corners: [.topLeft,.topRight])
+//    let contentView = UIImageView()
+//    contentView.image = cci("grass")
+//    contentView.backgroundColor = .clear
+//    contentView.contentMode = .scaleToFill
+//    contentView.frame = ccr(0, 0, 50, 40)
+//    //contentView.extAddRoundedCorner(radius: 10.0, corners: [.topLeft, .topRight])
+//
+//    let boxView = UIView()
+//    view.addSubview(boxView)
+//    boxView.addSubview(contentView)
+//    boxView.frame = ccr(100, 100, 50, 40)
+//    boxView.backgroundColor = .clear
+//    boxView.extSetShadow()
+
+    let contentView = UIView()
+    contentView.backgroundColor = .clear
+    contentView.frame = ccr(100, 100, 50, 40)
+    view.addSubview(contentView)
+    contentView.extAddRoundedLayer(radius: 10, corners: [.topLeft, .topRight], color: .brown)
+    contentView.extSetShadow(opacity: 1.0)
+
 
     Async.main(after: 3.0) {
 //      redView.extRemoveRoundedCorder()
