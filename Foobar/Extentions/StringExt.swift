@@ -72,10 +72,8 @@ extension String {
   }
   // 纯字母
   var extIsAlpha: Bool {
-    return false
+    return CharacterSet.letters.isSuperset(of: CharacterSet(charactersIn: self))
   }
-
-
 
   // http://emailregex.com/
   var extIsValidEmail: Bool {
@@ -92,6 +90,63 @@ extension String {
   var extURLDecodedString: String {
     return removingPercentEncoding ?? self
   }
+}
+
+// MARK: Number
+//
+// 给变量赋值或给函数传参时, 整型字面量能转成三种浮点型, 浮点字面量不能转成整型
+// 整型变量和浮点型变量之间完全不能互转
+//
+// Int      -> Double(xxx)
+//          -> Float(xxx)
+//          -> CGFloat(xxx)
+//
+// Double   -> Int(xxx)
+//          -> Float(xxx)
+//          -> CGFloat(xxx)
+//
+// Float    -> Int(xxx)
+//          -> Double(xxx)
+//          -> CGFloat(xxx)
+//
+// CGFloat  -> Int(xxx)
+//          -> Double(xxx)
+//          -> Float(xxx)
+//
+// All -> String(xxx)
+//
+extension String {
+  // " 123" -> 123
+  // " 12a" -> 12
+  // "a123" -> 0
+  // "0x12" -> 0
+  func extInt() -> Int {
+    var value: Int = 0
+    Scanner(string: self).scanInt(&value)
+    return value
+  }
+  // " 1.2" -> 1.2
+  // " .2a" -> 0.2
+  // "a123" -> 0.0
+  // " 123" -> 123.0
+  func extDouble() -> Double {
+    var value: Double = 0.0
+    Scanner(string: self).scanDouble(&value)
+    return value
+  }
+  #if DEBUG
+  static func extTestNumber() {
+    print(" 123".extInt())
+    print(" 12a".extInt())
+    print("a123".extInt())
+    print("0x12".extInt())
+
+    print(" 1.2".extDouble())
+    print(" .2a".extDouble())
+    print(" 123".extDouble())
+    print("a123".extDouble())
+  }
+  #endif
 }
 
 // MARK: Substring

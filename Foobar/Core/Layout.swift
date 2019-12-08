@@ -94,12 +94,12 @@ extension UIScrollView {
 }
 
 extension CGPoint {
-  init(_ value: CGFloat) {
-    self.init(x: value, y: value)
-  }
-  init(_ valueX: CGFloat, _ valueY: CGFloat) {
-    self.init(x: valueX, y: valueY)
-  }
+//  init(_ value: CGFloat) {
+//    self.init(x: value, y: value)
+//  }
+//  init(_ valueX: CGFloat, _ valueY: CGFloat) {
+//    self.init(x: valueX, y: valueY)
+//  }
 
   func with(x: CGFloat) -> CGPoint {
     return CGPoint(x: x, y: y)
@@ -110,12 +110,12 @@ extension CGPoint {
 }
 
 extension CGSize {
-  init(_ value: CGFloat) {
-    self.init(width: value, height: value)
-  }
-  init(_ valueWidth: CGFloat, _ valueHeight: CGFloat) {
-    self.init(width: valueWidth, height: valueHeight)
-  }
+//  init(_ value: CGFloat) {
+//    self.init(width: value, height: value)
+//  }
+//  init(_ valueWidth: CGFloat, _ valueHeight: CGFloat) {
+//    self.init(width: valueWidth, height: valueHeight)
+//  }
 
   func with(width: CGFloat) -> CGSize {
     return CGSize(width: width, height: height)
@@ -126,12 +126,12 @@ extension CGSize {
 }
 
 extension CGRect {
-  init(_ valueWidth: CGFloat, _ valueHeight: CGFloat) {
-    self.init(x: 0, y: 0, width: valueWidth, height: valueHeight)
-  }
-  init(_ valueX: CGFloat, _ valueY: CGFloat, _ valueWidth: CGFloat, _ valueHeight: CGFloat) {
-    self.init(x: valueX, y: valueY, width: valueWidth, height: valueHeight)
-  }
+//  init(_ valueWidth: CGFloat, _ valueHeight: CGFloat) {
+//    self.init(x: 0, y: 0, width: valueWidth, height: valueHeight)
+//  }
+//  init(_ valueX: CGFloat, _ valueY: CGFloat, _ valueWidth: CGFloat, _ valueHeight: CGFloat) {
+//    self.init(x: valueX, y: valueY, width: valueWidth, height: valueHeight)
+//  }
 
   func with(x: CGFloat, y: CGFloat) -> CGRect {
     return CGRect(x: x, y: y, width: size.width, height: size.height)

@@ -55,36 +55,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     self.window = window
 
-    var a1: Double = 1.1234567891234562
-    var a2: Double = 1.1234567891234563
-//    if a1 == a2 {
-//      print("true \(a1) \(a2)")
-//    } else {
-//      print("false \(a1) \(a2)")
-//    }
 
-
-    //String.extTestNumber()
-
-    var a = 0.1 + 0.2
-    var b = 0.3
-
-    //print(a > b)
-
-    print(a.extEqual(b))
-    print(a1.extEqual(a2))
-
-//    if fabs(a1-a2) < Double.ulpOfOne {
-//      print("true")
-//    }
-
-//    if a1 === a2 {
-//      print("xxx")
-//    }
-
-
-
-
+    let font = ccf(14)
+    print(font.lineHeight)
+    print(font.lineSpacing())
+    print(font.lineHeight())
+    print(font.lineSpacing(0.45))
+    print(font.lineHeight(0.45))
+    
 
 
 
