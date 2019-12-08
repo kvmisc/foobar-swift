@@ -34,7 +34,7 @@ class Path {
     }
   }
 
-  static func bundle(_ relativePath: String = "", bundle: Bundle = .main) -> String {
+  static func bundle(_ relativePath: String = "", _ bundle: Bundle = .main) -> String {
     if let bundlePath = bundle.resourcePath {
       return bundlePath.extAppendingPathComponent(relativePath)
     }
@@ -47,7 +47,7 @@ class Path {
     }
     return ""
   }
-  static func user(uid: String, relativePath: String = "") -> String {
+  static func user(_ uid: String, _ relativePath: String = "") -> String {
     var path = self.document()
     path = path.extAppendingPathComponent("Users")
     path = path.extAppendingPathComponent(uid)

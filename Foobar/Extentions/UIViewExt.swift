@@ -9,6 +9,30 @@
 import UIKit
 
 extension UIView {
+  func extSendToBack() {
+    self.superview?.sendSubviewToBack(self)
+  }
+  func extBringToFront() {
+    self.superview?.bringSubviewToFront(self)
+  }
+
+  func extImageRep() -> UIImage {
+    if #available(iOS 10.0, *) {
+      let renderer = UIGraphicsImageRenderer(bounds: bounds)
+      return renderer.image { context in
+        layer.render(in: context.cgContext)
+      }
+    } else {
+      UIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque, 0.0)
+      layer.render(in: UIGraphicsGetCurrentContext()!)
+      let image = UIGraphicsGetImageFromCurrentImageContext()
+      UIGraphicsEndImageContext()
+      return UIImage(cgImage: image!.cgImage!)
+    }
+  }
+}
+
+extension UIView {
 
   //////////////////////////////////////////////////////////////////////////////
   // 不要阴影

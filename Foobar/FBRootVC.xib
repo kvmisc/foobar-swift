@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FBRootVC" customModule="Foobar" customModuleProvider="target">
             <connections>
+                <outlet property="aaaBt" destination="snn-E2-Ban" id="YwC-ms-x3w"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +18,21 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snn-E2-Ban">
+                    <rect key="frame" x="192" y="431" width="30" height="34"/>
+                    <connections>
+                        <action selector="doit:" destination="-1" eventType="touchUpInside" id="sLh-o0-hNd"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="snn-E2-Ban" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="UXP-bM-WLv"/>
+                <constraint firstItem="snn-E2-Ban" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vUf-6a-Xey"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-105.79710144927537" y="78.348214285714278"/>
+            <point key="canvasLocation" x="-400" y="42"/>
         </view>
     </objects>
 </document>

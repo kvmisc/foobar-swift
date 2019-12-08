@@ -36,10 +36,10 @@ extension UIView {
     set { frame.origin.y = newValue - frame.height / 2.0 }
   }
 
-  var max: CGPoint {
-    get { return CGPoint(x: frame.maxX, y: frame.maxY) }
-    set { frame.origin = CGPoint(x: newValue.x - frame.width, y: newValue.y - frame.height) }
-  }
+//  var max: CGPoint {
+//    get { return CGPoint(x: frame.maxX, y: frame.maxY) }
+//    set { frame.origin = CGPoint(x: newValue.x - frame.width, y: newValue.y - frame.height) }
+//  }
   var maxX: CGFloat {
     get { return frame.maxX }
     set { frame.origin.x = newValue - frame.width }

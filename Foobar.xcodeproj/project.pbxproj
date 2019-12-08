@@ -23,6 +23,7 @@
 		0A300D1F239C8C030025FC04 /* FloatingPointExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A300D1E239C8C030025FC04 /* FloatingPointExt.swift */; };
 		0A300D21239C90310025FC04 /* UIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A300D20239C90310025FC04 /* UIElement.swift */; };
 		0A300D23239CBB470025FC04 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A300D22239CBB470025FC04 /* UIViewControllerExt.swift */; };
+		0A300D25239D04F00025FC04 /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A300D24239D04F00025FC04 /* UIButtonExt.swift */; };
 		0A53303B238EC957009B5375 /* DataStringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303A238EC957009B5375 /* DataStringExt.swift */; };
 		0A53303D238EC965009B5375 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303C238EC965009B5375 /* StringExt.swift */; };
 		0A768A4E239955A90027A68A /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A768A4D239955A90027A68A /* Metrics.swift */; };
@@ -63,6 +64,7 @@
 		0A300D1E239C8C030025FC04 /* FloatingPointExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPointExt.swift; sourceTree = "<group>"; };
 		0A300D20239C90310025FC04 /* UIElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElement.swift; sourceTree = "<group>"; };
 		0A300D22239CBB470025FC04 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		0A300D24239D04F00025FC04 /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
 		0A53303A238EC957009B5375 /* DataStringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStringExt.swift; sourceTree = "<group>"; };
 		0A53303C238EC965009B5375 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		0A768A4D239955A90027A68A /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				0A53303C238EC965009B5375 /* StringExt.swift */,
 				0A300D1E239C8C030025FC04 /* FloatingPointExt.swift */,
 				BB91D2DF238E451E0048D384 /* UIViewExt.swift */,
+				0A300D24239D04F00025FC04 /* UIButtonExt.swift */,
 				0A300D22239CBB470025FC04 /* UIViewControllerExt.swift */,
 			);
 			path = Extentions;
@@ -375,6 +378,7 @@
 				0A2CF41C23916F9F00F914C5 /* GlobalImport.swift in Sources */,
 				0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */,
 				BB9D5CED2394FC3D00FB4BD1 /* FBPersonModel.swift in Sources */,
+				0A300D25239D04F00025FC04 /* UIButtonExt.swift in Sources */,
 				BB2BB0FC238E73FF00EC127B /* CALayerExt.swift in Sources */,
 				0A300D23239CBB470025FC04 /* UIViewControllerExt.swift in Sources */,
 				BBB404422391381500222569 /* UITableViewExt.swift in Sources */,
