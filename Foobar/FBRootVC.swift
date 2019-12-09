@@ -54,24 +54,54 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 //    bt.extSetTitle("关注\n523493")
 //    bt.extSetTitleColor(.red)
 
+//    let chr = NSLineSeparatorCharacter
+//    print(chr)
+
+//    let attr1 = TextAttributes()
+//      .font(ccf(16))
+//      .foregroundColor(.red)
+//      .alignment(.center)
+//      .lineSpacing(10) // 两行间距
+//    let attributedText = NSMutableAttributedString(string: "关注", attributes: attr1)
+//
+//    attributedText.append(NSAttributedString(string: LINE_SEPARATOR))
+//
+//    let attr2 = TextAttributes()
+//      .font(ccf(12))
+//      .foregroundColor(.darkGray)
+//      .alignment(.center)
+//    attributedText.append(NSAttributedString(string: "5", attributes: attr2))
+//
+//    bt.titleLabel?.numberOfLines = 0
+//    bt.titleLabel?.textAlignment = .center
+//    //bt.extSetAttributedTitle(attributedText)
+
+
+
+    bt.titleLabel?.numberOfLines = 0
+    bt.titleLabel?.textAlignment = .center
+
     let attr1 = TextAttributes()
       .font(ccf(16))
       .foregroundColor(.red)
       .alignment(.center)
-      .paragraphSpacing(10) // 两行间距
-    let attributedText = NSMutableAttributedString(string: "关注", attributes: attr1)
-
-    attributedText.append(NSAttributedString(string: "\n"))
-
+      .lineSpacing(10) // 两行间距
     let attr2 = TextAttributes()
       .font(ccf(12))
       .foregroundColor(.darkGray)
       .alignment(.center)
-    attributedText.append(NSAttributedString(string: "5", attributes: attr2))
+    let richText = RichText().then {
+      $0.append("关注", attr1)
+      $0.appendLineSeparator()
+      $0.append("5", attr2)
+    }
 
-    bt.titleLabel?.numberOfLines = 0
-    bt.titleLabel?.textAlignment = .center
-    bt.extSetAttributedTitle(attributedText)
+    bt.extSetAttributedTitle(richText.attributedText)
+//    bt.extSetAttributedTitle(RichText.attributedText(["关注","2"], [attr1,attr2], " "))
+
+
+
+    //bt.extSetAttributedTitle(attributedText)
 
 
     bt.imageView?.extSetBorder()

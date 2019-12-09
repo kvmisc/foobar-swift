@@ -6,6 +6,7 @@
 //  Copyright (c) firefly.com. All rights reserved.
 //
 
+import UIKit
 import DeviceKit
 
 ///-------
