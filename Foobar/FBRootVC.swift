@@ -16,6 +16,7 @@ import YYModel
 import Async
 import IHKeyboardAvoiding
 import DeviceKit
+import TextAttributes
 
 class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
 
@@ -32,10 +33,6 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-//    Async.main(after: 4.0) {
-//      print("sdf")
-//      self.aaaBt.extRemoveAllTargets()
-//    }
 
     let bt = UIButton(type: .custom)
     view.addSubview(bt)
@@ -47,63 +44,45 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
     }
 
 
-    bt.setImage(cci("fav"), for: .normal)
-    bt.setTitle("Adding", for: .normal)
-    bt.setTitleColor(.red, for: .normal)
+//    bt.setImage(cci("fav"), for: .normal)
+//    bt.setTitle("Adding", for: .normal)
+//    bt.setTitleColor(.red, for: .normal)
 
-    bt.extSetBorder()
-    bt.titleLabel?.extSetBorder()
+
+//    bt.titleLabel?.numberOfLines = 0
+//    bt.titleLabel?.textAlignment = .center
+//    bt.extSetTitle("关注\n523493")
+//    bt.extSetTitleColor(.red)
+
+    let attr1 = TextAttributes()
+      .font(ccf(16))
+      .foregroundColor(.red)
+      .alignment(.center)
+      .lineSpacing(10)
+      //.lineHeightMultiple(1.45)
+    let attr2 = TextAttributes()
+      .font(ccf(12))
+      .foregroundColor(.darkGray)
+      .alignment(.center)
+      .lineSpacing(10)
+      //.lineHeightMultiple(1.45)
+
+    let attributedText = NSMutableAttributedString(string: "关注", attributes: attr1)
+    attributedText.append(NSAttributedString(string: "\n"))
+    attributedText.append(NSAttributedString(string: "5", attributes: attr2))
+
+    bt.titleLabel?.numberOfLines = 0
+    bt.titleLabel?.textAlignment = .center
+    bt.extSetAttributedTitle(attributedText)
+
+
     bt.imageView?.extSetBorder()
-
-    Async.main(after: 3.0) {
-      //bt.extCenterHorizontally(6.0)
-      print(bt.frame)
-      bt.extCenterVertically(6.0)
-      print(bt.frame)
-      
-//      print(self.aaaBt.intrinsicContentSize)
-//      self.aaaBt.snp.makeConstraints { (make) in
-//        let size = self.aaaBt.intrinsicContentSize
-//        print(size)
-//        make.width.equalTo(size.width).offset(5.0)
-//      }
-    }
-
-//    view.backgroundColor = .darkGray
+    bt.titleLabel?.extSetBorder()
 
 
 
-//    let contentView = UIImageView()
-//    contentView.image = cci("grass")
-//    contentView.backgroundColor = .clear
-//    contentView.contentMode = .scaleToFill
-//    contentView.frame = ccr(0, 0, 50, 40)
-//    //contentView.extAddRoundedCorner(radius: 10.0, corners: [.topLeft, .topRight])
-//
-//    let boxView = UIView()
-//    view.addSubview(boxView)
-//    boxView.addSubview(contentView)
-//    boxView.frame = ccr(100, 100, 50, 40)
-//    boxView.backgroundColor = .clear
-//    boxView.extSetShadow()
-
-    let contentView = UIView()
-    contentView.backgroundColor = .red
-    contentView.frame = ccr(100, 100, 50, 40)
-    view.addSubview(contentView)
-    contentView.extAddRoundedCorner(radius: 10, corners: [.topLeft, .topRight])
-//    contentView.extAddRoundedBorder(radius: 10, corners: [.topLeft, .topRight], width: 1, color: .white)
-//    contentView.extAddRoundedLayer(radius: 10, corners: [.topLeft, .topRight], color: .brown)
-    contentView.extSetShadow(color: .blue, opacity: 1.0)
-
-    let image = contentView.extImageRep()
-    print(image)
-
-
-    Async.main(after: 5.0) {
-//      redView.extRemoveRoundedCorder()
-//      redView.extRemoveRoundedBorder()
-    }
+//    Async.main(after: 3.0) {
+//    }
 
   }
 }
