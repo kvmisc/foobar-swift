@@ -18,6 +18,8 @@
 		0A300D21239C90310025FC04 /* UIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A300D20239C90310025FC04 /* UIElement.swift */; };
 		0A300D23239CBB470025FC04 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A300D22239CBB470025FC04 /* UIViewControllerExt.swift */; };
 		0A300D25239D04F00025FC04 /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A300D24239D04F00025FC04 /* UIButtonExt.swift */; };
+		0A384B4C239EA8E600CBE1F8 /* TestWindowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A384B4A239EA8E600CBE1F8 /* TestWindowVC.swift */; };
+		0A384B4D239EA8E600CBE1F8 /* TestWindowVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A384B4B239EA8E600CBE1F8 /* TestWindowVC.xib */; };
 		0A53303B238EC957009B5375 /* DataStringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303A238EC957009B5375 /* DataStringExt.swift */; };
 		0A53303D238EC965009B5375 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303C238EC965009B5375 /* StringExt.swift */; };
 		0A53A528239E7E9C00A51A54 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53A527239E7E9C00A51A54 /* UIImageExt.swift */; };
@@ -64,6 +66,8 @@
 		0A300D20239C90310025FC04 /* UIElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElement.swift; sourceTree = "<group>"; };
 		0A300D22239CBB470025FC04 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		0A300D24239D04F00025FC04 /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
+		0A384B4A239EA8E600CBE1F8 /* TestWindowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWindowVC.swift; sourceTree = "<group>"; };
+		0A384B4B239EA8E600CBE1F8 /* TestWindowVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestWindowVC.xib; sourceTree = "<group>"; };
 		0A53303A238EC957009B5375 /* DataStringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStringExt.swift; sourceTree = "<group>"; };
 		0A53303C238EC965009B5375 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		0A53A527239E7E9C00A51A54 /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
@@ -148,6 +152,15 @@
 			name = FlowView;
 			sourceTree = "<group>";
 		};
+		0A384B49239EA8AB00CBE1F8 /* TestWindow */ = {
+			isa = PBXGroup;
+			children = (
+				0A384B4A239EA8E600CBE1F8 /* TestWindowVC.swift */,
+				0A384B4B239EA8E600CBE1F8 /* TestWindowVC.xib */,
+			);
+			name = TestWindow;
+			sourceTree = "<group>";
+		};
 		0A533037238EBBEC009B5375 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +239,7 @@
 		BB8A3A1F239DD5A000DF3125 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				0A384B49239EA8AB00CBE1F8 /* TestWindow */,
 				BB8A3A20239DD5A000DF3125 /* TestMultiLineButton.swift */,
 				BB6C9A64239E06DA00822180 /* TestThen.swift */,
 				BB462896239E5CB200989126 /* TestViewState */,
@@ -357,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB91D2CB238E35160048D384 /* LaunchScreen.storyboard in Resources */,
+				0A384B4D239EA8E600CBE1F8 /* TestWindowVC.xib in Resources */,
 				0A2CF40B2391530D00F914C5 /* FBRootVC.xib in Resources */,
 				0A2CF41A23916DA400F914C5 /* FBRootCell.xib in Resources */,
 				BB462888239E477900989126 /* TestReusableVC.xib in Resources */,
@@ -446,6 +461,7 @@
 				0A2CF41923916DA400F914C5 /* FBRootCell.swift in Sources */,
 				0A19DCD4239B449500CA5D24 /* HUD.swift in Sources */,
 				BB91D2BF238E35130048D384 /* AppDelegate.swift in Sources */,
+				0A384B4C239EA8E600CBE1F8 /* TestWindowVC.swift in Sources */,
 				BB46288E239E49A400989126 /* TestReusableXXTC.swift in Sources */,
 				0A300D21239C90310025FC04 /* UIElement.swift in Sources */,
 				0A53A528239E7E9C00A51A54 /* UIImageExt.swift in Sources */,
