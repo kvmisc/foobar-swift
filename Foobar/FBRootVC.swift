@@ -58,17 +58,15 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
       .font(ccf(16))
       .foregroundColor(.red)
       .alignment(.center)
-      .lineSpacing(10)
-      //.lineHeightMultiple(1.45)
+      .paragraphSpacing(10) // 两行间距
+    let attributedText = NSMutableAttributedString(string: "关注", attributes: attr1)
+
+    attributedText.append(NSAttributedString(string: "\n"))
+
     let attr2 = TextAttributes()
       .font(ccf(12))
       .foregroundColor(.darkGray)
       .alignment(.center)
-      .lineSpacing(10)
-      //.lineHeightMultiple(1.45)
-
-    let attributedText = NSMutableAttributedString(string: "关注", attributes: attr1)
-    attributedText.append(NSAttributedString(string: "\n"))
     attributedText.append(NSAttributedString(string: "5", attributes: attr2))
 
     bt.titleLabel?.numberOfLines = 0
@@ -79,11 +77,18 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
     bt.imageView?.extSetBorder()
     bt.titleLabel?.extSetBorder()
 
+    bt.extAddTarget(self, #selector(doxx(_:)))
+    //bt.addTarget(self, action: #selector(doxx(_:)), for: .touchUpInside)
+
 
 
 //    Async.main(after: 3.0) {
 //    }
 
+  }
+
+  @objc func doxx(_ sender: UIButton) {
+    print("doit")
   }
 }
 

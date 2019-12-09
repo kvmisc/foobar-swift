@@ -12,17 +12,15 @@ import UIKit
 //  .font(ccf(16))
 //  .foregroundColor(.red)
 //  .alignment(.center)
-//  .lineSpacing(10)
-////.lineHeightMultiple(1.45)
+//  .paragraphSpacing(10) // 两行间距
+//let attributedText = NSMutableAttributedString(string: "关注", attributes: attr1)
+//
+//attributedText.append(NSAttributedString(string: "\n"))
+//
 //let attr2 = TextAttributes()
 //  .font(ccf(12))
 //  .foregroundColor(.darkGray)
 //  .alignment(.center)
-//  .lineSpacing(10)
-////.lineHeightMultiple(1.45)
-//
-//let attributedText = NSMutableAttributedString(string: "关注", attributes: attr1)
-//attributedText.append(NSAttributedString(string: "\n"))
 //attributedText.append(NSAttributedString(string: "5", attributes: attr2))
 //
 //bt.titleLabel?.numberOfLines = 0

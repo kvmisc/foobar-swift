@@ -30,6 +30,10 @@ extension UIButton {
   func extSetAttributedTitle(_ title: NSAttributedString?, _ state: UIControl.State = .normal) {
     setAttributedTitle(title, for: state)
   }
+
+  func extAddTarget(_ target: Any?, _ action: Selector, _ events: UIControl.Event = .touchUpInside) {
+    addTarget(target, action: action, for: events)
+  }
 }
 
 extension UIButton {
