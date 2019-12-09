@@ -23,7 +23,7 @@ class HUD: NSObject {
       if let oldWindow = window {
         MBProgressHUD(for: oldWindow)?.hide(animated: false)
       }
-      window = topmostWindow()
+      window = TopmostWindow()
       view = window
     }
 
@@ -75,7 +75,7 @@ class HUD: NSObject {
       if let oldWindow = window {
         MBProgressHUD(for: oldWindow)?.hide(animated: false)
       }
-      window = topmostWindow()
+      window = TopmostWindow()
       view = window
     }
 
@@ -115,14 +115,5 @@ class HUD: NSObject {
         MBProgressHUD(for: oldWindow)?.hide(animated: false)
       }
     }
-  }
-
-  fileprivate static func topmostWindow() -> UIWindow? {
-    for window in UIApplication.shared.windows.reversed() {
-      if !(window.isHidden) && (window.alpha>0.0) {
-        return window
-      }
-    }
-    return nil
   }
 }

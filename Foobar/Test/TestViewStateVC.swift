@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TestViewStateVC: UIViewController, StatefulPage {
+class TestViewStateVC: UIViewController {
 
   var pageMachine: StatefulPageMachine = StatefulPageMachine()
 
@@ -18,8 +18,8 @@ class TestViewStateVC: UIViewController, StatefulPage {
     view.backgroundColor = .brown
 
 //    self.loadingView = nil
-    self.loadingView = UIView()
-
-    print(self.loadingView)
+//    self.loadingView = UIView()
+//
+//    print(self.loadingView)
   }
 }

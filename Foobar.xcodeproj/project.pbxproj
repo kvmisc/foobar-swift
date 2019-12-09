@@ -20,6 +20,7 @@
 		0A300D25239D04F00025FC04 /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A300D24239D04F00025FC04 /* UIButtonExt.swift */; };
 		0A53303B238EC957009B5375 /* DataStringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303A238EC957009B5375 /* DataStringExt.swift */; };
 		0A53303D238EC965009B5375 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303C238EC965009B5375 /* StringExt.swift */; };
+		0A53A528239E7E9C00A51A54 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53A527239E7E9C00A51A54 /* UIImageExt.swift */; };
 		0A768A4E239955A90027A68A /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A768A4D239955A90027A68A /* Metrics.swift */; };
 		51ED5B58178026AF3ADCE160 /* Pods_Foobar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */; };
 		BB462887239E477900989126 /* TestReusableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB462885239E477900989126 /* TestReusableVC.swift */; };
@@ -65,6 +66,7 @@
 		0A300D24239D04F00025FC04 /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
 		0A53303A238EC957009B5375 /* DataStringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStringExt.swift; sourceTree = "<group>"; };
 		0A53303C238EC965009B5375 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		0A53A527239E7E9C00A51A54 /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		0A768A4D239955A90027A68A /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		2BCD74F1A55A7280F3DB3800 /* Pods-Foobar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.release.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.release.xcconfig"; sourceTree = "<group>"; };
 		B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foobar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,6 +280,7 @@
 				0A53303A238EC957009B5375 /* DataStringExt.swift */,
 				0A53303C238EC965009B5375 /* StringExt.swift */,
 				0A300D1E239C8C030025FC04 /* FloatingPointExt.swift */,
+				0A53A527239E7E9C00A51A54 /* UIImageExt.swift */,
 				BB91D2DF238E451E0048D384 /* UIViewExt.swift */,
 				0A300D24239D04F00025FC04 /* UIButtonExt.swift */,
 				0A300D22239CBB470025FC04 /* UIViewControllerExt.swift */,
@@ -445,6 +448,7 @@
 				BB91D2BF238E35130048D384 /* AppDelegate.swift in Sources */,
 				BB46288E239E49A400989126 /* TestReusableXXTC.swift in Sources */,
 				0A300D21239C90310025FC04 /* UIElement.swift in Sources */,
+				0A53A528239E7E9C00A51A54 /* UIImageExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

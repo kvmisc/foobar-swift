@@ -17,17 +17,9 @@ extension UIView {
   }
 
   func extImageRep() -> UIImage {
-    if #available(iOS 10.0, *) {
-      let renderer = UIGraphicsImageRenderer(bounds: bounds)
-      return renderer.image { context in
-        layer.render(in: context.cgContext)
-      }
-    } else {
-      UIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque, 0.0)
-      layer.render(in: UIGraphicsGetCurrentContext()!)
-      let image = UIGraphicsGetImageFromCurrentImageContext()
-      UIGraphicsEndImageContext()
-      return UIImage(cgImage: image!.cgImage!)
+    let renderer = UIGraphicsImageRenderer(bounds: bounds)
+    return renderer.image { (ctx) in
+      layer.render(in: ctx.cgContext)
     }
   }
 

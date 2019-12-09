@@ -24,11 +24,11 @@ extension StatefulPage {
   }
 
 
-  func setupInitialState(_ completion: CompletionHandler? = nil) {
-    let isLoading = (lastState == .loading)
-    let error: NSError? = (lastState == .error) ? NSError(domain: "", code: -1, userInfo: nil) : nil
-    //transitionViewStates(loading: isLoading, error: error, animated: false, completion: completion)
-  }
+//  func setupInitialState(_ completion: CompletionHandler? = nil) {
+//    let isLoading = (lastState == .loading)
+//    let error: NSError? = (lastState == .error) ? NSError(domain: "", code: -1, userInfo: nil) : nil
+//    //transitionViewStates(loading: isLoading, error: error, animated: false, completion: completion)
+//  }
 
   func startLoading(animated: Bool = false, completion: CompletionHandler? = nil) {
     //transitionViewStates(loading: true, animated: animated, completion: completion)
