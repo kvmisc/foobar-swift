@@ -100,7 +100,7 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
     print(image)
 
 
-    Async.main(after: 3.0) {
+    Async.main(after: 5.0) {
 //      redView.extRemoveRoundedCorder()
 //      redView.extRemoveRoundedBorder()
     }

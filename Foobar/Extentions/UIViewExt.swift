@@ -30,6 +30,21 @@ extension UIView {
       return UIImage(cgImage: image!.cgImage!)
     }
   }
+
+  func extUseAutoLayout() {
+    translatesAutoresizingMaskIntoConstraints = false
+  }
+
+  func extAddSubviews(_ views : [UIView]) {
+    for view in views {
+      addSubview(view)
+    }
+  }
+  func extRemoveAllSubviews() {
+    subviews.forEach { (view) in
+      view.removeFromSuperview()
+    }
+  }
 }
 
 extension UIView {
@@ -48,8 +63,7 @@ extension UIView {
     layer.borderColor = color.cgColor
   }
   // 添加部分圆角, 会切割内容
-  func extAddRoundedCorner(radius: Double = 4.0,
-                           corners: UIRectCorner = .allCorners)
+  func extAddRoundedCorner(radius: Double = 4.0, corners: UIRectCorner = .allCorners)
   {
     let shapeLayer = CAShapeLayer()
     let bezierPath = UIBezierPath(roundedRect: bounds,
@@ -63,9 +77,9 @@ extension UIView {
   }
   // 设置部分圆角边框
   func extAddRoundedBorder(radius: Double = 4.0,
-                          corners: UIRectCorner = .allCorners,
-                          width: Double = 1.0,
-                          color: UIColor = .lightGray)
+                           corners: UIRectCorner = .allCorners,
+                           width: Double = 1.0,
+                           color: UIColor = .lightGray)
   {
     extRemoveRoundedLayer()
 

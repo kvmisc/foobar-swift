@@ -76,10 +76,7 @@ class HTTPManager: NSObject {
                             switch response.result {
 
                             case .success(let data):
-                              myself.parseResponse(response: response,
-                                                   data: data,
-                                                   context: context,
-                                                   completion: completion)
+                              myself.parseResponse(response, data, context, completion)
 
                             case .failure:
                               if let error = response.result.error as NSError?, error.code == NSURLErrorCancelled {
@@ -103,10 +100,10 @@ class HTTPManager: NSObject {
     }
   }
 
-  func parseResponse(response: DataResponse<Data>,
-                     data: Data,
-                     context: Any?,
-                     completion: CompletionHandler)
+  func parseResponse(_ response: DataResponse<Data>,
+                     _ data: Data,
+                     _ context: Any?,
+                     _ completion: CompletionHandler)
   {
     if !(data.isEmpty) {
       do {

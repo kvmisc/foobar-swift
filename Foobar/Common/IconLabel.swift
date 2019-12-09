@@ -40,6 +40,7 @@ class IconLabel: UIView {
     stackView.snp.makeConstraints { (make) in
       make.edges.equalToSuperview()
     }
+
     stackView.addArrangedSubview(iconView)
     stackView.addArrangedSubview(valueLabel)
   }

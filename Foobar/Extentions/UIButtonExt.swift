@@ -14,20 +14,6 @@ extension UIButton {
     removeTarget(nil, action: nil, for: .allEvents)
   }
 
-  func extSet(image: UIImage? = nil,
-              backgroundImage: UIImage? = nil,
-              title: String? = nil,
-              titleColor: UIColor? = nil,
-              attributedTitle: NSAttributedString? = nil,
-              state: UIControl.State = .normal)
-  {
-    setImage(image, for: state)
-    setBackgroundImage(backgroundImage, for: state)
-    setTitle(title, for: state)
-    setTitleColor(titleColor, for: state)
-    setAttributedTitle(attributedTitle, for: state)
-  }
-
   func extSetImage(_ image: UIImage?, _ state: UIControl.State = .normal) {
     setImage(image, for: state)
   }
