@@ -15,15 +15,21 @@ enum StatefulPageState: String {
   case Empty    = "empty"
 }
 
-protocol StatefulPage {
+protocol StatefulPage: AnyObject {
 
   var pageMachine: StatefulPageMachine { get }
 
 //  var backingView: UIView { get }
 
   var loadingView: UIView? { get set }
-//  var errorView: UIView? { get set }
-//  var emptyView: UIView? { get set }
+  var errorView: UIView? { get set }
+  var emptyView: UIView? { get set }
+
+  typealias CompletionHandler = () -> Void
+
+  func setupInitialState(_ completion: CompletionHandler?)
+  func startLoading(animated: Bool, completion: CompletionHandler?)
+  func endLoading(animated: Bool, error: Error?, completion: CompletionHandler?)
 
 //  func hasContent() -> Bool
 //  func handleErrorWhenContentAvailable(_ error: Error)

@@ -17,6 +17,9 @@ class TestViewStateVC: UIViewController, StatefulPage {
 
     view.backgroundColor = .brown
 
-    print(loadingView)
+//    self.loadingView = nil
+    self.loadingView = UIView()
+
+    print(self.loadingView)
   }
 }
