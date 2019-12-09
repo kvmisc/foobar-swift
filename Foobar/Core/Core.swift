@@ -21,3 +21,17 @@ func TopmostWindow() -> UIWindow {
   }
   return UIWindow()
 }
+
+//func TopmostViewController() -> UIViewController {
+//  return TopViewController(UIApplication.shared.keyWindow?.rootViewController)
+//}
+func TopViewController(_ controller: UIViewController?) -> UIViewController? {
+  if let nav = controller as? UINavigationController {
+    return TopViewController(nav.topViewController)
+  } else if let tab = controller as? UITabBarController, let selected = tab.selectedViewController {
+    return TopViewController(selected)
+  } else if let split = controller as? UISplitViewController, let detail = split.viewControllers.last {
+    return TopViewController(detail)
+  }
+  return controller
+}
