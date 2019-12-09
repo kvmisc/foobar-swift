@@ -1,15 +1,16 @@
 //
-//  FBRedView.swift
+//  TestLoadView.swift
 //  Foobar
 //
-//  Created by Kevin Wu on 11/29/19.
+//  Created by Kevin Wu on 12/9/19.
 //  Copyright (c) firefly.com. All rights reserved.
 //
 
 import UIKit
 import Reusable
 
-class FBRedView: UIView, NibOwnerLoadable {
+class TestLoadView: UIView, NibOwnerLoadable {
+
 
   required init?(coder: NSCoder) {
     super.init(coder: coder)

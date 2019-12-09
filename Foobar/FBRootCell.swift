@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Reusable
 
 class FBRootCell: UITableViewCell, NibReusable {
 
