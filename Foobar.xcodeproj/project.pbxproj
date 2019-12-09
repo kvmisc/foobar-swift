@@ -22,6 +22,11 @@
 		0A53303D238EC965009B5375 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303C238EC965009B5375 /* StringExt.swift */; };
 		0A768A4E239955A90027A68A /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A768A4D239955A90027A68A /* Metrics.swift */; };
 		51ED5B58178026AF3ADCE160 /* Pods_Foobar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */; };
+		BB462887239E477900989126 /* TestReusableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB462885239E477900989126 /* TestReusableVC.swift */; };
+		BB462888239E477900989126 /* TestReusableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB462886239E477900989126 /* TestReusableVC.xib */; };
+		BB46288B239E478E00989126 /* TestReusableTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB462889239E478E00989126 /* TestReusableTC.swift */; };
+		BB46288C239E478E00989126 /* TestReusableTC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB46288A239E478E00989126 /* TestReusableTC.xib */; };
+		BB46288E239E49A400989126 /* TestReusableXXTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46288D239E49A400989126 /* TestReusableXXTC.swift */; };
 		BB5885A3239E44650051220C /* TestLoadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5885A2239E44650051220C /* TestLoadView.xib */; };
 		BB5885A5239E44780051220C /* TestLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5885A4239E44780051220C /* TestLoadView.swift */; };
 		BB6C9A61239DF3F300822180 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6C9A60239DF3F300822180 /* Core.swift */; };
@@ -60,6 +65,11 @@
 		0A768A4D239955A90027A68A /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		2BCD74F1A55A7280F3DB3800 /* Pods-Foobar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.release.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.release.xcconfig"; sourceTree = "<group>"; };
 		B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foobar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB462885239E477900989126 /* TestReusableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReusableVC.swift; sourceTree = "<group>"; };
+		BB462886239E477900989126 /* TestReusableVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestReusableVC.xib; sourceTree = "<group>"; };
+		BB462889239E478E00989126 /* TestReusableTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReusableTC.swift; sourceTree = "<group>"; };
+		BB46288A239E478E00989126 /* TestReusableTC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestReusableTC.xib; sourceTree = "<group>"; };
+		BB46288D239E49A400989126 /* TestReusableXXTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReusableXXTC.swift; sourceTree = "<group>"; };
 		BB5885A2239E44650051220C /* TestLoadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestLoadView.xib; sourceTree = "<group>"; };
 		BB5885A4239E44780051220C /* TestLoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoadView.swift; sourceTree = "<group>"; };
 		BB6C9A60239DF3F300822180 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
@@ -177,6 +187,11 @@
 			children = (
 				BB5885A4239E44780051220C /* TestLoadView.swift */,
 				BB5885A2239E44650051220C /* TestLoadView.xib */,
+				BB462885239E477900989126 /* TestReusableVC.swift */,
+				BB462886239E477900989126 /* TestReusableVC.xib */,
+				BB462889239E478E00989126 /* TestReusableTC.swift */,
+				BB46288A239E478E00989126 /* TestReusableTC.xib */,
+				BB46288D239E49A400989126 /* TestReusableXXTC.swift */,
 			);
 			name = TestReusable;
 			sourceTree = "<group>";
@@ -316,7 +331,9 @@
 				BB91D2CB238E35160048D384 /* LaunchScreen.storyboard in Resources */,
 				0A2CF40B2391530D00F914C5 /* FBRootVC.xib in Resources */,
 				0A2CF41A23916DA400F914C5 /* FBRootCell.xib in Resources */,
+				BB462888239E477900989126 /* TestReusableVC.xib in Resources */,
 				BB91D2C8238E35160048D384 /* Assets.xcassets in Resources */,
+				BB46288C239E478E00989126 /* TestReusableTC.xib in Resources */,
 				BB5885A3239E44650051220C /* TestLoadView.xib in Resources */,
 				BB91D2C6238E35130048D384 /* Main.storyboard in Resources */,
 			);
@@ -380,7 +397,9 @@
 				0A300D1F239C8C030025FC04 /* FloatingPointExt.swift in Sources */,
 				BB6C9A61239DF3F300822180 /* Core.swift in Sources */,
 				0A53303B238EC957009B5375 /* DataStringExt.swift in Sources */,
+				BB46288B239E478E00989126 /* TestReusableTC.swift in Sources */,
 				0A19DCDB239B465300CA5D24 /* IconLabel.swift in Sources */,
+				BB462887239E477900989126 /* TestReusableVC.swift in Sources */,
 				BB8D53D42399E04A008BA419 /* Base64.swift in Sources */,
 				0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */,
 				BB8D53D22399DFFB008BA419 /* Path.swift in Sources */,
@@ -396,6 +415,7 @@
 				0A2CF41923916DA400F914C5 /* FBRootCell.swift in Sources */,
 				0A19DCD4239B449500CA5D24 /* HUD.swift in Sources */,
 				BB91D2BF238E35130048D384 /* AppDelegate.swift in Sources */,
+				BB46288E239E49A400989126 /* TestReusableXXTC.swift in Sources */,
 				0A300D21239C90310025FC04 /* UIElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
