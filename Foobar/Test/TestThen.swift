@@ -11,8 +11,6 @@ import Then
 
 class TestThen: Then {
 
-  static let shared = TestThen()
-
   var ppt = ""
 
   func doit() {
@@ -26,10 +24,6 @@ func doTestThen() {
   // 能在对象上 `调用方法`、`修改属性`
   // 能在值类型上 `调用方法`，不能修改值类型属性(未用 inout 传参数)
   // 因其无返回值，不能将其赋值给 `常量` 或 `变量`，所以不能做创建工作
-  TestThen.shared.do {
-    $0.doit()
-    $0.ppt = "a"
-  }
   let va = TestThen()
   va.do {
     $0.doit()

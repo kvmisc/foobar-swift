@@ -7,23 +7,29 @@
 //
 
 import UIKit
+import TextAttributes
 
-//let attr1 = TextAttributes()
-//  .font(ccf(16))
-//  .foregroundColor(.red)
-//  .alignment(.center)
-//  .paragraphSpacing(10) // 两行间距
-//let attributedText = NSMutableAttributedString(string: "关注", attributes: attr1)
-//
-//attributedText.append(NSAttributedString(string: "\n"))
-//
-//let attr2 = TextAttributes()
-//  .font(ccf(12))
-//  .foregroundColor(.darkGray)
-//  .alignment(.center)
-//attributedText.append(NSAttributedString(string: "5", attributes: attr2))
-//
-//bt.titleLabel?.numberOfLines = 0
-//bt.titleLabel?.textAlignment = .center
-//bt.extSetAttributedTitle(attributedText)
+func doTestMultiLineButton(_ bt: UIButton) {
+
+  let richText = RichText().then {
+
+    let attr1 = TextAttributes()
+      .font(ccf(16))
+      .foregroundColor(.red)
+      .alignment(.center)
+      .lineSpacing(10) // 行间距
+    $0.append("关注", attr1)
+
+    $0.appendLineSeparator()
+
+    let attr2 = TextAttributes()
+      .font(ccf(12))
+      .foregroundColor(.darkGray)
+      .alignment(.center)
+    $0.append("125", attr2)
+  }
+  bt.extSetAttributedTitle(richText.attributedText)
+  bt.titleLabel?.numberOfLines = 0
+
+}
 
