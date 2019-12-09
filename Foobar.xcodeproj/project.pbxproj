@@ -27,6 +27,10 @@
 		BB46288B239E478E00989126 /* TestReusableTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB462889239E478E00989126 /* TestReusableTC.swift */; };
 		BB46288C239E478E00989126 /* TestReusableTC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB46288A239E478E00989126 /* TestReusableTC.xib */; };
 		BB46288E239E49A400989126 /* TestReusableXXTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46288D239E49A400989126 /* TestReusableXXTC.swift */; };
+		BB462893239E5BE900989126 /* StatefulPageMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB462892239E5BE900989126 /* StatefulPageMachine.swift */; };
+		BB462895239E5C4D00989126 /* StatefulPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB462894239E5C4D00989126 /* StatefulPage.swift */; };
+		BB46289A239E5CDF00989126 /* TestViewStateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB462899239E5CDF00989126 /* TestViewStateVC.swift */; };
+		BB46289C239E5D3500989126 /* StatefulPageImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46289B239E5D3500989126 /* StatefulPageImp.swift */; };
 		BB5885A3239E44650051220C /* TestLoadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5885A2239E44650051220C /* TestLoadView.xib */; };
 		BB5885A5239E44780051220C /* TestLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5885A4239E44780051220C /* TestLoadView.swift */; };
 		BB6C9A61239DF3F300822180 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6C9A60239DF3F300822180 /* Core.swift */; };
@@ -44,7 +48,6 @@
 		BB91D2CB238E35160048D384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB91D2C9238E35160048D384 /* LaunchScreen.storyboard */; };
 		BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB91D2DF238E451E0048D384 /* UIViewExt.swift */; };
 		BB9D5CED2394FC3D00FB4BD1 /* FBPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D5CEC2394FC3D00FB4BD1 /* FBPersonModel.swift */; };
-		BBB404422391381500222569 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB404412391381500222569 /* UITableViewExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,10 @@
 		BB462889239E478E00989126 /* TestReusableTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReusableTC.swift; sourceTree = "<group>"; };
 		BB46288A239E478E00989126 /* TestReusableTC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestReusableTC.xib; sourceTree = "<group>"; };
 		BB46288D239E49A400989126 /* TestReusableXXTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReusableXXTC.swift; sourceTree = "<group>"; };
+		BB462892239E5BE900989126 /* StatefulPageMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulPageMachine.swift; sourceTree = "<group>"; };
+		BB462894239E5C4D00989126 /* StatefulPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulPage.swift; sourceTree = "<group>"; };
+		BB462899239E5CDF00989126 /* TestViewStateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewStateVC.swift; sourceTree = "<group>"; };
+		BB46289B239E5D3500989126 /* StatefulPageImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulPageImp.swift; sourceTree = "<group>"; };
 		BB5885A2239E44650051220C /* TestLoadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestLoadView.xib; sourceTree = "<group>"; };
 		BB5885A4239E44780051220C /* TestLoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoadView.swift; sourceTree = "<group>"; };
 		BB6C9A60239DF3F300822180 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
@@ -90,7 +97,6 @@
 		BB91D2CC238E35160048D384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB91D2DF238E451E0048D384 /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		BB9D5CEC2394FC3D00FB4BD1 /* FBPersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBPersonModel.swift; sourceTree = "<group>"; };
-		BBB404412391381500222569 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
 		F83B494BE851057FCED14615 /* Pods-Foobar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.debug.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +125,7 @@
 			children = (
 				0A19DCD5239B44A800CA5D24 /* Message */,
 				0A19DCDA239B465300CA5D24 /* IconLabel.swift */,
+				BB46288F239E54A600989126 /* ViewState */,
 				0A19DCD6239B44BB00CA5D24 /* FlowView */,
 			);
 			path = Common;
@@ -171,6 +178,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BB46288F239E54A600989126 /* ViewState */ = {
+			isa = PBXGroup;
+			children = (
+				BB462894239E5C4D00989126 /* StatefulPage.swift */,
+				BB46289B239E5D3500989126 /* StatefulPageImp.swift */,
+				BB462892239E5BE900989126 /* StatefulPageMachine.swift */,
+			);
+			name = ViewState;
+			sourceTree = "<group>";
+		};
+		BB462896239E5CB200989126 /* TestViewState */ = {
+			isa = PBXGroup;
+			children = (
+				BB462899239E5CDF00989126 /* TestViewStateVC.swift */,
+			);
+			name = TestViewState;
+			sourceTree = "<group>";
+		};
 		BB6C9A68239E425600822180 /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +226,7 @@
 			children = (
 				BB8A3A20239DD5A000DF3125 /* TestMultiLineButton.swift */,
 				BB6C9A64239E06DA00822180 /* TestThen.swift */,
+				BB462896239E5CB200989126 /* TestViewState */,
 				BB6C9A69239E429800822180 /* TestReusable */,
 			);
 			path = Test;
@@ -249,7 +275,6 @@
 		BB91D2DE238E451E0048D384 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
-				BBB404412391381500222569 /* UITableViewExt.swift */,
 				0A53303A238EC957009B5375 /* DataStringExt.swift */,
 				0A53303C238EC965009B5375 /* StringExt.swift */,
 				0A300D1E239C8C030025FC04 /* FloatingPointExt.swift */,
@@ -396,11 +421,14 @@
 				BB5885A5239E44780051220C /* TestLoadView.swift in Sources */,
 				0A300D1F239C8C030025FC04 /* FloatingPointExt.swift in Sources */,
 				BB6C9A61239DF3F300822180 /* Core.swift in Sources */,
+				BB46289A239E5CDF00989126 /* TestViewStateVC.swift in Sources */,
 				0A53303B238EC957009B5375 /* DataStringExt.swift in Sources */,
 				BB46288B239E478E00989126 /* TestReusableTC.swift in Sources */,
 				0A19DCDB239B465300CA5D24 /* IconLabel.swift in Sources */,
 				BB462887239E477900989126 /* TestReusableVC.swift in Sources */,
+				BB462893239E5BE900989126 /* StatefulPageMachine.swift in Sources */,
 				BB8D53D42399E04A008BA419 /* Base64.swift in Sources */,
+				BB46289C239E5D3500989126 /* StatefulPageImp.swift in Sources */,
 				0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */,
 				BB8D53D22399DFFB008BA419 /* Path.swift in Sources */,
 				0A53303D238EC965009B5375 /* StringExt.swift in Sources */,
@@ -411,7 +439,7 @@
 				BB9D5CED2394FC3D00FB4BD1 /* FBPersonModel.swift in Sources */,
 				0A300D25239D04F00025FC04 /* UIButtonExt.swift in Sources */,
 				0A300D23239CBB470025FC04 /* UIViewControllerExt.swift in Sources */,
-				BBB404422391381500222569 /* UITableViewExt.swift in Sources */,
+				BB462895239E5C4D00989126 /* StatefulPage.swift in Sources */,
 				0A2CF41923916DA400F914C5 /* FBRootCell.swift in Sources */,
 				0A19DCD4239B449500CA5D24 /* HUD.swift in Sources */,
 				BB91D2BF238E35130048D384 /* AppDelegate.swift in Sources */,
