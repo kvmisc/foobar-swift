@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Then
 import TextAttributes
+import Then
 
 class RichText: Then {
   var attributedText = NSMutableAttributedString()
