@@ -68,8 +68,8 @@ class Overlay {
 
     SwiftEntryKit.display(entry: view, using: attributes, presentInsideKeyWindow: false, rollbackWindow: .main)
   }
-  static func entryHide() {
-    SwiftEntryKit.dismiss()
+  static func entryHide(_ completion: SwiftEntryKit.DismissCompletionHandler? = nil) {
+    SwiftEntryKit.dismiss(.all, with: completion)
   }
 
 

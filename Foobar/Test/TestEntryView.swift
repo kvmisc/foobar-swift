@@ -20,7 +20,7 @@ class TestEntryView: UIView {
   }
 
   override var intrinsicContentSize: CGSize {
-    return ccs(UIView.noIntrinsicMetric, 80)
+    return ccs(200, 80)
   }
 
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

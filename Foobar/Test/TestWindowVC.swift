@@ -123,7 +123,12 @@ class TestWindowVC: UIViewController {
     let v = TestEntryView()
     //Overlay.shared.showAlert(v, width: .ratio(value: 0.8))
     //Overlay.entrySheet(v)
-    Overlay.entryAlert(v)
+//    Overlay.entryAlert(v)
+//    Async.main(after: 2.0) {
+//      Overlay.entryHide { print("did hide") }
+//    }
+    Overlay.entryHide { print("did hide") }
+
     return
 
 //    print("do show")
