@@ -155,7 +155,7 @@ extension Drop {
         self.upAll()
         let drop = Drop(duration: duration)
         //UIApplication.shared.keyWindow?.addSubview(drop)
-        MainWindow()?.addSubview(drop)
+        (UIApplication.shared.delegate as? AppDelegate)?.window?.addSubview(drop)
         guard let window = drop.window else { return }
 
         let heightConstraint = NSLayoutConstraint(item: drop, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 100.0)
@@ -210,7 +210,7 @@ extension Drop {
     
     public class func upAll() {
         //guard let window = UIApplication.shared.keyWindow else { return }
-        guard let window = MainWindow() else { return }
+        guard let window = (UIApplication.shared.delegate as? AppDelegate)?.window else { return }
         for view in window.subviews {
             if let drop = view as? Drop {
                 drop.up()

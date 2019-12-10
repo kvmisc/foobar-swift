@@ -21,10 +21,10 @@ class Overlay {
   func showSheet() {
   }
 
-  // 显示在屏幕顶部, 点周围有效果, 点击/时间到消失
+  // 显示在屏幕顶部(MainWindow), 点周围有效果, 点击/时间到消失
   // 后来的会隐藏前面的
   func showSuccess(_ info: String, _ action: DropAction? = nil) {
-    Drop.down(info, state: .success, duration: 3.0, action: action)
+    Drop.down(info, state: .success, duration: 5.0, action: action)
   }
   func showFailure(_ info: String, _ action: DropAction? = nil) {
     Drop.down(info, state: .error, duration: 3.0, action: action)
