@@ -21,7 +21,7 @@ class Overlay {
     ac.addAction(UIAlertAction(title: confirm, style: .default) { (action) in
       completion?()
     })
-    MainWindow().rootViewController?.present(ac, animated: true, completion: nil)
+    TopmostViewController().present(ac, animated: true, completion: nil)
   }
   static func popConfirm(title: String? = nil,
                          message: String? = nil,
@@ -36,7 +36,7 @@ class Overlay {
     ac.addAction(UIAlertAction(title: confirm, style: .default) { (action) in
       completion?(true)
     })
-    MainWindow().rootViewController?.present(ac, animated: true, completion: nil)
+    TopmostViewController().present(ac, animated: true, completion: nil)
   }
   static func popInput(title: String? = nil,
                        message: String? = nil,
@@ -53,7 +53,7 @@ class Overlay {
     ac.addAction(UIAlertAction(title: confirm, style: .default) { [weak ac](action) in
       completion?(true, ac?.textFields?[0].text ?? "")
     })
-    MainWindow().rootViewController?.present(ac, animated: true, completion: nil)
+    TopmostViewController().present(ac, animated: true, completion: nil)
   }
   static func popOptions(title: String? = nil,
                          message: String? = nil,
@@ -70,7 +70,7 @@ class Overlay {
     ac.addAction(UIAlertAction(title: cancel, style: .cancel) { (action) in
       completion?(-1, "")
     })
-    MainWindow().rootViewController?.present(ac, animated: true, completion: nil)
+    TopmostViewController().present(ac, animated: true, completion: nil)
   }
 
   // MARK: HUD
