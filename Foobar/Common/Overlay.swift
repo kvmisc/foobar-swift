@@ -21,7 +21,7 @@ class Overlay {
     ac.addAction(UIAlertAction(title: confirm, style: .default) { (action) in
       completion?()
     })
-    TopmostViewController().present(ac, animated: true, completion: nil)
+    MainWindow().rootViewController?.present(ac, animated: true, completion: nil)
   }
   static func popConfirm(title: String? = nil,
                          message: String? = nil,
@@ -36,7 +36,7 @@ class Overlay {
     ac.addAction(UIAlertAction(title: confirm, style: .default) { (action) in
       completion?(true)
     })
-    TopmostViewController().present(ac, animated: true, completion: nil)
+    MainWindow().rootViewController?.present(ac, animated: true, completion: nil)
   }
   static func popInput(title: String? = nil,
                        message: String? = nil,
@@ -53,7 +53,7 @@ class Overlay {
     ac.addAction(UIAlertAction(title: confirm, style: .default) { [weak ac](action) in
       completion?(true, ac?.textFields?[0].text ?? "")
     })
-    TopmostViewController().present(ac, animated: true, completion: nil)
+    MainWindow().rootViewController?.present(ac, animated: true, completion: nil)
   }
   static func popOptions(title: String? = nil,
                          message: String? = nil,
@@ -70,7 +70,7 @@ class Overlay {
     ac.addAction(UIAlertAction(title: cancel, style: .cancel) { (action) in
       completion?(-1, "")
     })
-    TopmostViewController().present(ac, animated: true, completion: nil)
+    MainWindow().rootViewController?.present(ac, animated: true, completion: nil)
   }
 
   // MARK: HUD
@@ -112,6 +112,26 @@ class Overlay {
     if let inView = view {
       MBProgressHUD(for: inView)?.hide(animated: animated)
     }
+  }
+
+  // MARK: Drop
+  // 显示在屏幕顶部(MainWindow), 点周围有效果, 点击/时间到消失
+  // 后来的会隐藏前面的
+  // clicked 和 dismissed 不会周时被调用, 因为点击里面已经知道隐藏了
+  static func dropSuccess(_ info: String, _ clicked: DropAction? = nil, _ dismissed: DropAction? = nil) {
+    Drop.down(info, state: .success, duration: 3.0, action: clicked, completion: dismissed)
+  }
+  static func dropFailure(_ info: String, _ clicked: DropAction? = nil, _ dismissed: DropAction? = nil) {
+    Drop.down(info, state: .error, duration: 3.0, action: clicked, completion: dismissed)
+  }
+  static func dropWarning(_ info: String, _ clicked: DropAction? = nil, _ dismissed: DropAction? = nil) {
+    Drop.down(info, state: .warning, duration: 3.0, action: clicked, completion: dismissed)
+  }
+  static func dropMessage(_ info: String, _ clicked: DropAction? = nil, _ dismissed: DropAction? = nil) {
+    Drop.down(info, state: .info, duration: 3.0, action: clicked, completion: dismissed)
+  }
+  static func dropHide() {
+    Drop.upAll()
   }
 
   // MARK: Entry
@@ -175,26 +195,5 @@ class Overlay {
   }
   static func entryHide(_ completion: SwiftEntryKit.DismissCompletionHandler? = nil) {
     SwiftEntryKit.dismiss(.all, with: completion)
-  }
-
-
-  // MARK: Drop
-  // 显示在屏幕顶部(MainWindow), 点周围有效果, 点击/时间到消失
-  // 后来的会隐藏前面的
-  // clicked 和 dismissed 不会周时被调用, 因为点击里面已经知道隐藏了
-  static func dropSuccess(_ info: String, _ clicked: DropAction? = nil, _ dismissed: DropAction? = nil) {
-    Drop.down(info, state: .success, duration: 3.0, action: clicked, completion: dismissed)
-  }
-  static func dropFailure(_ info: String, _ clicked: DropAction? = nil, _ dismissed: DropAction? = nil) {
-    Drop.down(info, state: .error, duration: 3.0, action: clicked, completion: dismissed)
-  }
-  static func dropWarning(_ info: String, _ clicked: DropAction? = nil, _ dismissed: DropAction? = nil) {
-    Drop.down(info, state: .warning, duration: 3.0, action: clicked, completion: dismissed)
-  }
-  static func dropMessage(_ info: String, _ clicked: DropAction? = nil, _ dismissed: DropAction? = nil) {
-    Drop.down(info, state: .info, duration: 3.0, action: clicked, completion: dismissed)
-  }
-  static func dropHide() {
-    Drop.upAll()
   }
 }

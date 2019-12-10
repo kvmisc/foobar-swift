@@ -8,9 +8,8 @@
 
 import UIKit
 import TextAttributes
-import Then
 
-class RichText: Then {
+class RichText {
   var attributedText = NSMutableAttributedString()
 
   func append(_ text: String, _ attribute: TextAttributes) {

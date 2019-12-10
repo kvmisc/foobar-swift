@@ -11,23 +11,22 @@ import TextAttributes
 
 func doTestMultiLineButton(_ bt: UIButton) {
 
-  let richText = RichText().then {
+  let richText = RichText()
+  let attr1 = TextAttributes()
+    .font(ccf(16))
+    .foregroundColor(.red)
+    .alignment(.center)
+    .lineSpacing(10) // 行间距
+  richText.append("关注", attr1)
 
-    let attr1 = TextAttributes()
-      .font(ccf(16))
-      .foregroundColor(.red)
-      .alignment(.center)
-      .lineSpacing(10) // 行间距
-    $0.append("关注", attr1)
+  richText.appendLineSeparator()
 
-    $0.appendLineSeparator()
-
-    let attr2 = TextAttributes()
-      .font(ccf(12))
-      .foregroundColor(.darkGray)
-      .alignment(.center)
-    $0.append("125", attr2)
-  }
+  let attr2 = TextAttributes()
+    .font(ccf(12))
+    .foregroundColor(.darkGray)
+    .alignment(.center)
+  richText.append("125", attr2)
+  
   bt.extSetAttributedTitle(richText.attributedText)
   bt.titleLabel?.numberOfLines = 0
 
