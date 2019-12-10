@@ -30,24 +30,22 @@ target 'Foobar' do
   pod 'DeviceKit'
   pod "AsyncSwift"
 
-  pod 'Cache'
-  pod 'SwiftDate'
-  pod 'SQLite.swift'
-
   pod 'SnapKit'
   pod 'Reusable'
   pod 'TextAttributes'
   pod 'SwiftEntryKit'
   pod 'IHKeyboardAvoiding'
 
-  pod 'SVProgressHUD'
-
-  pod 'WLEmptyState'
+  pod 'Cache'
+  pod 'SwiftDate'
+  pod 'SQLite.swift'
 
   pod 'Alamofire'
   pod 'MBProgressHUD'
   pod 'MJRefresh'
   pod 'YYModel'
   pod 'SwiftyJSON'
+
+  pod 'WLEmptyState'
 
 end

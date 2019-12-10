@@ -76,6 +76,7 @@ public final class Drop: UIView {
     fileprivate var startTop: CGFloat?
 
     fileprivate var action: DropAction?
+    fileprivate var completion: DropAction?
 
     convenience init(duration: Double) {
         self.init(frame: CGRect.zero)
@@ -143,15 +144,15 @@ public final class Drop: UIView {
 }
 
 extension Drop {
-    public class func down(_ status: String, state: DropState = .default, duration: Double = 4.0, action: DropAction? = nil) {
-        show(status, state: state, duration: duration, action: action)
+    public class func down(_ status: String, state: DropState = .default, duration: Double = 4.0, action: DropAction? = nil, completion: DropAction? = nil) {
+        show(status, state: state, duration: duration, action: action, completion: completion)
     }
 
-    public class func down<T: DropStatable>(_ status: String, state: T, duration: Double = 4.0, action: DropAction? = nil) {
-        show(status, state: state, duration: duration, action: action)
+    public class func down<T: DropStatable>(_ status: String, state: T, duration: Double = 4.0, action: DropAction? = nil, completion: DropAction? = nil) {
+        show(status, state: state, duration: duration, action: action, completion: completion)
     }
 
-    fileprivate class func show(_ status: String, state: DropStatable, duration: Double, action: DropAction?) {
+    fileprivate class func show(_ status: String, state: DropStatable, duration: Double, action: DropAction?, completion: DropAction?) {
         self.upAll()
         let drop = Drop(duration: duration)
         //UIApplication.shared.keyWindow?.addSubview(drop)
@@ -175,6 +176,7 @@ extension Drop {
 
         drop.setup(status, state: state)
         drop.action = action
+        drop.completion = completion
         drop.updateHeight()
         
         guard let superview = drop.superview else { return }
@@ -204,7 +206,7 @@ extension Drop {
             animations: {
                 superview.layoutIfNeeded()
             }) { [weak drop] finished -> Void in
-                if let drop = drop { drop.removeFromSuperview() }
+                if let drop = drop { drop.removeFromSuperview(); drop.completion?() }
         }
     }
     
@@ -292,6 +294,7 @@ extension Drop {
 
 extension Drop {
     @objc func up(_ sender: AnyObject) {
+        if action != nil { completion = nil }
         action?()
         self.up()
     }

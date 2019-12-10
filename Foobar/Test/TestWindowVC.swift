@@ -8,6 +8,7 @@
 
 import UIKit
 import Async
+import SVProgressHUD
 
 class TestWindowVC: UIViewController {
 
@@ -128,14 +129,21 @@ class TestWindowVC: UIViewController {
 //      Overlay.entryHide { print("did hide") }
 //    }
 //    Overlay.entryHide { print("did hide") }
-    Overlay.hudActivity()
 
-    Async.main(after: 4.0) {
-      print("resign")
-      Overlay.hudMessage(view: nil, info: "suc") {
-        print("did hide hud")
-      }
-    }
+    Overlay.dropSuccess("asdf")
+
+//    Overlay.hudActivity()
+//    Overlay.hudActivity(view: nil, info: nil)
+//    Overlay.hudActivity(view: nil, info: "加载中...")
+
+//    Async.main(after: 4.0) {
+//      print("resign")
+//      Overlay.hudHide()
+////      Overlay.hudHide(view: nil, animated: true)
+////      Overlay.hudMessage(view: nil, info: "suc") {
+////        print("did hide hud")
+////      }
+//    }
 
     return
 

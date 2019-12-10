@@ -13,14 +13,14 @@ import UIKit
 let LINE_SEPARATOR      = "\u{2028}"
 let PARAGRAPH_SEPARATOR = "\u{2029}"
 
-func TopmostWindow() -> UIWindow? {
+func TopmostWindow() -> UIWindow {
   for window in UIApplication.shared.windows.reversed() {
     if !(window.isHidden) && (window.alpha>0.0) {
       return window
     }
   }
   // Should not be here
-  return nil
+  return UIWindow()
 }
 func MainWindow() -> UIWindow {
   return (UIApplication.shared.delegate as! AppDelegate).window!
