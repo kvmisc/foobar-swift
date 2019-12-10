@@ -25,6 +25,7 @@ PODS:
   - Then (2.6.0)
   - WLEmptyState (3.1.0)
   - YYModel (1.0.4)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - Alamofire
@@ -45,6 +46,7 @@ DEPENDENCIES:
   - Then
   - WLEmptyState
   - YYModel
+  - YYText
 
 SPEC REPOS:
   trunk:
@@ -67,6 +69,7 @@ SPEC REPOS:
     - Then
     - WLEmptyState
     - YYModel
+    - YYText
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -88,7 +91,8 @@ SPEC CHECKSUMS:
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
   WLEmptyState: 2bbb3970f62c0b9252029d34a8f74cb3d436eeea
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 49140c5e82140f7a60852870f42de37900291f20
+PODFILE CHECKSUM: fd9b6fd42fca6de385fc53a8b750c53a8616d916
 
 COCOAPODS: 1.8.4

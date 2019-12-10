@@ -9,6 +9,7 @@
 import UIKit
 import Async
 import TextAttributes
+import YYText
 
 class TestWindowVC: UIViewController {
 

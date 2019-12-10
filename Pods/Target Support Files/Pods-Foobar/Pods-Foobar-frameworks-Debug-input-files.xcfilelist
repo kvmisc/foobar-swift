@@ -18,3 +18,4 @@ ${BUILT_PRODUCTS_DIR}/TextAttributes/TextAttributes.framework
 ${BUILT_PRODUCTS_DIR}/Then/Then.framework
 ${BUILT_PRODUCTS_DIR}/WLEmptyState/WLEmptyState.framework
 ${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework
+${BUILT_PRODUCTS_DIR}/YYText/YYText.framework

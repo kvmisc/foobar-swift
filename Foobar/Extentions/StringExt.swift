@@ -8,7 +8,7 @@
 
 import UIKit
 
-// MARK: xxx
+// MARK: Misc
 extension String {
 
   static func extRandomString(_ length: Int) -> String {
