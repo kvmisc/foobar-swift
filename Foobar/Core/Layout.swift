@@ -167,3 +167,23 @@ extension CGRect {
   }
 
 }
+
+func ceil(_ point: CGPoint) -> CGPoint {
+  return CGPoint(x: ceil(point.x), y: ceil(point.y))
+}
+func ceil(_ size: CGSize) -> CGSize {
+  return CGSize(width: ceil(size.width), height: ceil(size.height))
+}
+func ceil(_ rect: CGRect) -> CGRect {
+  return CGRect(x: ceil(rect.origin.x), y: ceil(rect.origin.y), width: ceil(rect.size.width), height: ceil(rect.size.height))
+}
+
+func floor(_ point: CGPoint) -> CGPoint {
+  return CGPoint(x: floor(point.x), y: floor(point.y))
+}
+func floor(_ size: CGSize) -> CGSize {
+  return CGSize(width: floor(size.width), height: floor(size.height))
+}
+func floor(_ rect: CGRect) -> CGRect {
+  return CGRect(x: floor(rect.origin.x), y: floor(rect.origin.y), width: floor(rect.size.width), height: floor(rect.size.height))
+}

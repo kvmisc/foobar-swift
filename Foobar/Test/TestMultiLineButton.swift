@@ -26,7 +26,7 @@ func doTestMultiLineButton(_ bt: UIButton) {
     .foregroundColor(.darkGray)
     .alignment(.center)
   richText.append("125", attr2)
-  
+
   bt.extSetAttributedTitle(richText.attributedText)
   bt.titleLabel?.numberOfLines = 0
 

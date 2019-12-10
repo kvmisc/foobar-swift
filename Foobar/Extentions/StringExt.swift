@@ -82,13 +82,29 @@ extension String {
   }
 }
 
-// MARK: URL encoding
+// MARK: Sizing
 extension String {
   var extURLEncodedString: String {
     return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self
   }
   var extURLDecodedString: String {
     return removingPercentEncoding ?? self
+  }
+}
+
+// MARK: URL encoding
+extension String {
+  func extSizeWith(_ font: UIFont) -> CGSize {
+    let size = (self as NSString).size(withAttributes: [.font:font])
+    return CGSize(width: ceil(size.width), height: ceil(size.height))
+  }
+  func extSizeWith(_ attributes: [NSAttributedString.Key:Any], _ width: CGFloat) -> CGSize {
+    let context = NSStringDrawingContext()
+    let rect = (self as NSString).boundingRect(with: CGSize(width: floor(width), height: CGFloat.greatestFiniteMagnitude),
+                                               options: .usesLineFragmentOrigin,
+                                               attributes: attributes,
+                                               context: context)
+    return CGSize(width: ceil(rect.size.width), height: ceil(rect.size.height))
   }
 }
 

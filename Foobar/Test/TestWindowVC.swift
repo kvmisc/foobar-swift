@@ -8,6 +8,7 @@
 
 import UIKit
 import Async
+import TextAttributes
 
 class TestWindowVC: UIViewController {
 
@@ -51,12 +52,49 @@ class TestWindowVC: UIViewController {
     ret.isUserInteractionEnabled = false
     return ret
   }()
-
+  @IBOutlet weak var textLabel: UILabel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    view.addSubview(tf)
-    view.addSubview(bt)
+//    view.addSubview(tf)
+//    view.addSubview(bt)
+
+    let sz = CGSize(width: 2.5, height: 5.1)
+    print(ceil(sz))
+
+    let ta = TextAttributes()
+      .font(ccf(15.0))
+      .lineBreakMode(.byWordWrapping)
+      .lineSpacing(ccf(15).extLineSpacing())
+
+    let str = "This worked for me. First open the simulator and select a device that works in Hardware Device. Then select Manage Devices and delete the ones that aren't working. Add the same devices you deleted and they should be working"
+
+    textLabel.numberOfLines = 2
+    textLabel.attributedText = NSAttributedString(string: str, attributes: ta)
+
+//    textLabel.text = str
+//    textLabel.numberOfLines = 2
+//    textLabel.lineBreakMode = .byTruncatingTail
+    textLabel.backgroundColor = .lightGray
+
+    var dict: [NSAttributedString.Key:Any] = [:]
+    dict[.font] = ccf(15)
+
+    let paragraph = NSMutableParagraphStyle()
+    paragraph.lineBreakMode = .byTruncatingTail
+    paragraph.lineSpacing = ccf(15).extLineSpacing()
+    dict[.paragraphStyle] = paragraph
+
+//    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
+//    paragraph.lineBreakMode = lineBreakMode;
+//    paragraph.lineSpacing = lineSpacing;
+//    [attributes setObject:paragraph forKey:NSParagraphStyleAttributeName];
+
+    print("str".extSizeWith(ta.dictionary, 200))
+    print("jfJFG".extSizeWith(ccf(15)))
+
+
 
     //self.printWindows()
 

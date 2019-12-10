@@ -46,6 +46,8 @@ target 'Foobar' do
   pod 'YYModel'
   pod 'SwiftyJSON'
 
+  pod 'YYText'
+
   pod 'WLEmptyState'
 
 end

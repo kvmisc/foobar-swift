@@ -41,15 +41,15 @@ func ccf(_ size: CGFloat) -> UIFont {
   return UIFont.systemFont(ofSize: size)
 }
 extension UIFont {
-  enum LineSpacingRatio: Double {
+  enum LineSpacingRatio: CGFloat {
     case min = 0.2
     case max = 0.45
   }
-  func lineSpacing(_ ratio: Double = LineSpacingRatio.min.rawValue) -> Double {
-    return Double(lineHeight) * ratio
+  func extLineSpacing(_ ratio: CGFloat = LineSpacingRatio.min.rawValue) -> CGFloat {
+    return lineHeight * ratio
   }
-  func lineHeight(_ ratio: Double = LineSpacingRatio.min.rawValue) -> Double {
-    return Double(lineHeight) * (1.0 + ratio)
+  func extLineHeight(_ ratio: CGFloat = LineSpacingRatio.min.rawValue) -> CGFloat {
+    return lineHeight * (1.0 + ratio)
   }
 }
 
