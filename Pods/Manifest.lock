@@ -20,7 +20,6 @@ PODS:
   - SwiftDate (6.1.0)
   - SwiftEntryKit (1.2.3):
     - QuickLayout (= 3.0.0)
-  - SwiftyDrop (4.2.0)
   - SwiftyJSON (5.0.0)
   - TextAttributes (2.0.2)
   - Then (2.6.0)
@@ -41,7 +40,6 @@ DEPENDENCIES:
   - SQLite.swift
   - SwiftDate
   - SwiftEntryKit
-  - SwiftyDrop
   - SwiftyJSON
   - TextAttributes
   - Then
@@ -64,7 +62,6 @@ SPEC REPOS:
     - SQLite.swift
     - SwiftDate
     - SwiftEntryKit
-    - SwiftyDrop
     - SwiftyJSON
     - TextAttributes
     - Then
@@ -86,13 +83,12 @@ SPEC CHECKSUMS:
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
   SwiftEntryKit: 340713c2e4a6662c5149629990bf1088bf5f0389
-  SwiftyDrop: c5b306082dfbd7d6b9c1e569dcdd2ab13306e552
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TextAttributes: 89905fb52c36de587010f335bd4071463d9c6d9b
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
   WLEmptyState: 2bbb3970f62c0b9252029d34a8f74cb3d436eeea
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 1b36aee4111ea5c1dde9a9d32ae073a1cf19760f
+PODFILE CHECKSUM: c1ff50fba76f34862fdb9b9f8181c6bcdfa4ac21
 
 COCOAPODS: 1.8.4

@@ -154,7 +154,8 @@ extension Drop {
     fileprivate class func show(_ status: String, state: DropStatable, duration: Double, action: DropAction?) {
         self.upAll()
         let drop = Drop(duration: duration)
-        UIApplication.shared.keyWindow?.addSubview(drop)
+        //UIApplication.shared.keyWindow?.addSubview(drop)
+        MainWindow()?.addSubview(drop)
         guard let window = drop.window else { return }
 
         let heightConstraint = NSLayoutConstraint(item: drop, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 100.0)
@@ -208,7 +209,8 @@ extension Drop {
     }
     
     public class func upAll() {
-        guard let window = UIApplication.shared.keyWindow else { return }
+        //guard let window = UIApplication.shared.keyWindow else { return }
+        guard let window = MainWindow() else { return }
         for view in window.subviews {
             if let drop = view as? Drop {
                 drop.up()
@@ -332,6 +334,7 @@ extension Drop {
             startTop = nil
             scheduleUpTimer(2.0)
         case .possible: break
+        default: break
         }
     }
 }

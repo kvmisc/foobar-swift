@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftyDrop
 
 class Overlay {
   static let shared = Overlay()

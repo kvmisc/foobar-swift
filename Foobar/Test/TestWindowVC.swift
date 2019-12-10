@@ -73,10 +73,10 @@ class TestWindowVC: UIViewController {
 
     Async.main(after: 1.0) {
       print(MainWindow())
-      Overlay.shared.showSuccess("fas")
-//      Overlay.shared.showSuccess("123") {
-//        print("xxx end")
-//      }
+      //Overlay.shared.showSuccess("fas")
+      Overlay.shared.showSuccess("123") {
+        print("xxx end")
+      }
 //      Overlay.shared.showSuccess("suc") {
 //        print("suc end")
 //      }

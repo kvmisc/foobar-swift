@@ -13,7 +13,6 @@ ${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
 ${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework
 ${BUILT_PRODUCTS_DIR}/SwiftEntryKit/SwiftEntryKit.framework
-${BUILT_PRODUCTS_DIR}/SwiftyDrop/SwiftyDrop.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
 ${BUILT_PRODUCTS_DIR}/TextAttributes/TextAttributes.framework
 ${BUILT_PRODUCTS_DIR}/Then/Then.framework
