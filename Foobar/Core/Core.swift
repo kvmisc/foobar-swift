@@ -22,8 +22,8 @@ func TopmostWindow() -> UIWindow? {
   // Should not be here
   return nil
 }
-func MainWindow() -> UIWindow? {
-  return (UIApplication.shared.delegate as? AppDelegate)?.window
+func MainWindow() -> UIWindow {
+  return (UIApplication.shared.delegate as! AppDelegate).window!
 }
 
 //func TopmostViewController() -> UIViewController {

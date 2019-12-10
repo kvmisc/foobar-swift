@@ -127,7 +127,15 @@ class TestWindowVC: UIViewController {
 //    Async.main(after: 2.0) {
 //      Overlay.entryHide { print("did hide") }
 //    }
-    Overlay.entryHide { print("did hide") }
+//    Overlay.entryHide { print("did hide") }
+    Overlay.hudActivity()
+
+    Async.main(after: 4.0) {
+      print("resign")
+      Overlay.hudMessage(view: nil, info: "suc") {
+        print("did hide hud")
+      }
+    }
 
     return
 

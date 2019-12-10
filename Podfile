@@ -40,6 +40,8 @@ target 'Foobar' do
   pod 'SwiftEntryKit'
   pod 'IHKeyboardAvoiding'
 
+  pod 'SVProgressHUD'
+
   pod 'WLEmptyState'
 
   pod 'Alamofire'
