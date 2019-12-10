@@ -8,7 +8,6 @@
 
 import UIKit
 import Async
-import SVProgressHUD
 
 class TestWindowVC: UIViewController {
 
