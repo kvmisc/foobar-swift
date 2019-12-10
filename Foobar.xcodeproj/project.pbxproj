@@ -36,6 +36,7 @@
 		BB46289C239E5D3500989126 /* StatefulPageImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46289B239E5D3500989126 /* StatefulPageImp.swift */; };
 		BB5885A3239E44650051220C /* TestLoadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5885A2239E44650051220C /* TestLoadView.xib */; };
 		BB5885A5239E44780051220C /* TestLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5885A4239E44780051220C /* TestLoadView.swift */; };
+		BB5D0D8B239F655B002CEA09 /* TestEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5D0D8A239F655B002CEA09 /* TestEntryView.swift */; };
 		BB6C9A61239DF3F300822180 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6C9A60239DF3F300822180 /* Core.swift */; };
 		BB6C9A63239DF52400822180 /* RichText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6C9A62239DF52400822180 /* RichText.swift */; };
 		BB6C9A65239E06DA00822180 /* TestThen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6C9A64239E06DA00822180 /* TestThen.swift */; };
@@ -88,6 +89,7 @@
 		BB46289B239E5D3500989126 /* StatefulPageImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulPageImp.swift; sourceTree = "<group>"; };
 		BB5885A2239E44650051220C /* TestLoadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestLoadView.xib; sourceTree = "<group>"; };
 		BB5885A4239E44780051220C /* TestLoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoadView.swift; sourceTree = "<group>"; };
+		BB5D0D8A239F655B002CEA09 /* TestEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEntryView.swift; sourceTree = "<group>"; };
 		BB6C9A60239DF3F300822180 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		BB6C9A62239DF52400822180 /* RichText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichText.swift; sourceTree = "<group>"; };
 		BB6C9A64239E06DA00822180 /* TestThen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestThen.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				0A384B4A239EA8E600CBE1F8 /* TestWindowVC.swift */,
 				0A384B4B239EA8E600CBE1F8 /* TestWindowVC.xib */,
 				BBBB0607239F2DB60004613C /* ThroughView.swift */,
+				BB5D0D8A239F655B002CEA09 /* TestEntryView.swift */,
 			);
 			name = TestWindow;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				0A2CF41923916DA400F914C5 /* FBRootCell.swift in Sources */,
 				0A19DCD4239B449500CA5D24 /* HUD.swift in Sources */,
 				BB91D2BF238E35130048D384 /* AppDelegate.swift in Sources */,
+				BB5D0D8B239F655B002CEA09 /* TestEntryView.swift in Sources */,
 				0A384B4C239EA8E600CBE1F8 /* TestWindowVC.swift in Sources */,
 				BB46288E239E49A400989126 /* TestReusableXXTC.swift in Sources */,
 				0A300D21239C90310025FC04 /* UIElement.swift in Sources */,

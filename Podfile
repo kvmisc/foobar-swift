@@ -36,10 +36,11 @@ target 'Foobar' do
 
   pod 'SnapKit'
   pod 'Reusable'
-  pod 'WLEmptyState'
   pod 'TextAttributes'
-  pod 'IHKeyboardAvoiding'
   pod 'SwiftEntryKit'
+  pod 'IHKeyboardAvoiding'
+
+  pod 'WLEmptyState'
 
   pod 'Alamofire'
   pod 'MBProgressHUD'
