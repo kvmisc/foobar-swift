@@ -11,6 +11,68 @@ import MBProgressHUD
 import SwiftEntryKit
 
 class Overlay {
+  // MARK: Alert & Sheet
+  static func popAlert(title: String? = nil,
+                       message: String? = nil,
+                       confirm: String? = "OK",
+                       completion: (()->Void)? = nil)
+  {
+    let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    ac.addAction(UIAlertAction(title: confirm, style: .default) { (action) in
+      completion?()
+    })
+    MainWindow().rootViewController?.present(ac, animated: true, completion: nil)
+  }
+  static func popConfirm(title: String? = nil,
+                         message: String? = nil,
+                         cancel: String? = "Cancel",
+                         confirm: String? = "Confirm",
+                         completion: ((Bool)->Void)? = nil)
+  {
+    let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    ac.addAction(UIAlertAction(title: cancel, style: .cancel) { (action) in
+      completion?(false)
+    })
+    ac.addAction(UIAlertAction(title: confirm, style: .default) { (action) in
+      completion?(true)
+    })
+    MainWindow().rootViewController?.present(ac, animated: true, completion: nil)
+  }
+  static func popInput(title: String? = nil,
+                       message: String? = nil,
+                       text: String? = nil,
+                       cancel: String? = "Cancel",
+                       confirm: String? = "Confirm",
+                       completion: ((Bool,String)->Void)? = nil)
+  {
+    let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    ac.addTextField { (tf) in tf.text = text }
+    ac.addAction(UIAlertAction(title: cancel, style: .cancel) { [weak ac](action) in
+      completion?(false, ac?.textFields?[0].text ?? "")
+    })
+    ac.addAction(UIAlertAction(title: confirm, style: .default) { [weak ac](action) in
+      completion?(true, ac?.textFields?[0].text ?? "")
+    })
+    MainWindow().rootViewController?.present(ac, animated: true, completion: nil)
+  }
+  static func popOptions(title: String? = nil,
+                         message: String? = nil,
+                         options: [String] = [],
+                         cancel: String? = "Cancel",
+                         completion: ((Int,String)->Void)? = nil)
+  {
+    let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+    for (index, option) in options.enumerated() {
+      ac.addAction(UIAlertAction(title: option, style: .default) { (action) in
+        completion?(index, option)
+      })
+    }
+    ac.addAction(UIAlertAction(title: cancel, style: .cancel) { (action) in
+      completion?(-1, "")
+    })
+    MainWindow().rootViewController?.present(ac, animated: true, completion: nil)
+  }
+
   // MARK: HUD
   static func hudActivity(view: UIView? = nil, info: String? = nil) {
     hudHide(view: view, animated: false)

@@ -60,9 +60,9 @@ class TestWindowVC: UIViewController {
 
     //self.printWindows()
 
-    Async.main(after: 1.0) {
-      self.printWindows()
-    }
+//    Async.main(after: 1.0) {
+//      self.printWindows()
+//    }
 
 //    Async.main(after: 3.0) {
 //      print("show entry")
@@ -120,7 +120,7 @@ class TestWindowVC: UIViewController {
 
   @objc func showAction(_ sender: UIButton) {
 
-    let v = TestEntryView()
+
     //Overlay.shared.showAlert(v, width: .ratio(value: 0.8))
     //Overlay.entrySheet(v)
 //    Overlay.entryAlert(v)
@@ -129,7 +129,25 @@ class TestWindowVC: UIViewController {
 //    }
 //    Overlay.entryHide { print("did hide") }
 
-    Overlay.dropSuccess("asdf")
+//    Overlay.dropSuccess("asdf")
+
+//    Overlay.popAlert(title: "ttl", message: "msg", confirm: "xxx") {
+//      print("got it")
+//    }
+//    Overlay.popConfirm(title: "ttl", message: "msg") { (result) in
+//      print(result)
+//    }
+//    Overlay.popInput(title: "ttl", message: "msg", text: "adsf") { (result, text) in
+//      print("\(result) H\(text)H")
+//    }
+    Overlay.popOptions(title: "ttl", message: "msg", options: ["AA","BB"]) { (index, option) in
+      print("\(index) H\(option)H")
+    }
+
+    Async.main(after: 3.0) {
+      let v = TestEntryView()
+      Overlay.entrySheet(v)
+    }
 
 //    Overlay.hudActivity()
 //    Overlay.hudActivity(view: nil, info: nil)
