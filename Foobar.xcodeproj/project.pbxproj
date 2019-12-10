@@ -51,6 +51,8 @@
 		BB91D2CB238E35160048D384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB91D2C9238E35160048D384 /* LaunchScreen.storyboard */; };
 		BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB91D2DF238E451E0048D384 /* UIViewExt.swift */; };
 		BB9D5CED2394FC3D00FB4BD1 /* FBPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D5CEC2394FC3D00FB4BD1 /* FBPersonModel.swift */; };
+		BBBB0608239F2DB60004613C /* ThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB0607239F2DB60004613C /* ThroughView.swift */; };
+		BBBB060A239F403B0004613C /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB0609239F403B0004613C /* Overlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +105,8 @@
 		BB91D2CC238E35160048D384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB91D2DF238E451E0048D384 /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		BB9D5CEC2394FC3D00FB4BD1 /* FBPersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBPersonModel.swift; sourceTree = "<group>"; };
+		BBBB0607239F2DB60004613C /* ThroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughView.swift; sourceTree = "<group>"; };
+		BBBB0609239F403B0004613C /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		F83B494BE851057FCED14615 /* Pods-Foobar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.debug.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				0A19DCD3239B449500CA5D24 /* HUD.swift */,
+				BBBB0609239F403B0004613C /* Overlay.swift */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			children = (
 				0A384B4A239EA8E600CBE1F8 /* TestWindowVC.swift */,
 				0A384B4B239EA8E600CBE1F8 /* TestWindowVC.xib */,
+				BBBB0607239F2DB60004613C /* ThroughView.swift */,
 			);
 			name = TestWindow;
 			sourceTree = "<group>";
@@ -441,7 +447,9 @@
 				BB6C9A61239DF3F300822180 /* Core.swift in Sources */,
 				BB46289A239E5CDF00989126 /* TestViewStateVC.swift in Sources */,
 				0A53303B238EC957009B5375 /* DataStringExt.swift in Sources */,
+				BBBB060A239F403B0004613C /* Overlay.swift in Sources */,
 				BB46288B239E478E00989126 /* TestReusableTC.swift in Sources */,
+				BBBB0608239F2DB60004613C /* ThroughView.swift in Sources */,
 				0A19DCDB239B465300CA5D24 /* IconLabel.swift in Sources */,
 				BB462887239E477900989126 /* TestReusableVC.swift in Sources */,
 				BB462893239E5BE900989126 /* StatefulPageMachine.swift in Sources */,

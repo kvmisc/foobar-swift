@@ -19,6 +19,16 @@ func TopmostWindow() -> UIWindow {
       return window
     }
   }
+  // Should not be here
+  return UIWindow()
+}
+func MainWindow() -> UIWindow {
+  if let delegate = UIApplication.shared.delegate as? AppDelegate {
+    if let window = delegate.window {
+      return window
+    }
+  }
+  // Should not be here
   return UIWindow()
 }
 
@@ -34,4 +44,10 @@ func TopViewController(_ controller: UIViewController?) -> UIViewController? {
     return TopViewController(detail)
   }
   return controller
+}
+
+func HideKeyboard() {
+  for window in UIApplication.shared.windows {
+    window.endEditing(true)
+  }
 }

@@ -40,7 +40,6 @@ target 'Foobar' do
   pod 'TextAttributes'
   pod 'IHKeyboardAvoiding'
   pod 'SwiftEntryKit'
-  pod 'SwiftyDrop'
 
   pod 'Alamofire'
   pod 'MBProgressHUD'
