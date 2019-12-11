@@ -8,9 +8,8 @@
 
 import UIKit
 import SnapKit
-import WLEmptyState
 
-class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
+class FBRootVC: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var imageView: UIImageView!

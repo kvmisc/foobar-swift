@@ -26,7 +26,6 @@ target 'Foobar' do
   use_frameworks!
 
   pod 'AppVersionMonitor'
-  pod 'Then'
   pod 'DeviceKit'
   pod "AsyncSwift"
 
@@ -34,16 +33,11 @@ target 'Foobar' do
   pod 'Reusable'
   pod 'TextAttributes'
   pod 'SwiftEntryKit'
-  pod 'IHKeyboardAvoiding'
   pod 'Static'
+  pod 'IHKeyboardAvoiding'
 
-  pod 'RealmSwift'
-
-  pod 'Cache'
+  pod 'Then'
   pod 'SwiftDate'
-
-  pod 'SQLite.swift'
-  pod 'GRDB.swift'
 
   pod 'Alamofire'
   pod 'MBProgressHUD'
@@ -53,6 +47,10 @@ target 'Foobar' do
 
   pod 'YYText'
 
-  pod 'WLEmptyState'
+  pod 'Cache'
+
+#  pod 'RealmSwift'
+#  pod 'SQLite.swift'
+#  pod 'GRDB.swift'
 
 end

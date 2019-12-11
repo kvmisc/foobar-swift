@@ -144,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				0A19DCD5239B44A800CA5D24 /* Message */,
-				0A19DCDA239B465300CA5D24 /* IconLabel.swift */,
 				BB46288F239E54A600989126 /* PageState */,
+				0A19DCDA239B465300CA5D24 /* IconLabel.swift */,
 				0A19DCD6239B44BB00CA5D24 /* FlowView */,
 			);
 			path = Common;
