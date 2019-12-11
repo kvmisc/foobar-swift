@@ -19,6 +19,19 @@ class FBRootVC: UIViewController, WLEmptyStateDataSource, WLEmptyStateDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    let grayView = UIView()
+    grayView.backgroundColor = .darkGray
+    grayView.frame = ccr(50, 50, 200, 200)
+    view.addSubview(grayView)
+
+    let v = UIView()
+    v.backgroundColor = .red
+    v.frame = ccr(50, 50)
+    grayView.addSubview(v)
+    //view.addSubview(v)
+    view.extAddSubviewIfNeeded(v)
+
+
     let imgTall = cci("tall")!
     let imgWide = cci("wide")!
     let imgXyz = cci("start")!

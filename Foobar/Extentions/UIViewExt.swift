@@ -32,6 +32,12 @@ extension UIView {
       addSubview(view)
     }
   }
+  func extAddSubviewIfNeeded(_ view: UIView) {
+    if view.superview != self {
+      view.removeFromSuperview()
+      addSubview(view)
+    }
+  }
   func extRemoveAllSubviews() {
     subviews.forEach { (view) in
       view.removeFromSuperview()

@@ -7,19 +7,52 @@
 //
 
 import UIKit
+import Async
 
 class TestViewStateVC: UIViewController {
 
-  var pageMachine: StatefulPageMachine = StatefulPageMachine()
+  let pageMachine: StatefulPageMachine = StatefulPageMachine()
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     view.backgroundColor = .brown
 
-//    self.loadingView = nil
-//    self.loadingView = UIView()
-//
-//    print(self.loadingView)
+    pageMachine.view = view
+
+    let loadingView = UIView()
+    loadingView.backgroundColor = .red
+    pageMachine.loadingView = loadingView
+
+    let errorView = UIView()
+    errorView.backgroundColor = .green
+    pageMachine.errorView = errorView
+
+    let emptyView = UIView()
+    emptyView.backgroundColor = .blue
+    pageMachine.emptyView = emptyView
+
+    pageMachine.setupInitialState()
+
   }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+
+    pageMachine.startLoading()
+    doLoading()
+  }
+
+  func doLoading() {
+    Async.main(after: 3.0) {
+      self.loadComplete()
+    }
+  }
+  func loadComplete() {
+//    pageMachine.endLoading(true, false)
+//    pageMachine.endLoading(true, true)
+//    pageMachine.endLoading(false, true)
+    pageMachine.endLoading(false, false)
+  }
+
 }

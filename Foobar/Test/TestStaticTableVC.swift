@@ -30,6 +30,8 @@ class TestStaticTableVC: TableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+
+
     tableView.rowHeight = 50
 
     // Note: Required to be set pre iOS11, to support autosizing

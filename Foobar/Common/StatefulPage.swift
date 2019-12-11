@@ -8,29 +8,32 @@
 
 import UIKit
 
-enum StatefulPageState: String {
-  case Content  = "content"
-  case Loading  = "loading"
-  case Error    = "error"
-  case Empty    = "empty"
-}
-
-protocol StatefulPage: AnyObject {
-
-  var pageMachine: StatefulPageMachine { get }
-
-//  var backingView: UIView { get }
-
-  var loadingView: UIView? { get set }
-  var errorView: UIView? { get set }
-  var emptyView: UIView? { get set }
-
-  typealias CompletionHandler = () -> Void
-
-  func setupInitialState(_ completion: CompletionHandler?)
-  func startLoading(animated: Bool, completion: CompletionHandler?)
-  func endLoading(animated: Bool, error: Error?, completion: CompletionHandler?)
-
+//enum StatefulPageState: String {
+//  case Content  = "content"
+//  case Loading  = "loading"
+//  case Error    = "error"
+//  case Empty    = "empty"
+//}
+//
+//protocol StatefulPage: AnyObject {
+//
+////  var pageMachine: StatefulPageMachine { get }
+////  var currentState: StatefulPageState { get }
+////  var lastState: StatefulPageState { get }
+//
+////  var backingView: UIView { get }
+//
+//  var currentState: StatefulPageState { get }
+//
+//  var loadingView: UIView? { get set }
+//  var errorView: UIView? { get set }
+//  var emptyView: UIView? { get set }
+//
+//  func setupInitialState()
+//  func startLoading()           // loading
+//  func endLoadingWithContent()  // hasContent ? content : empty
+//  func endLoadingWithError()    // error
+//
 //  func hasContent() -> Bool
 //  func handleErrorWhenContentAvailable(_ error: Error)
-}
+//}
