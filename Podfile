@@ -48,6 +48,8 @@ target 'Foobar' do
 
   pod 'YYText'
 
+  pod 'Static'
+
   pod 'WLEmptyState'
 
 end
