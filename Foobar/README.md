@@ -18,7 +18,7 @@ aa = value
 }
 
 
-translatesAutoresizingMaskIntoConstraints 的作用？
+
 
 
 无默认值，每个参数必须传，可以省略标签
@@ -28,22 +28,11 @@ translatesAutoresizingMaskIntoConstraints 的作用？
 有默认值，想依次传值，可以省略标签
 
 
-Entry Name
-Window Level
-Display Position
-Display Duration
-Lifecycle Events
-Shadow
-Round Corners
-Border
-Status Bar
+translatesAutoresizingMaskIntoConstraints 的作用？
+sqlite vs realm ?
+cache ?
+App Routing
 
-Precedence
-Position Constraints
-User Interaction
-Haptic Feedback
-Display Mode
-Background Style
-Animations
-Pop Behavior
-Swiping and Rubber Banding
+SwiftTheme
+SKPhotoBrowser
+SGPagingView

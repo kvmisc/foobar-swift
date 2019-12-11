@@ -35,10 +35,15 @@ target 'Foobar' do
   pod 'TextAttributes'
   pod 'SwiftEntryKit'
   pod 'IHKeyboardAvoiding'
+  pod 'Static'
+
+  pod 'RealmSwift'
 
   pod 'Cache'
   pod 'SwiftDate'
+
   pod 'SQLite.swift'
+  pod 'GRDB.swift'
 
   pod 'Alamofire'
   pod 'MBProgressHUD'
@@ -47,8 +52,6 @@ target 'Foobar' do
   pod 'SwiftyJSON'
 
   pod 'YYText'
-
-  pod 'Static'
 
   pod 'WLEmptyState'
 
