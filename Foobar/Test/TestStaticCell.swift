@@ -22,5 +22,6 @@ class TestStaticCell: UITableViewCell, Cell {
   }
   func configure(row: Row) {
     titleLabel.text = row.text
+    titleLabel.text = row.context?["name"] as? String
   }
 }

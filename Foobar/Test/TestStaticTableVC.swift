@@ -41,7 +41,17 @@ class TestStaticTableVC: TableViewController {
     dataSource.sections = [
 
       Section(header: "asdf", rows: [
-        Row(text: "Hello")
+        Row(text: "Hello"),
+        Row(text: "aa", detailText: "detail", selection: {
+          print("selected")
+        }, image: nil, accessory: .disclosureIndicator, cellClass: TestStaticCell.self, context: ["name":"kevin"], editActions: [
+          Row.EditAction(title: "Warn", backgroundColor: .orange, selection: { [unowned self] (indexPath) in
+            self.showAlert(title: "Warned at indexPath: \(indexPath).")
+          }),
+          Row.EditAction(title: "xxx", style: .destructive, backgroundColor: .green, backgroundEffect: nil, selection: { (ip) in
+            print("edit \(ip)")
+          })
+        ], uuid: "uuid", accessibilityIdentifier: nil)
       ], footer: .view(customFooter)),
 
       Section(header: "Styles", rows: [
