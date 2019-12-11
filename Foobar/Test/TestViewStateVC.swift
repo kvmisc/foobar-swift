@@ -11,35 +11,37 @@ import Async
 
 class TestViewStateVC: UIViewController {
 
-  let pageMachine: StatefulPageMachine = StatefulPageMachine()
+  let pageState = PageState()
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     view.backgroundColor = .brown
 
-    pageMachine.view = view
+    pageState.view = view
 
-    let loadingView = UIView()
-    loadingView.backgroundColor = .red
-    pageMachine.loadingView = loadingView
+//    let loadingView = UIView()
+//    loadingView.backgroundColor = .red
+//    pageMachine.loadingView = loadingView
+//
+//    let errorView = UIView()
+//    errorView.backgroundColor = .green
+//    pageMachine.errorView = errorView
+//
+//    let emptyView = UIView()
+//    emptyView.backgroundColor = .blue
+//    pageMachine.emptyView = emptyView
 
-    let errorView = UIView()
-    errorView.backgroundColor = .green
-    pageMachine.errorView = errorView
-
-    let emptyView = UIView()
-    emptyView.backgroundColor = .blue
-    pageMachine.emptyView = emptyView
-
-    pageMachine.setupInitialState()
+    print("init")
+    pageState.setupInitialState()
 
   }
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
 
-    pageMachine.startLoading()
+    print("loading")
+    pageState.startLoading()
     doLoading()
   }
 
@@ -49,10 +51,11 @@ class TestViewStateVC: UIViewController {
     }
   }
   func loadComplete() {
-//    pageMachine.endLoading(true, false)
-//    pageMachine.endLoading(true, true)
-//    pageMachine.endLoading(false, true)
-    pageMachine.endLoading(false, false)
+    print("complete")
+//    pageState.endLoading(true, false)
+//    pageState.endLoading(true, true)
+//    pageState.endLoading(false, true)
+    pageState.endLoading(false, true)
   }
 
 }
