@@ -32,17 +32,35 @@ class TestViewStateVC: UIViewController {
 //    emptyView.backgroundColor = .blue
 //    pageMachine.emptyView = emptyView
 
-    print("init")
-    pageState.setupInitialState()
+//    print("init")
+//    pageState.setupInitialState()
 
   }
+
+  let bt: UIButton = {
+    let ret = UIButton(type: .custom)
+    ret.extSetImage(cci("settings"))
+    ret.extSetTitle("asdf")
+    ret.extSetBorder()
+    ret.imageView?.extSetBorder(width: 1.0, color: .darkGray)
+    ret.titleLabel?.extSetBorder(width: 1.0, color: .darkGray)
+    return ret
+  }()
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
 
-    print("loading")
-    pageState.startLoading()
-    doLoading()
+    view.addSubview(bt)
+    bt.snp.makeConstraints { (make) in
+      make.center.equalToSuperview()
+    }
+
+    bt.extCenterHorizontally(5)
+    bt.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+
+//    print("loading")
+//    pageState.startLoading()
+//    doLoading()
   }
 
   func doLoading() {

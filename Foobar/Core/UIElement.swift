@@ -81,3 +81,8 @@ func ccr(_ width: CGFloat, _ height: CGFloat) -> CGRect {
 func ccr(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
   return CGRect(x: x, y: y, width: width, height: height)
 }
+
+// MARK: EdgeInsets
+func cce(_ top: CGFloat, _ left: CGFloat, _ bottom: CGFloat, _ right: CGFloat) -> UIEdgeInsets {
+  return UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
+}

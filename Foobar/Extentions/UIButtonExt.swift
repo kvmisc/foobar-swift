@@ -81,4 +81,14 @@ extension UIButton {
     contentEdgeInsets = UIEdgeInsets(top: offsetV, left: offsetH, bottom: offsetV, right: offsetH)
   }
 
+  // 多次调用时, 效果会叠加
+  func extExpand(_ top: CGFloat, _ left: CGFloat, _ bottom: CGFloat, _ right: CGFloat) {
+    var insets = contentEdgeInsets
+    insets.top += top
+    insets.left += left
+    insets.bottom += bottom
+    insets.right += right
+    contentEdgeInsets = insets
+  }
+
 }
