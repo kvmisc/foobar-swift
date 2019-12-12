@@ -27,7 +27,7 @@ aa = value
 有默认值，部分参数不想传，不能省略标签
 有默认值，想依次传值，可以省略标签
 
-
+Static 无行高
 translatesAutoresizingMaskIntoConstraints 的作用？
 sqlite vs realm ?
 cache ?

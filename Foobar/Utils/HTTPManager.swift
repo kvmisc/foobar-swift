@@ -71,32 +71,32 @@ class HTTPManager: NSObject {
                            parameters: parameters,
                            encoding: encoding,
                            headers: headers).validate().responseData() { [weak self](response) in
-                            guard let myself = self else { return }
+                            guard let self = self else { return }
 
                             switch response.result {
 
                             case .success(let data):
-                              myself.parseResponse(response, data, context, completion)
+                              self.parseResponse(response, data, context, completion)
 
                             case .failure:
                               if let error = response.result.error as NSError?, error.code == NSURLErrorCancelled {
                                 // 因取消而产生的错误
-                                completion(response, [:], myself.makeError(reason: FailureReason.Cancelled.rawValue), context)
+                                completion(response, [:], self.makeError(reason: FailureReason.Cancelled.rawValue), context)
                               } else {
-                                if let reachability = myself.reachability,
+                                if let reachability = self.reachability,
                                   reachability.networkReachabilityStatus != .unknown,
                                   !reachability.isReachable
                                 {
                                   // 有 reachability, 有状态, 状态是无法访问网络
-                                  completion(response, [:], myself.makeError(reason: FailureReason.NetworkError.rawValue), context)
+                                  completion(response, [:], self.makeError(reason: FailureReason.NetworkError.rawValue), context)
                                 } else {
-                                  completion(response, [:], myself.makeError(reason: FailureReason.HTTPError.rawValue), context)
+                                  completion(response, [:], self.makeError(reason: FailureReason.HTTPError.rawValue), context)
                                 }
                               }
 
                             }
 
-                            myself.managers.remove(manager)
+                            self.managers.remove(manager)
     }
   }
 
