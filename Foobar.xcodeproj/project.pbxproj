@@ -140,7 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				BBB14E772394A1C400E6E5D9 /* Network */,
-				BBE7DCB323A23BE7009A650F /* ExpirePool.swift */,
+				BBE7DCB523A23DD7009A650F /* ExpirePool */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -343,6 +343,14 @@
 				0A01F7682392400800A6E5E6 /* HTTPManager.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		BBE7DCB523A23DD7009A650F /* ExpirePool */ = {
+			isa = PBXGroup;
+			children = (
+				BBE7DCB323A23BE7009A650F /* ExpirePool.swift */,
+			);
+			name = ExpirePool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
