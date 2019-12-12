@@ -32,9 +32,7 @@ class PageStateView: UIView {
   }()
 
   var widthConstraint: MetricConstraint = .Ratio(value: 0.8) {
-    didSet {
-      setNeedsUpdateConstraints()
-    }
+    didSet { setNeedsUpdateConstraints() }
   }
 
   override func updateConstraints() {

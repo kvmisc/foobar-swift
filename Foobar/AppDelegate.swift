@@ -13,6 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
+//  func doit() {
+//    let ary: [Int] = [1]
+//    guard !ary.isEmpty else { return }
+//    print(ary)
+//  }
+
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     let window = UIWindow()

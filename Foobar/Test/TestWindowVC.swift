@@ -70,8 +70,11 @@ class TestWindowVC: UIViewController {
     //testView.theme_backgroundColor = ["#F00", "#0F0"]
     testView.theme_backgroundColor = "view.bg"
 
-
-    print(testView.value(forKeyPath: "jklv"))
+    if !testView.isHidden {
+      print("aa")
+    } else {
+      print("bb")
+    }
 
 //    Async.main(after: 1) {
 //      print("xxx")

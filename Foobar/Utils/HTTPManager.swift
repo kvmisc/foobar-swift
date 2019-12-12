@@ -85,7 +85,7 @@ class HTTPManager: NSObject {
                               } else {
                                 if let reachability = myself.reachability,
                                   reachability.networkReachabilityStatus != .unknown,
-                                  !(reachability.isReachable)
+                                  !reachability.isReachable
                                 {
                                   // 有 reachability, 有状态, 状态是无法访问网络
                                   completion(response, [:], myself.makeError(reason: FailureReason.NetworkError.rawValue), context)
@@ -105,7 +105,7 @@ class HTTPManager: NSObject {
                      _ context: Any?,
                      _ completion: CompletionHandler)
   {
-    if !(data.isEmpty) {
+    if !data.isEmpty {
       do {
         let json: Any = try JSONSerialization.jsonObject(with: data, options: [])
 

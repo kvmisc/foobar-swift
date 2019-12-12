@@ -24,15 +24,15 @@ extension UIViewController {
 extension UINavigationController {
   func extPopViewController(_ count: Int, _ animated: Bool) {
     let vcCount = viewControllers.count
-    if vcCount > 1 {
-      if count == 1 {
-        popViewController(animated: animated)
-      } else if count > 1 {
-        if count >= (vcCount - 1) {
-          popToRootViewController(animated: animated)
-        } else {
-          popToViewController(viewControllers[vcCount-count-1], animated: animated)
-        }
+    guard vcCount > 1 else { return }
+
+    if count == 1 {
+      popViewController(animated: animated)
+    } else if count > 1 {
+      if count >= (vcCount - 1) {
+        popToRootViewController(animated: animated)
+      } else {
+        popToViewController(viewControllers[vcCount-count-1], animated: animated)
       }
     }
   }

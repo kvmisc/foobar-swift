@@ -109,8 +109,8 @@ class Overlay {
   }
   static func hudHide(view: UIView? = nil, animated: Bool = false) {
     MBProgressHUD(for: MainWindow())?.hide(animated: animated)
-    if let inView = view {
-      MBProgressHUD(for: inView)?.hide(animated: animated)
+    if let view = view {
+      MBProgressHUD(for: view)?.hide(animated: animated)
     }
   }
 

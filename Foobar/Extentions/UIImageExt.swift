@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
 
-  // TODO: 圆角/解码
+  // TODO: 圆角
 
   // 图片 scale 为屏幕 scale
   static func extColored(_ color: UIColor, _ size: CGSize) -> UIImage {
@@ -32,10 +32,14 @@ extension UIImage {
   }
 
   func extScaleToFill(_ size: CGSize, _ force: Bool = false) -> UIImage {
-    if self.size.width.extEqual(size.width) && self.size.height.extEqual(size.height) {
+    if self.size.width.extEqual(size.width)
+      && self.size.height.extEqual(size.height)
+    {
       return self
     }
-    if (self.size.width < size.width) && (self.size.height < size.height) {
+    if self.size.width < size.width
+      && self.size.height < size.height
+    {
       if !force { return self }
     }
 
@@ -46,10 +50,14 @@ extension UIImage {
     }
   }
   func extScaleToAspectFit(_ size: CGSize, _ force: Bool = false) -> UIImage {
-    if self.size.width.extEqual(size.width) && self.size.height.extEqual(size.height) {
+    if self.size.width.extEqual(size.width)
+      && self.size.height.extEqual(size.height)
+    {
       return self
     }
-    if (self.size.width < size.width) && (self.size.height < size.height) {
+    if self.size.width < size.width
+      && self.size.height < size.height
+    {
       if !force { return self }
     }
 
@@ -62,10 +70,14 @@ extension UIImage {
     }
   }
   func extScaleToAspectFill(_ size: CGSize, _ force: Bool = false) -> UIImage {
-    if self.size.width.extEqual(size.width) && self.size.height.extEqual(size.height) {
+    if self.size.width.extEqual(size.width)
+      && self.size.height.extEqual(size.height)
+    {
       return self
     }
-    if (self.size.width < size.width) && (self.size.height < size.height) {
+    if self.size.width < size.width
+      && self.size.height < size.height
+    {
       if !force { return self }
     }
 

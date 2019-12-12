@@ -35,20 +35,15 @@ class Path {
   }
 
   static func bundle(_ relativePath: String = "", _ bundle: Bundle = .main) -> String {
-    if let bundlePath = bundle.resourcePath {
-      return bundlePath.extAppendingPathComponent(relativePath)
-    }
-    return ""
+    return bundle.resourcePath?.extAppendingPathComponent(relativePath) ?? ""
   }
   static func document(_ relativePath: String = "") -> String {
     let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-    if !(paths.isEmpty) {
-      return paths[0].extAppendingPathComponent(relativePath)
-    }
-    return ""
+    guard !paths.isEmpty else { return "" }
+    return paths[0].extAppendingPathComponent(relativePath)
   }
   static func user(_ uid: String, _ relativePath: String = "") -> String {
-    var path = self.document()
+    var path = document()
     path = path.extAppendingPathComponent("Users")
     path = path.extAppendingPathComponent(uid)
     path = path.extAppendingPathComponent(relativePath)

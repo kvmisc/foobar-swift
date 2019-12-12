@@ -12,15 +12,13 @@ import UIKit
 extension String {
 
   static func extRandomString(_ length: Int) -> String {
-    if length > 0 {
-      let base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-      var result = ""
-      for _ in 1...length {
-        result.append(base.randomElement()!)
-      }
-      return result
+    guard length > 0 else { return "" }
+    let base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    var result = ""
+    for _ in 1...length {
+      result.append(base.randomElement()!)
     }
-    return ""
+    return result
   }
 
   func extLocalized(_ comment: String = "") -> String {
@@ -197,25 +195,19 @@ extension String {
 extension String {
   // 第 xxx 个字符, 第一个字符序号是 0
   func extSubstring(at: Int) -> String {
-    if at >= 0 {
-      return extSubstring(from: at, length: 1)
-    }
-    return ""
+    guard at >= 0  else { return "" }
+    return extSubstring(from: at, length: 1)
   }
 
   // 前 xxx 个字符
   func extSubstring(leading: Int) -> String {
-    if leading > 0 {
-      return String(prefix(leading))
-    }
-    return ""
+    guard leading > 0  else { return "" }
+    return String(prefix(leading))
   }
   // 后 xxx 个字符
   func extSubstring(trailing: Int) -> String {
-    if trailing > 0 {
-      return String(suffix(trailing))
-    }
-    return ""
+    guard trailing > 0 else { return "" }
+    return String(suffix(trailing))
   }
 
   // 去掉前 xxx 个字符, 后 xxx 个字符
@@ -232,28 +224,27 @@ extension String {
 
   // 从 xxx 到 xxx, 返回区间内的
   func extSubstring(from: Int, to: Int) -> String {
-    if from < to {
-      if to <= 0 {
-        // from -1, to 0
-      } else {
-        let begin = max(from, 0)
-        return extSubstring(from: begin, length: to-begin)
-      }
+    guard from < to else { return "" }
+    if to <= 0 {
+      // from -1, to 0
+      return ""
+    } else {
+      let begin = max(from, 0)
+      return extSubstring(from: begin, length: to-begin)
     }
-    return ""
   }
   // 从 xxx 开始, 长度 xxx, 仅当长度不足时, 返回长度才会变小, 当起点为负, 从 0 开始数长度
   func extSubstring(from: Int, length: Int) -> String {
-    if length > 0 {
-      if let fromIndex = index(startIndex, offsetBy: max(from, 0), limitedBy: endIndex) {
-        if let toIndex = index(fromIndex, offsetBy: length, limitedBy: endIndex) {
-          return String(self[fromIndex..<toIndex])
-        } else {
-          return String(self[fromIndex..<endIndex])
-        }
+    guard length > 0 else { return "" }
+    if let fromIndex = index(startIndex, offsetBy: max(from, 0), limitedBy: endIndex) {
+      if let toIndex = index(fromIndex, offsetBy: length, limitedBy: endIndex) {
+        return String(self[fromIndex..<toIndex])
+      } else {
+        return String(self[fromIndex..<endIndex])
       }
+    } else {
+      return ""
     }
-    return ""
   }
 
   #if DEBUG
