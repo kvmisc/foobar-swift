@@ -33,9 +33,28 @@ sqlite vs realm ?
 cache ?
 App Routing
 
-
-Kingfisher SDWebImage?
 ObjectMapper
 SwiftTheme
 SKPhotoBrowser
 SGPagingView
+
+
+#Animation
+#App Routing
+#JSON
+#Dependency Injection
+#Events
+#Images
+# Alert: 各种弹窗
+# Button: 各种按钮
+# Form: 复杂表单
+# Label: 各种文字控件
+# Menu: 各种菜单、抽屉等
+# Pagination: 分页控件和分页控制器
+# Permissions: 管理设备权限
+# Tab: 标签和标签管理器
+# Transition: 页面转换
+# UICollectionView
+# UITableView
+# Walkthrough: 引导页
+# Validation: 验证输入

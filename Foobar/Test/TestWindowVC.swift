@@ -10,6 +10,7 @@ import UIKit
 import Async
 import TextAttributes
 import YYText
+import YYCache
 
 class TestWindowVC: UIViewController {
 
@@ -100,6 +101,18 @@ class TestWindowVC: UIViewController {
     Async.main(after: 2) {
       print("asfd")
     }
+
+
+    let cache = YYDiskCache(path: Path.document("asdf.ch"))
+    let obj = cache?.object(forKey: "kk") as? TestCodingObject ?? TestCodingObject()
+
+    print("\(obj.name) \(obj.age)")
+
+//    let obj = TestCodingObject()
+//    obj.name = "Kevin"
+//    obj.age = 17
+//    print("\(obj.name) \(obj.age)")
+//    cache?.setObject(obj, forKey: "kk")
 
 
 //    view.addSubview(tf)
