@@ -13,6 +13,7 @@ import YYText
 
 class TestWindowVC: UIViewController {
 
+  @IBOutlet weak var testView: UIView!
   let tf: UITextField = {
     let ret = UITextField()
     ret.frame = ccr(50, 160, 100, 50)
@@ -73,6 +74,8 @@ class TestWindowVC: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    print(testView.value(forKeyPath: "jklv"))
 
 //    Async.main(after: 1) {
 //      print("xxx")

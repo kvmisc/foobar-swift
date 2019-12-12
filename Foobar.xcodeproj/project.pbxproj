@@ -61,6 +61,8 @@
 		BBE7DCB223A23351009A650F /* TestCodingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCB123A23351009A650F /* TestCodingObject.swift */; };
 		BBE7DCB423A23BE7009A650F /* ExpirePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCB323A23BE7009A650F /* ExpirePool.swift */; };
 		BBE7DCB823A23EF7009A650F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCB723A23EF7009A650F /* BaseViewController.swift */; };
+		BBE7DCDE23A24C9B009A650F /* TestCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCDD23A24C9B009A650F /* TestCircleView.swift */; };
+		BBE7DCE023A25423009A650F /* TestLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCDF23A25423009A650F /* TestLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +125,8 @@
 		BBE7DCB123A23351009A650F /* TestCodingObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCodingObject.swift; sourceTree = "<group>"; };
 		BBE7DCB323A23BE7009A650F /* ExpirePool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpirePool.swift; sourceTree = "<group>"; };
 		BBE7DCB723A23EF7009A650F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BBE7DCDD23A24C9B009A650F /* TestCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCircleView.swift; sourceTree = "<group>"; };
+		BBE7DCDF23A25423009A650F /* TestLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLabel.swift; sourceTree = "<group>"; };
 		F83B494BE851057FCED14615 /* Pods-Foobar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.debug.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,6 +184,8 @@
 			children = (
 				0A384B4A239EA8E600CBE1F8 /* TestWindowVC.swift */,
 				0A384B4B239EA8E600CBE1F8 /* TestWindowVC.xib */,
+				BBE7DCDF23A25423009A650F /* TestLabel.swift */,
+				BBE7DCDD23A24C9B009A650F /* TestCircleView.swift */,
 				BBE7DCB123A23351009A650F /* TestCodingObject.swift */,
 				BBBB0607239F2DB60004613C /* ThroughView.swift */,
 				BB5D0D8A239F655B002CEA09 /* TestEntryView.swift */,
@@ -509,9 +515,11 @@
 				BB8D53D42399E04A008BA419 /* Base64.swift in Sources */,
 				BBE7DCB423A23BE7009A650F /* ExpirePool.swift in Sources */,
 				BBA6782723A07AB100791EEA /* TestStaticTableVC.swift in Sources */,
+				BBE7DCDE23A24C9B009A650F /* TestCircleView.swift in Sources */,
 				0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */,
 				BB8D53D22399DFFB008BA419 /* Path.swift in Sources */,
 				0A53303D238EC965009B5375 /* StringExt.swift in Sources */,
+				BBE7DCE023A25423009A650F /* TestLabel.swift in Sources */,
 				BB8A3A21239DD5A000DF3125 /* TestMultiLineButton.swift in Sources */,
 				BB6C9A63239DF52400822180 /* RichText.swift in Sources */,
 				BB6C9A65239E06DA00822180 /* TestThen.swift in Sources */,

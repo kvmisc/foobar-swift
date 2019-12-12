@@ -26,6 +26,8 @@ target 'Foobar' do
   pod 'YYModel'
   pod 'SwiftyJSON'
 
+  pod 'SwiftTheme'
+
   pod 'YYText'
 
   pod 'Cache'
