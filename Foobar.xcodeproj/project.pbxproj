@@ -25,6 +25,9 @@
 		0A768A4E239955A90027A68A /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A768A4D239955A90027A68A /* Metrics.swift */; };
 		0A9B191923A12E47008906F0 /* TestViewStateRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9B191823A12E47008906F0 /* TestViewStateRootVC.swift */; };
 		0A9B191B23A13434008906F0 /* PageStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9B191A23A13434008906F0 /* PageStateView.swift */; };
+		0AACE9C223A27497004A1BC1 /* theme_red.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AACE9C123A27497004A1BC1 /* theme_red.plist */; };
+		0AACE9C423A274DB004A1BC1 /* theme_blue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AACE9C323A274DB004A1BC1 /* theme_blue.plist */; };
+		0AACE9C623A27A6A004A1BC1 /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AACE9C523A27A6A004A1BC1 /* ToolBar.swift */; };
 		51ED5B58178026AF3ADCE160 /* Pods_Foobar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */; };
 		BB462887239E477900989126 /* TestReusableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB462885239E477900989126 /* TestReusableVC.swift */; };
 		BB462888239E477900989126 /* TestReusableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB462886239E477900989126 /* TestReusableVC.xib */; };
@@ -85,6 +88,9 @@
 		0A768A4D239955A90027A68A /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		0A9B191823A12E47008906F0 /* TestViewStateRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewStateRootVC.swift; sourceTree = "<group>"; };
 		0A9B191A23A13434008906F0 /* PageStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStateView.swift; sourceTree = "<group>"; };
+		0AACE9C123A27497004A1BC1 /* theme_red.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_red.plist; sourceTree = "<group>"; };
+		0AACE9C323A274DB004A1BC1 /* theme_blue.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_blue.plist; sourceTree = "<group>"; };
+		0AACE9C523A27A6A004A1BC1 /* ToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
 		2BCD74F1A55A7280F3DB3800 /* Pods-Foobar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.release.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.release.xcconfig"; sourceTree = "<group>"; };
 		B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foobar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB462885239E477900989126 /* TestReusableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReusableVC.swift; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				BBE7DCB723A23EF7009A650F /* BaseViewController.swift */,
+				0AACE9C523A27A6A004A1BC1 /* ToolBar.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -189,6 +196,8 @@
 				BBE7DCB123A23351009A650F /* TestCodingObject.swift */,
 				BBBB0607239F2DB60004613C /* ThroughView.swift */,
 				BB5D0D8A239F655B002CEA09 /* TestEntryView.swift */,
+				0AACE9C123A27497004A1BC1 /* theme_red.plist */,
+				0AACE9C323A274DB004A1BC1 /* theme_blue.plist */,
 			);
 			name = TestWindow;
 			sourceTree = "<group>";
@@ -434,9 +443,11 @@
 				BBA6782C23A07E8A00791EEA /* TestStaticCell.xib in Resources */,
 				BBA6782823A07AB100791EEA /* TestStaticTableVC.xib in Resources */,
 				0A384B4D239EA8E600CBE1F8 /* TestWindowVC.xib in Resources */,
+				0AACE9C223A27497004A1BC1 /* theme_red.plist in Resources */,
 				0A2CF40B2391530D00F914C5 /* FBRootVC.xib in Resources */,
 				0A2CF41A23916DA400F914C5 /* FBRootCell.xib in Resources */,
 				BB462888239E477900989126 /* TestReusableVC.xib in Resources */,
+				0AACE9C423A274DB004A1BC1 /* theme_blue.plist in Resources */,
 				BB91D2C8238E35160048D384 /* Assets.xcassets in Resources */,
 				BB46288C239E478E00989126 /* TestReusableTC.xib in Resources */,
 				BB5885A3239E44650051220C /* TestLoadView.xib in Resources */,
@@ -520,6 +531,7 @@
 				BB8D53D22399DFFB008BA419 /* Path.swift in Sources */,
 				0A53303D238EC965009B5375 /* StringExt.swift in Sources */,
 				BBE7DCE023A25423009A650F /* TestLabel.swift in Sources */,
+				0AACE9C623A27A6A004A1BC1 /* ToolBar.swift in Sources */,
 				BB8A3A21239DD5A000DF3125 /* TestMultiLineButton.swift in Sources */,
 				BB6C9A63239DF52400822180 /* RichText.swift in Sources */,
 				BB6C9A65239E06DA00822180 /* TestThen.swift in Sources */,

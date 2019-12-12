@@ -31,37 +31,31 @@ class PageStateView: UIView {
     return ret
   }()
 
-  enum Edge {
-    case ratio(value: CGFloat)
-    case offset(value: CGFloat)
-    case constant(value: CGFloat)
-    case intrinsic
-  }
-  var edge: Edge = .ratio(value: 0.8) {
+  var widthConstraint: MetricConstraint = .Ratio(value: 0.8) {
     didSet {
       setNeedsUpdateConstraints()
     }
   }
 
   override func updateConstraints() {
-    switch edge {
-    case .ratio(let value):
+    switch widthConstraint {
+    case .Ratio(let value):
       stackView.snp.remakeConstraints { (make) in
         make.center.equalToSuperview()
         make.width.equalToSuperview().multipliedBy(value)
       }
-    case .offset(let value):
+    case .Offset(let value):
       stackView.snp.remakeConstraints { (make) in
         make.centerY.equalToSuperview()
         make.left.equalToSuperview().offset(value)
         make.right.equalToSuperview().offset(-value)
       }
-    case .constant(let value):
+    case .Constant(let value):
       stackView.snp.remakeConstraints { (make) in
         make.center.equalToSuperview()
         make.width.equalTo(value)
       }
-    case .intrinsic:
+    case .Intrinsic:
       stackView.snp.remakeConstraints { (make) in
         make.center.equalToSuperview()
         make.width.lessThanOrEqualToSuperview()

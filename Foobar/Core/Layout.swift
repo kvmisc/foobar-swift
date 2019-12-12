@@ -187,3 +187,14 @@ func floor(_ size: CGSize) -> CGSize {
 func floor(_ rect: CGRect) -> CGRect {
   return CGRect(x: floor(rect.origin.x), y: floor(rect.origin.y), width: floor(rect.size.width), height: floor(rect.size.height))
 }
+
+enum MetricConstraint {
+  // 父视图比例
+  case Ratio(value: CGFloat)
+  // 与父视图距离
+  case Offset(value: CGFloat)
+  // 指定大小
+  case Constant(value: CGFloat)
+  // 视图自身大小
+  case Intrinsic
+}

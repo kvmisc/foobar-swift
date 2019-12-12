@@ -16,6 +16,7 @@ target 'Foobar' do
   pod 'Static'
   pod 'IHKeyboardAvoiding'
   pod 'Kingfisher'
+  pod 'SwiftTheme'
 
   pod 'Then'
   pod 'SwiftDate'
@@ -25,8 +26,6 @@ target 'Foobar' do
   pod 'MJRefresh'
   pod 'YYModel'
   pod 'SwiftyJSON'
-
-  pod 'SwiftTheme'
 
   pod 'YYText'
 

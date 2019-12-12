@@ -10,6 +10,7 @@ import UIKit
 import Async
 import TextAttributes
 import YYText
+import SwiftTheme
 
 class TestWindowVC: UIViewController {
 
@@ -56,24 +57,19 @@ class TestWindowVC: UIViewController {
   }()
   @IBOutlet weak var textLabel: UILabel!
 
+  var isNight: Bool = false
 
-  enum xxx {
-    case main, userInteractive, userInitiated, utility, background, custom(queue: DispatchQueue)
-
-    var queue: DispatchQueue {
-      switch self {
-      case .main: return .main
-      case .userInteractive: return .global(qos: .userInteractive)
-      case .userInitiated: return .global(qos: .userInitiated)
-      case .utility: return .global(qos: .utility)
-      case .background: return .global(qos: .background)
-      case .custom(let queue): return queue
-      }
-    }
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    isNight = !isNight
+    ThemeManager.setTheme(plistName: isNight ? "theme_red" : "theme_blue", path: .mainBundle)
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    //testView.theme_backgroundColor = ["#F00", "#0F0"]
+    testView.theme_backgroundColor = "view.bg"
+
 
     print(testView.value(forKeyPath: "jklv"))
 

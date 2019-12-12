@@ -42,13 +42,13 @@ func ccf(_ size: CGFloat) -> UIFont {
 }
 extension UIFont {
   enum LineSpacingRatio: CGFloat {
-    case min = 0.2
-    case max = 0.45
+    case Min = 0.2
+    case Max = 0.45
   }
-  func extLineSpacing(_ ratio: CGFloat = LineSpacingRatio.min.rawValue) -> CGFloat {
+  func extLineSpacing(_ ratio: CGFloat = LineSpacingRatio.Min.rawValue) -> CGFloat {
     return lineHeight * ratio
   }
-  func extLineHeight(_ ratio: CGFloat = LineSpacingRatio.min.rawValue) -> CGFloat {
+  func extLineHeight(_ ratio: CGFloat = LineSpacingRatio.Min.rawValue) -> CGFloat {
     return lineHeight * (1.0 + ratio)
   }
 }
