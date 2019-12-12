@@ -9,7 +9,6 @@
 import UIKit
 
 class ToolBar: UIView {
-
   var contentView: UIView? = nil {
     willSet { contentView?.removeFromSuperview() }
     didSet {
