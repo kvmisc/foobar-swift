@@ -35,6 +35,7 @@ target 'Foobar' do
   pod 'SwiftEntryKit'
   pod 'Static'
   pod 'IHKeyboardAvoiding'
+  pod 'Kingfisher'
 
   pod 'Then'
   pod 'SwiftDate'
@@ -46,6 +47,7 @@ target 'Foobar' do
   pod 'SwiftyJSON'
 
   pod 'YYText'
+  pod 'YYCache'
 
   pod 'Cache'
 

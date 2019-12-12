@@ -32,8 +32,10 @@ translatesAutoresizingMaskIntoConstraints 的作用？
 sqlite vs realm ?
 cache ?
 App Routing
-SDWebImage?
 
+
+Kingfisher SDWebImage?
+ObjectMapper
 SwiftTheme
 SKPhotoBrowser
 SGPagingView

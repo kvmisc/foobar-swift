@@ -54,9 +54,53 @@ class TestWindowVC: UIViewController {
     return ret
   }()
   @IBOutlet weak var textLabel: UILabel!
-  
+
+
+  enum xxx {
+    case main, userInteractive, userInitiated, utility, background, custom(queue: DispatchQueue)
+
+    var queue: DispatchQueue {
+      switch self {
+      case .main: return .main
+      case .userInteractive: return .global(qos: .userInteractive)
+      case .userInitiated: return .global(qos: .userInitiated)
+      case .utility: return .global(qos: .utility)
+      case .background: return .global(qos: .background)
+      case .custom(let queue): return queue
+      }
+    }
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
+
+//    Async.main(after: 1) {
+//      print("xxx")
+//    }
+
+//    let queue = DispatchQueue(label: "foo", attributes: .concurrent)
+
+//    print("to do")
+//    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+//      print("haha")
+//    }
+//    DispatchQueue.main.asyncAfter(wallDeadline: .now() + 2.0) {
+//      print("haha")
+//    }
+
+    Async.main { () -> Int in
+      return 0
+    }
+    Async.main {
+      print("xx")
+    }
+    Async.main(after: 2) { () -> String in
+      return ""
+    }
+    Async.main(after: 2) {
+      print("asfd")
+    }
+
 
 //    view.addSubview(tf)
 //    view.addSubview(bt)

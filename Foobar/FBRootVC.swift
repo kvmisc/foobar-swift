@@ -36,6 +36,8 @@ class FBRootVC: UIViewController {
     let imgXyz = cci("start")!
     let imgSet = cci("settings")!
 
+    
+
     imageView.extSetBorder()
     imageView.contentMode = .left
 //    let img = UIImage.extColored(.blue, ccs(50))
