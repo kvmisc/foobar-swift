@@ -193,10 +193,7 @@
 				BBE7DCB723A23EF7009A650F /* BaseViewController.swift */,
 				BBE5F1A323A31D2F00DC9978 /* NavBar.swift */,
 				0AACE9C523A27A6A004A1BC1 /* ToolBar.swift */,
-				BB11C65323A3AB7E00008938 /* navbar_back_dark@2x.png */,
-				BB11C65223A3AB7E00008938 /* navbar_back_dark@3x.png */,
-				BB11C65423A3AB7E00008938 /* navbar_back_light@2x.png */,
-				BB11C65523A3AB7E00008938 /* navbar_back_light@3x.png */,
+				0AAD582123A3E43200E62092 /* images */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -230,6 +227,17 @@
 				BB6C9A62239DF52400822180 /* RichText.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		0AAD582123A3E43200E62092 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				BB11C65323A3AB7E00008938 /* navbar_back_dark@2x.png */,
+				BB11C65223A3AB7E00008938 /* navbar_back_dark@3x.png */,
+				BB11C65423A3AB7E00008938 /* navbar_back_light@2x.png */,
+				BB11C65523A3AB7E00008938 /* navbar_back_light@3x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		82E1CCD52881DC49E334EA78 /* Frameworks */ = {

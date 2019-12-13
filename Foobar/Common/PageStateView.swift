@@ -70,7 +70,7 @@ class PageStateLoadingView: PageStateView {
     stackView.addArrangedSubview(infoLabel)
   }
   let indicatorView: UIActivityIndicatorView = {
-    if #available(iOS 13, *) {
+    if #available(iOS 13.0, *) {
       let ret = UIActivityIndicatorView(style: .medium)
       ret.color = .gray
       ret.hidesWhenStopped = false

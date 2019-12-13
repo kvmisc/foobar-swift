@@ -87,7 +87,7 @@ class Overlay {
     hud.bezelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
 
     hud.mode = .customView
-    if #available(iOS 13, *) {
+    if #available(iOS 13.0, *) {
       let aiv = UIActivityIndicatorView(style: .large)
       aiv.color = .white
       aiv.hidesWhenStopped = false

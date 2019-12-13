@@ -66,28 +66,18 @@ class NavBar: UIView {
     addSubview(containerView)
   }
 
-  func setupBackButton() {
-    let button = UIButton(type: .custom)
-    button.extSetImage(cci("navbar_back_light"))
-    leftHConstraint = .Intrinsic(offset: 0.0, minWidth: 40.0)
-    leftVConstraint = .Occupy
-    leftView = button
-  }
-  func setupCloseButton() {
-    let button = UIButton(type: .custom)
-    button.extSetImage(nil)
-    leftView = button
-  }
   func setupLeftButton() {
     let button = UIButton(type: .custom)
     button.extSetTitleFont(UIFont.preferredFont(forTextStyle: .body))
     button.extSetTitleColor(.black)
+    //button.extSetTitle(nil)
     leftView = button
   }
   func setupRightButton() {
     let button = UIButton(type: .custom)
     button.extSetTitleFont(UIFont.preferredFont(forTextStyle: .body))
     button.extSetTitleColor(.black)
+    //button.extSetTitle(nil)
     rightView = button
   }
   func setupTitleLabel() {
@@ -99,6 +89,7 @@ class NavBar: UIView {
     label.numberOfLines = 1
     label.adjustsFontSizeToFitWidth = false
     label.backgroundColor = .clear
+    //label.text = nil
     titleView = label
   }
 
