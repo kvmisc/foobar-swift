@@ -135,10 +135,10 @@ extension UIView {
   {
     layer.masksToBounds = false
 
-    layer.shadowColor = color.cgColor;
+    layer.shadowColor = color.cgColor
     layer.shadowOpacity = Float(opacity)
-    layer.shadowRadius = CGFloat(radius);
-    layer.shadowOffset = offset;
+    layer.shadowRadius = CGFloat(radius)
+    layer.shadowOffset = offset
   }
   // 添加部分圆角图层, 阴影边界会跟着这个图层
   func extRoundedLayer() -> CAShapeLayer? {

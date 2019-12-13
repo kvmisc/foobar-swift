@@ -21,7 +21,7 @@ class NavBar: UIView {
       containerView.extAddSubviewIfNeeded(leftView)
       leftView?.setContentHuggingPriority(.required, for: .horizontal)
       leftView?.setContentCompressionResistancePriority(.required, for: .horizontal)
-      setNeedsLayout()
+      setNeedsUpdateConstraints()
     }
   }
   var rightView: UIView? = nil {
@@ -30,7 +30,7 @@ class NavBar: UIView {
       containerView.extAddSubviewIfNeeded(rightView)
       rightView?.setContentHuggingPriority(.required, for: .horizontal)
       rightView?.setContentCompressionResistancePriority(.required, for: .horizontal)
-      setNeedsLayout()
+      setNeedsUpdateConstraints()
     }
   }
   var titleView: UIView? = nil {
@@ -39,7 +39,7 @@ class NavBar: UIView {
       containerView.extAddSubviewIfNeeded(titleView)
       titleView?.setContentHuggingPriority(.defaultLow, for: .horizontal)
       titleView?.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-      setNeedsLayout()
+      setNeedsUpdateConstraints()
     }
   }
 
@@ -69,7 +69,8 @@ class NavBar: UIView {
   func setupBackButton() {
     let button = UIButton(type: .custom)
     button.extSetImage(cci("navbar_back_light"))
-    leftConstraint = .Intrinsic(offset: 0.0)
+    leftHConstraint = .Intrinsic(offset: 0.0, minWidth: 40.0)
+    leftVConstraint = .Occupy
     leftView = button
   }
   func setupCloseButton() {
@@ -108,21 +109,41 @@ class NavBar: UIView {
 
   static let defaultHeight: CGFloat = 44.0
 
-  var preferredHeight: CGFloat = NavBar.defaultHeight;
+  var preferredHeight: CGFloat = NavBar.defaultHeight {
+    didSet { setNeedsUpdateConstraints() }
+  }
 
 
   enum EdgeHConstraint {
-    case Intrinsic(offset: CGFloat)
+    case Intrinsic(offset: CGFloat, minWidth: CGFloat)
     case Constant(value: CGFloat, offset: CGFloat)
   }
-  var leftConstraint: EdgeHConstraint = .Intrinsic(offset: 8.0)
-  var rightConstraint: EdgeHConstraint = .Intrinsic(offset: 8.0)
+  enum EdgeVConstraint {
+    case Occupy
+    case Top(offset: CGFloat)
+    case Center(offset: CGFloat)
+    case Bottom(offset: CGFloat)
+  }
+  var leftHConstraint: EdgeHConstraint = .Intrinsic(offset: 8.0, minWidth: 0.0) {
+    didSet { setNeedsUpdateConstraints() }
+  }
+  var leftVConstraint: EdgeVConstraint = .Occupy {
+    didSet { setNeedsUpdateConstraints() }
+  }
+  var rightHConstraint: EdgeHConstraint = .Intrinsic(offset: 8.0, minWidth: 0.0) {
+    didSet { setNeedsUpdateConstraints() }
+  }
+  var rightVConstraint: EdgeVConstraint = .Occupy {
+    didSet { setNeedsUpdateConstraints() }
+  }
 
   enum TitleHAlignment {
     case Occupy(margin1: CGFloat, margin2: CGFloat)
     case Center(margin: CGFloat)
   }
-  var titleAlignment: TitleHAlignment = .Center(margin: 5.0)
+  var titleAlignment: TitleHAlignment = .Center(margin: 5.0) {
+    didSet { setNeedsUpdateConstraints() }
+  }
 
 
   override func updateConstraints() {
@@ -133,30 +154,45 @@ class NavBar: UIView {
     }
 
     leftView?.snp.remakeConstraints({ (make) in
-      make.top.bottom.equalToSuperview()
-      switch leftConstraint {
-      case .Intrinsic(let offset):
+      switch leftHConstraint {
+      case .Intrinsic(let offset, let minWidth):
         make.left.equalToSuperview().offset(offset)
+        make.width.greaterThanOrEqualTo(minWidth)
       case .Constant(let value, let offset):
         make.left.equalToSuperview().offset(offset)
         make.width.equalTo(value)
       }
-      if leftView is UIButton {
-        make.width.greaterThanOrEqualTo(44.0)
+      switch leftVConstraint {
+      case .Occupy:
+        make.top.bottom.equalToSuperview()
+      case .Top(let offset):
+        make.top.equalToSuperview().offset(offset)
+      case .Center(let offset):
+        make.centerY.equalToSuperview().offset(offset)
+      case .Bottom(let offset):
+        make.bottom.equalToSuperview().offset(-offset)
       }
     })
 
     rightView?.snp.remakeConstraints({ (make) in
       make.top.bottom.equalToSuperview()
-      switch rightConstraint {
-      case .Intrinsic(let offset):
+      switch rightHConstraint {
+      case .Intrinsic(let offset, let minWidth):
         make.right.equalToSuperview().offset(-offset)
+        make.width.greaterThanOrEqualTo(minWidth)
       case .Constant(let value, let offset):
         make.right.equalToSuperview().offset(-offset)
         make.width.equalTo(value)
       }
-      if rightView is UIButton {
-        make.width.greaterThanOrEqualTo(44.0)
+      switch rightVConstraint {
+      case .Occupy:
+        make.top.bottom.equalToSuperview()
+      case .Top(let offset):
+        make.top.equalToSuperview().offset(offset)
+      case .Center(let offset):
+        make.centerY.equalToSuperview().offset(offset)
+      case .Bottom(let offset):
+        make.bottom.equalToSuperview().offset(-offset)
       }
     })
 

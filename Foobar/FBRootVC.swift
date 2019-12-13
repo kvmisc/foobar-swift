@@ -38,8 +38,9 @@ class FBRootVC: UIViewController {
 //    navbar.titleLabel?.extSetBorder()
 
     //navbar.leftButton?.extSetTitle("AA")
-    navbar.rightButton?.extSetTitle("Done")
+    navbar.rightButton?.extSetTitle("Doneadfasdadfa")
     navbar.titleLabel?.text = "Welcome"
+    navbar.titleAlignment = .Occupy(margin1: 2, margin2: 8)
   }
 }
 

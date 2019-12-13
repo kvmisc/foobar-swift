@@ -12,7 +12,7 @@ class ToolBar: UIView {
 
   static let defaultHeight: CGFloat = 49.0
 
-  var preferredHeight: CGFloat = 0.0;
+  var preferredHeight: CGFloat = 0.0
 
   var contentView: UIView? = nil {
     didSet {
