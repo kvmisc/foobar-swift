@@ -29,15 +29,15 @@ class FBRootVC: UIViewController {
     navbar.extSetBorder()
     navbar.containerView.extSetBorder()
 
-    navbar.setupLeftButton()
+    navbar.setupPopButton()
     navbar.setupRightButton()
     navbar.setupTitleLabel()
 
-    navbar.leftButton?.extSetBorder()
-    navbar.rightButton?.extSetBorder()
-    navbar.titleLabel?.extSetBorder()
+//    navbar.leftButton?.extSetBorder()
+//    navbar.rightButton?.extSetBorder()
+//    navbar.titleLabel?.extSetBorder()
 
-    navbar.leftButton?.extSetTitle("AA")
+    //navbar.leftButton?.extSetTitle("AA")
     navbar.rightButton?.extSetTitle("Done")
     navbar.titleLabel?.text = "Welcome"
   }

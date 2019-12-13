@@ -68,14 +68,13 @@ class NavBar: UIView {
 
   func setupPopButton() {
     let button = UIButton(type: .custom)
-    button.extSetTitleFont(UIFont.preferredFont(forTextStyle: .body))
-    button.extSetTitleColor(.black)
+    button.extSetImage(cci("navbar_back_light"))
+    leftConstraint = .Intrinsic(offset: 0.0)
     leftView = button
   }
   func setupCloseButton() {
     let button = UIButton(type: .custom)
-    button.extSetTitleFont(UIFont.preferredFont(forTextStyle: .body))
-    button.extSetTitleColor(.black)
+    button.extSetImage(nil)
     leftView = button
   }
   func setupLeftButton() {

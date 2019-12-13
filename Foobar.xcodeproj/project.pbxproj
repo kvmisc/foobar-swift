@@ -29,6 +29,10 @@
 		0AACE9C423A274DB004A1BC1 /* theme_blue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AACE9C323A274DB004A1BC1 /* theme_blue.plist */; };
 		0AACE9C623A27A6A004A1BC1 /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AACE9C523A27A6A004A1BC1 /* ToolBar.swift */; };
 		51ED5B58178026AF3ADCE160 /* Pods_Foobar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */; };
+		BB11C65623A3AB7E00008938 /* navbar_back_dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65223A3AB7E00008938 /* navbar_back_dark@3x.png */; };
+		BB11C65723A3AB7E00008938 /* navbar_back_dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65323A3AB7E00008938 /* navbar_back_dark@2x.png */; };
+		BB11C65823A3AB7E00008938 /* navbar_back_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65423A3AB7E00008938 /* navbar_back_light@2x.png */; };
+		BB11C65923A3AB7E00008938 /* navbar_back_light@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65523A3AB7E00008938 /* navbar_back_light@3x.png */; };
 		BB462887239E477900989126 /* TestReusableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB462885239E477900989126 /* TestReusableVC.swift */; };
 		BB462888239E477900989126 /* TestReusableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB462886239E477900989126 /* TestReusableVC.xib */; };
 		BB46288B239E478E00989126 /* TestReusableTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB462889239E478E00989126 /* TestReusableTC.swift */; };
@@ -94,6 +98,10 @@
 		0AACE9C523A27A6A004A1BC1 /* ToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
 		2BCD74F1A55A7280F3DB3800 /* Pods-Foobar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.release.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.release.xcconfig"; sourceTree = "<group>"; };
 		B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foobar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB11C65223A3AB7E00008938 /* navbar_back_dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_dark@3x.png"; sourceTree = "<group>"; };
+		BB11C65323A3AB7E00008938 /* navbar_back_dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_dark@2x.png"; sourceTree = "<group>"; };
+		BB11C65423A3AB7E00008938 /* navbar_back_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_light@2x.png"; sourceTree = "<group>"; };
+		BB11C65523A3AB7E00008938 /* navbar_back_light@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_light@3x.png"; sourceTree = "<group>"; };
 		BB462885239E477900989126 /* TestReusableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReusableVC.swift; sourceTree = "<group>"; };
 		BB462886239E477900989126 /* TestReusableVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestReusableVC.xib; sourceTree = "<group>"; };
 		BB462889239E478E00989126 /* TestReusableTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReusableTC.swift; sourceTree = "<group>"; };
@@ -185,6 +193,10 @@
 				BBE7DCB723A23EF7009A650F /* BaseViewController.swift */,
 				BBE5F1A323A31D2F00DC9978 /* NavBar.swift */,
 				0AACE9C523A27A6A004A1BC1 /* ToolBar.swift */,
+				BB11C65323A3AB7E00008938 /* navbar_back_dark@2x.png */,
+				BB11C65223A3AB7E00008938 /* navbar_back_dark@3x.png */,
+				BB11C65423A3AB7E00008938 /* navbar_back_light@2x.png */,
+				BB11C65523A3AB7E00008938 /* navbar_back_light@3x.png */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -442,11 +454,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB11C65623A3AB7E00008938 /* navbar_back_dark@3x.png in Resources */,
 				BB91D2CB238E35160048D384 /* LaunchScreen.storyboard in Resources */,
+				BB11C65723A3AB7E00008938 /* navbar_back_dark@2x.png in Resources */,
 				BBA6782C23A07E8A00791EEA /* TestStaticCell.xib in Resources */,
 				BBA6782823A07AB100791EEA /* TestStaticTableVC.xib in Resources */,
 				0A384B4D239EA8E600CBE1F8 /* TestWindowVC.xib in Resources */,
+				BB11C65823A3AB7E00008938 /* navbar_back_light@2x.png in Resources */,
 				0AACE9C223A27497004A1BC1 /* theme_red.plist in Resources */,
+				BB11C65923A3AB7E00008938 /* navbar_back_light@3x.png in Resources */,
 				0A2CF40B2391530D00F914C5 /* FBRootVC.xib in Resources */,
 				0A2CF41A23916DA400F914C5 /* FBRootCell.xib in Resources */,
 				BB462888239E477900989126 /* TestReusableVC.xib in Resources */,
