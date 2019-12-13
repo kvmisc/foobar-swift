@@ -29,7 +29,7 @@ class FBRootVC: UIViewController {
     navbar.extSetBorder()
     navbar.containerView.extSetBorder()
 
-    navbar.setupPopButton()
+    navbar.setupBackButton()
     navbar.setupRightButton()
     navbar.setupTitleLabel()
 

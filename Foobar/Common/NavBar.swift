@@ -66,7 +66,7 @@ class NavBar: UIView {
     addSubview(containerView)
   }
 
-  func setupPopButton() {
+  func setupBackButton() {
     let button = UIButton(type: .custom)
     button.extSetImage(cci("navbar_back_light"))
     leftConstraint = .Intrinsic(offset: 0.0)
