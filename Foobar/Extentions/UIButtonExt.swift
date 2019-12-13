@@ -27,6 +27,9 @@ extension UIButton {
   func extSetTitleColor(_ color: UIColor?, _ state: UIControl.State = .normal) {
     setTitleColor(color, for: state)
   }
+  func extSetTitleFont(_ font: UIFont) {
+    titleLabel?.font = font
+  }
   func extSetAttributedTitle(_ title: NSAttributedString?, _ state: UIControl.State = .normal) {
     setAttributedTitle(title, for: state)
   }

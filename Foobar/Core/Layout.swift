@@ -63,6 +63,15 @@ extension UIView {
     set { frame.size.height = newValue }
   }
 
+  var extIntrinsicContentWidth: CGFloat {
+    let size = intrinsicContentSize
+    return (size.width > 0.0) ? size.width : 0.0
+  }
+  var extIntrinsicContentHeight: CGFloat {
+    let size = intrinsicContentSize
+    return (size.height > 0.0) ? size.height : 0.0
+  }
+
 }
 
 extension UIScrollView {
