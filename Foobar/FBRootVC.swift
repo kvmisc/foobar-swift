@@ -17,6 +17,16 @@ class FBRootVC: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    let v = TestAutolayoutView()
+    v.backgroundColor = .red
+    view.addSubview(v)
+    v.snp.makeConstraints { (make) in
+      make.left.equalToSuperview().offset(50)
+      make.top.equalToSuperview().offset(50)
+      make.width.equalTo(200)
+      make.height.equalTo(200)
+    }
+
 //    print("1 \(testView.frame)")
 //    testView.snp.makeConstraints { (make) in
 //      make.left.equalToSuperview().offset(20)

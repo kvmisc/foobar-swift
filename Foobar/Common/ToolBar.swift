@@ -12,7 +12,18 @@ class ToolBar: UIView {
 
   static let defaultHeight: CGFloat = 49.0
 
-  var preferredHeight: CGFloat = 0.0
+  var preferredHeight: CGFloat = 0.0 {
+    didSet { setNeedsUpdateConstraints() }
+  }
+
+  var safeAreaHeight: CGFloat = 0.0 {
+    didSet { invalidateIntrinsicContentSize() }
+  }
+
+  override var intrinsicContentSize: CGSize {
+    return ccs(UIView.noIntrinsicMetric, preferredHeight+safeAreaHeight)
+  }
+
 
   var contentView: UIView? = nil {
     didSet {
@@ -20,16 +31,6 @@ class ToolBar: UIView {
       extAddSubviewIfNeeded(contentView)
       setNeedsLayout()
     }
-  }
-
-  override var intrinsicContentSize: CGSize {
-    if preferredHeight > 0.0 {
-      return CGSize(width: UIView.noIntrinsicMetric, height: preferredHeight)
-    }
-    if let contentView = contentView {
-      return contentView.intrinsicContentSize
-    }
-    return CGSize(width: UIView.noIntrinsicMetric, height: ToolBar.defaultHeight)
   }
 
   override func layoutSubviews() {

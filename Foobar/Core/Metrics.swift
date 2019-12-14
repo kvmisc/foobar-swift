@@ -32,33 +32,33 @@ let SCREEN_HAS_NOTCH: Bool =
     || Device.current.isOneOf(Device.allSimulatorXSeriesDevices)
 
 // 屏幕宽和高的数值, 根据横竖屏变化
-let SCREEN_WID: Int = Int(UIScreen.main.bounds.size.width)
-let SCREEN_HET: Int = Int(UIScreen.main.bounds.size.height)
+let SCREEN_WID: CGFloat = UIScreen.main.bounds.size.width
+let SCREEN_HET: CGFloat = UIScreen.main.bounds.size.height
 // 屏幕高和矮的数值, 不管横竖屏
-let SCREEN_TAL: Int = max(SCREEN_WID, SCREEN_HET)
-let SCREEN_SRT: Int = min(SCREEN_WID, SCREEN_HET)
+let SCREEN_TAL: CGFloat = max(SCREEN_WID, SCREEN_HET)
+let SCREEN_SRT: CGFloat = min(SCREEN_WID, SCREEN_HET)
 
 
 ///-----------------------
 /// Status Bar & Safe Area
 ///-----------------------
 
-let STATUS_BAR_HET: Int = SCREEN_HAS_NOTCH ? 44 : 20
+let STATUS_BAR_HET: CGFloat = SCREEN_HAS_NOTCH ? 44 : 20
 
 // In Portrait
 //     44pt
 // 00pt    00pt
 //     34pt
-let SAFE_AREA_TOP: Int = SCREEN_HAS_NOTCH ? 44 : 0
-let SAFE_AREA_BOT: Int = SCREEN_HAS_NOTCH ? 34 : 0
-let SAFE_AREA_LFT: Int = 0
-let SAFE_AREA_RIT: Int = 0
+let SAFE_AREA_TOP: CGFloat = SCREEN_HAS_NOTCH ? 44 : 0
+let SAFE_AREA_BOT: CGFloat = SCREEN_HAS_NOTCH ? 34 : 0
+let SAFE_AREA_LFT: CGFloat = 0
+let SAFE_AREA_RIT: CGFloat = 0
 
 // In Landscape
 //     00pt
 // 44pt    44pt
 //     21pt
-let SAFE_AREA_LANDSCAPE_TOP: Int = 0
-let SAFE_AREA_LANDSCAPE_BOT: Int = SCREEN_HAS_NOTCH ? 21 : 0
-let SAFE_AREA_LANDSCAPE_LFT: Int = SCREEN_HAS_NOTCH ? 44 : 0
-let SAFE_AREA_LANDSCAPE_RIT: Int = SCREEN_HAS_NOTCH ? 44 : 0
+let SAFE_AREA_LANDSCAPE_TOP: CGFloat = 0
+let SAFE_AREA_LANDSCAPE_BOT: CGFloat = SCREEN_HAS_NOTCH ? 21 : 0
+let SAFE_AREA_LANDSCAPE_LFT: CGFloat = SCREEN_HAS_NOTCH ? 44 : 0
+let SAFE_AREA_LANDSCAPE_RIT: CGFloat = SCREEN_HAS_NOTCH ? 44 : 0

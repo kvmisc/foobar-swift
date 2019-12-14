@@ -23,6 +23,8 @@
 		0A53303D238EC965009B5375 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303C238EC965009B5375 /* StringExt.swift */; };
 		0A53A528239E7E9C00A51A54 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53A527239E7E9C00A51A54 /* UIImageExt.swift */; };
 		0A768A4E239955A90027A68A /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A768A4D239955A90027A68A /* Metrics.swift */; };
+		0A8E76BA23A4845D00AFA2BA /* TestAutolayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E76B923A4845D00AFA2BA /* TestAutolayoutView.swift */; };
+		0A8E76BD23A48F4F00AFA2BA /* TestHierachyRedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E76BC23A48F4F00AFA2BA /* TestHierachyRedVC.swift */; };
 		0A9B191923A12E47008906F0 /* TestViewStateRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9B191823A12E47008906F0 /* TestViewStateRootVC.swift */; };
 		0A9B191B23A13434008906F0 /* PageStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9B191A23A13434008906F0 /* PageStateView.swift */; };
 		0AACE9C223A27497004A1BC1 /* theme_red.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AACE9C123A27497004A1BC1 /* theme_red.plist */; };
@@ -91,6 +93,8 @@
 		0A53303C238EC965009B5375 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		0A53A527239E7E9C00A51A54 /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		0A768A4D239955A90027A68A /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		0A8E76B923A4845D00AFA2BA /* TestAutolayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAutolayoutView.swift; sourceTree = "<group>"; };
+		0A8E76BC23A48F4F00AFA2BA /* TestHierachyRedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHierachyRedVC.swift; sourceTree = "<group>"; };
 		0A9B191823A12E47008906F0 /* TestViewStateRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewStateRootVC.swift; sourceTree = "<group>"; };
 		0A9B191A23A13434008906F0 /* PageStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStateView.swift; sourceTree = "<group>"; };
 		0AACE9C123A27497004A1BC1 /* theme_red.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_red.plist; sourceTree = "<group>"; };
@@ -229,6 +233,14 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		0A8E76BB23A48F2000AFA2BA /* TestHierachy */ = {
+			isa = PBXGroup;
+			children = (
+				0A8E76BC23A48F4F00AFA2BA /* TestHierachyRedVC.swift */,
+			);
+			name = TestHierachy;
+			sourceTree = "<group>";
+		};
 		0AAD582123A3E43200E62092 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +292,7 @@
 			children = (
 				0A2CF4082391530D00F914C5 /* FBRootVC.swift */,
 				0A2CF4092391530D00F914C5 /* FBRootVC.xib */,
+				0A8E76B923A4845D00AFA2BA /* TestAutolayoutView.swift */,
 				0A2CF41723916DA400F914C5 /* FBRootCell.swift */,
 				0A2CF41823916DA400F914C5 /* FBRootCell.xib */,
 			);
@@ -303,6 +316,7 @@
 		BB8A3A1F239DD5A000DF3125 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				0A8E76BB23A48F2000AFA2BA /* TestHierachy */,
 				BBA6782423A07A8F00791EEA /* TestStaticTable */,
 				0A384B49239EA8AB00CBE1F8 /* TestWindow */,
 				BB8A3A20239DD5A000DF3125 /* TestMultiLineButton.swift */,
@@ -548,6 +562,7 @@
 				BB46288B239E478E00989126 /* TestReusableTC.swift in Sources */,
 				BBBB0608239F2DB60004613C /* ThroughView.swift in Sources */,
 				0A19DCDB239B465300CA5D24 /* IconLabel.swift in Sources */,
+				0A8E76BA23A4845D00AFA2BA /* TestAutolayoutView.swift in Sources */,
 				BB462887239E477900989126 /* TestReusableVC.swift in Sources */,
 				BB462893239E5BE900989126 /* PageState.swift in Sources */,
 				BB8D53D42399E04A008BA419 /* Base64.swift in Sources */,
@@ -565,6 +580,7 @@
 				BBE5F1A423A31D2F00DC9978 /* NavBar.swift in Sources */,
 				0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */,
 				BB9D5CED2394FC3D00FB4BD1 /* FBPersonModel.swift in Sources */,
+				0A8E76BD23A48F4F00AFA2BA /* TestHierachyRedVC.swift in Sources */,
 				0A300D25239D04F00025FC04 /* UIButtonExt.swift in Sources */,
 				0A300D23239CBB470025FC04 /* UIViewControllerExt.swift in Sources */,
 				0A2CF41923916DA400F914C5 /* FBRootCell.swift in Sources */,

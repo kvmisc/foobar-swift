@@ -43,15 +43,34 @@ class NavBar: UIView {
     }
   }
 
-  var leftButton: UIButton? {
-    return leftView as? UIButton
-  }
-  var rightButton: UIButton? {
-    return rightView as? UIButton
-  }
-  var titleLabel: UILabel? {
-    return titleView as? UILabel
-  }
+  let leftButton: UIButton = {
+    let ret = UIButton(type: .custom)
+    ret.extSetTitleFont(UIFont.preferredFont(forTextStyle: .body))
+    ret.extSetTitleColor(.black)
+    //ret.extSetTitle(nil)
+    //ret.extSetImage(nil)
+    return ret
+  }()
+  let rightButton: UIButton = {
+    let ret = UIButton(type: .custom)
+    ret.extSetTitleFont(UIFont.preferredFont(forTextStyle: .body))
+    ret.extSetTitleColor(.black)
+    //ret.extSetTitle(nil)
+    //ret.extSetImage(nil)
+    return ret
+  }()
+  let titleLabel: UILabel = {
+    let ret = UILabel()
+    ret.font = UIFont.preferredFont(forTextStyle: .title1)
+    ret.textColor = .black
+    ret.textAlignment = .center
+    ret.lineBreakMode = .byTruncatingTail
+    ret.numberOfLines = 1
+    ret.adjustsFontSizeToFitWidth = false
+    ret.backgroundColor = .clear
+    //label.text = nil
+    return ret
+  }()
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -64,44 +83,24 @@ class NavBar: UIView {
   func setup() {
     backgroundColor = .white
     addSubview(containerView)
-  }
-
-  func setupLeftButton() {
-    let button = UIButton(type: .custom)
-    button.extSetTitleFont(UIFont.preferredFont(forTextStyle: .body))
-    button.extSetTitleColor(.black)
-    //button.extSetTitle(nil)
-    leftView = button
-  }
-  func setupRightButton() {
-    let button = UIButton(type: .custom)
-    button.extSetTitleFont(UIFont.preferredFont(forTextStyle: .body))
-    button.extSetTitleColor(.black)
-    //button.extSetTitle(nil)
-    rightView = button
-  }
-  func setupTitleLabel() {
-    let label = UILabel()
-    label.font = UIFont.preferredFont(forTextStyle: .title1)
-    label.textColor = .black
-    label.textAlignment = .center
-    label.lineBreakMode = .byTruncatingTail
-    label.numberOfLines = 1
-    label.adjustsFontSizeToFitWidth = false
-    label.backgroundColor = .clear
-    //label.text = nil
-    titleView = label
-  }
-
-  override var intrinsicContentSize: CGSize {
-    return CGSize(width: UIView.noIntrinsicMetric, height: preferredHeight)
+    leftView = leftButton
+    rightView = rightButton
+    titleView = titleLabel
   }
 
 
   static let defaultHeight: CGFloat = 44.0
 
+  // 实体占用高度
   var preferredHeight: CGFloat = NavBar.defaultHeight {
     didSet { setNeedsUpdateConstraints() }
+  }
+  var safeAreaHeight: CGFloat = 0.0 {
+    didSet { invalidateIntrinsicContentSize() }
+  }
+
+  override var intrinsicContentSize: CGSize {
+    return ccs(UIView.noIntrinsicMetric, preferredHeight+safeAreaHeight)
   }
 
 
@@ -135,7 +134,6 @@ class NavBar: UIView {
   var titleAlignment: TitleHAlignment = .Center(margin: 5.0) {
     didSet { setNeedsUpdateConstraints() }
   }
-
 
   override func updateConstraints() {
 

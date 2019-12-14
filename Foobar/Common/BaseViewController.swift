@@ -10,11 +10,9 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+  // MARK: View lifecycle
   fileprivate (set) var viewAppeared: Bool = false
   fileprivate (set) var appearedEver: Bool = false
-
-  var occupySafeArea: Bool = false
-
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     viewAppeared = true
@@ -24,7 +22,6 @@ class BaseViewController: UIViewController {
     viewAppeared = false
     appearedEver = true
   }
-
   override func viewDidLoad() {
     super.viewDidLoad()
     loadNavBarIfNeeded()
@@ -34,36 +31,73 @@ class BaseViewController: UIViewController {
   }
   func setup() {
   }
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
 
-    var topUsage: CGFloat = 0.0
+  var occupySafeArea: Bool = false
+//  override func viewDidLayoutSubviews() {
+//    super.viewDidLayoutSubviews()
+//
+//    var topUsage: CGFloat = 0.0
+//    if let navBar = navBar {
+//      var navHeight = navBar.extIntrinsicContentHeight
+//      if !occupySafeArea { navHeight += SAFE_AREA_TOP }
+//      navBar.frame = ccr(view.extWidth, navHeight)
+//      topUsage = navHeight
+//    } else {
+//      topUsage = occupySafeArea ? 0.0 : STATUS_BAR_HET
+//    }
+//
+//    var botUsage: CGFloat = 0.0
+//    if let toolBar = toolBar {
+//      var toolHeight = toolBar.extIntrinsicContentHeight
+//      if !occupySafeArea { toolHeight += SAFE_AREA_BOT }
+//      toolBar.frame = ccr(0.0,
+//                          view.extHeight-toolHeight,
+//                          view.extWidth,
+//                          toolHeight)
+//      botUsage = toolHeight
+//    } else {
+//      botUsage = occupySafeArea ? 0.0 : SAFE_AREA_BOT
+//    }
+//
+//    contentView?.frame = ccr(0.0,
+//                             topUsage,
+//                             view.extWidth,
+//                             view.extHeight - topUsage - botUsage)
+//  }
+  override func updateViewConstraints() {
     if let navBar = navBar {
-      var navHeight = navBar.extIntrinsicContentHeight
-      if !occupySafeArea { navHeight += CGFloat(SAFE_AREA_TOP) }
-      navBar.frame = ccr(view.extWidth, navHeight)
-      topUsage = navHeight
-    } else {
-      topUsage = occupySafeArea ? 0.0 : CGFloat(STATUS_BAR_HET)
+      navBar.preferredHeight = preferredNavBarHeight()
+      navBar.safeAreaHeight = occupySafeArea ? 0.0 : STATUS_BAR_HET
+      navBar.snp.remakeConstraints { (make) in
+        make.left.top.right.equalToSuperview()
+      }
     }
 
-    var botUsage: CGFloat = 0.0
     if let toolBar = toolBar {
-      var toolHeight = toolBar.extIntrinsicContentHeight
-      if !occupySafeArea { toolHeight += CGFloat(SAFE_AREA_BOT) }
-      toolBar.frame = ccr(0.0,
-                          view.extHeight-toolHeight,
-                          view.extWidth,
-                          toolHeight)
-      botUsage = toolHeight
-    } else {
-      botUsage = occupySafeArea ? 0.0 : CGFloat(SAFE_AREA_BOT)
+      toolBar.preferredHeight = preferredToolBarHeight()
+      toolBar.safeAreaHeight = occupySafeArea ? 0.0 : SAFE_AREA_BOT
+      toolBar.snp.remakeConstraints { (make) in
+        make.left.bottom.right.equalToSuperview()
+      }
     }
 
-    contentView?.frame = ccr(0.0,
-                             topUsage,
-                             view.extWidth,
-                             view.extHeight - topUsage - botUsage)
+    contentView?.snp.remakeConstraints({ (make) in
+      if let navBar = navBar {
+        make.top.equalTo(navBar.snp.bottom)
+      } else {
+        let offset = occupySafeArea ? 0.0 : STATUS_BAR_HET
+        make.top.equalToSuperview().offset(offset)
+      }
+      make.left.right.equalToSuperview()
+      if let toolBar = toolBar {
+        make.bottom.equalTo(toolBar.snp.top)
+      } else {
+        let offset = occupySafeArea ? 0.0 : SAFE_AREA_BOT
+        make.bottom.equalToSuperview().offset(-offset)
+      }
+    })
+
+    super.updateViewConstraints()
   }
 
   // MARK: NavBar
@@ -83,24 +117,52 @@ class BaseViewController: UIViewController {
     if shouldLoadNavBar() {
       if navBar == nil {
         navBar = NavBar()
+        navBar?.translatesAutoresizingMaskIntoConstraints = false
+        navBar?.leftButton.extAddTarget(self, #selector(navBarLeftAction(_:)))
+        navBar?.rightButton.extAddTarget(self, #selector(navBarRightAction(_:)))
       }
-      navBar?.preferredHeight = preferredNavBarHeight()
       setupNavBar()
     } else {
       navBar = nil
     }
   }
   func setupNavBar() {
-    if extCanBePopped() {
-      // 在导航中且不是根, 设置 back
-      // ...
+    if let nav = navigationController {
+      if self != nav.viewControllers.first {
+        setupNavBarBackButton()
+      } else {
+        if nav.presentingViewController != nil {
+          setupNavBarDismissButton()
+        }
+      }
     } else {
-      if extCanBeDismissed() || extNavCanBeDismissed() {
-        // 不在导航中, 被 present, 设置 dismiss
-        // 在导航中且是根, 导航被 present, 设置 dismiss
-        // ...
+      if presentingViewController != nil {
+        setupNavBarDismissButton()
       }
     }
+  }
+  func setupNavBarBackButton() {
+    navBar?.leftButton.extSetTitle("返回")
+  }
+  func setupNavBarDismissButton() {
+    navBar?.leftButton.extSetTitle("关闭")
+  }
+  @objc func navBarLeftAction(_ sender: UIButton) {
+    if let nav = navigationController {
+      if self != nav.viewControllers.first {
+        nav.popViewController(animated: true)
+      } else {
+        if nav.presentingViewController != nil {
+          nav.dismiss(animated: true, completion: nil)
+        }
+      }
+    } else {
+      if presentingViewController != nil {
+        dismiss(animated: true, completion: nil)
+      }
+    }
+  }
+  @objc func navBarRightAction(_ sender: UIButton) {
   }
 
   // MARK: ToolBar
@@ -111,7 +173,7 @@ class BaseViewController: UIViewController {
     }
   }
   func shouldLoadToolBar() -> Bool {
-    return true
+    return false
   }
   func preferredToolBarHeight() -> CGFloat {
     return ToolBar.defaultHeight
@@ -121,7 +183,6 @@ class BaseViewController: UIViewController {
       if toolBar == nil {
         toolBar = ToolBar()
       }
-      toolBar?.preferredHeight = preferredToolBarHeight()
       setupToolBar()
     } else {
       toolBar = nil
@@ -136,12 +197,16 @@ class BaseViewController: UIViewController {
     return true
   }
   func loadContentViewIfNeeded() {
-    guard contentView == nil else { return }
-    guard shouldLoadContentView() else { return }
-
-    if contentView == nil {
-      contentView = UIView()
-      view.addSubview(contentView!)
+    if shouldLoadContentView() {
+      if contentView == nil {
+        contentView = UIView()
+        contentView?.backgroundColor = .white
+        view.addSubview(contentView!)
+        contentView?.extSendToBack()
+      }
+    } else {
+      contentView?.removeFromSuperview()
+      contentView = nil
     }
   }
 
