@@ -13,19 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-//  func doit() {
-//    let ary: [Int] = [1]
-//    guard !ary.isEmpty else { return }
-//    print(ary)
-//  }
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+    print(Path.document())
 
     let window = UIWindow()
 //    let nc = UINavigationController(rootViewController: TestHierachyRedVC())
 //    nc.isNavigationBarHidden = true
 //    window.rootViewController = nc
-    window.rootViewController = TestJSONVC()
+    window.rootViewController = TestRealmVC()
     window.makeKeyAndVisible()
     self.window = window
     return true

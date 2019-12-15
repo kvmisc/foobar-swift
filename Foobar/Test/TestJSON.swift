@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Person: Codable {
+struct TheObject: Codable {
   var name: String
 
   // 10.0 -> 10
@@ -85,7 +85,7 @@ func DecodeJSON() {
 """.data(using: .utf8)!
   let decoder = JSONDecoder()
   decoder.dateDecodingStrategy = .millisecondsSince1970
-  let p = try? decoder.decode(Person.self, from: json)
+  let p = try? decoder.decode(TheObject.self, from: json)
   print("decoding")
   if let p = p {
     print("name: \(p.name)")

@@ -13,27 +13,28 @@ target 'Foobar' do
   pod 'Reusable'
   pod 'TextAttributes'
   pod 'SwiftEntryKit'
-  pod 'Static'
   pod 'IHKeyboardAvoiding'
   pod 'Kingfisher'
   pod 'SwiftTheme'
   pod 'Localize-Swift'
+  pod 'Static'
 
+  pod 'RealmSwift'
   pod 'Then'
   pod 'SwiftDate'
 
   pod 'Alamofire'
-  pod 'MBProgressHUD'
   pod 'MJRefresh'
-  pod 'YYModel'
-  pod 'SwiftyJSON'
 
   pod 'YYText'
 
-  pod 'Cache'
+  # RealmSwift
+  # SwiftDate
+  # YYText
+  # HUD
 
-#  pod 'RealmSwift'
-#  pod 'SQLite.swift'
-#  pod 'GRDB.swift'
+  pod 'MBProgressHUD'
+  pod 'YYModel'
+  pod 'SwiftyJSON'
 
 end
