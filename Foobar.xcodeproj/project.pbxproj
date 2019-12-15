@@ -33,6 +33,7 @@
 		0ACBB21223A4A1BD0069F4D7 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACBB21123A4A1BD0069F4D7 /* AccountManager.swift */; };
 		0ACBB21823A5EF590069F4D7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0ACBB21423A5EF590069F4D7 /* Localizable.strings */; };
 		0ACBB21C23A5FDEE0069F4D7 /* TestJSONVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACBB21B23A5FDEE0069F4D7 /* TestJSONVC.swift */; };
+		0ACBB21E23A6319C0069F4D7 /* TestJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACBB21D23A6319C0069F4D7 /* TestJSON.swift */; };
 		51ED5B58178026AF3ADCE160 /* Pods_Foobar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */; };
 		BB11C65623A3AB7E00008938 /* navbar_back_dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65223A3AB7E00008938 /* navbar_back_dark@3x.png */; };
 		BB11C65723A3AB7E00008938 /* navbar_back_dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65323A3AB7E00008938 /* navbar_back_dark@2x.png */; };
@@ -108,6 +109,7 @@
 		0ACBB21623A5EF590069F4D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0ACBB21723A5EF590069F4D7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0ACBB21B23A5FDEE0069F4D7 /* TestJSONVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJSONVC.swift; sourceTree = "<group>"; };
+		0ACBB21D23A6319C0069F4D7 /* TestJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJSON.swift; sourceTree = "<group>"; };
 		2BCD74F1A55A7280F3DB3800 /* Pods-Foobar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.release.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.release.xcconfig"; sourceTree = "<group>"; };
 		B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foobar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB11C65223A3AB7E00008938 /* navbar_back_dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_dark@3x.png"; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 				BB8A3A20239DD5A000DF3125 /* TestMultiLineButton.swift */,
 				BB6C9A64239E06DA00822180 /* TestThen.swift */,
 				0ACBB21B23A5FDEE0069F4D7 /* TestJSONVC.swift */,
+				0ACBB21D23A6319C0069F4D7 /* TestJSON.swift */,
 				BB462896239E5CB200989126 /* TestViewState */,
 				BB6C9A69239E429800822180 /* TestReusable */,
 			);
@@ -607,6 +610,7 @@
 				0AACE9C623A27A6A004A1BC1 /* ToolBar.swift in Sources */,
 				BB8A3A21239DD5A000DF3125 /* TestMultiLineButton.swift in Sources */,
 				BB6C9A63239DF52400822180 /* RichText.swift in Sources */,
+				0ACBB21E23A6319C0069F4D7 /* TestJSON.swift in Sources */,
 				BB6C9A65239E06DA00822180 /* TestThen.swift in Sources */,
 				BBE5F1A423A31D2F00DC9978 /* NavBar.swift in Sources */,
 				0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */,
