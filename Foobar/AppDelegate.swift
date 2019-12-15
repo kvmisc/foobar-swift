@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Localize_Swift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,22 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     let window = UIWindow()
-    let nc = UINavigationController(rootViewController: TestHierachyRedVC())
-    nc.isNavigationBarHidden = true
-    window.rootViewController = nc
-    //window.rootViewController = TestHierachyRedVC()
+//    let nc = UINavigationController(rootViewController: TestHierachyRedVC())
+//    nc.isNavigationBarHidden = true
+//    window.rootViewController = nc
+    window.rootViewController = TestJSONVC()
     window.makeKeyAndVisible()
     self.window = window
-
-//    Localize.setCurrentLanguage("zh-Hant")
-
-    print("loading_login".localized())
-
-    print(Localize.availableLanguages())
-    print(Localize.currentLanguage())
-    print(Localize.defaultLanguage())
-    print(Localize.displayNameForLanguage(Localize.currentLanguage()))
-
     return true
   }
 

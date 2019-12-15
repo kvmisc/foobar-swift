@@ -29,23 +29,24 @@ class BaseViewController: UIViewController {
     loadNavBarIfNeeded()
     loadToolBarIfNeeded()
     loadContentViewIfNeeded()
+
+    observeLanguageChange()
     setup()
     reloadPage()
-    addLanguageChangeNotification()
+  }
+
+  func observeLanguageChange() {
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(languageChange(_:)),
+                                           name: NSNotification.Name(LCLLanguageChangeNotification),
+                                           object: nil)
+  }
+  @objc func languageChange(_ notification: NSNotification) {
+    reloadPage()
   }
   func setup() {
   }
   func reloadPage() {
-  }
-
-  func addLanguageChangeNotification() {
-    NotificationCenter.default.addObserver(self,
-                                           selector: #selector(changed(_:)),
-                                           name: NSNotification.Name(LCLLanguageChangeNotification),
-                                           object: nil)
-  }
-  @objc func changed(_ notification: NSNotification) {
-    reloadPage()
   }
 
   var occupySafeArea: Bool = false

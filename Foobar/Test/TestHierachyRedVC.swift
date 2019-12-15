@@ -99,7 +99,7 @@ class TestHierachyRedVC: BaseViewController {
     bt3.extAddTarget(self, #selector(presentNavIt(_:)))
 
     Async.main(after: 3.0) {
-      Localize.setCurrentLanguage("zh-Hans")
+      Localize.setCurrentLanguage("en")
     }
   }
   override func reloadPage() {
