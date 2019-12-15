@@ -40,7 +40,6 @@ SGPagingView
 
 
 #Animation
-#App Routing
 #JSON
 #Dependency Injection
 #Events

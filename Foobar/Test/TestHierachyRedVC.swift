@@ -35,11 +35,17 @@ class TestHierachyRedVC: BaseViewController {
     return ret
   }()
 
+  override func shouldLoadToolBar() -> Bool {
+    return (count % 2) == 0
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
     navBar?.backgroundColor = .lightGray
     navBar?.containerView.backgroundColor = .darkGray
+
+    toolBar?.backgroundColor = .lightGray
 
     contentView?.addSubview(infoLabel)
     infoLabel.text = info + ": " + String(count)
@@ -47,6 +53,8 @@ class TestHierachyRedVC: BaseViewController {
       make.top.equalToSuperview().offset(20)
       make.centerX.equalToSuperview()
     }
+
+    navBar?.titleLabel.text = infoLabel.text
 //    contentView?.addSubview(shadowView)
 //    shadowView.extSendToBack()
 //    shadowView.snp.makeConstraints { (make) in

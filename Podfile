@@ -17,6 +17,7 @@ target 'Foobar' do
   pod 'IHKeyboardAvoiding'
   pod 'Kingfisher'
   pod 'SwiftTheme'
+  pod 'Localize-Swift'
 
   pod 'Then'
   pod 'SwiftDate'

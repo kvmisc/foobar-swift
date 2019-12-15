@@ -30,6 +30,7 @@
 		0AACE9C223A27497004A1BC1 /* theme_red.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AACE9C123A27497004A1BC1 /* theme_red.plist */; };
 		0AACE9C423A274DB004A1BC1 /* theme_blue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AACE9C323A274DB004A1BC1 /* theme_blue.plist */; };
 		0AACE9C623A27A6A004A1BC1 /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AACE9C523A27A6A004A1BC1 /* ToolBar.swift */; };
+		0ACBB21223A4A1BD0069F4D7 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACBB21123A4A1BD0069F4D7 /* AccountManager.swift */; };
 		51ED5B58178026AF3ADCE160 /* Pods_Foobar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */; };
 		BB11C65623A3AB7E00008938 /* navbar_back_dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65223A3AB7E00008938 /* navbar_back_dark@3x.png */; };
 		BB11C65723A3AB7E00008938 /* navbar_back_dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65323A3AB7E00008938 /* navbar_back_dark@2x.png */; };
@@ -100,6 +101,7 @@
 		0AACE9C123A27497004A1BC1 /* theme_red.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_red.plist; sourceTree = "<group>"; };
 		0AACE9C323A274DB004A1BC1 /* theme_blue.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_blue.plist; sourceTree = "<group>"; };
 		0AACE9C523A27A6A004A1BC1 /* ToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
+		0ACBB21123A4A1BD0069F4D7 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		2BCD74F1A55A7280F3DB3800 /* Pods-Foobar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.release.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.release.xcconfig"; sourceTree = "<group>"; };
 		B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foobar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB11C65223A3AB7E00008938 /* navbar_back_dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_dark@3x.png"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				BBB14E772394A1C400E6E5D9 /* Network */,
+				0ACBB21023A4A19A0069F4D7 /* AccountManager */,
 				BBE7DCB523A23DD7009A650F /* ExpirePool */,
 			);
 			path = Utils;
@@ -250,6 +253,14 @@
 				BB11C65523A3AB7E00008938 /* navbar_back_light@3x.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		0ACBB21023A4A19A0069F4D7 /* AccountManager */ = {
+			isa = PBXGroup;
+			children = (
+				0ACBB21123A4A1BD0069F4D7 /* AccountManager.swift */,
+			);
+			name = AccountManager;
 			sourceTree = "<group>";
 		};
 		82E1CCD52881DC49E334EA78 /* Frameworks */ = {
@@ -581,6 +592,7 @@
 				0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */,
 				BB9D5CED2394FC3D00FB4BD1 /* FBPersonModel.swift in Sources */,
 				0A8E76BD23A48F4F00AFA2BA /* TestHierachyRedVC.swift in Sources */,
+				0ACBB21223A4A1BD0069F4D7 /* AccountManager.swift in Sources */,
 				0A300D25239D04F00025FC04 /* UIButtonExt.swift in Sources */,
 				0A300D23239CBB470025FC04 /* UIViewControllerExt.swift in Sources */,
 				0A2CF41923916DA400F914C5 /* FBRootCell.swift in Sources */,

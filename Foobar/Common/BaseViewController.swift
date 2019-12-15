@@ -24,6 +24,7 @@ class BaseViewController: UIViewController {
   }
   override func viewDidLoad() {
     super.viewDidLoad()
+    view.backgroundColor = .white
     loadNavBarIfNeeded()
     loadToolBarIfNeeded()
     loadContentViewIfNeeded()
@@ -33,37 +34,6 @@ class BaseViewController: UIViewController {
   }
 
   var occupySafeArea: Bool = false
-//  override func viewDidLayoutSubviews() {
-//    super.viewDidLayoutSubviews()
-//
-//    var topUsage: CGFloat = 0.0
-//    if let navBar = navBar {
-//      var navHeight = navBar.extIntrinsicContentHeight
-//      if !occupySafeArea { navHeight += SAFE_AREA_TOP }
-//      navBar.frame = ccr(view.extWidth, navHeight)
-//      topUsage = navHeight
-//    } else {
-//      topUsage = occupySafeArea ? 0.0 : STATUS_BAR_HET
-//    }
-//
-//    var botUsage: CGFloat = 0.0
-//    if let toolBar = toolBar {
-//      var toolHeight = toolBar.extIntrinsicContentHeight
-//      if !occupySafeArea { toolHeight += SAFE_AREA_BOT }
-//      toolBar.frame = ccr(0.0,
-//                          view.extHeight-toolHeight,
-//                          view.extWidth,
-//                          toolHeight)
-//      botUsage = toolHeight
-//    } else {
-//      botUsage = occupySafeArea ? 0.0 : SAFE_AREA_BOT
-//    }
-//
-//    contentView?.frame = ccr(0.0,
-//                             topUsage,
-//                             view.extWidth,
-//                             view.extHeight - topUsage - botUsage)
-//  }
   override func updateViewConstraints() {
     if let navBar = navBar {
       navBar.preferredHeight = preferredNavBarHeight()
@@ -99,6 +69,37 @@ class BaseViewController: UIViewController {
 
     super.updateViewConstraints()
   }
+//  override func viewDidLayoutSubviews() {
+//    super.viewDidLayoutSubviews()
+//
+//    var topUsage: CGFloat = 0.0
+//    if let navBar = navBar {
+//      var navHeight = navBar.extIntrinsicContentHeight
+//      if !occupySafeArea { navHeight += SAFE_AREA_TOP }
+//      navBar.frame = ccr(view.extWidth, navHeight)
+//      topUsage = navHeight
+//    } else {
+//      topUsage = occupySafeArea ? 0.0 : STATUS_BAR_HET
+//    }
+//
+//    var botUsage: CGFloat = 0.0
+//    if let toolBar = toolBar {
+//      var toolHeight = toolBar.extIntrinsicContentHeight
+//      if !occupySafeArea { toolHeight += SAFE_AREA_BOT }
+//      toolBar.frame = ccr(0.0,
+//                          view.extHeight-toolHeight,
+//                          view.extWidth,
+//                          toolHeight)
+//      botUsage = toolHeight
+//    } else {
+//      botUsage = occupySafeArea ? 0.0 : SAFE_AREA_BOT
+//    }
+//
+//    contentView?.frame = ccr(0.0,
+//                             topUsage,
+//                             view.extWidth,
+//                             view.extHeight - topUsage - botUsage)
+//  }
 
   // MARK: NavBar
   var navBar: NavBar? = nil {
