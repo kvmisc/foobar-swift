@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Async
+import Localize_Swift
 
 class TestHierachyRedVC: BaseViewController {
 
@@ -48,7 +50,6 @@ class TestHierachyRedVC: BaseViewController {
     toolBar?.backgroundColor = .lightGray
 
     contentView?.addSubview(infoLabel)
-    infoLabel.text = info + ": " + String(count)
     infoLabel.snp.makeConstraints { (make) in
       make.top.equalToSuperview().offset(20)
       make.centerX.equalToSuperview()
@@ -96,6 +97,13 @@ class TestHierachyRedVC: BaseViewController {
       make.height.equalTo(40)
     }
     bt3.extAddTarget(self, #selector(presentNavIt(_:)))
+
+    Async.main(after: 3.0) {
+      Localize.setCurrentLanguage("zh-Hans")
+    }
+  }
+  override func reloadPage() {
+    infoLabel.text = "some_key".localized() + " " + info + ": " + String(count)
   }
 
   @objc func pushIt(_ sender: UIButton) {

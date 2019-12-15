@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class BaseViewController: UIViewController {
 
@@ -29,8 +30,22 @@ class BaseViewController: UIViewController {
     loadToolBarIfNeeded()
     loadContentViewIfNeeded()
     setup()
+    reloadPage()
+    addLanguageChangeNotification()
   }
   func setup() {
+  }
+  func reloadPage() {
+  }
+
+  func addLanguageChangeNotification() {
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(changed(_:)),
+                                           name: NSNotification.Name(LCLLanguageChangeNotification),
+                                           object: nil)
+  }
+  @objc func changed(_ notification: NSNotification) {
+    reloadPage()
   }
 
   var occupySafeArea: Bool = false

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +29,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //window.rootViewController = TestHierachyRedVC()
     window.makeKeyAndVisible()
     self.window = window
+
+//    Localize.setCurrentLanguage("zh-Hant")
+
+    print("loading_login".localized())
+
+    print(Localize.availableLanguages())
+    print(Localize.currentLanguage())
+    print(Localize.defaultLanguage())
+    print(Localize.displayNameForLanguage(Localize.currentLanguage()))
 
     return true
   }

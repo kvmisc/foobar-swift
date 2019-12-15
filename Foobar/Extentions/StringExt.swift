@@ -20,11 +20,6 @@ extension String {
     }
     return result
   }
-
-  func extLocalized(_ comment: String = "") -> String {
-    return NSLocalizedString(self, comment: comment)
-  }
-
 }
 
 // MARK: Common
