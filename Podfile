@@ -8,19 +8,20 @@ target 'Foobar' do
   pod 'AppVersionMonitor'
   pod 'DeviceKit'
   pod "AsyncSwift"
-
-  pod 'SnapKit'
+  pod 'Then'
+  pod 'Localize-Swift'
   pod 'Reusable'
   pod 'TextAttributes'
+
+  pod 'SnapKit'
+  pod 'Kingfisher'
   pod 'SwiftEntryKit'
   pod 'IHKeyboardAvoiding'
-  pod 'Kingfisher'
   pod 'SwiftTheme'
-  pod 'Localize-Swift'
+
   pod 'Static'
 
   pod 'RealmSwift'
-  pod 'Then'
   pod 'SwiftDate'
 
   pod 'Alamofire'
