@@ -83,13 +83,27 @@ class TestJSONVC: UIViewController {
   "nullField": null,
   "gender": 0,
   "birthday": 1576397406723,
-  "asdf": "aa"
+  "asdf": "aa",
+  "not_used": 456
 }
 """.data(using: .utf8)!
     let decoder = JSONDecoder()
     decoder.dateDecodingStrategy = .millisecondsSince1970
     let p = try? decoder.decode(Person.self, from: json)
-    print(p?.birthday)
+    print("decoding")
+    if let p = p {
+      print("name: \(p.name)")
+      print("age: \(p.age)")
+      print("weight: \(p.weight)")
+      print("charming: \(p.charming)")
+      print("dict: \(p.dict)")
+      print("ary: \(p.ary)")
+      print("nullField: \(p.nullField)")
+      print("missedField: \(p.missedField)")
+      print("gender: \(p.gender)")
+      print("birthday: \(p.birthday)")
+      print("field: \(p.field)")
+    }
   }
 
 
