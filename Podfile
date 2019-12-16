@@ -7,7 +7,7 @@ target 'Foobar' do
 
   pod 'AppVersionMonitor'
   pod 'DeviceKit'
-  pod "AsyncSwift"
+  pod 'AsyncSwift'
   pod 'Then'
   pod 'Localize-Swift'
   pod 'Reusable'
@@ -21,18 +21,11 @@ target 'Foobar' do
 
   pod 'Static'
 
-  pod 'RealmSwift'
-  pod 'SwiftDate'
-
   pod 'Alamofire'
   pod 'MJRefresh'
 
   pod 'YYText'
-
-  # RealmSwift
-  # SwiftDate
-  # YYText
-  # HUD
+  pod 'RealmSwift'
 
   pod 'MBProgressHUD'
   pod 'YYModel'

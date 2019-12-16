@@ -24,6 +24,9 @@ extension String {
   func extURL() -> URL? {
     return URL(string: self)
   }
+  func extFileURL() -> URL {
+    return URL(fileURLWithPath: self)
+  }
 }
 
 // MARK: Common

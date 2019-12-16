@@ -17,11 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     print(Path.document())
 
+
     let window = UIWindow()
 //    let nc = UINavigationController(rootViewController: TestHierachyRedVC())
 //    nc.isNavigationBarHidden = true
 //    window.rootViewController = nc
-    window.rootViewController = TestRealmVC()
+    window.rootViewController = TestSerizationVC()
     window.makeKeyAndVisible()
     self.window = window
     return true

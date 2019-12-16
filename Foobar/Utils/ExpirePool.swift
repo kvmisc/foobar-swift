@@ -11,7 +11,7 @@ import UIKit
 class ExpirePool {
   static let shared = ExpirePool()
 
-  let dict = NSMutableDictionary()
+  fileprivate var pool: [String:AnyObject] = [:]
 
   init() {
   }

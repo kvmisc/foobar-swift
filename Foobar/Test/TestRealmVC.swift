@@ -20,6 +20,8 @@ import Async
 
 // 对象未加到 Realm 前能自由修改属性, 加进去以后只能在事务中修改
 
+// 先创建查询结果, 再添加符合查询条件的对象, 新对象会在查询结果中
+
 // 属性定义
 //
 // 数值类型: Bool, Int, Double
@@ -92,6 +94,20 @@ func Config(_ name: String) -> Realm {
   let realm = try! Realm(configuration: config)
 
   return realm
+}
+
+func TestNotification() {
+  // 关注通知
+//  let token = realm.observe { notification, realm in
+//    viewController.updateUI()
+//  }
+//
+//  token.invalidate()
+
+  // 某次写操作不想触发这个通知
+//  try! realm.write(withoutNotifying: [token]) {
+//    // ... write to realm
+//  }
 }
 
 // 内存 Realm, 何时释放的？
@@ -253,15 +269,18 @@ class Person: Object {
 //   }
 }
 
+// 版本 1
 //class Toup: Object {
 //  @objc dynamic var tid = 0
 //  @objc dynamic var firstName = ""
 //  @objc dynamic var lastName = ""
 //}
+// 版本 2
 //class Toup: Object {
 //  @objc dynamic var tid = 0
 //  @objc dynamic var fullName = ""
 //}
+// 版本 3
 class Toup: Object {
   @objc dynamic var tid = 0
   @objc dynamic var fullName = ""
@@ -275,28 +294,42 @@ class TestRealmVC: UIViewController {
 
     let realm = Config("tu.realm")
 
-//    let t1 = Toup()
-//    t1.tid = 1
-//    t1.firstName = "fa"
-//    t1.lastName = "la"
-//
-//    let t2 = Toup()
-//    t2.tid = 2
-//    t2.firstName = "fb"
-//    t2.lastName = "lb"
-//
-//    let t3 = Toup()
-//    t3.tid = 3
-//    t3.firstName = "fc"
-//    t3.lastName = "lc"
-//
-//    try! realm.write {
-//      realm.add(t1)
-//      realm.add(t2)
-//      realm.add(t3)
-//    }
+    let t1 = Toup()
+    t1.tid = 1
+    t1.fullName = "fa"
 
-    print(realm.objects(Toup.self))
+    let t2 = Toup()
+    t2.tid = 8
+    t2.fullName = "fb"
+
+    let t3 = Toup()
+    t3.tid = 3
+    t3.fullName = "fc"
+
+    try! realm.write {
+      realm.add(t1)
+      realm.add(t2)
+      realm.add(t3)
+    }
+
+    let res = realm.objects(Toup.self).filter("tid < 5")
+    print(res)
+
+    try! realm.write {
+      let t = Toup()
+      t.tid = 7
+      t.fullName = "fd"
+      realm.add(t)
+    }
+    print(res)
+
+    try! realm.write {
+      let t = Toup()
+      t.tid = 2
+      t.fullName = "fe"
+      realm.add(t)
+    }
+    print(res)
 
   }
 }
