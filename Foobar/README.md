@@ -1,24 +1,5 @@
 
 
-## 其它
-
-1. 为何 Alamofire 每次要导入而有些库不用？
-
-2. 为何 cc 不用加 mutating？
-struct Stt {
-var aa = 0
-var bb = 0
-var cc: Int {
-get { return aa }
-set { aa = newValue }
-}
-mutating func dd(value: Int) {
-aa = value
-}
-}
-
-
-
 
 
 无默认值，每个参数必须传，可以省略标签

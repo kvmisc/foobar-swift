@@ -1,5 +1,5 @@
 //
-//  ExpirePool.swift
+//  Expiration.swift
 //  Foobar
 //
 //  Created by Kevin Wu on 12/12/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExpirePool {
+class Expiration {
   private var path: String = ""
   private var pool: [String:Double] = [:]
   private var lock = NSLock()
