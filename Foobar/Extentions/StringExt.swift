@@ -20,6 +20,10 @@ extension String {
     }
     return result
   }
+
+  func extURL() -> URL? {
+    return URL(string: self)
+  }
 }
 
 // MARK: Common
