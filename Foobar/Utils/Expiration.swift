@@ -16,8 +16,7 @@ class Expiration {
   init(_ path: String) {
     self.path = path
 
-    let original = Archive.fromJSONFile(path) as? [String:Double]
-    if let original = original {
+    if let original: [String:Double] = Archive.fromJSONFile(path) {
       pool = cleanInvalidEntries(original)
     }
     Archive.toJSONFile(pool, path)

@@ -44,27 +44,11 @@ class AccountManager {
   }
   // 从磁盘加载上次登录成功的帐号和用户对象到 AccountManager 里
   func loadLastAccountFromDisk() -> Bool {
-    guard let username = lastAccountUsername() else { return false }
-    guard !username.isEmpty else { return false }
-    do {
-      let dat = try Data(contentsOf: URL(fileURLWithPath: Path.user(username, "user.dat")))
-
-      do {
-        let decoder = JSONDecoder()
-        let user = try decoder.decode(UserModel.self, from: dat)
-
-        self.username = username
-        self.user = user
-
-        return true
-
-      } catch {
-        return false
-      }
-
-    } catch {
-      return false
-    }
+    guard let username = lastAccountUsername(), !username.isEmpty else { return false }
+    guard let user: UserModel = Archive.fromJSONFile(Path.user(username, "user.dat")) else { return false }
+    self.username = username
+    self.user = user
+    return true
   }
 
   // MARK: Ever account (only username)

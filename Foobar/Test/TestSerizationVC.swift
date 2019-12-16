@@ -28,8 +28,8 @@ class TestSerizationVC: UIViewController {
 //
 //    Archive.toJSON(dict, Path.document("abc.json"))
 
-    let ret = Archive.fromJSONFile(Path.document("abc.json"))
-    print(ret)
+//    let ret = Archive.fromJSONFile(Path.document("abc.json"))
+//    print(ret)
 
     //let encoder = JSONEncoder()
 //    let encoder = PropertyListEncoder()

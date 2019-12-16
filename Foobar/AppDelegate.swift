@@ -17,6 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     print(Path.document())
 
+    let expiration = Expiration(Path.document("asdf.json"))
+//    expiration.setKey("aa", 1)
+//    expiration.setKey("bb", 5)
+//    expiration.setKey("cc", 10)
+//    expiration.setKey("dd", 100)
+
+    print(expiration.hasKey("aa"))
+    print(expiration.hasKey("bb"))
+    print(expiration.hasKey("cc"))
+    print(expiration.hasKey("dd"))
+
 
     print("Account")
 //    print(AccountManager.shared.everAccountList())

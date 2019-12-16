@@ -27,12 +27,13 @@ class Archive {
       return false
     }
   }
-  static func fromJSONFile(_ path: String) -> Any? {
+  static func fromJSONFile<DecodableType: Decodable>(_ path: String) -> DecodableType? {
     do {
       let dat = try Data(contentsOf: URL(fileURLWithPath: path))
 
       do {
-        let ret = try JSONSerialization.jsonObject(with: dat, options: [])
+        let decoder = JSONDecoder()
+        let ret = try decoder.decode(DecodableType.self, from: dat)
         return ret
       } catch {
         return nil
