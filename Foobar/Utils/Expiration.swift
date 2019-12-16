@@ -12,6 +12,7 @@ class Expiration {
   private var path: String = ""
   private var pool: [String:Double] = [:]
   private var lock = NSLock()
+  private var work: DispatchWorkItem? = nil
 
   init(_ path: String) {
     self.path = path
@@ -29,6 +30,7 @@ class Expiration {
       ret = Date().timeIntervalSince1970 < value
     }
     lock.unlock()
+    delayClean()
     return ret
   }
   func setKey(_ key: String, _ timeout: TimeInterval) {
@@ -41,6 +43,7 @@ class Expiration {
     }
     Archive.toJSONFile(pool, path)
     lock.unlock()
+    delayClean()
   }
   func removeKey(_ key: String) {
     guard !key.isEmpty else { return }
@@ -48,6 +51,7 @@ class Expiration {
     pool[key] = nil
     Archive.toJSONFile(pool, path)
     lock.unlock()
+    delayClean()
   }
   func removeAllKeys() {
     lock.lock()
@@ -56,7 +60,22 @@ class Expiration {
     lock.unlock()
   }
 
+  private func delayClean() {
+    print("expiration in delay: \(work != nil)")
+    work?.cancel()
+
+    let newWork = DispatchWorkItem { [weak self] in
+      guard let self = self else { return }
+      print("expiration to clean")
+      self.clean()
+      self.work = nil
+    }
+
+    work = newWork
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: newWork)
+  }
   func clean() {
+    print("expiration did clean")
     lock.lock()
     pool = cleanInvalidEntries(pool)
     Archive.toJSONFile(pool, path)

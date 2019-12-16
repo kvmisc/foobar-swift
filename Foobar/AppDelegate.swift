@@ -13,11 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
+  var expiration: Expiration! = nil
+
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     print(Path.document())
 
-    let expiration = Expiration(Path.document("asdf.json"))
+    expiration = Expiration(Path.document("asdf.json"))
 //    expiration.setKey("aa", 1)
 //    expiration.setKey("bb", 5)
 //    expiration.setKey("cc", 10)
@@ -27,6 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     print(expiration.hasKey("bb"))
     print(expiration.hasKey("cc"))
     print(expiration.hasKey("dd"))
+
+    DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
+      self.expiration.hasKey("aa")
+    }
 
 
     print("Account")
