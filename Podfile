@@ -7,6 +7,7 @@ target 'Foobar' do
 
   pod 'AppVersionMonitor'
   pod 'DeviceKit'
+  pod 'KeychainAccess'
   pod 'AsyncSwift'
   pod 'Then'
   pod 'Localize-Swift'

@@ -17,22 +17,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     print(Path.document())
 
-    let expiration = Expiration(Path.document("find.json"))
 
-//    expiration.setKey("aa", 0.1)
-//    expiration.setKey("bb", 1)
-//    expiration.setKey("cc", 5)
-//    expiration.setKey("dd", 10)
-//    expiration.setKey("ee", 20)
-//    expiration.setKey("ff", 500)
-//    expiration.setKey("gg", 10000)
-    print(expiration.hasKey("aa"))
-    print(expiration.hasKey("bb"))
-    print(expiration.hasKey("cc"))
-    print(expiration.hasKey("dd"))
-    print(expiration.hasKey("ee"))
-    print(expiration.hasKey("ff"))
-    print(expiration.hasKey("gg"))
+    print("Account")
+//    print(AccountManager.shared.everAccountList())
+//    AccountManager.shared.everAccountListAdd("aa")
+//    print(AccountManager.shared.everAccountList())
+//    AccountManager.shared.everAccountListAdd("zz")
+//    print(AccountManager.shared.everAccountList())
+//    AccountManager.shared.everAccountListAdd("bb")
+//    print(AccountManager.shared.everAccountList())
+//    AccountManager.shared.everAccountListAdd("aa")
+//    print(AccountManager.shared.everAccountList())
+
+//    print("\(AccountManager.shared.lastAccountUsername()) \(AccountManager.shared.lastAccountPassword())")
+//    //AccountManager.shared.lastAccountUpdate("aa", "bb")
+//    print("\(AccountManager.shared.lastAccountUsername()) \(AccountManager.shared.lastAccountPassword())")
+//    //AccountManager.shared.lastAccountDelete()
+//    print("\(AccountManager.shared.lastAccountUsername()) \(AccountManager.shared.lastAccountPassword())")
+
+    let am = AccountManager.shared
+    print(am.everAccountList())
+    print("\(am.lastAccountUsername()) \(am.lastAccountPassword())")
+
+//    let um = UserModel()
+//    um.name = "cc"
+//    um.age = 33
+//    am.setCurrentAccount("cc", um)
+//    am.everAccountListAdd("cc")
+//    am.lastAccountUpdate("cc", "zzz")
+    am.loadLastAccountFromDisk()
+    print("\(am.user?.name) \(am.user?.age)")
 
 
     let window = UIWindow()

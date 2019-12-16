@@ -4,6 +4,7 @@ ${BUILT_PRODUCTS_DIR}/AppVersionMonitor/AppVersionMonitor.framework
 ${BUILT_PRODUCTS_DIR}/AsyncSwift/Async.framework
 ${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework
 ${BUILT_PRODUCTS_DIR}/IHKeyboardAvoiding/IHKeyboardAvoiding.framework
+${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
 ${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework
 ${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
@@ -14,7 +15,6 @@ ${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework
 ${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
 ${BUILT_PRODUCTS_DIR}/Static/Static.framework
-${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework
 ${BUILT_PRODUCTS_DIR}/SwiftEntryKit/SwiftEntryKit.framework
 ${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

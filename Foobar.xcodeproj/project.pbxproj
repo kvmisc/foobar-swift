@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01F7682392400800A6E5E6 /* HTTPManager.swift */; };
+		0A11FDA123A7C65B00BF4BED /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11FDA023A7C65B00BF4BED /* UserModel.swift */; };
 		0A19DCDB239B465300CA5D24 /* IconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19DCDA239B465300CA5D24 /* IconLabel.swift */; };
 		0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF4082391530D00F914C5 /* FBRootVC.swift */; };
 		0A2CF40B2391530D00F914C5 /* FBRootVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CF4092391530D00F914C5 /* FBRootVC.xib */; };
@@ -84,6 +85,7 @@
 
 /* Begin PBXFileReference section */
 		0A01F7682392400800A6E5E6 /* HTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
+		0A11FDA023A7C65B00BF4BED /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0A19DCDA239B465300CA5D24 /* IconLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLabel.swift; sourceTree = "<group>"; };
 		0A2CF4082391530D00F914C5 /* FBRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRootVC.swift; sourceTree = "<group>"; };
 		0A2CF4092391530D00F914C5 /* FBRootVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBRootVC.xib; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				0ACBB21123A4A1BD0069F4D7 /* AccountManager.swift */,
+				0A11FDA023A7C65B00BF4BED /* UserModel.swift */,
 			);
 			name = AccountManager;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				0ACBB21223A4A1BD0069F4D7 /* AccountManager.swift in Sources */,
 				0A300D25239D04F00025FC04 /* UIButtonExt.swift in Sources */,
 				0A300D23239CBB470025FC04 /* UIViewControllerExt.swift in Sources */,
+				0A11FDA123A7C65B00BF4BED /* UserModel.swift in Sources */,
 				0A2CF41923916DA400F914C5 /* FBRootCell.swift in Sources */,
 				BB91D2BF238E35130048D384 /* AppDelegate.swift in Sources */,
 				0A9B191923A12E47008906F0 /* TestViewStateRootVC.swift in Sources */,
