@@ -17,6 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     print(Path.document())
 
+    let expire = ExpirePool(Path.document("find.json"))
+
+//    expire.setKey("aa", 0.9)
+//    expire.setKey("bb", 1)
+//    expire.setKey("cc", 5)
+//    expire.setKey("dd", 10)
+//    expire.setKey("ee", 20)
+//    expire.setKey("ff", 500)
+    print(expire.hasKey("aa"))
+    print(expire.hasKey("bb"))
+    print(expire.hasKey("cc"))
+    print(expire.hasKey("dd"))
+    print(expire.hasKey("ee"))
+    print(expire.hasKey("ff"))
+
 
     let window = UIWindow()
 //    let nc = UINavigationController(rootViewController: TestHierachyRedVC())

@@ -90,14 +90,14 @@ class PageState {
     }
   }
 
-  fileprivate func addContainerViewIfNeeded() {
+  private func addContainerViewIfNeeded() {
     guard let view = view else { return }
     view.extAddSubviewIfNeeded(containerView)
     containerView.snp.remakeConstraints { (make) in
       make.edges.equalToSuperview()
     }
   }
-  fileprivate func showViewIfNeeded(_ view: UIView) {
+  private func showViewIfNeeded(_ view: UIView) {
     if view != loadingView { loadingView.removeFromSuperview() }
     if view != emptyView { emptyView.removeFromSuperview() }
     if view != errorView { errorView.removeFromSuperview() }

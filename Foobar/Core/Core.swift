@@ -33,7 +33,7 @@ func TopmostViewController() -> UIViewController {
   // Should not be here
   return UIViewController()
 }
-fileprivate func FindTopmostViewController(_ vc: UIViewController?) -> UIViewController? {
+private func FindTopmostViewController(_ vc: UIViewController?) -> UIViewController? {
   if let nav = vc as? UINavigationController {
     return FindTopmostViewController(nav.topViewController)
   } else if let tab = vc as? UITabBarController, let selected = tab.selectedViewController {

@@ -12,8 +12,8 @@ import Localize_Swift
 class BaseViewController: UIViewController {
 
   // MARK: View lifecycle
-  fileprivate (set) var viewAppeared: Bool = false
-  fileprivate (set) var appearedEver: Bool = false
+  private (set) var viewAppeared: Bool = false
+  private (set) var appearedEver: Bool = false
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     viewAppeared = true
