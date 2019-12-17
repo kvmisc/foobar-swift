@@ -20,17 +20,19 @@ target 'Foobar' do
   pod 'IHKeyboardAvoiding'
   pod 'SwiftTheme'
 
-
-  pod 'Static'
-
   pod 'Alamofire'
-  pod 'MJRefresh'
+  pod 'SwiftyJSON'
+  pod 'ZVRefreshing'
+  pod 'ESPullToRefresh'
+#  pod 'MJRefresh'
 
   pod 'YYText'
+
+
+  pod 'Static'
   pod 'RealmSwift'
 
   pod 'MBProgressHUD'
   pod 'YYModel'
-  pod 'SwiftyJSON'
 
 end

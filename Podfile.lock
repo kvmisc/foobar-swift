@@ -3,6 +3,7 @@ PODS:
   - AppVersionMonitor (1.4.0)
   - AsyncSwift (2.0.4)
   - DeviceKit (2.3.0)
+  - ESPullToRefresh (2.9)
   - IHKeyboardAvoiding (4.7)
   - KeychainAccess (4.1.0)
   - Kingfisher (5.11.0):
@@ -10,7 +11,6 @@ PODS:
   - Kingfisher/Core (5.11.0)
   - Localize-Swift (3.1.0)
   - MBProgressHUD (1.1.0)
-  - MJRefresh (3.2.3)
   - QuickLayout (3.0.0)
   - Realm (4.1.1):
     - Realm/Headers (= 4.1.1)
@@ -32,18 +32,21 @@ PODS:
   - Then (2.6.0)
   - YYModel (1.0.4)
   - YYText (1.0.7)
+  - ZVActivityIndicatorView (0.2.2)
+  - ZVRefreshing (2.3.0):
+    - ZVActivityIndicatorView
 
 DEPENDENCIES:
   - Alamofire
   - AppVersionMonitor
   - AsyncSwift
   - DeviceKit
+  - ESPullToRefresh
   - IHKeyboardAvoiding
   - KeychainAccess
   - Kingfisher
   - Localize-Swift
   - MBProgressHUD
-  - MJRefresh
   - RealmSwift
   - Reusable
   - SnapKit
@@ -55,6 +58,7 @@ DEPENDENCIES:
   - Then
   - YYModel
   - YYText
+  - ZVRefreshing
 
 SPEC REPOS:
   trunk:
@@ -62,12 +66,12 @@ SPEC REPOS:
     - AppVersionMonitor
     - AsyncSwift
     - DeviceKit
+    - ESPullToRefresh
     - IHKeyboardAvoiding
     - KeychainAccess
     - Kingfisher
     - Localize-Swift
     - MBProgressHUD
-    - MJRefresh
     - QuickLayout
     - Realm
     - RealmSwift
@@ -81,18 +85,20 @@ SPEC REPOS:
     - Then
     - YYModel
     - YYText
+    - ZVActivityIndicatorView
+    - ZVRefreshing
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AppVersionMonitor: 0227cbd70c78b787190afd5e959c0280718bac8e
   AsyncSwift: 65775a7b32e740609b24969ece3de58723b9dc3e
   DeviceKit: da103891aa928d89f64ea8dd8aca738c5f3d8ac0
+  ESPullToRefresh: ce058a36454a5032519cc9d8b45da217728cf104
   IHKeyboardAvoiding: 4cae0880c3975feffa278495df894c5166e71ad0
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
   Kingfisher: 4569606189149e19c7d9439f47e885d0679b7a90
   Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  MJRefresh: 2b1214a2dc8f4df4c5dcb028ea2ad4e245425fb7
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   Realm: 25f0a8244cbb1c2271c922963ea8666fc2d8104d
   RealmSwift: 9e2657b33764f80e4a4dffd6d440e24715782052
@@ -106,7 +112,9 @@ SPEC CHECKSUMS:
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  ZVActivityIndicatorView: 7e2ee4153a1a35f311a4b3a21a51a97a6b4fab33
+  ZVRefreshing: a6deaa78b50e7ddb3e17bad4da3cbdfee705d643
 
-PODFILE CHECKSUM: aa027edac2d027d90db5e0c16bb72a5b478deeb7
+PODFILE CHECKSUM: 8e1fe7f174967f50832ba31f468330a1a5d3c1a0
 
 COCOAPODS: 1.8.4

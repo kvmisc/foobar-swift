@@ -70,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    let nc = UINavigationController(rootViewController: TestHierachyRedVC())
 //    nc.isNavigationBarHidden = true
 //    window.rootViewController = nc
-    window.rootViewController = TestSerizationVC()
+    window.rootViewController = TestPullToRefreshVC()
     window.makeKeyAndVisible()
     self.window = window
     return true
