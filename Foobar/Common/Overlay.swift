@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MBProgressHUD
+import PKHUD
 import SwiftEntryKit
 
 class Overlay {
@@ -74,60 +74,39 @@ class Overlay {
   }
 
   // MARK: HUD
-  static func hudActivity(view: UIView? = nil, info: String? = nil) {
-    hudHide(view: view, animated: false)
-
-    let inView = view ?? MainWindow()
-    let hud = MBProgressHUD(view: inView)
-
-    hud.removeFromSuperViewOnHide = true
-    hud.isSquare = true
-    hud.contentColor = nil
-    hud.margin = 15.0
-    hud.bezelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
-
-    hud.mode = .customView
-    if #available(iOS 13.0, *) {
-      let aiv = UIActivityIndicatorView(style: .large)
-      aiv.color = .white
-      aiv.hidesWhenStopped = false
-      aiv.startAnimating()
-      hud.customView = aiv
-    } else {
-      let aiv = UIActivityIndicatorView(style: .whiteLarge)
-      aiv.hidesWhenStopped = false
-      aiv.startAnimating()
-      hud.customView = aiv
-    }
-
-    hud.label.font = UIFont.preferredFont(forTextStyle: .subheadline)
-    hud.label.textColor = .white
-    hud.label.text = info
-
-    inView.addSubview(hud)
-    hud.show(animated: true)
+  static func hudActivity(_ view: UIView? = nil) {
+    PKHUD.sharedHUD.hide(false)
+    PKHUD.sharedHUD.contentView = PKHUDSystemActivityIndicatorView()
+    //PKHUD.sharedHUD.dimsBackground = false
+    //PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = false
+    PKHUD.sharedHUD.show(onView: view ?? MainWindow())
   }
-  static func hudHide(view: UIView? = nil, animated: Bool = false) {
-    MBProgressHUD(for: MainWindow())?.hide(animated: animated)
-    if let view = view {
-      MBProgressHUD(for: view)?.hide(animated: animated)
-    }
+  static func hudInfo(_ view: UIView? = nil, info: String, completion: (()->Void)? = nil) {
+    PKHUD.sharedHUD.hide(false)
+    PKHUD.sharedHUD.contentView = PKHUDTextView(text: info)
+    //PKHUD.sharedHUD.dimsBackground = false
+    //PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = false
+    PKHUD.sharedHUD.show(onView: view ?? MainWindow())
+    PKHUD.sharedHUD.hide(afterDelay: 3.0) { success in completion?() }
+  }
+  static func hudHide(_ animated: Bool = false) {
+    PKHUD.sharedHUD.hide(animated)
   }
 
   // MARK: Drop
   // 显示在屏幕顶部(MainWindow), 点周围有效果, 点击/时间到消失
   // 后来的会隐藏前面的
   // clicked 和 dismissed 不会周时被调用, 因为点击里面已经知道隐藏了
-  static func dropSuccess(_ info: String, _ clicked: DropAction? = nil, _ dismissed: DropAction? = nil) {
+  static func dropSuccess(_ info: String, clicked: DropAction? = nil, dismissed: DropAction? = nil) {
     Drop.down(info, state: .success, duration: 3.0, action: clicked, completion: dismissed)
   }
-  static func dropFailure(_ info: String, _ clicked: DropAction? = nil, _ dismissed: DropAction? = nil) {
+  static func dropFailure(_ info: String, clicked: DropAction? = nil, dismissed: DropAction? = nil) {
     Drop.down(info, state: .error, duration: 3.0, action: clicked, completion: dismissed)
   }
-  static func dropWarning(_ info: String, _ clicked: DropAction? = nil, _ dismissed: DropAction? = nil) {
+  static func dropWarning(_ info: String, clicked: DropAction? = nil, dismissed: DropAction? = nil) {
     Drop.down(info, state: .warning, duration: 3.0, action: clicked, completion: dismissed)
   }
-  static func dropMessage(_ info: String, _ clicked: DropAction? = nil, _ dismissed: DropAction? = nil) {
+  static func dropMessage(_ info: String, clicked: DropAction? = nil, dismissed: DropAction? = nil) {
     Drop.down(info, state: .info, duration: 3.0, action: clicked, completion: dismissed)
   }
   static func dropHide() {

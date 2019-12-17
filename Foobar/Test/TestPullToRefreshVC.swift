@@ -8,7 +8,6 @@
 
 import UIKit
 import Reusable
-import ESPullToRefresh
 import Async
 
 class TestPullToRefreshVC: UIViewController {
@@ -16,6 +15,12 @@ class TestPullToRefreshVC: UIViewController {
   let tableView: UITableView = {
     let ret = UITableView(frame: .zero, style: .plain)
     ret.register(cellType: TestPullToRefreshCell.self)
+    return ret
+  }()
+
+  let contentView: UIView = {
+    let ret = UIView()
+    ret.extSetBorder()
     return ret
   }()
 
@@ -43,6 +48,11 @@ class TestPullToRefreshVC: UIViewController {
     bt.snp.makeConstraints { (make) in
       make.top.equalToSuperview().offset(STATUS_BAR_HET)
       make.right.equalToSuperview()
+    }
+
+    view.addSubview(contentView)
+    contentView.snp.makeConstraints { (make) in
+      make.edges.equalToSuperview().inset(cce(50, 50, 50, 50))
     }
   }
 
@@ -97,9 +107,9 @@ class TestPullToRefreshVC: UIViewController {
   }
 
   @objc func addMoreData(_ sender: UIButton) {
-    for i in 1...20 {
-      nextList.insert("\(i)", at: 0)
-    }
+//    for i in 1...20 {
+//      nextList.insert("\(i)", at: 0)
+//    }
   }
 
 }
