@@ -28,7 +28,6 @@ target 'Foobar' do
 
 
   pod 'Static'
-  pod 'RealmSwift'
 
   pod 'MBProgressHUD'
   pod 'YYModel'

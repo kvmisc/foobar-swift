@@ -35,7 +35,6 @@
 		0ACBB21823A5EF590069F4D7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0ACBB21423A5EF590069F4D7 /* Localizable.strings */; };
 		0ACBB21C23A5FDEE0069F4D7 /* TestJSONVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACBB21B23A5FDEE0069F4D7 /* TestJSONVC.swift */; };
 		0ACBB21E23A6319C0069F4D7 /* TestJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACBB21D23A6319C0069F4D7 /* TestJSON.swift */; };
-		0ACBB22023A64A650069F4D7 /* TestRealmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACBB21F23A64A650069F4D7 /* TestRealmVC.swift */; };
 		51ED5B58178026AF3ADCE160 /* Pods_Foobar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */; };
 		BB01147723A788E9002EA1A2 /* TestSerizationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB01147623A788E9002EA1A2 /* TestSerizationVC.swift */; };
 		BB11C65623A3AB7E00008938 /* navbar_back_dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65223A3AB7E00008938 /* navbar_back_dark@3x.png */; };
@@ -117,7 +116,6 @@
 		0ACBB21723A5EF590069F4D7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0ACBB21B23A5FDEE0069F4D7 /* TestJSONVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJSONVC.swift; sourceTree = "<group>"; };
 		0ACBB21D23A6319C0069F4D7 /* TestJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJSON.swift; sourceTree = "<group>"; };
-		0ACBB21F23A64A650069F4D7 /* TestRealmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRealmVC.swift; sourceTree = "<group>"; };
 		2BCD74F1A55A7280F3DB3800 /* Pods-Foobar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.release.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.release.xcconfig"; sourceTree = "<group>"; };
 		B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foobar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB01147623A788E9002EA1A2 /* TestSerizationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSerizationVC.swift; sourceTree = "<group>"; };
@@ -364,7 +362,6 @@
 				BB6C9A64239E06DA00822180 /* TestThen.swift */,
 				0ACBB21B23A5FDEE0069F4D7 /* TestJSONVC.swift */,
 				0ACBB21D23A6319C0069F4D7 /* TestJSON.swift */,
-				0ACBB21F23A64A650069F4D7 /* TestRealmVC.swift */,
 				BB01147623A788E9002EA1A2 /* TestSerizationVC.swift */,
 				BBEA347423A866DE00FBC575 /* TestPullToRefreshVC.swift */,
 				BB462896239E5CB200989126 /* TestViewState */,
@@ -606,7 +603,6 @@
 				BB5885A5239E44780051220C /* TestLoadView.swift in Sources */,
 				0A300D1F239C8C030025FC04 /* FloatingPointExt.swift in Sources */,
 				BB6C9A61239DF3F300822180 /* Core.swift in Sources */,
-				0ACBB22023A64A650069F4D7 /* TestRealmVC.swift in Sources */,
 				BB46289A239E5CDF00989126 /* TestViewStateVC.swift in Sources */,
 				0A53303B238EC957009B5375 /* DataStringExt.swift in Sources */,
 				BBBB060A239F403B0004613C /* Overlay.swift in Sources */,
