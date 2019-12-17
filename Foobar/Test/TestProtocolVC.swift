@@ -53,7 +53,7 @@ class TestProtocolVC: UIViewController {
     default:
       line.backgroundColor = .yellow
     }
-    line.contentHeight = CGFloat(count+1) * 20.0 + 30
+    line.contentHeight = CGFloat(count+1) * 40.0 
     count += 1
 
     let ln = FlowLineView(line)

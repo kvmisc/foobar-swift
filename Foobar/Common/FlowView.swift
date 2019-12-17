@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FlowView: UIView {
+class FlowView: UIScrollView {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -19,32 +19,31 @@ class FlowView: UIView {
     setup()
   }
   func setup() {
-    addSubview(scrollView)
+    addSubview(containerView)
   }
 
-  let scrollView: UIScrollView = {
-    let ret = UIScrollView()
+  let containerView: UIView = {
+    let ret = UIView()
+    ret.backgroundColor = .clear
     return ret
   }()
 
   var lines: [FlowLineView] = []
 
-  var alwaysScrollable = false
-
   func addLine(_ line: FlowLineView) {
-    scrollView.extAddSubviewIfNeeded(line)
+    containerView.extAddSubviewIfNeeded(line)
     if !lines.contains(line) {
       lines.append(line)
       lines.sort { $0.index < $1.index }
     }
-    setNeedsLayout()
+    setNeedsUpdateConstraints()
   }
   func removeLine(_ line: FlowLineView) {
     let at = lines.firstIndex(of: line)
     if let at = at {
       line.removeFromSuperview()
       lines.remove(at: at)
-      setNeedsLayout()
+      setNeedsUpdateConstraints()
     }
   }
   func removeLine(_ at: Int) {
@@ -52,46 +51,48 @@ class FlowView: UIView {
       let line = lines[at]
       line.removeFromSuperview()
       lines.remove(at: at)
-      setNeedsLayout()
+      setNeedsUpdateConstraints()
     }
   }
-
   func layoutLines() {
-    setNeedsLayout()
+    setNeedsUpdateConstraints()
   }
 
-  override func layoutSubviews() {
-    super.layoutSubviews()
-    scrollView.frame = bounds
+  override func updateConstraints() {
+    containerView.snp.remakeConstraints { (make) in
+      make.edges.equalTo(self)
+      make.width.equalTo(self)
+    }
 
-    var offsetY: CGFloat = 0.0
+    var prevView: FlowLineView? = nil
     for line in lines {
-      let contentHeight = line.extIntrinsicContentHeight
-      line.frame = ccr(line.insets.left,
-                       offsetY+line.insets.top,
-                       extWidth-line.insets.left-line.insets.right,
-                       contentHeight)
-      offsetY += line.insets.top
-      offsetY += contentHeight
-      offsetY += line.insets.bottom
+      line.snp.remakeConstraints { (make) in
+        if let prevView = prevView {
+          make.top.equalTo(prevView.snp.bottom).offset(prevView.insets.bottom+line.insets.top)
+        } else {
+          make.top.equalToSuperview().offset(line.insets.top)
+        }
+        make.left.equalToSuperview().offset(line.insets.left)
+        make.right.equalToSuperview().offset(-line.insets.right)
+      }
+      prevView = line
     }
 
-    if alwaysScrollable {
-      let contentHeight = max(extHeight+1, offsetY)
-      scrollView.contentSize = ccs(extWidth, contentHeight)
+    if let prevView = prevView {
+      containerView.snp.makeConstraints { (make) in
+        make.bottom.equalTo(prevView).offset(prevView.insets.bottom)
+      }
     } else {
-      scrollView.contentSize = ccs(extWidth, offsetY)
+      containerView.snp.makeConstraints { (make) in
+        make.height.equalTo(0)
+      }
     }
+
+    super.updateConstraints()
   }
 }
 
 class FlowLineView: UIView {
-  weak var flowView: FlowView? = nil
-  var insets: UIEdgeInsets = .zero
-  var index = 0
-  var contentView: UIView? = nil {
-    didSet { setup() }
-  }
 //  override init(frame: CGRect) {
 //    super.init(frame: frame)
 //  }
@@ -105,15 +106,25 @@ class FlowLineView: UIView {
   }
   func setup() {
     extAddSubviewIfNeeded(contentView)
-    setNeedsLayout()
+    setNeedsUpdateConstraints()
     invalidateIntrinsicContentSize()
-    if self.superview == flowView?.scrollView {
+    if self.superview == flowView?.containerView {
       flowView?.layoutLines()
     }
   }
-  override func layoutSubviews() {
-    super.layoutSubviews()
-    contentView?.frame = bounds
+
+  weak var flowView: FlowView? = nil
+  var insets: UIEdgeInsets = .zero
+  var index = 0
+  var contentView: UIView? = nil {
+    didSet { setup() }
+  }
+
+  override func updateConstraints() {
+    contentView?.snp.remakeConstraints({ (make) in
+      make.edges.equalToSuperview()
+    })
+    super.updateConstraints()
   }
   override var intrinsicContentSize: CGSize {
     if let contentView = contentView {
