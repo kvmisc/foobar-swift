@@ -12,6 +12,7 @@ class NavBar: UIView {
 
   let containerView: UIView = {
     let ret = UIView()
+    ret.extUseAutoLayout()
     ret.backgroundColor = .clear
     return ret
   }()
@@ -45,6 +46,7 @@ class NavBar: UIView {
 
   let leftButton: UIButton = {
     let ret = UIButton(type: .custom)
+    ret.extUseAutoLayout()
     ret.extSetTitleFont(UIFont.preferredFont(forTextStyle: .body))
     ret.extSetTitleColor(.black)
     //ret.extSetTitle(nil)
@@ -53,6 +55,7 @@ class NavBar: UIView {
   }()
   let rightButton: UIButton = {
     let ret = UIButton(type: .custom)
+    ret.extUseAutoLayout()
     ret.extSetTitleFont(UIFont.preferredFont(forTextStyle: .body))
     ret.extSetTitleColor(.black)
     //ret.extSetTitle(nil)
@@ -61,6 +64,7 @@ class NavBar: UIView {
   }()
   let titleLabel: UILabel = {
     let ret = UILabel()
+    ret.extUseAutoLayout()
     ret.font = UIFont.preferredFont(forTextStyle: .title1)
     ret.textColor = .black
     ret.textAlignment = .center

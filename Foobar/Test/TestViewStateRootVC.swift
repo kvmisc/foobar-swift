@@ -35,8 +35,8 @@ class TestViewStateRootVC: UIViewController {
     return ret
   }()
 
-//  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//    let vc = TestViewStateVC()
-//    self.navigationController?.pushViewController(vc, animated: true)
-//  }
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    let vc = TestViewStateVC()
+    self.navigationController?.pushViewController(vc, animated: true)
+  }
 }

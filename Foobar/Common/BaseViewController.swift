@@ -134,7 +134,7 @@ class BaseViewController: UIViewController {
     if shouldLoadNavBar() {
       if navBar == nil {
         navBar = NavBar()
-        navBar?.translatesAutoresizingMaskIntoConstraints = false
+        navBar?.extUseAutoLayout()
         navBar?.leftButton.extAddTarget(self, #selector(navBarLeftAction(_:)))
         navBar?.rightButton.extAddTarget(self, #selector(navBarRightAction(_:)))
       }
@@ -199,6 +199,7 @@ class BaseViewController: UIViewController {
     if shouldLoadToolBar() {
       if toolBar == nil {
         toolBar = ToolBar()
+        toolBar?.extUseAutoLayout()
       }
       setupToolBar()
     } else {
@@ -217,6 +218,7 @@ class BaseViewController: UIViewController {
     if shouldLoadContentView() {
       if contentView == nil {
         contentView = UIView()
+        contentView?.extUseAutoLayout()
         contentView?.backgroundColor = .white
         view.addSubview(contentView!)
         contentView?.extSendToBack()

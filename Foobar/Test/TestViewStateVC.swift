@@ -50,17 +50,17 @@ class TestViewStateVC: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
 
-    view.addSubview(bt)
-    bt.snp.makeConstraints { (make) in
-      make.center.equalToSuperview()
-    }
-
-    bt.extCenterHorizontally(5)
-    bt.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+//    view.addSubview(bt)
+//    bt.snp.makeConstraints { (make) in
+//      make.center.equalToSuperview()
+//    }
+//
+//    bt.extCenterHorizontally(5)
+//    bt.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 
 //    print("loading")
-//    pageState.startLoading()
-//    doLoading()
+    pageState.startLoading()
+    doLoading()
   }
 
   func doLoading() {

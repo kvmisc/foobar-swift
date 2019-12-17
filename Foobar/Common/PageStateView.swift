@@ -18,6 +18,7 @@ class PageStateView: UIView {
     setup()
   }
   func setup() {
+    self.extUseAutoLayout()
     addSubview(stackView)
   }
 
@@ -72,12 +73,14 @@ class PageStateLoadingView: PageStateView {
   let indicatorView: UIActivityIndicatorView = {
     if #available(iOS 13.0, *) {
       let ret = UIActivityIndicatorView(style: .medium)
+      ret.extUseAutoLayout()
       ret.color = .gray
       ret.hidesWhenStopped = false
       ret.startAnimating()
       return ret
     } else {
       let ret = UIActivityIndicatorView(style: .gray)
+      ret.extUseAutoLayout()
       ret.hidesWhenStopped = false
       ret.startAnimating()
       return ret
@@ -85,6 +88,7 @@ class PageStateLoadingView: PageStateView {
   }()
   let infoLabel: UILabel = {
     let ret = UILabel()
+    ret.extUseAutoLayout()
     ret.backgroundColor = .clear
     ret.textAlignment = .center
     ret.font = UIFont.preferredFont(forTextStyle: .subheadline)
@@ -103,6 +107,7 @@ class PageStateEmptyView: PageStateView {
   }
   let imageView: UIImageView = {
     let ret = UIImageView()
+    ret.extUseAutoLayout()
     ret.backgroundColor = .clear
     ret.contentMode = .center
     ret.image = cci("page_empty")
@@ -110,6 +115,7 @@ class PageStateEmptyView: PageStateView {
   }()
   let titleLabel: UILabel = {
     let ret = UILabel()
+    ret.extUseAutoLayout()
     ret.backgroundColor = .clear
     ret.textAlignment = .center
     ret.font = UIFont.preferredFont(forTextStyle: .body)
@@ -119,6 +125,7 @@ class PageStateEmptyView: PageStateView {
   }()
   let infoLabel: UILabel = {
     let ret = UILabel()
+    ret.extUseAutoLayout()
     ret.backgroundColor = .clear
     ret.textAlignment = .center
     ret.font = UIFont.preferredFont(forTextStyle: .subheadline)
@@ -138,6 +145,7 @@ class PageStateErrorView: PageStateView {
   }
   let imageView: UIImageView = {
     let ret = UIImageView()
+    ret.extUseAutoLayout()
     ret.backgroundColor = .clear
     ret.contentMode = .center
     ret.image = cci("page_empty")
@@ -145,6 +153,7 @@ class PageStateErrorView: PageStateView {
   }()
   let titleLabel: UILabel = {
     let ret = UILabel()
+    ret.extUseAutoLayout()
     ret.backgroundColor = .clear
     ret.textAlignment = .center
     ret.font = UIFont.preferredFont(forTextStyle: .body)
@@ -154,6 +163,7 @@ class PageStateErrorView: PageStateView {
   }()
   let infoLabel: UILabel = {
     let ret = UILabel()
+    ret.extUseAutoLayout()
     ret.backgroundColor = .clear
     ret.textAlignment = .center
     ret.font = UIFont.preferredFont(forTextStyle: .subheadline)

@@ -20,6 +20,7 @@ class IconLabel: UIView {
 
   let stackView: UIStackView = {
     let ret = UIStackView()
+    ret.extUseAutoLayout()
     ret.alignment = .center
     ret.spacing = 5.0
     return ret
@@ -27,11 +28,13 @@ class IconLabel: UIView {
 
   let iconView: UIImageView = {
     let ret = UIImageView()
+    ret.extUseAutoLayout()
     return ret
   }()
 
   let valueLabel: UILabel = {
     let ret = UILabel()
+    ret.extUseAutoLayout()
     return ret
   }()
 

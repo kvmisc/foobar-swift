@@ -23,6 +23,7 @@ class PageState {
 
   let containerView: UIView = {
     let ret = UIView()
+    ret.extUseAutoLayout()
     ret.backgroundColor = .white
     return ret
   }()
