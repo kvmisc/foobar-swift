@@ -57,6 +57,7 @@ class TestProtocolVC: UIViewController {
     count += 1
 
     let ln = FlowLineView(line)
+    //ln.contentView = line
     ln.insets.top = 5
     ln.insets.left = 5
     ln.insets.right = 10
@@ -80,12 +81,12 @@ class TestLineView: UIView {
   }
 
   func setup() {
-    let bt = UIButton(type: .system)
-    bt.extSetTitle("flaks")
-    addSubview(bt)
-    bt.snp.makeConstraints { (make) in
-      make.edges.equalToSuperview().inset(cce(5, 5, 5, 5))
-    }
+//    let bt = UIButton(type: .system)
+//    bt.extSetTitle("flaks")
+//    addSubview(bt)
+//    bt.snp.makeConstraints { (make) in
+//      make.edges.equalToSuperview().inset(cce(5, 5, 5, 5))
+//    }
   }
 
   override var intrinsicContentSize: CGSize {

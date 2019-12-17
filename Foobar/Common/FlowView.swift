@@ -99,21 +99,20 @@ class FlowLineView: UIView {
   required init?(coder: NSCoder) {
     super.init(coder: coder)
   }
-  init(_ view: UIView) {
-    contentView = view
+  init(_ view: UIView? = nil) {
     super.init(frame: .zero)
-    setup()
+    if view != nil {
+      contentView = view
+      extAddSubviewIfNeeded(contentView)
+      setNeedsUpdateConstraints()
+    }
   }
   func setup() {
     extAddSubviewIfNeeded(contentView)
     setNeedsUpdateConstraints()
     invalidateIntrinsicContentSize()
-    if self.superview == flowView?.containerView {
-      flowView?.layoutLines()
-    }
   }
 
-  weak var flowView: FlowView? = nil
   var insets: UIEdgeInsets = .zero
   var index = 0
   var contentView: UIView? = nil {
@@ -126,10 +125,10 @@ class FlowLineView: UIView {
     })
     super.updateConstraints()
   }
-  override var intrinsicContentSize: CGSize {
-    if let contentView = contentView {
-      return contentView.intrinsicContentSize
-    }
-    return ccs(0, 0)
-  }
+//  override var intrinsicContentSize: CGSize {
+//    if let contentView = contentView {
+//      return contentView.intrinsicContentSize
+//    }
+//    return ccs(0, 0)
+//  }
 }
