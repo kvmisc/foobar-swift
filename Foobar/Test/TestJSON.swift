@@ -48,6 +48,7 @@ struct TheObject: Codable {
   // 部分键改名字
   // 非可选字段必须映射, 否则编译出错
   // 可选字段如果不映射, 就算 JSON 里提供了值也解析不出来
+  // 提供了默认值的属性可以不写在这里, 但如果不写 JSON 里有值也解不过来
   var field: String
   enum CodingKeys: String, CodingKey {
     case name
