@@ -25,7 +25,6 @@ PODS:
   - SwiftyJSON (5.0.0)
   - TextAttributes (2.0.2)
   - Then (2.6.0)
-  - YYModel (1.0.4)
   - YYText (1.0.7)
 
 DEPENDENCIES:
@@ -47,7 +46,6 @@ DEPENDENCIES:
   - SwiftyJSON
   - TextAttributes
   - Then
-  - YYModel
   - YYText
 
 SPEC REPOS:
@@ -71,7 +69,6 @@ SPEC REPOS:
     - SwiftyJSON
     - TextAttributes
     - Then
-    - YYModel
     - YYText
 
 SPEC CHECKSUMS:
@@ -94,9 +91,8 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TextAttributes: 89905fb52c36de587010f335bd4071463d9c6d9b
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
-  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 986f549a2733ac3b4040b5644db743a2894d3e32
+PODFILE CHECKSUM: 396f057866be7815afadb83af0f484dfc0bb1cad
 
 COCOAPODS: 1.8.4

@@ -28,8 +28,6 @@ target 'Foobar' do
 
 
   pod 'Static'
-
   pod 'MBProgressHUD'
-  pod 'YYModel'
 
 end
