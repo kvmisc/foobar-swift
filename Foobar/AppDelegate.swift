@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    let nc = UINavigationController(rootViewController: TestHierachyRedVC())
 //    nc.isNavigationBarHidden = true
 //    window.rootViewController = nc
-    window.rootViewController = TestJSONVC()
+    window.rootViewController = TestProtocolVC()
     window.makeKeyAndVisible()
     self.window = window
     return true
