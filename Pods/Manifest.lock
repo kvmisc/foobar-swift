@@ -18,7 +18,6 @@ PODS:
   - Reusable/Storyboard (4.1.0)
   - Reusable/View (4.1.0)
   - SnapKit (5.0.1)
-  - Static (4.0.0)
   - SwiftEntryKit (1.2.3):
     - QuickLayout (= 3.0.0)
   - SwiftTheme (0.4.7)
@@ -40,7 +39,6 @@ DEPENDENCIES:
   - PKHUD
   - Reusable
   - SnapKit
-  - Static
   - SwiftEntryKit
   - SwiftTheme
   - SwiftyJSON
@@ -63,7 +61,6 @@ SPEC REPOS:
     - QuickLayout
     - Reusable
     - SnapKit
-    - Static
     - SwiftEntryKit
     - SwiftTheme
     - SwiftyJSON
@@ -85,7 +82,6 @@ SPEC CHECKSUMS:
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   Reusable: 82be188f29d96dc5eff0db7b2393bcc08d2cdd5b
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  Static: 3204aad2dc648cfe08dc7aa4a26d65ee37e4853a
   SwiftEntryKit: 340713c2e4a6662c5149629990bf1088bf5f0389
   SwiftTheme: 67bbb51f2ef69570164562376f441655a143399d
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
@@ -93,6 +89,6 @@ SPEC CHECKSUMS:
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 5c0e7f67dd65678f68d7d79dc15c2b31f6b3fe8d
+PODFILE CHECKSUM: 58f948d9580c8a1d49434f933397be746dddc761
 
 COCOAPODS: 1.8.4

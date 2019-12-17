@@ -27,6 +27,4 @@ target 'Foobar' do
 
   pod 'YYText'
 
-  pod 'Static'
-
 end
