@@ -22,5 +22,3 @@ ${BUILT_PRODUCTS_DIR}/TextAttributes/TextAttributes.framework
 ${BUILT_PRODUCTS_DIR}/Then/Then.framework
 ${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework
 ${BUILT_PRODUCTS_DIR}/YYText/YYText.framework
-${BUILT_PRODUCTS_DIR}/ZVActivityIndicatorView/ZVActivityIndicatorView.framework
-${BUILT_PRODUCTS_DIR}/ZVRefreshing/ZVRefreshing.framework

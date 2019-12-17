@@ -32,9 +32,6 @@ PODS:
   - Then (2.6.0)
   - YYModel (1.0.4)
   - YYText (1.0.7)
-  - ZVActivityIndicatorView (0.2.2)
-  - ZVRefreshing (2.3.0):
-    - ZVActivityIndicatorView
 
 DEPENDENCIES:
   - Alamofire
@@ -58,7 +55,6 @@ DEPENDENCIES:
   - Then
   - YYModel
   - YYText
-  - ZVRefreshing
 
 SPEC REPOS:
   trunk:
@@ -85,8 +81,6 @@ SPEC REPOS:
     - Then
     - YYModel
     - YYText
-    - ZVActivityIndicatorView
-    - ZVRefreshing
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -112,9 +106,7 @@ SPEC CHECKSUMS:
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
-  ZVActivityIndicatorView: 7e2ee4153a1a35f311a4b3a21a51a97a6b4fab33
-  ZVRefreshing: a6deaa78b50e7ddb3e17bad4da3cbdfee705d643
 
-PODFILE CHECKSUM: 8e1fe7f174967f50832ba31f468330a1a5d3c1a0
+PODFILE CHECKSUM: f65a1f7f29306d234bdb290a3a93c5f0ef893353
 
 COCOAPODS: 1.8.4
