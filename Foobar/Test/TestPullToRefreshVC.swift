@@ -71,10 +71,16 @@ class TestPullToRefreshVC: UIViewController {
     prevList = prevList.dropLast(5)
     tableView.reloadData()
 
-    tableView.extStopRefreshHeader()
-    tableView.extAddRefreshFooter(!nextList.isEmpty, false) { [unowned self] in
-      self.loadNext()
+    let index = 1
+    let hasMore = !nextList.isEmpty
+
+    if index == 1 {
+      tableView.extStopRefreshHeader()
+      tableView.extAddRefreshFooter(hasMore) { [unowned self] in self.loadNext() }
+    } else {
+      tableView.extStopRefreshFooter(hasMore)
     }
+
   }
 
   func loadNext() {
@@ -87,7 +93,7 @@ class TestPullToRefreshVC: UIViewController {
     nextList = Array(nextList.dropFirst(5))
     tableView.reloadData()
 
-    tableView.extStopRefreshFooter(!nextList.isEmpty, false)
+    tableView.extStopRefreshFooter(!nextList.isEmpty)
   }
 
   @objc func addMoreData(_ sender: UIButton) {

@@ -82,7 +82,7 @@
 		BBE7DCDE23A24C9B009A650F /* TestCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCDD23A24C9B009A650F /* TestCircleView.swift */; };
 		BBE7DCE023A25423009A650F /* TestLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCDF23A25423009A650F /* TestLabel.swift */; };
 		BBEA347523A866DE00FBC575 /* TestPullToRefreshVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEA347423A866DE00FBC575 /* TestPullToRefreshVC.swift */; };
-		BBEA347723A87D5F00FBC575 /* PullToRefreshProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEA347623A87D5F00FBC575 /* PullToRefreshProtocol.swift */; };
+		BBEA347923A8A0A400FBC575 /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEA347823A8A0A400FBC575 /* PullToRefresh.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -168,7 +168,7 @@
 		BBE7DCDD23A24C9B009A650F /* TestCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCircleView.swift; sourceTree = "<group>"; };
 		BBE7DCDF23A25423009A650F /* TestLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLabel.swift; sourceTree = "<group>"; };
 		BBEA347423A866DE00FBC575 /* TestPullToRefreshVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPullToRefreshVC.swift; sourceTree = "<group>"; };
-		BBEA347623A87D5F00FBC575 /* PullToRefreshProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefreshProtocol.swift; sourceTree = "<group>"; };
+		BBEA347823A8A0A400FBC575 /* PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
 		F83B494BE851057FCED14615 /* Pods-Foobar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.debug.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -367,7 +367,6 @@
 				0ACBB21F23A64A650069F4D7 /* TestRealmVC.swift */,
 				BB01147623A788E9002EA1A2 /* TestSerizationVC.swift */,
 				BBEA347423A866DE00FBC575 /* TestPullToRefreshVC.swift */,
-				BBEA347623A87D5F00FBC575 /* PullToRefreshProtocol.swift */,
 				BB462896239E5CB200989126 /* TestViewState */,
 				BB6C9A69239E429800822180 /* TestReusable */,
 			);
@@ -460,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				0A19DCDA239B465300CA5D24 /* IconLabel.swift */,
+				BBEA347823A8A0A400FBC575 /* PullToRefresh.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -640,11 +640,11 @@
 				0ACBB21223A4A1BD0069F4D7 /* AccountManager.swift in Sources */,
 				0A300D25239D04F00025FC04 /* UIButtonExt.swift in Sources */,
 				0A300D23239CBB470025FC04 /* UIViewControllerExt.swift in Sources */,
-				BBEA347723A87D5F00FBC575 /* PullToRefreshProtocol.swift in Sources */,
 				0A11FDA123A7C65B00BF4BED /* UserModel.swift in Sources */,
 				0A2CF41923916DA400F914C5 /* FBRootCell.swift in Sources */,
 				BB91D2BF238E35130048D384 /* AppDelegate.swift in Sources */,
 				0A9B191923A12E47008906F0 /* TestViewStateRootVC.swift in Sources */,
+				BBEA347923A8A0A400FBC575 /* PullToRefresh.swift in Sources */,
 				BB41B29923A78EB400BD1EF4 /* Archive.swift in Sources */,
 				BB5D0D8B239F655B002CEA09 /* TestEntryView.swift in Sources */,
 				0A384B4C239EA8E600CBE1F8 /* TestWindowVC.swift in Sources */,

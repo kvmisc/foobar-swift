@@ -1,5 +1,5 @@
 //
-//  PullToRefreshProtocol.swift
+//  PullToRefresh.swift
 //  Foobar
 //
 //  Created by Kevin Wu on 12/17/19.
@@ -9,9 +9,12 @@
 import UIKit
 import ESPullToRefresh
 
-//protocol PullToRefreshProtocol {
-//
-//}
+// if index == 1 {
+//   tableView.extStopRefreshHeader()
+//   tableView.extAddRefreshFooter(hasMore) { [unowned self] in self.loadNext() }
+// } else {
+//   tableView.extStopRefreshFooter(hasMore)
+// }
 
 extension UIScrollView {
   func extAddRefreshHeader(_ handler: @escaping ()->Void) {
@@ -61,7 +64,6 @@ extension UIScrollView {
     if hasMore {
       es.stopLoadingMore()
     } else {
-      es.stopLoadingMore()
       if alwaysShow {
         es.noticeNoMoreData()
       } else {

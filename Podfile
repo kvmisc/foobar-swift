@@ -22,9 +22,7 @@ target 'Foobar' do
 
   pod 'Alamofire'
   pod 'SwiftyJSON'
-  pod 'ZVRefreshing'
   pod 'ESPullToRefresh'
-#  pod 'MJRefresh'
 
   pod 'YYText'
 
