@@ -1,20 +1,11 @@
 
-
-
-
 无默认值，每个参数必须传，可以省略标签
 无默认值，每个参数必须传，如果有相同类型的重载，不能省略标签
 
 有默认值，部分参数不想传，不能省略标签
 有默认值，想依次传值，可以省略标签
 
-
-
-
-
 Animation
 Events
 Images
 App Routing
-
-translatesAutoresizingMaskIntoConstraints 的作用？
