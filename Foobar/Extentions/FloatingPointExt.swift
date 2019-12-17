@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension FloatingPoint {
+extension FloatingPoint {
   // 保留 xxx 位, 四舍五入
   // 1.12351234 -> 1.124
   // https://codereview.stackexchange.com/questions/142748/swift-floatingpoint-rounded-to-places
