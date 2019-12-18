@@ -20,21 +20,22 @@ class ToolBar: UIView {
     didSet { invalidateIntrinsicContentSize() }
   }
 
-  override var intrinsicContentSize: CGSize {
-    return ccs(UIView.noIntrinsicMetric, preferredHeight+safeAreaHeight)
-  }
-
-
   var contentView: UIView? = nil {
     didSet {
       oldValue?.removeFromSuperview()
       extAddSubviewIfNeeded(contentView)
-      setNeedsLayout()
+      setNeedsUpdateConstraints()
     }
   }
 
-  override func layoutSubviews() {
-    super.layoutSubviews()
-    contentView?.frame = bounds
+  override func updateConstraints() {
+    contentView?.snp.makeConstraints({ (make) in
+      make.edges.equalToSuperview()
+    })
+    super.updateConstraints()
+  }
+
+  override var intrinsicContentSize: CGSize {
+    return ccs(UIView.noIntrinsicMetric, preferredHeight+safeAreaHeight)
   }
 }
