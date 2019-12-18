@@ -11,7 +11,6 @@ target 'Foobar' do
   pod 'AsyncSwift'
   pod 'Then'
   pod 'Localize-Swift'
-  pod 'Reusable'
   pod 'TextAttributes'
 
   pod 'SnapKit'
@@ -19,6 +18,7 @@ target 'Foobar' do
   pod 'SwiftEntryKit'
   pod 'IHKeyboardAvoiding'
   pod 'SwiftTheme'
+  pod 'Reusable'
 
   pod 'Alamofire'
   pod 'SwiftyJSON'
