@@ -8,6 +8,12 @@
 
 import UIKit
 
+//lazy var pageState: PageState = {
+//  let ret = PageState()
+//  ret.view = view
+//  return ret
+//}()
+
 class PageState {
 
   enum State {

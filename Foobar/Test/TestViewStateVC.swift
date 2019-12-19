@@ -11,14 +11,16 @@ import Async
 
 class TestViewStateVC: UIViewController {
 
-  let pageState = PageState()
+  lazy var pageState: PageState = {
+    let ret = PageState()
+    ret.view = view
+    return ret
+  }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     view.backgroundColor = .brown
-
-    pageState.view = view
 
 //    let loadingView = UIView()
 //    loadingView.backgroundColor = .red

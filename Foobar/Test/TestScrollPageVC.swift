@@ -16,9 +16,10 @@ class TestScrollPageVC: UIViewController {
     ret.delegate = self
     return ret
   }()
-  lazy var containerView: UIView = {
+  let containerView: UIView = {
     let ret = UIView()
     ret.backgroundColor = .clear
+    print("here")
     return ret
   }()
   
