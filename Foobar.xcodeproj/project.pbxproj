@@ -40,6 +40,8 @@
 		BB11C65723A3AB7E00008938 /* navbar_back_dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65323A3AB7E00008938 /* navbar_back_dark@2x.png */; };
 		BB11C65823A3AB7E00008938 /* navbar_back_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65423A3AB7E00008938 /* navbar_back_light@2x.png */; };
 		BB11C65923A3AB7E00008938 /* navbar_back_light@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65523A3AB7E00008938 /* navbar_back_light@3x.png */; };
+		BB3C5AED23AB1DD40078F953 /* TestScrollPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C5AEC23AB1DD40078F953 /* TestScrollPageVC.swift */; };
+		BB3C5AEF23AB1EED0078F953 /* GlobalImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C5AEE23AB1EED0078F953 /* GlobalImport.swift */; };
 		BB41B29923A78EB400BD1EF4 /* Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41B29823A78EB400BD1EF4 /* Archive.swift */; };
 		BB462887239E477900989126 /* TestReusableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB462885239E477900989126 /* TestReusableVC.swift */; };
 		BB462888239E477900989126 /* TestReusableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB462886239E477900989126 /* TestReusableVC.xib */; };
@@ -120,6 +122,8 @@
 		BB11C65323A3AB7E00008938 /* navbar_back_dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_dark@2x.png"; sourceTree = "<group>"; };
 		BB11C65423A3AB7E00008938 /* navbar_back_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_light@2x.png"; sourceTree = "<group>"; };
 		BB11C65523A3AB7E00008938 /* navbar_back_light@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_light@3x.png"; sourceTree = "<group>"; };
+		BB3C5AEC23AB1DD40078F953 /* TestScrollPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScrollPageVC.swift; sourceTree = "<group>"; };
+		BB3C5AEE23AB1EED0078F953 /* GlobalImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalImport.swift; sourceTree = "<group>"; };
 		BB41B29823A78EB400BD1EF4 /* Archive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Archive.swift; sourceTree = "<group>"; };
 		BB462885239E477900989126 /* TestReusableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReusableVC.swift; sourceTree = "<group>"; };
 		BB462886239E477900989126 /* TestReusableVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestReusableVC.xib; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 				BB8D53DD2399F931008BA419 /* Layout.swift */,
 				0A300D20239C90310025FC04 /* UIElement.swift */,
 				BB6C9A62239DF52400822180 /* RichText.swift */,
+				BB3C5AEE23AB1EED0078F953 /* GlobalImport.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 				BB462896239E5CB200989126 /* TestViewState */,
 				BB6C9A69239E429800822180 /* TestReusable */,
 				BB7959C923A8D6C000A21343 /* TestProtocolVC.swift */,
+				BB3C5AEC23AB1DD40078F953 /* TestScrollPageVC.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -640,11 +646,13 @@
 				BB8A3A21239DD5A000DF3125 /* TestMultiLineButton.swift in Sources */,
 				BB6C9A63239DF52400822180 /* RichText.swift in Sources */,
 				0ACBB21E23A6319C0069F4D7 /* TestJSON.swift in Sources */,
+				BB3C5AED23AB1DD40078F953 /* TestScrollPageVC.swift in Sources */,
 				BB9D82E523A9F46B00CE73A1 /* ArrayExt.swift in Sources */,
 				BB6C9A65239E06DA00822180 /* TestThen.swift in Sources */,
 				BBEA347523A866DE00FBC575 /* TestPullToRefreshVC.swift in Sources */,
 				BBE5F1A423A31D2F00DC9978 /* NavBar.swift in Sources */,
 				0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */,
+				BB3C5AEF23AB1EED0078F953 /* GlobalImport.swift in Sources */,
 				0A8E76BD23A48F4F00AFA2BA /* TestHierachyRedVC.swift in Sources */,
 				0ACBB21223A4A1BD0069F4D7 /* AccountManager.swift in Sources */,
 				0A300D25239D04F00025FC04 /* UIButtonExt.swift in Sources */,

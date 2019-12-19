@@ -24,6 +24,7 @@ class FlowView: UIScrollView {
 
   let containerView: UIView = {
     let ret = UIView()
+    ret.extUseAutoLayout()
     ret.backgroundColor = .clear
     return ret
   }()
