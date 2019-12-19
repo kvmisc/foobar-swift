@@ -42,6 +42,7 @@
 		BB11C65923A3AB7E00008938 /* navbar_back_light@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65523A3AB7E00008938 /* navbar_back_light@3x.png */; };
 		BB3C5AED23AB1DD40078F953 /* TestScrollPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C5AEC23AB1DD40078F953 /* TestScrollPageVC.swift */; };
 		BB3C5AEF23AB1EED0078F953 /* GlobalImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C5AEE23AB1EED0078F953 /* GlobalImport.swift */; };
+		BB3C5AF123AB46270078F953 /* TestStaticVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C5AF023AB46270078F953 /* TestStaticVC.swift */; };
 		BB41B29923A78EB400BD1EF4 /* Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41B29823A78EB400BD1EF4 /* Archive.swift */; };
 		BB462887239E477900989126 /* TestReusableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB462885239E477900989126 /* TestReusableVC.swift */; };
 		BB462888239E477900989126 /* TestReusableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB462886239E477900989126 /* TestReusableVC.xib */; };
@@ -124,6 +125,7 @@
 		BB11C65523A3AB7E00008938 /* navbar_back_light@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_light@3x.png"; sourceTree = "<group>"; };
 		BB3C5AEC23AB1DD40078F953 /* TestScrollPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScrollPageVC.swift; sourceTree = "<group>"; };
 		BB3C5AEE23AB1EED0078F953 /* GlobalImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalImport.swift; sourceTree = "<group>"; };
+		BB3C5AF023AB46270078F953 /* TestStaticVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStaticVC.swift; sourceTree = "<group>"; };
 		BB41B29823A78EB400BD1EF4 /* Archive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Archive.swift; sourceTree = "<group>"; };
 		BB462885239E477900989126 /* TestReusableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReusableVC.swift; sourceTree = "<group>"; };
 		BB462886239E477900989126 /* TestReusableVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestReusableVC.xib; sourceTree = "<group>"; };
@@ -308,6 +310,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BB3C5AF223AB47560078F953 /* StaticTableView */ = {
+			isa = PBXGroup;
+			children = (
+				BB3C5AF023AB46270078F953 /* TestStaticVC.swift */,
+			);
+			name = StaticTableView;
+			sourceTree = "<group>";
+		};
 		BB46288F239E54A600989126 /* PageState */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +375,7 @@
 				BB6C9A69239E429800822180 /* TestReusable */,
 				BB7959C923A8D6C000A21343 /* TestProtocolVC.swift */,
 				BB3C5AEC23AB1DD40078F953 /* TestScrollPageVC.swift */,
+				BB3C5AF223AB47560078F953 /* StaticTableView */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -639,6 +650,7 @@
 				BBE7DCB423A23BE7009A650F /* Expiration.swift in Sources */,
 				BBE7DCDE23A24C9B009A650F /* TestCircleView.swift in Sources */,
 				0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */,
+				BB3C5AF123AB46270078F953 /* TestStaticVC.swift in Sources */,
 				BB8D53D22399DFFB008BA419 /* Path.swift in Sources */,
 				0A53303D238EC965009B5375 /* StringExt.swift in Sources */,
 				BBE7DCE023A25423009A650F /* TestLabel.swift in Sources */,

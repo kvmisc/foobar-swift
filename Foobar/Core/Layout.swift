@@ -9,6 +9,20 @@
 import UIKit
 
 extension UIView {
+  func extOccupySuperview(_ inset: UIEdgeInsets = .zero) {
+    self.snp.makeConstraints { (make) in
+      make.edges.equalToSuperview().inset(inset)
+    }
+  }
+  func extAlignCenter(_ offset: CGPoint = .zero) {
+    self.snp.makeConstraints { (make) in
+      make.centerX.equalToSuperview().offset(offset.x)
+      make.centerY.equalToSuperview().offset(offset.y)
+    }
+  }
+}
+
+extension UIView {
 
   var extMin: CGPoint {
     get { return frame.origin }
