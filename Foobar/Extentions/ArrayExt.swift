@@ -10,9 +10,9 @@ import UIKit
 
 extension Array where Element: Equatable {
 
-  subscript (safe index: Int) -> Element? {
-    return (0..<count).contains(index) ? self[index] : nil
-  }
+//  subscript (safe index: Int) -> Element? {
+//    return (0..<count).contains(index) ? self[index] : nil
+//  }
 
   mutating func extRemoveObject(_ object: Element) {
     if let index = firstIndex(of: object) {

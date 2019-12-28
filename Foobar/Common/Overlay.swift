@@ -144,7 +144,11 @@ class Overlay {
   // 后来的会隐藏前面的
   static func entrySheet(_ view: UIView,
                          width: EKAttributes.PositionConstraints.Edge = .ratio(value: 1.0),
-                         offset: CGFloat = 0.0)
+                         offset: CGFloat = 0.0,
+                         willAppear: EKAttributes.LifecycleEvents.Event? = nil,
+                         didAppear: EKAttributes.LifecycleEvents.Event? = nil,
+                         willDisappear: EKAttributes.LifecycleEvents.Event? = nil,
+                         didDisappear: EKAttributes.LifecycleEvents.Event? = nil)
   {
     HideKeyboard()
 
@@ -169,6 +173,11 @@ class Overlay {
     attributes.entranceAnimation = .init(translate: .init(duration: 0.25, spring: .init(damping: 1, initialVelocity: 0)))
     attributes.exitAnimation = .init(translate: .init(duration: 0.25, spring: .init(damping: 1, initialVelocity: 0)))
     //attributes.popBehavior = .overridden
+
+    attributes.lifecycleEvents.willAppear = willAppear
+    attributes.lifecycleEvents.didAppear = didAppear
+    attributes.lifecycleEvents.willDisappear = willDisappear
+    attributes.lifecycleEvents.didDisappear = didDisappear
 
     SwiftEntryKit.display(entry: view, using: attributes, presentInsideKeyWindow: false, rollbackWindow: .main)
   }
