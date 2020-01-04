@@ -8,12 +8,6 @@
 
 import UIKit
 
-//let toolBar = ToolBar()
-//toolBar.contentView = xxx
-//toolBar.preferredHeight = xxx.intrinsicContentSize.height
-//toolBar.safeAreaHeight = yyy
-//toolBar.invalidateIntrinsicContentSize()
-
 class ToolBar: UIView {
 
   static let defaultHeight: CGFloat = 49.0

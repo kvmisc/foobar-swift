@@ -8,12 +8,6 @@
 
 import UIKit
 
-//let navBar = NavBar()
-//navBar.preferredHeight = xxx.intrinsicContentSize.height
-//navBar.safeAreaHeight = yyy
-//navBar.invalidateIntrinsicContentSize()
-//navBar.setNeedsUpdateConstraints()
-
 class NavBar: UIView {
 
   let contentView: UIView = {
