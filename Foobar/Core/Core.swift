@@ -51,3 +51,14 @@ func HideKeyboard() {
     window.endEditing(true)
   }
 }
+
+// po pnt(xxx)
+func pnt(_ object: Any) {
+  do {
+    let data = try JSONSerialization.data(withJSONObject: object, options: .prettyPrinted)
+    let string = String(data: data, encoding: .utf8)
+    print(string ?? "[pnt] json empty")
+  } catch {
+    print("[pnt] json failed")
+  }
+}

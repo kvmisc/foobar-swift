@@ -9,9 +9,16 @@
 import UIKit
 import Reusable
 
+class asdf {
+  var a = 0
+  var b = ""
+}
+
 class TestStaticVC: BaseViewController {
 
   var lines: [UIView] = []
+
+  var obj = asdf()
 
   lazy var tableView: UITableView = {
     let ret = UITableView(frame: .zero, style: .plain)
@@ -53,6 +60,9 @@ class TestStaticVC: BaseViewController {
 //    let v = TestStaticBodyView()
 //    v.backgroundColor = .red
 //    lines.append(v)
+
+    let map: [String:Any] = ["a":1, "b":"2", "c":["c1":11, "c2":"22"]]
+    print(map)
   }
 
 }
