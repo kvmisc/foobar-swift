@@ -12,6 +12,7 @@ target 'Foobar' do
   pod 'Then'
   pod 'Localize-Swift'
   pod 'TextAttributes'
+  pod 'Repeat'
 
   pod 'SnapKit'
   pod 'Kingfisher'

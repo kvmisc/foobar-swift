@@ -8,17 +8,11 @@
 
 import UIKit
 import Reusable
-
-class asdf {
-  var a = 0
-  var b = ""
-}
+import Repeat
 
 class TestStaticVC: BaseViewController {
 
   var lines: [UIView] = []
-
-  var obj = asdf()
 
   lazy var tableView: UITableView = {
     let ret = UITableView(frame: .zero, style: .plain)
@@ -60,11 +54,20 @@ class TestStaticVC: BaseViewController {
 //    let v = TestStaticBodyView()
 //    v.backgroundColor = .red
 //    lines.append(v)
-
-    let map: [String:Any] = ["a":1, "b":"2", "c":["c1":11, "c2":"22"]]
-    print(map)
   }
 
+  lazy var deb: Debouncer = {
+    let ret = Debouncer(.seconds(1.0)) {
+      print("doit")
+    }
+    return ret
+  }()
+  lazy var thr: Throttler = {
+    let ret = Throttler(time: .seconds(2.0)) {
+      print("do2t")
+    }
+    return ret
+  }()
 }
 
 extension TestStaticVC: UITableViewDataSource, UITableViewDelegate {
@@ -80,6 +83,11 @@ extension TestStaticVC: UITableViewDataSource, UITableViewDelegate {
 
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return lines[indexPath.row].extIntrinsicContentHeight
+  }
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    print("a")
+//    deb.call()
+    thr.call()
   }
 }
 
