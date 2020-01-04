@@ -30,7 +30,7 @@
 		0A9B191B23A13434008906F0 /* PageStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9B191A23A13434008906F0 /* PageStateView.swift */; };
 		0AACE9C223A27497004A1BC1 /* theme_red.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AACE9C123A27497004A1BC1 /* theme_red.plist */; };
 		0AACE9C423A274DB004A1BC1 /* theme_blue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AACE9C323A274DB004A1BC1 /* theme_blue.plist */; };
-		0AACE9C623A27A6A004A1BC1 /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AACE9C523A27A6A004A1BC1 /* ToolBar.swift */; };
+		0AACE9C623A27A6A004A1BC1 /* EdgeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AACE9C523A27A6A004A1BC1 /* EdgeBar.swift */; };
 		0ACBB21223A4A1BD0069F4D7 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACBB21123A4A1BD0069F4D7 /* AccountManager.swift */; };
 		0ACBB21823A5EF590069F4D7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0ACBB21423A5EF590069F4D7 /* Localizable.strings */; };
 		0ACBB21C23A5FDEE0069F4D7 /* TestJSONVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACBB21B23A5FDEE0069F4D7 /* TestJSONVC.swift */; };
@@ -74,7 +74,6 @@
 		BBBB0608239F2DB60004613C /* ThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB0607239F2DB60004613C /* ThroughView.swift */; };
 		BBBB060A239F403B0004613C /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB0609239F403B0004613C /* Overlay.swift */; };
 		BBBB060D239F58820004613C /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB060C239F58820004613C /* Drop.swift */; };
-		BBE5F1A423A31D2F00DC9978 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE5F1A323A31D2F00DC9978 /* NavBar.swift */; };
 		BBE7DCB223A23351009A650F /* TestCodingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCB123A23351009A650F /* TestCodingObject.swift */; };
 		BBE7DCB423A23BE7009A650F /* Expiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCB323A23BE7009A650F /* Expiration.swift */; };
 		BBE7DCB823A23EF7009A650F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCB723A23EF7009A650F /* BaseViewController.swift */; };
@@ -110,7 +109,7 @@
 		0A9B191A23A13434008906F0 /* PageStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStateView.swift; sourceTree = "<group>"; };
 		0AACE9C123A27497004A1BC1 /* theme_red.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_red.plist; sourceTree = "<group>"; };
 		0AACE9C323A274DB004A1BC1 /* theme_blue.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_blue.plist; sourceTree = "<group>"; };
-		0AACE9C523A27A6A004A1BC1 /* ToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
+		0AACE9C523A27A6A004A1BC1 /* EdgeBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeBar.swift; sourceTree = "<group>"; };
 		0ACBB21123A4A1BD0069F4D7 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		0ACBB21523A5EF590069F4D7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0ACBB21623A5EF590069F4D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -159,7 +158,6 @@
 		BBBB0607239F2DB60004613C /* ThroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughView.swift; sourceTree = "<group>"; };
 		BBBB0609239F403B0004613C /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		BBBB060C239F58820004613C /* Drop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drop.swift; sourceTree = "<group>"; };
-		BBE5F1A323A31D2F00DC9978 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		BBE7DCB123A23351009A650F /* TestCodingObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCodingObject.swift; sourceTree = "<group>"; };
 		BBE7DCB323A23BE7009A650F /* Expiration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expiration.swift; sourceTree = "<group>"; };
 		BBE7DCB723A23EF7009A650F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -217,8 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				BBE7DCB723A23EF7009A650F /* BaseViewController.swift */,
-				BBE5F1A323A31D2F00DC9978 /* NavBar.swift */,
-				0AACE9C523A27A6A004A1BC1 /* ToolBar.swift */,
+				0AACE9C523A27A6A004A1BC1 /* EdgeBar.swift */,
 				0AAD582123A3E43200E62092 /* images */,
 			);
 			name = ViewControllers;
@@ -654,7 +651,7 @@
 				BB8D53D22399DFFB008BA419 /* Path.swift in Sources */,
 				0A53303D238EC965009B5375 /* StringExt.swift in Sources */,
 				BBE7DCE023A25423009A650F /* TestLabel.swift in Sources */,
-				0AACE9C623A27A6A004A1BC1 /* ToolBar.swift in Sources */,
+				0AACE9C623A27A6A004A1BC1 /* EdgeBar.swift in Sources */,
 				BB8A3A21239DD5A000DF3125 /* TestMultiLineButton.swift in Sources */,
 				BB6C9A63239DF52400822180 /* RichText.swift in Sources */,
 				0ACBB21E23A6319C0069F4D7 /* TestJSON.swift in Sources */,
@@ -662,7 +659,6 @@
 				BB9D82E523A9F46B00CE73A1 /* ArrayExt.swift in Sources */,
 				BB6C9A65239E06DA00822180 /* TestThen.swift in Sources */,
 				BBEA347523A866DE00FBC575 /* TestPullToRefreshVC.swift in Sources */,
-				BBE5F1A423A31D2F00DC9978 /* NavBar.swift in Sources */,
 				0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */,
 				BB3C5AEF23AB1EED0078F953 /* GlobalImport.swift in Sources */,
 				0A8E76BD23A48F4F00AFA2BA /* TestHierachyRedVC.swift in Sources */,

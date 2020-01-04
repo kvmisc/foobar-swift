@@ -80,54 +80,32 @@ class BaseViewController: UIViewController {
 
     super.updateViewConstraints()
   }
-//  override func viewDidLayoutSubviews() {
-//    super.viewDidLayoutSubviews()
-//
-//    var topUsage: CGFloat = 0.0
-//    if let navBar = navBar {
-//      var navHeight = navBar.extIntrinsicContentHeight
-//      if !occupySafeArea { navHeight += SAFE_AREA_TOP }
-//      navBar.frame = ccr(view.extWidth, navHeight)
-//      topUsage = navHeight
-//    } else {
-//      topUsage = occupySafeArea ? 0.0 : STATUS_BAR_HET
-//    }
-//
-//    var botUsage: CGFloat = 0.0
-//    if let toolBar = toolBar {
-//      var toolHeight = toolBar.extIntrinsicContentHeight
-//      if !occupySafeArea { toolHeight += SAFE_AREA_BOT }
-//      toolBar.frame = ccr(0.0,
-//                          view.extHeight-toolHeight,
-//                          view.extWidth,
-//                          toolHeight)
-//      botUsage = toolHeight
-//    } else {
-//      botUsage = occupySafeArea ? 0.0 : SAFE_AREA_BOT
-//    }
-//
-//    contentView?.frame = ccr(0.0,
-//                             topUsage,
-//                             view.extWidth,
-//                             view.extHeight - topUsage - botUsage)
-//  }
 
   // MARK: NavBar
-  var navBar: NavBar? = nil
+  var navBar: EdgeBar? = nil
   func shouldLoadNavBar() -> Bool {
     return true
   }
   func loadNavBarIfNeeded() {
     if shouldLoadNavBar() {
       if navBar == nil {
-        navBar = NavBar()
+        navBar = EdgeBar()
         navBar?.extUseAutoLayout()
-        navBar?.leftButton.extAddTarget(self, #selector(navBarLeftAction(_:)))
-        navBar?.rightButton.extAddTarget(self, #selector(navBarRightAction(_:)))
+        view.extAddSubviewIfNeeded(navBar)
+
+        let cv = NavBarContentView()
+        cv.extUseAutoLayout()
+        cv.leftButton.extAddTarget(self, #selector(navBarLeftAction(_:)))
+        cv.rightButton.extAddTarget(self, #selector(navBarRightAction(_:)))
+        navBar?.contentView = cv
+
+        navBar?.preferredHeight = EdgeBar.defaultNavHeight
+        navBar?.safeAreaHeight = shouldOccupySafeArea() ? 0.0 : STATUS_BAR_HET
+
+        navBar?.alignment = .Bottom(offset: 0.0)
+
+        setupNavBar()
       }
-      view.extAddSubviewIfNeeded(navBar)
-      navBar?.safeAreaHeight = shouldOccupySafeArea() ? 0.0 : STATUS_BAR_HET
-      setupNavBar()
     } else {
       navBar?.removeFromSuperview()
       navBar = nil
@@ -149,10 +127,19 @@ class BaseViewController: UIViewController {
     }
   }
   func setupNavBarBackButton() {
-    navBar?.leftButton.extSetTitle("返回")
+    if let cv = navBar?.contentView as? NavBarContentView {
+      cv.leftButton.extSetTitle("返回")
+    }
   }
   func setupNavBarDismissButton() {
-    navBar?.leftButton.extSetTitle("关闭")
+    if let cv = navBar?.contentView as? NavBarContentView {
+      cv.leftButton.extSetTitle("关闭")
+    }
+  }
+  func setupNavBarTitle(_ title: String) {
+    if let cv = navBar?.contentView as? NavBarContentView {
+      cv.titleLabel.text = title
+    }
   }
   @objc func navBarLeftAction(_ sender: UIButton) {
     if let nav = navigationController {
@@ -173,19 +160,24 @@ class BaseViewController: UIViewController {
   }
 
   // MARK: ToolBar
-  var toolBar: ToolBar? = nil
+  var toolBar: EdgeBar? = nil
   func shouldLoadToolBar() -> Bool {
     return false
   }
   func loadToolBarIfNeeded() {
     if shouldLoadToolBar() {
       if toolBar == nil {
-        toolBar = ToolBar()
+        toolBar = EdgeBar()
         toolBar?.extUseAutoLayout()
+        view.extAddSubviewIfNeeded(toolBar)
+
+        toolBar?.preferredHeight = EdgeBar.defaultToolHeight
+        toolBar?.safeAreaHeight = shouldOccupySafeArea() ? 0.0 : SAFE_AREA_BOT
+
+        toolBar?.alignment = .Top(offset: 0.0)
+
+        setupToolBar()
       }
-      view.extAddSubviewIfNeeded(toolBar)
-      toolBar?.safeAreaHeight = shouldOccupySafeArea() ? 0.0 : SAFE_AREA_BOT
-      setupToolBar()
     } else {
       toolBar?.removeFromSuperview()
       toolBar = nil
@@ -204,8 +196,8 @@ class BaseViewController: UIViewController {
       if contentView == nil {
         contentView = UIView()
         contentView?.extUseAutoLayout()
-        contentView?.backgroundColor = .white
         view.addSubview(contentView!)
+        contentView?.backgroundColor = .white
         contentView?.extSendToBack()
       }
     } else {

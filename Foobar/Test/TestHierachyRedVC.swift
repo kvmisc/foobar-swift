@@ -45,7 +45,7 @@ class TestHierachyRedVC: BaseViewController {
     super.viewDidLoad()
 
     navBar?.backgroundColor = .lightGray
-    navBar?.contentView.backgroundColor = .darkGray
+    navBar?.contentView?.backgroundColor = .darkGray
 
     toolBar?.backgroundColor = .lightGray
 
@@ -57,7 +57,8 @@ class TestHierachyRedVC: BaseViewController {
       make.centerX.equalToSuperview()
     }
 
-    navBar?.titleLabel.text = infoLabel.text
+    setupNavBarTitle("ttl")
+//    navBar?.titleLabel.text = infoLabel.text
 //    contentView?.addSubview(shadowView)
 //    shadowView.extSendToBack()
 //    shadowView.snp.makeConstraints { (make) in
