@@ -21,10 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     let window = UIWindow()
-//    let nc = UINavigationController(rootViewController: TestViewStateRootVC())
-//    nc.isNavigationBarHidden = true
-//    window.rootViewController = nc
-    window.rootViewController = TestStaticVC()
+    let nc = UINavigationController(rootViewController: TestHierachyRedVC())
+    nc.isNavigationBarHidden = true
+    window.rootViewController = nc
+//    window.rootViewController = TestStaticVC()
     window.makeKeyAndVisible()
     self.window = window
     return true

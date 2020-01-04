@@ -8,9 +8,15 @@
 
 import UIKit
 
+//let navBar = NavBar()
+//navBar.preferredHeight = xxx.intrinsicContentSize.height
+//navBar.safeAreaHeight = yyy
+//navBar.invalidateIntrinsicContentSize()
+//navBar.setNeedsUpdateConstraints()
+
 class NavBar: UIView {
 
-  let containerView: UIView = {
+  let contentView: UIView = {
     let ret = UIView()
     ret.extUseAutoLayout()
     ret.backgroundColor = .clear
@@ -19,7 +25,7 @@ class NavBar: UIView {
   var leftView: UIView? = nil {
     didSet {
       oldValue?.removeFromSuperview()
-      containerView.extAddSubviewIfNeeded(leftView)
+      contentView.extAddSubviewIfNeeded(leftView)
       leftView?.setContentHuggingPriority(.required, for: .horizontal)
       leftView?.setContentCompressionResistancePriority(.required, for: .horizontal)
       setNeedsUpdateConstraints()
@@ -28,7 +34,7 @@ class NavBar: UIView {
   var rightView: UIView? = nil {
     didSet {
       oldValue?.removeFromSuperview()
-      containerView.extAddSubviewIfNeeded(rightView)
+      contentView.extAddSubviewIfNeeded(rightView)
       rightView?.setContentHuggingPriority(.required, for: .horizontal)
       rightView?.setContentCompressionResistancePriority(.required, for: .horizontal)
       setNeedsUpdateConstraints()
@@ -37,7 +43,7 @@ class NavBar: UIView {
   var titleView: UIView? = nil {
     didSet {
       oldValue?.removeFromSuperview()
-      containerView.extAddSubviewIfNeeded(titleView)
+      contentView.extAddSubviewIfNeeded(titleView)
       titleView?.setContentHuggingPriority(.defaultLow, for: .horizontal)
       titleView?.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
       setNeedsUpdateConstraints()
@@ -65,13 +71,13 @@ class NavBar: UIView {
   let titleLabel: UILabel = {
     let ret = UILabel()
     ret.extUseAutoLayout()
-    ret.font = UIFont.preferredFont(forTextStyle: .title1)
-    ret.textColor = .black
     ret.textAlignment = .center
     ret.lineBreakMode = .byTruncatingTail
     ret.numberOfLines = 1
     ret.adjustsFontSizeToFitWidth = false
     ret.backgroundColor = .clear
+    ret.font = UIFont.preferredFont(forTextStyle: .title1)
+    ret.textColor = .black
     //label.text = nil
     return ret
   }()
@@ -86,7 +92,7 @@ class NavBar: UIView {
   }
   func setup() {
     backgroundColor = .white
-    addSubview(containerView)
+    addSubview(contentView)
     leftView = leftButton
     rightView = rightButton
     titleView = titleLabel
@@ -94,23 +100,25 @@ class NavBar: UIView {
 
 
   static let defaultHeight: CGFloat = 44.0
-
-  // 实体占用高度
   var preferredHeight: CGFloat = NavBar.defaultHeight {
-    didSet { setNeedsUpdateConstraints() }
+    didSet {
+      setNeedsUpdateConstraints()
+      invalidateIntrinsicContentSize()
+    }
   }
   var safeAreaHeight: CGFloat = 0.0 {
-    didSet { invalidateIntrinsicContentSize() }
+    didSet {
+      invalidateIntrinsicContentSize()
+    }
   }
-
   override var intrinsicContentSize: CGSize {
-    return ccs(UIView.noIntrinsicMetric, preferredHeight+safeAreaHeight)
+    return ccs(UIView.noIntrinsicMetric, preferredHeight + safeAreaHeight)
   }
 
 
   enum EdgeHConstraint {
     case Intrinsic(offset: CGFloat, minWidth: CGFloat)
-    case Constant(value: CGFloat, offset: CGFloat)
+    case Constant(offset: CGFloat, width: CGFloat)
   }
   enum EdgeVConstraint {
     case Occupy
@@ -141,7 +149,7 @@ class NavBar: UIView {
 
   override func updateConstraints() {
 
-    containerView.snp.remakeConstraints { (make) in
+    contentView.snp.remakeConstraints { (make) in
       make.left.bottom.right.equalToSuperview()
       make.height.equalTo(preferredHeight)
     }
@@ -151,9 +159,9 @@ class NavBar: UIView {
       case .Intrinsic(let offset, let minWidth):
         make.left.equalToSuperview().offset(offset)
         make.width.greaterThanOrEqualTo(minWidth)
-      case .Constant(let value, let offset):
+      case .Constant(let offset, let width):
         make.left.equalToSuperview().offset(offset)
-        make.width.equalTo(value)
+        make.width.equalTo(width)
       }
       switch leftVConstraint {
       case .Occupy:
@@ -168,14 +176,13 @@ class NavBar: UIView {
     })
 
     rightView?.snp.remakeConstraints({ (make) in
-      make.top.bottom.equalToSuperview()
       switch rightHConstraint {
       case .Intrinsic(let offset, let minWidth):
         make.right.equalToSuperview().offset(-offset)
         make.width.greaterThanOrEqualTo(minWidth)
-      case .Constant(let value, let offset):
+      case .Constant(let offset, let width):
         make.right.equalToSuperview().offset(-offset)
-        make.width.equalTo(value)
+        make.width.equalTo(width)
       }
       switch rightVConstraint {
       case .Occupy:

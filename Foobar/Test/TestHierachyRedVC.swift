@@ -45,9 +45,11 @@ class TestHierachyRedVC: BaseViewController {
     super.viewDidLoad()
 
     navBar?.backgroundColor = .lightGray
-    navBar?.containerView.backgroundColor = .darkGray
+    navBar?.contentView.backgroundColor = .darkGray
 
     toolBar?.backgroundColor = .lightGray
+
+    contentView?.extSetBorder(width: 2, color: .red)
 
     contentView?.addSubview(infoLabel)
     infoLabel.snp.makeConstraints { (make) in
@@ -99,7 +101,11 @@ class TestHierachyRedVC: BaseViewController {
     bt3.extAddTarget(self, #selector(presentNavIt(_:)))
 
     Async.main(after: 3.0) {
-      Localize.setCurrentLanguage("en")
+      //Localize.setCurrentLanguage("en")
+
+//      self.occupySafeArea = true
+//      self.navBar?.preferredHeight = 100
+//      self.toolBar?.preferredHeight = 200
     }
   }
   override func reloadPage() {

@@ -49,36 +49,31 @@ class BaseViewController: UIViewController {
   func reloadPage() {
   }
 
-  var occupySafeArea: Bool = false
+  func shouldOccupySafeArea() -> Bool {
+    return false
+  }
+
   override func updateViewConstraints() {
-    if let navBar = navBar {
-      navBar.preferredHeight = preferredNavBarHeight()
-      navBar.safeAreaHeight = occupySafeArea ? 0.0 : STATUS_BAR_HET
-      navBar.snp.remakeConstraints { (make) in
-        make.left.top.right.equalToSuperview()
-      }
+    navBar?.snp.remakeConstraints { (make) in
+      make.left.top.right.equalToSuperview()
     }
 
-    if let toolBar = toolBar {
-      toolBar.preferredHeight = preferredToolBarHeight()
-      toolBar.safeAreaHeight = occupySafeArea ? 0.0 : SAFE_AREA_BOT
-      toolBar.snp.remakeConstraints { (make) in
-        make.left.bottom.right.equalToSuperview()
-      }
+    toolBar?.snp.remakeConstraints { (make) in
+      make.left.bottom.right.equalToSuperview()
     }
 
     contentView?.snp.remakeConstraints({ (make) in
       if let navBar = navBar {
         make.top.equalTo(navBar.snp.bottom)
       } else {
-        let offset = occupySafeArea ? 0.0 : STATUS_BAR_HET
+        let offset = shouldOccupySafeArea() ? 0.0 : STATUS_BAR_HET
         make.top.equalToSuperview().offset(offset)
       }
       make.left.right.equalToSuperview()
       if let toolBar = toolBar {
         make.bottom.equalTo(toolBar.snp.top)
       } else {
-        let offset = occupySafeArea ? 0.0 : SAFE_AREA_BOT
+        let offset = shouldOccupySafeArea() ? 0.0 : SAFE_AREA_BOT
         make.bottom.equalToSuperview().offset(-offset)
       }
     })
@@ -118,17 +113,9 @@ class BaseViewController: UIViewController {
 //  }
 
   // MARK: NavBar
-  var navBar: NavBar? = nil {
-    didSet {
-      oldValue?.removeFromSuperview()
-      view.extAddSubviewIfNeeded(navBar)
-    }
-  }
+  var navBar: NavBar? = nil
   func shouldLoadNavBar() -> Bool {
     return true
-  }
-  func preferredNavBarHeight() -> CGFloat {
-    return NavBar.defaultHeight
   }
   func loadNavBarIfNeeded() {
     if shouldLoadNavBar() {
@@ -138,8 +125,11 @@ class BaseViewController: UIViewController {
         navBar?.leftButton.extAddTarget(self, #selector(navBarLeftAction(_:)))
         navBar?.rightButton.extAddTarget(self, #selector(navBarRightAction(_:)))
       }
+      view.extAddSubviewIfNeeded(navBar)
+      navBar?.safeAreaHeight = shouldOccupySafeArea() ? 0.0 : STATUS_BAR_HET
       setupNavBar()
     } else {
+      navBar?.removeFromSuperview()
       navBar = nil
     }
   }
@@ -183,17 +173,9 @@ class BaseViewController: UIViewController {
   }
 
   // MARK: ToolBar
-  var toolBar: ToolBar? = nil {
-    didSet {
-      oldValue?.removeFromSuperview()
-      view.extAddSubviewIfNeeded(toolBar)
-    }
-  }
+  var toolBar: ToolBar? = nil
   func shouldLoadToolBar() -> Bool {
     return false
-  }
-  func preferredToolBarHeight() -> CGFloat {
-    return ToolBar.defaultHeight
   }
   func loadToolBarIfNeeded() {
     if shouldLoadToolBar() {
@@ -201,8 +183,11 @@ class BaseViewController: UIViewController {
         toolBar = ToolBar()
         toolBar?.extUseAutoLayout()
       }
+      view.extAddSubviewIfNeeded(toolBar)
+      toolBar?.safeAreaHeight = shouldOccupySafeArea() ? 0.0 : SAFE_AREA_BOT
       setupToolBar()
     } else {
+      toolBar?.removeFromSuperview()
       toolBar = nil
     }
   }
