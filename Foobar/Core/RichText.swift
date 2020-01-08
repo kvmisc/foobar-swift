@@ -9,6 +9,11 @@
 import UIKit
 import TextAttributes
 
+// "\n", "\r", "\r\n" 来断行时，行为不确定
+// Unicode 定义了两个明确的字符来断行和分段, NSAttributedString 中用断行符不会产生段落
+let LINE_SEPARATOR      = "\u{2028}"
+let PARAGRAPH_SEPARATOR = "\u{2029}"
+
 class RichText {
   var attributedText = NSMutableAttributedString()
 

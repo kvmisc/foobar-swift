@@ -32,7 +32,7 @@ class PageStateView: UIView {
     return ret
   }()
 
-  var widthConstraint: MetricConstraint = .Ratio(value: 0.8) {
+  var widthConstraint: LayoutConstraint = .Ratio(value: 0.8) {
     didSet { setNeedsUpdateConstraints() }
   }
 

@@ -116,7 +116,10 @@ class Overlay {
   // MARK: Entry
   // 显示在屏幕中间, 点周围无效果 且 视图不消失, 选择后手动消失
   // 后来的会隐藏前面的
-  static func entryAlert(_ view: UIView, width: EKAttributes.PositionConstraints.Edge = .intrinsic) {
+  static func entryAlert(_ view: UIView,
+                         width: EKAttributes.PositionConstraints.Edge = .intrinsic,
+                         config: ((EKAttributes)->Void)? = nil)
+  {
     var attributes = EKAttributes()
     //attributes.windowLevel = .statusBar
     attributes.position = .center
@@ -138,6 +141,8 @@ class Overlay {
     attributes.exitAnimation = .init(translate: .init(duration: 0.25, spring: .init(damping: 1, initialVelocity: 0)))
     //attributes.popBehavior = .overridden
 
+    config?(attributes)
+
     SwiftEntryKit.display(entry: view, using: attributes, presentInsideKeyWindow: true, rollbackWindow: .main)
   }
   // 显示在屏幕下边, 点周围无效果 但 视图消失, 选择后手动消失
@@ -145,10 +150,7 @@ class Overlay {
   static func entrySheet(_ view: UIView,
                          width: EKAttributes.PositionConstraints.Edge = .ratio(value: 1.0),
                          offset: CGFloat = 0.0,
-                         willAppear: EKAttributes.LifecycleEvents.Event? = nil,
-                         didAppear: EKAttributes.LifecycleEvents.Event? = nil,
-                         willDisappear: EKAttributes.LifecycleEvents.Event? = nil,
-                         didDisappear: EKAttributes.LifecycleEvents.Event? = nil)
+                         config: ((EKAttributes)->Void)? = nil)
   {
     HideKeyboard()
 
@@ -174,10 +176,7 @@ class Overlay {
     attributes.exitAnimation = .init(translate: .init(duration: 0.25, spring: .init(damping: 1, initialVelocity: 0)))
     //attributes.popBehavior = .overridden
 
-    attributes.lifecycleEvents.willAppear = willAppear
-    attributes.lifecycleEvents.didAppear = didAppear
-    attributes.lifecycleEvents.willDisappear = willDisappear
-    attributes.lifecycleEvents.didDisappear = didDisappear
+    config?(attributes)
 
     SwiftEntryKit.display(entry: view, using: attributes, presentInsideKeyWindow: false, rollbackWindow: .main)
   }

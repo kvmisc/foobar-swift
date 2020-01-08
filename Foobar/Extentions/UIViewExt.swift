@@ -49,84 +49,30 @@ extension UIView {
 extension UIView {
 
   //////////////////////////////////////////////////////////////////////////////
-  // 不要阴影
-  //
-  // 设置四个圆角, 会切割内容
-  func extSetCorner(radius: CGFloat) {
-    layer.masksToBounds = true
-    layer.cornerRadius = radius
-  }
-  // 设置边框
-  func extSetBorder(width: Double = 1.0, color: UIColor = .lightGray) {
-    layer.borderWidth = CGFloat(width)
-    layer.borderColor = color.cgColor
-  }
-
-  // 设置部分圆角, 会切割内容
-  func extAddRoundedCorner(radius: Double = 4.0, corners: UIRectCorner = .allCorners)
-  {
-    let shapeLayer = CAShapeLayer()
-    let bezierPath = UIBezierPath(roundedRect: bounds,
-                                  byRoundingCorners: corners,
-                                  cornerRadii: CGSize(width: radius, height: radius))
-    shapeLayer.path = bezierPath.cgPath
-    layer.mask = shapeLayer
-  }
-  func extRemoveRoundedCorder() {
-    layer.mask = nil
-  }
-  // 设置部分圆角边框
-  func extAddRoundedBorder(radius: Double = 4.0,
-                           corners: UIRectCorner = .allCorners,
-                           width: Double = 1.0,
-                           color: UIColor = .lightGray)
-  {
-    extRemoveRoundedLayer()
-
-    let roundedLayer = CAShapeLayer()
-    roundedLayer.name = "rounded_border_layer"
-    roundedLayer.frame = bounds
-    let bezierPath = UIBezierPath(roundedRect: bounds,
-                                  byRoundingCorners: corners,
-                                  cornerRadii: CGSize(width: radius, height: radius))
-    roundedLayer.path = bezierPath.cgPath
-    roundedLayer.fillColor = UIColor.clear.cgColor
-    roundedLayer.lineWidth = CGFloat(width)
-    roundedLayer.strokeColor = color.cgColor
-
-    layer.addSublayer(roundedLayer)
-  }
-  func extRemoveRoundedBorder() {
-    layer.sublayers?.first { $0.name == "rounded_border_layer" }?.removeFromSuperlayer()
-  }
-
-  //////////////////////////////////////////////////////////////////////////////
-  // 需要阴影
+  // 制作阴影
   //
   // a) 如果内容不是纯色, 将内容视图切割好, 放到另一视图中, 在其中做阴影
   //
-  //  let contentView = UIImageView()
-  //  contentView.image = cci("grass")
-  //  contentView.backgroundColor = .clear
+  //  let contentView = UIImageView(image: cci("grass"))
   //  contentView.contentMode = .scaleToFill
-  //  contentView.frame = ccr(0, 0, 50, 40)
-  //  contentView.extAddRoundedCorner(radius: 10.0, corners: [.topLeft, .topRight])
+  //  contentView.frame = ccr(0, 0, 100, 40)
+  //> contentView.extMaskRoundedLayer(radius: 20.0, corners: [.topLeft, .topRight])
   //
   //  let boxView = UIView()
   //  view.addSubview(boxView)
   //  boxView.addSubview(contentView)
   //  boxView.frame = ccr(100, 100, 50, 40)
-  //  boxView.backgroundColor = .clear
-  //  boxView.extSetShadow()
+  //> boxView.backgroundColor = .clear
+  //> boxView.extSetShadow()
   //
   // b) 如果内容背景是纯色, 不需要另一视图就能做阴影
   //
   //  let contentView = UIView()
-  //  contentView.backgroundColor = .clear
-  //  contentView.frame = ccr(100, 100, 50, 40)
+  //  contentView.frame = ccr(100, 100, 100, 40)
   //  view.addSubview(contentView)
-  //  contentView.extAddRoundedLayer(radius: 10, corners: [.topLeft, .topRight], color: .brown)
-  //  contentView.extSetShadow(opacity: 1.0)
+  //> contentView.extAddRoundedLayer(radius: 10, corners: [.topLeft, .topRight], fillColor: .brown)
+  //> contentView.backgroundColor = .clear
+  //> contentView.extSetShadow()
 
   // 设置阴影
   func extSetShadow(color: UIColor = .black,
@@ -141,30 +87,57 @@ extension UIView {
     layer.shadowRadius = CGFloat(radius)
     layer.shadowOffset = offset
   }
-  // 添加部分圆角图层, 阴影边界会跟着这个图层
-  func extRoundedLayer() -> CAShapeLayer? {
-    return layer.sublayers?.first { $0.name == "rounded_layer" } as? CAShapeLayer
+
+  // 设置边框
+  func extSetBorder(width: Double = 1.0, color: UIColor = .lightGray) {
+    layer.borderWidth = CGFloat(width)
+    layer.borderColor = color.cgColor
   }
+
+  // 设置圆角
+  func extSetCorner(radius: Double = 4.0) {
+    layer.masksToBounds = true
+    layer.cornerRadius = CGFloat(radius)
+  }
+
+
+  // 遮罩圆角, 如果视图设置了阴影, 阴影会被切掉
+  func extMaskRoundedLayer(radius: Double = 4.0, corners: UIRectCorner = .allCorners) {
+    let shapeLayer = CAShapeLayer()
+    let bezierPath = UIBezierPath(roundedRect: bounds,
+                                  byRoundingCorners: corners,
+                                  cornerRadii: CGSize(width: radius, height: radius))
+    shapeLayer.path = bezierPath.cgPath
+    layer.mask = shapeLayer
+  }
+  func extUnmaskRoundedLayer() {
+    layer.mask = nil
+  }
+
+  // 添加圆角/有边框/无填充图层, 如果视图设置了阴影, 阴影会绕着这个图层的边界, 由于图层无填充, 边框内外都有阴影
+  // 添加圆角/无边框/有填充图层, 如果视图设置了阴影, 阴影会绕着这个图层的边界
   func extAddRoundedLayer(radius: Double = 4.0,
                           corners: UIRectCorner = .allCorners,
-                          color: UIColor = .clear)
+                          borderWidth: Double = 1.0,
+                          borderColor: UIColor = .lightGray,
+                          fillColor: UIColor = .white)
   {
     extRemoveRoundedLayer()
 
     let roundedLayer = CAShapeLayer()
-    roundedLayer.name = "rounded_layer"
+    roundedLayer.name = "rounded_border_layer"
     roundedLayer.frame = bounds
     let bezierPath = UIBezierPath(roundedRect: bounds,
                                   byRoundingCorners: corners,
                                   cornerRadii: CGSize(width: radius, height: radius))
     roundedLayer.path = bezierPath.cgPath
-    roundedLayer.fillColor = color.cgColor
-    roundedLayer.lineWidth = 0.0
-    roundedLayer.strokeColor = color.cgColor
+    roundedLayer.lineWidth = CGFloat(borderWidth)
+    roundedLayer.strokeColor = borderColor.cgColor
+    roundedLayer.fillColor = fillColor.cgColor
 
     layer.addSublayer(roundedLayer)
   }
   func extRemoveRoundedLayer() {
-    layer.sublayers?.first { $0.name == "rounded_layer" }?.removeFromSuperlayer()
+    layer.sublayers?.first { $0.name == "rounded_border_layer" }?.removeFromSuperlayer()
   }
 }
