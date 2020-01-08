@@ -70,6 +70,14 @@ class TestAutolayoutVC: UIViewController {
       //self.log(self.redView.constraints)
     }
 
+
+    let rv = EXRedView()
+    rv.backgroundColor = .brown
+    view.addSubview(rv)
+    rv.snp.makeConstraints { (make) in
+      make.center.equalToSuperview()
+    }
+
   }
 
   func log(_ list: [NSLayoutConstraint]) {
@@ -90,4 +98,10 @@ class TestAutolayoutVC: UIViewController {
     }
   }
 
+}
+
+class EXRedView: UIView {
+  override var intrinsicContentSize: CGSize {
+    return ccs(100)
+  }
 }

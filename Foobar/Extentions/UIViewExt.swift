@@ -51,17 +51,18 @@ extension UIView {
   //////////////////////////////////////////////////////////////////////////////
   // 不要阴影
   //
-  // 设置四角全圆, 会切割内容
+  // 设置四个圆角, 会切割内容
   func extSetCorner(radius: CGFloat) {
     layer.masksToBounds = true
     layer.cornerRadius = radius
   }
-  // 设置四角全圆边框
+  // 设置边框
   func extSetBorder(width: Double = 1.0, color: UIColor = .lightGray) {
     layer.borderWidth = CGFloat(width)
     layer.borderColor = color.cgColor
   }
-  // 添加部分圆角, 会切割内容
+
+  // 设置部分圆角, 会切割内容
   func extAddRoundedCorner(radius: Double = 4.0, corners: UIRectCorner = .allCorners)
   {
     let shapeLayer = CAShapeLayer()

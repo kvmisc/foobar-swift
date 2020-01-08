@@ -8,7 +8,7 @@
 
 import UIKit
 
-// MARK: Misc
+// MARK: Common
 extension String {
 
   static func extRandomString(_ length: Int) -> String {
@@ -21,16 +21,7 @@ extension String {
     return result
   }
 
-  func extURL() -> URL? {
-    return URL(string: self)
-  }
-  func extFileURL() -> URL {
-    return URL(fileURLWithPath: self)
-  }
-}
 
-// MARK: Common
-extension String {
   func extReversedString() -> String {
     return String(reversed())
   }
@@ -54,6 +45,16 @@ extension String {
   }
 }
 
+// MARK: URL
+extension String {
+  func extURL() -> URL? {
+    return URL(string: self)
+  }
+  func extFileURL() -> URL {
+    return URL(fileURLWithPath: self)
+  }
+}
+
 // MARK: Validation
 extension String {
   // 纯数字, 不包括小数点
@@ -64,7 +65,7 @@ extension String {
   // "1.3" -> true (en_US)
   // "1,3" -> true (fr_FR)
   // "abc" -> false
-  // 是否数字
+  // 数字
   var extIsNumeric: Bool {
     let scanner = Scanner(string: self)
     scanner.locale = NSLocale.current
@@ -82,7 +83,7 @@ extension String {
   }
 }
 
-// MARK: Sizing
+// MARK: URL encoding
 extension String {
   var extURLEncodedString: String {
     return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self
@@ -92,7 +93,7 @@ extension String {
   }
 }
 
-// MARK: URL encoding
+// MARK: Sizing
 extension String {
   func extSizeWith(_ font: UIFont) -> CGSize {
     let size = (self as NSString).size(withAttributes: [.font:font])

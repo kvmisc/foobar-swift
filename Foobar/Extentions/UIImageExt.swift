@@ -8,9 +8,8 @@
 
 import UIKit
 
+// MARK: Common
 extension UIImage {
-
-  // TODO: 圆角
 
   // 图片 scale 为屏幕 scale
   static func extColored(_ color: UIColor, _ size: CGSize) -> UIImage {
@@ -31,6 +30,12 @@ extension UIImage {
     }
   }
 
+  // TODO: 圆角
+  // ...
+}
+
+// MARK: Scale
+extension UIImage {
   func extScaleToFill(_ size: CGSize, _ force: Bool = false) -> UIImage {
     if self.size.width.extEqual(size.width)
       && self.size.height.extEqual(size.height)
