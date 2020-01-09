@@ -47,6 +47,9 @@ func HideKeyboard() {
   }
 }
 
+
+#if DEBUG
+// Print object as json via lldb
 // po pnt(xxx)
 func pnt(_ object: Any) {
   do {
@@ -57,3 +60,4 @@ func pnt(_ object: Any) {
     print("[pnt] json failed")
   }
 }
+#endif

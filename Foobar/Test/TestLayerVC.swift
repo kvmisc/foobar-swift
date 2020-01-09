@@ -16,32 +16,28 @@ class TestLayerVC: UIViewController {
     view.backgroundColor = .white
     print("doit")
 
-
-//    let v1 = UIView()
-//    v1.backgroundColor = .red
-//    v1.frame = ccr(100, 100, 100, 40)
-//    view.addSubview(v1)
-//
-////    v1.extAddRoundedLayer(radius: 10.0,
-////                          corners: [.topLeft,.topRight],
-////                          borderWidth: 2,
-////                          borderColor: .green,
-////                          fillColor: .clear)
-////    v1.extAddRoundedLayer(fillColor: .white)
-////    v1.extSetShadow(color: .red, opacity: 1.0)
-////    v1.extSetCorner(radius: 10.0)
-////    v1.extSetBorder(width: 2.0, color: .green)
-//
-//    v1.extMaskCorner(radius: 10, corners: [.topLeft,.topRight])
-//    v1.extAddRoundedLayer(radius: 10, corners: [.topLeft,.topRight], borderWidth: 3, borderColor: .black, fillColor: .clear)
-
-
-//    let contentView = UIView()
+//    let contentView = UIImageView(image: cci("grass"))
+//    contentView.contentMode = .scaleToFill
 //    contentView.frame = ccr(100, 100, 100, 40)
 //    view.addSubview(contentView)
-//    contentView.backgroundColor = .clear
-//    contentView.extAddRoundedLayer(radius: 10, corners: [.topLeft, .topRight], fillColor: .brown)
-//    contentView.extSetShadow()
+//
+//    // 四角全圆
+//    contentView.extSetCorner(radius: 10.0)
+//    contentView.extSetBorder(width: 2.0, color: .red)
+//
+//    // 部分圆角
+//    contentView.extMaskRoundedLayer(radius: 10.0, corners: [.topLeft, .topRight])
+//    contentView.extAddRoundedLayer(radius: 10.0,
+//                                   corners: [.topLeft, .topRight],
+//                                   borderWidth: 2.0,
+//                                   borderColor: .red,
+//                                   fillColor: .clear)
+
+    let bt = UIButton(type: .custom)
+    print("\(bt.buttonType)")
+    bt.frame = ccr(100, 100, 100, 100)
+    view.addSubview(bt)
+    doTestMultiLineButton(bt)
 
   }
 

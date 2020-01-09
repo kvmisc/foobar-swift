@@ -21,18 +21,6 @@ extension String {
     return result
   }
 
-
-  func extReversedString() -> String {
-    return String(reversed())
-  }
-  func extShuffledString() -> String {
-    return String(shuffled())
-  }
-  func extTrimmedString() -> String {
-    return trimmingCharacters(in: .whitespacesAndNewlines)
-  }
-
-
   func extContains(_ string: String, _ caseSensitive: Bool = true) -> Bool {
     if !caseSensitive {
       return range(of: string, options: .caseInsensitive) != nil

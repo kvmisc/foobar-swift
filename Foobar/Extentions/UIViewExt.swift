@@ -55,24 +55,50 @@ extension UIView {
   //
   //  let contentView = UIImageView(image: cci("grass"))
   //  contentView.contentMode = .scaleToFill
-  //  contentView.frame = ccr(0, 0, 100, 40)
-  //> contentView.extMaskRoundedLayer(radius: 20.0, corners: [.topLeft, .topRight])
+  //  contentView.frame = ccr(10, 10, 100, 40)
   //
   //  let boxView = UIView()
   //  view.addSubview(boxView)
   //  boxView.addSubview(contentView)
-  //  boxView.frame = ccr(100, 100, 50, 40)
+  //  boxView.frame = ccr(100, 100, 120, 60)
+  //
+  //> contentView.extMaskRoundedLayer(radius: 20.0, corners: [.topLeft, .topRight])
   //> boxView.backgroundColor = .clear
-  //> boxView.extSetShadow()
+  //> boxView.extSetShadow(color: .red, opacity: 1.0, radius: 5.0, offset: .zero)
   //
   // b) 如果内容背景是纯色, 不需要另一视图就能做阴影
   //
   //  let contentView = UIView()
   //  contentView.frame = ccr(100, 100, 100, 40)
   //  view.addSubview(contentView)
-  //> contentView.extAddRoundedLayer(radius: 10, corners: [.topLeft, .topRight], fillColor: .brown)
+  //
   //> contentView.backgroundColor = .clear
-  //> contentView.extSetShadow()
+  //> contentView.extAddRoundedLayer(radius: 10.0,
+  //>                                corners: [.topLeft, .topRight],
+  //>                                borderWidth: 0.0,
+  //>                                borderColor: .brown,
+  //>                                fillColor: .brown)
+  //> contentView.extSetShadow(color: .red, opacity: 1.0, radius: 5.0, offset: .zero)
+
+  //////////////////////////////////////////////////////////////////////////////
+  // 制作边框
+  //
+  //  let contentView = UIImageView(image: cci("grass"))
+  //  contentView.contentMode = .scaleToFill
+  //  contentView.frame = ccr(100, 100, 100, 40)
+  //  view.addSubview(contentView)
+  //
+  //  // 四角全圆
+  //  contentView.extSetCorner(radius: 10.0)
+  //  contentView.extSetBorder(width: 2.0, color: .red)
+  //
+  //  // 部分圆角
+  //  contentView.extMaskRoundedLayer(radius: 10.0, corners: [.topLeft, .topRight])
+  //  contentView.extAddRoundedLayer(radius: 10.0,
+  //                                 corners: [.topLeft, .topRight],
+  //                                 borderWidth: 2.0,
+  //                                 borderColor: .red,
+  //                                 fillColor: .clear)
 
   // 设置阴影
   func extSetShadow(color: UIColor = .black,
