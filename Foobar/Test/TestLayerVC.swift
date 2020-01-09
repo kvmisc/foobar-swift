@@ -36,9 +36,24 @@ class TestLayerVC: UIViewController {
     let bt = UIButton(type: .custom)
     print("\(bt.buttonType)")
     bt.frame = ccr(100, 100, 100, 100)
+    bt.extAddTarget(self, #selector(clicked(_:)))
     view.addSubview(bt)
     doTestMultiLineButton(bt)
 
   }
 
+  @objc func clicked(_ sender: UIButton) {
+
+    let sheet = TheSheet()
+    sheet.backgroundColor = .red
+    Overlay.entrySheet(sheet, width: .ratio(value: 0.8), offset: 10.0, interaction: .absorbTouches, config: nil)
+
+  }
+
+}
+
+class TheSheet: UIView {
+  override var intrinsicContentSize: CGSize {
+    return ccs(UIView.noIntrinsicMetric, 200.0)
+  }
 }

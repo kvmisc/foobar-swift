@@ -145,11 +145,12 @@ class Overlay {
 
     SwiftEntryKit.display(entry: view, using: attributes, presentInsideKeyWindow: true, rollbackWindow: .main)
   }
-  // 显示在屏幕下边, 点周围无效果 但 视图消失, 选择后手动消失
+  // 显示在屏幕下边, 点周围无效果 可以 视图不动/消失, 选择后手动消失
   // 后来的会隐藏前面的
   static func entrySheet(_ view: UIView,
                          width: EKAttributes.PositionConstraints.Edge = .ratio(value: 1.0),
                          offset: CGFloat = 0.0,
+                         interaction: EKAttributes.UserInteraction = .dismiss,
                          config: ((EKAttributes)->Void)? = nil)
   {
     HideKeyboard()
@@ -161,7 +162,7 @@ class Overlay {
     attributes.displayDuration = .infinity
     attributes.positionConstraints.size = .init(width: width, height: .intrinsic)
     attributes.positionConstraints.verticalOffset = offset
-    attributes.screenInteraction = .dismiss
+    attributes.screenInteraction = interaction
     attributes.entryInteraction = .absorbTouches
     attributes.scroll = .disabled
     //attributes.hapticFeedbackType = .none
