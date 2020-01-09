@@ -20,6 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     print(Path.document())
 
 
+//    var bgR, bgG, bgB, bgA: CGFloat = 0.0
+//
+//    print("\(bgR) \(bgG) \(bgB) \(bgA)")
+
+
+
     let window = UIWindow()
 //    let nc = UINavigationController(rootViewController: TestHierachyRedVC())
 //    nc.isNavigationBarHidden = true

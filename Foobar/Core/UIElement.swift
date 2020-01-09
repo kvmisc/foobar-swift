@@ -37,20 +37,11 @@ func ccc(_ hex: String) -> UIColor {
 }
 
 // MARK: Font
-func ccf(_ size: CGFloat) -> UIFont {
-  return UIFont.systemFont(ofSize: size)
+func ccf(_ style: UIFont.TextStyle) -> UIFont {
+  return UIFont.preferredFont(forTextStyle: style)
 }
-extension UIFont {
-  enum LineSpacingRatio: CGFloat {
-    case Min = 0.2
-    case Max = 0.45
-  }
-  func extLineSpacing(_ ratio: CGFloat = LineSpacingRatio.Min.rawValue) -> CGFloat {
-    return lineHeight * ratio
-  }
-  func extLineHeight(_ ratio: CGFloat = LineSpacingRatio.Min.rawValue) -> CGFloat {
-    return lineHeight * (1.0 + ratio)
-  }
+func ccf(_ size: CGFloat, _ weight: UIFont.Weight = .regular) -> UIFont {
+  return UIFont.systemFont(ofSize: size, weight: weight)
 }
 
 // MARK: Image
