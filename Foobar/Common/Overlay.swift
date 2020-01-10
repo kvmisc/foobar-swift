@@ -125,7 +125,8 @@ class Overlay {
     attributes.position = .center
     //attributes.precedence = .override(priority: .normal, dropEnqueuedEntries: false)
     attributes.displayDuration = .infinity
-    attributes.positionConstraints.size = .init(width: width, height: .intrinsic)
+    attributes.positionConstraints.size =
+      EKAttributes.PositionConstraints.Size(width: width, height: .intrinsic)
     attributes.screenInteraction = .absorbTouches
     attributes.entryInteraction = .absorbTouches
     attributes.scroll = .disabled
@@ -137,9 +138,13 @@ class Overlay {
     //attributes.roundCorners = .none
     //attributes.border = .none
     //attributes.statusBar = .inferred
-    attributes.entranceAnimation = .init(translate: .init(duration: 0.25, spring: .init(damping: 1, initialVelocity: 0)))
-    attributes.exitAnimation = .init(translate: .init(duration: 0.25, spring: .init(damping: 1, initialVelocity: 0)))
     //attributes.popBehavior = .overridden
+
+    let spring = EKAttributes.Animation.Spring(damping: 1, initialVelocity: 0)
+    let translate = EKAttributes.Animation.Translate(duration: 0.25, spring: spring)
+    let animation = EKAttributes.Animation(translate: translate)
+    attributes.entranceAnimation = animation
+    attributes.exitAnimation = animation
 
     config?(attributes)
 
@@ -160,7 +165,8 @@ class Overlay {
     attributes.position = .bottom
     //attributes.precedence = .override(priority: .normal, dropEnqueuedEntries: false)
     attributes.displayDuration = .infinity
-    attributes.positionConstraints.size = .init(width: width, height: .intrinsic)
+    attributes.positionConstraints.size =
+      EKAttributes.PositionConstraints.Size(width: width, height: .intrinsic)
     attributes.positionConstraints.verticalOffset = offset
     attributes.screenInteraction = interaction
     attributes.entryInteraction = .absorbTouches
@@ -173,9 +179,13 @@ class Overlay {
     //attributes.roundCorners = .none
     //attributes.border = .none
     //attributes.statusBar = .inferred
-    attributes.entranceAnimation = .init(translate: .init(duration: 0.25, spring: .init(damping: 1, initialVelocity: 0)))
-    attributes.exitAnimation = .init(translate: .init(duration: 0.25, spring: .init(damping: 1, initialVelocity: 0)))
     //attributes.popBehavior = .overridden
+
+    let spring = EKAttributes.Animation.Spring(damping: 1, initialVelocity: 0)
+    let translate = EKAttributes.Animation.Translate(duration: 0.25, spring: spring)
+    let animation = EKAttributes.Animation(translate: translate)
+    attributes.entranceAnimation = animation
+    attributes.exitAnimation = animation
 
     config?(attributes)
 
