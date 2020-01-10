@@ -28,4 +28,6 @@ target 'Foobar' do
 
   pod 'YYText'
 
+  pod 'MonkeyKing'
+
 end

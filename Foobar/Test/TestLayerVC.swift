@@ -44,9 +44,13 @@ class TestLayerVC: UIViewController {
 
   @objc func clicked(_ sender: UIButton) {
 
-    let sheet = TheSheet()
-    sheet.backgroundColor = .red
-    Overlay.entrySheet(sheet, width: .ratio(value: 0.8), offset: 10.0, interaction: .absorbTouches, config: nil)
+//    let sheet = TheSheet()
+//    sheet.backgroundColor = .red
+//    Overlay.entrySheet(sheet, width: .ratio(value: 0.8), offset: 10.0, interaction: .absorbTouches, config: nil)
+
+    ThirdMedia.shared.wechatSession("测试(假装没看见) \(UUID().uuidString)") { (result) in
+      print(result)
+    }
 
   }
 

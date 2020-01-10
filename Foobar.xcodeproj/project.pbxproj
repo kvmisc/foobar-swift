@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01F7682392400800A6E5E6 /* HTTPManager.swift */; };
 		0A11FDA123A7C65B00BF4BED /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11FDA023A7C65B00BF4BED /* UserModel.swift */; };
+		0A1388F923C8BB9400A1ADDE /* ThirdMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1388F823C8BB9400A1ADDE /* ThirdMedia.swift */; };
 		0A19DCDB239B465300CA5D24 /* IconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19DCDA239B465300CA5D24 /* IconLabel.swift */; };
 		0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF4082391530D00F914C5 /* FBRootVC.swift */; };
 		0A2CF40B2391530D00F914C5 /* FBRootVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CF4092391530D00F914C5 /* FBRootVC.xib */; };
@@ -90,6 +91,7 @@
 /* Begin PBXFileReference section */
 		0A01F7682392400800A6E5E6 /* HTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
 		0A11FDA023A7C65B00BF4BED /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		0A1388F823C8BB9400A1ADDE /* ThirdMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdMedia.swift; sourceTree = "<group>"; };
 		0A19DCDA239B465300CA5D24 /* IconLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLabel.swift; sourceTree = "<group>"; };
 		0A2CF4082391530D00F914C5 /* FBRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRootVC.swift; sourceTree = "<group>"; };
 		0A2CF4092391530D00F914C5 /* FBRootVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBRootVC.xib; sourceTree = "<group>"; };
@@ -197,9 +199,18 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		0A1388F723C8BB5600A1ADDE /* ThirdMedia */ = {
+			isa = PBXGroup;
+			children = (
+				0A1388F823C8BB9400A1ADDE /* ThirdMedia.swift */,
+			);
+			name = ThirdMedia;
+			sourceTree = "<group>";
+		};
 		0A19DCD0239B447F00CA5D24 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0A1388F723C8BB5600A1ADDE /* ThirdMedia */,
 				0A19DCD5239B44A800CA5D24 /* Message */,
 				BB46288F239E54A600989126 /* PageState */,
 				BBE7DCB623A23ED5009A650F /* Views */,
@@ -662,6 +673,7 @@
 				0A53303D238EC965009B5375 /* StringExt.swift in Sources */,
 				BBE7DCE023A25423009A650F /* TestLabel.swift in Sources */,
 				0AACE9C623A27A6A004A1BC1 /* EdgeBar.swift in Sources */,
+				0A1388F923C8BB9400A1ADDE /* ThirdMedia.swift in Sources */,
 				BB8A3A21239DD5A000DF3125 /* TestMultiLineButton.swift in Sources */,
 				BB6C9A63239DF52400822180 /* RichText.swift in Sources */,
 				0ACBB21E23A6319C0069F4D7 /* TestJSON.swift in Sources */,
@@ -848,13 +860,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F7P7PVCL9M;
 				INFOPLIST_FILE = Foobar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.firefly.Foobar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.firefly.smartcombat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -867,13 +880,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F7P7PVCL9M;
 				INFOPLIST_FILE = Foobar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.firefly.Foobar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.firefly.smartcombat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

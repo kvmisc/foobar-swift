@@ -20,9 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     print(Path.document())
 
 
-//    var bgR, bgG, bgB, bgA: CGFloat = 0.0
-//
-//    print("\(bgR) \(bgG) \(bgB) \(bgA)")
+    ThirdMedia.setup()
+
 
 
 
@@ -35,6 +34,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.window = window
     return true
   }
+
+
+  func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    if ThirdMedia.parseURL(url) { return true }
+    return false
+  }
+
+//  func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+//    if MonkeyKing.handleOpenURL(url) {
+//      return true
+//    }
+//    return false
+//  }
 
 }
 

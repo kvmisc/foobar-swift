@@ -10,6 +10,7 @@ PODS:
     - Kingfisher/Core (= 5.11.0)
   - Kingfisher/Core (5.11.0)
   - Localize-Swift (3.1.0)
+  - MonkeyKing (1.16.0)
   - PKHUD (5.3.0)
   - QuickLayout (3.0.0)
   - Repeat (0.5.8)
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - KeychainAccess
   - Kingfisher
   - Localize-Swift
+  - MonkeyKing
   - PKHUD
   - Repeat
   - Reusable
@@ -59,6 +61,7 @@ SPEC REPOS:
     - KeychainAccess
     - Kingfisher
     - Localize-Swift
+    - MonkeyKing
     - PKHUD
     - QuickLayout
     - Repeat
@@ -81,6 +84,7 @@ SPEC CHECKSUMS:
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
   Kingfisher: 4569606189149e19c7d9439f47e885d0679b7a90
   Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
+  MonkeyKing: dc5076dc206bf9e6eb427d618317eff1b44b0666
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   Repeat: 8e65710d09da68f06ed79e865b091ffdcc8d0279
@@ -93,6 +97,6 @@ SPEC CHECKSUMS:
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: c3786baf9eb42ddc917f5213aa0ef89b7757d21b
+PODFILE CHECKSUM: ca0b8c79c387d8709e2354253cabd9d92553f141
 
 COCOAPODS: 1.8.4
