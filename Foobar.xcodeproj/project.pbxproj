@@ -66,7 +66,7 @@
 		BB8A3A21239DD5A000DF3125 /* TestMultiLineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8A3A20239DD5A000DF3125 /* TestMultiLineButton.swift */; };
 		BB8D53D22399DFFB008BA419 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D53D12399DFFB008BA419 /* Path.swift */; };
 		BB8D53D42399E04A008BA419 /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D53D32399E04A008BA419 /* Base64.swift */; };
-		BB8D53D62399E07D008BA419 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D53D52399E07D008BA419 /* Formatter.swift */; };
+		BB8D53D62399E07D008BA419 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D53D52399E07D008BA419 /* DateTime.swift */; };
 		BB8D53DE2399F931008BA419 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D53DD2399F931008BA419 /* Layout.swift */; };
 		BB91D2BF238E35130048D384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB91D2BE238E35130048D384 /* AppDelegate.swift */; };
 		BB91D2C3238E35130048D384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB91D2C2238E35130048D384 /* ViewController.swift */; };
@@ -152,7 +152,7 @@
 		BB8A3A20239DD5A000DF3125 /* TestMultiLineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMultiLineButton.swift; sourceTree = "<group>"; };
 		BB8D53D12399DFFB008BA419 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		BB8D53D32399E04A008BA419 /* Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64.swift; sourceTree = "<group>"; };
-		BB8D53D52399E07D008BA419 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		BB8D53D52399E07D008BA419 /* DateTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTime.swift; sourceTree = "<group>"; };
 		BB8D53DD2399F931008BA419 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		BB91D2BB238E35130048D384 /* Foobar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foobar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB91D2BE238E35130048D384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -262,7 +262,7 @@
 				0A768A4D239955A90027A68A /* Metrics.swift */,
 				BB8D53D12399DFFB008BA419 /* Path.swift */,
 				BB8D53D32399E04A008BA419 /* Base64.swift */,
-				BB8D53D52399E07D008BA419 /* Formatter.swift */,
+				BB8D53D52399E07D008BA419 /* DateTime.swift */,
 				BB8D53DD2399F931008BA419 /* Layout.swift */,
 				0A300D20239C90310025FC04 /* UIElement.swift */,
 				BB6C9A62239DF52400822180 /* RichText.swift */,
@@ -437,10 +437,10 @@
 		BB91D2DE238E451E0048D384 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
-				0A53303A238EC957009B5375 /* DataStringExt.swift */,
-				0A53303C238EC965009B5375 /* StringExt.swift */,
-				0A300D1E239C8C030025FC04 /* FloatingPointExt.swift */,
 				BB9D82E423A9F46B00CE73A1 /* ArrayExt.swift */,
+				0A53303A238EC957009B5375 /* DataStringExt.swift */,
+				0A300D1E239C8C030025FC04 /* FloatingPointExt.swift */,
+				0A53303C238EC965009B5375 /* StringExt.swift */,
 				BB2EF0F023C6CEFB005B693A /* UIColorExt.swift */,
 				BB2EF0F223C6CF0A005B693A /* UIFontExt.swift */,
 				0A53A527239E7E9C00A51A54 /* UIImageExt.swift */,
@@ -643,7 +643,7 @@
 			files = (
 				0A768A4E239955A90027A68A /* Metrics.swift in Sources */,
 				BB8D53DE2399F931008BA419 /* Layout.swift in Sources */,
-				BB8D53D62399E07D008BA419 /* Formatter.swift in Sources */,
+				BB8D53D62399E07D008BA419 /* DateTime.swift in Sources */,
 				BB91D2C3238E35130048D384 /* ViewController.swift in Sources */,
 				BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */,
 				BBE7DCB823A23EF7009A650F /* BaseViewController.swift in Sources */,

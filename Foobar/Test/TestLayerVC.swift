@@ -48,9 +48,9 @@ class TestLayerVC: UIViewController {
     let sheet = TheSheet()
     sheet.backgroundColor = .red
 //    Overlay.entrySheet(sheet, width: .ratio(value: 0.8), offset: 10.0, interaction: .absorbTouches, config: )
-    Overlay.entrySheet(sheet, width: .ratio(value: 0.8), offset: 10.0, interaction: .absorbTouches) { (attributes) in
-      attributes.screenInteraction = EKAttributes.UserInteraction.dismiss
-    }
+//    Overlay.entrySheet(sheet, width: .ratio(value: 0.8), offset: 10.0, interaction: .absorbTouches) { (attributes) in
+//      attributes.screenInteraction = EKAttributes.UserInteraction.dismiss
+//    }
 
 //    ThirdMedia.shared.wechatSession("测试(假装没看见) \(UUID().uuidString)") { (result) in
 //      print(result)
