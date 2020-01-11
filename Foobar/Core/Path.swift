@@ -34,6 +34,13 @@ class Path {
     }
   }
 
+  static func findPath(_ name: String, _ bundle: Bundle = .main) -> String? {
+    return bundle.path(forResource: name, ofType: nil)
+  }
+  static func findURL(_ name: String, _ bundle: Bundle = .main) -> URL? {
+    return bundle.url(forResource: name, withExtension: nil)
+  }
+
   static func bundle(_ relativePath: String = "", _ bundle: Bundle = .main) -> String {
     return bundle.resourcePath?.extAppendingPathComponent(relativePath) ?? ""
   }

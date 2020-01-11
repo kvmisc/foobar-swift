@@ -9,6 +9,7 @@
 import UIKit
 
 class Archive {
+
   @discardableResult
   static func toJSONFile<EncodableType: Encodable>(_ object: EncodableType, _ path: String) -> Bool {
     let encoder = JSONEncoder()
@@ -27,6 +28,7 @@ class Archive {
       return false
     }
   }
+
   static func fromJSONFile<DecodableType: Decodable>(_ path: String) -> DecodableType? {
     do {
       let dat = try Data(contentsOf: URL(fileURLWithPath: path))
@@ -43,4 +45,5 @@ class Archive {
       return nil
     }
   }
+
 }

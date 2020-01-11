@@ -117,8 +117,7 @@ class Overlay {
   // 显示在屏幕中间, 点周围无效果 且 视图不消失, 选择后手动消失
   // 后来的会隐藏前面的
   static func entryAlert(_ view: UIView,
-                         width: EKAttributes.PositionConstraints.Edge = .intrinsic,
-                         config: ((EKAttributes)->Void)? = nil)
+                         width: EKAttributes.PositionConstraints.Edge = .intrinsic)
   {
     var attributes = EKAttributes()
     //attributes.windowLevel = .statusBar
@@ -146,8 +145,6 @@ class Overlay {
     attributes.entranceAnimation = animation
     attributes.exitAnimation = animation
 
-    config?(attributes)
-
     SwiftEntryKit.display(entry: view, using: attributes, presentInsideKeyWindow: true, rollbackWindow: .main)
   }
   // 显示在屏幕下边, 点周围无效果 可以 视图不动/消失, 选择后手动消失
@@ -156,7 +153,7 @@ class Overlay {
                          width: EKAttributes.PositionConstraints.Edge = .ratio(value: 1.0),
                          offset: CGFloat = 0.0,
                          interaction: EKAttributes.UserInteraction = .dismiss,
-                         config: ((EKAttributes)->Void)? = nil)
+                         dismissed: EKAttributes.LifecycleEvents.Event? = nil)
   {
     HideKeyboard()
 
@@ -187,7 +184,7 @@ class Overlay {
     attributes.entranceAnimation = animation
     attributes.exitAnimation = animation
 
-    config?(attributes)
+    attributes.lifecycleEvents.didDisappear = dismissed
 
     SwiftEntryKit.display(entry: view, using: attributes, presentInsideKeyWindow: false, rollbackWindow: .main)
   }

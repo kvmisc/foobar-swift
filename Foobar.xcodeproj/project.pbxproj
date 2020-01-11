@@ -41,6 +41,7 @@
 		BB11C65723A3AB7E00008938 /* navbar_back_dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65323A3AB7E00008938 /* navbar_back_dark@2x.png */; };
 		BB11C65823A3AB7E00008938 /* navbar_back_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65423A3AB7E00008938 /* navbar_back_light@2x.png */; };
 		BB11C65923A3AB7E00008938 /* navbar_back_light@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65523A3AB7E00008938 /* navbar_back_light@3x.png */; };
+		BB1B259A23C9987500949532 /* eagle.gif in Resources */ = {isa = PBXBuildFile; fileRef = BB1B259923C9987500949532 /* eagle.gif */; };
 		BB2AD5FD23C5BCA00055E82C /* TestLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2AD5FC23C5BCA00055E82C /* TestLayerVC.swift */; };
 		BB2EF0F123C6CEFB005B693A /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2EF0F023C6CEFB005B693A /* UIColorExt.swift */; };
 		BB2EF0F323C6CF0A005B693A /* UIFontExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2EF0F223C6CF0A005B693A /* UIFontExt.swift */; };
@@ -64,6 +65,7 @@
 		BB7959CA23A8D6C000A21343 /* TestProtocolVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7959C923A8D6C000A21343 /* TestProtocolVC.swift */; };
 		BB7959CC23A8ECA900A21343 /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7959CB23A8ECA900A21343 /* FlowView.swift */; };
 		BB8A3A21239DD5A000DF3125 /* TestMultiLineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8A3A20239DD5A000DF3125 /* TestMultiLineButton.swift */; };
+		BB8B0DE823C98E6A00BAA547 /* DataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8B0DE723C98E6A00BAA547 /* DataExt.swift */; };
 		BB8D53D22399DFFB008BA419 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D53D12399DFFB008BA419 /* Path.swift */; };
 		BB8D53D42399E04A008BA419 /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D53D32399E04A008BA419 /* Base64.swift */; };
 		BB8D53D62399E07D008BA419 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D53D52399E07D008BA419 /* DateTime.swift */; };
@@ -127,6 +129,7 @@
 		BB11C65323A3AB7E00008938 /* navbar_back_dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_dark@2x.png"; sourceTree = "<group>"; };
 		BB11C65423A3AB7E00008938 /* navbar_back_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_light@2x.png"; sourceTree = "<group>"; };
 		BB11C65523A3AB7E00008938 /* navbar_back_light@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_light@3x.png"; sourceTree = "<group>"; };
+		BB1B259923C9987500949532 /* eagle.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = eagle.gif; sourceTree = "<group>"; };
 		BB2AD5FC23C5BCA00055E82C /* TestLayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLayerVC.swift; sourceTree = "<group>"; };
 		BB2EF0F023C6CEFB005B693A /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		BB2EF0F223C6CF0A005B693A /* UIFontExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExt.swift; sourceTree = "<group>"; };
@@ -150,6 +153,7 @@
 		BB7959C923A8D6C000A21343 /* TestProtocolVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProtocolVC.swift; sourceTree = "<group>"; };
 		BB7959CB23A8ECA900A21343 /* FlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowView.swift; sourceTree = "<group>"; };
 		BB8A3A20239DD5A000DF3125 /* TestMultiLineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMultiLineButton.swift; sourceTree = "<group>"; };
+		BB8B0DE723C98E6A00BAA547 /* DataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExt.swift; sourceTree = "<group>"; };
 		BB8D53D12399DFFB008BA419 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		BB8D53D32399E04A008BA419 /* Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64.swift; sourceTree = "<group>"; };
 		BB8D53D52399E07D008BA419 /* DateTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTime.swift; sourceTree = "<group>"; };
@@ -302,6 +306,7 @@
 		0ACBB21323A5EF590069F4D7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BB1B259923C9987500949532 /* eagle.gif */,
 				0ACBB21423A5EF590069F4D7 /* Localizable.strings */,
 			);
 			path = Resources;
@@ -438,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				BB9D82E423A9F46B00CE73A1 /* ArrayExt.swift */,
+				BB8B0DE723C98E6A00BAA547 /* DataExt.swift */,
 				0A53303A238EC957009B5375 /* DataStringExt.swift */,
 				0A300D1E239C8C030025FC04 /* FloatingPointExt.swift */,
 				0A53303C238EC965009B5375 /* StringExt.swift */,
@@ -584,6 +590,7 @@
 				0A2CF41A23916DA400F914C5 /* FBRootCell.xib in Resources */,
 				BB462888239E477900989126 /* TestReusableVC.xib in Resources */,
 				0AACE9C423A274DB004A1BC1 /* theme_blue.plist in Resources */,
+				BB1B259A23C9987500949532 /* eagle.gif in Resources */,
 				0ACBB21823A5EF590069F4D7 /* Localizable.strings in Resources */,
 				BB91D2C8238E35160048D384 /* Assets.xcassets in Resources */,
 				BB46288C239E478E00989126 /* TestReusableTC.xib in Resources */,
@@ -645,6 +652,7 @@
 				BB8D53DE2399F931008BA419 /* Layout.swift in Sources */,
 				BB8D53D62399E07D008BA419 /* DateTime.swift in Sources */,
 				BB91D2C3238E35130048D384 /* ViewController.swift in Sources */,
+				BB8B0DE823C98E6A00BAA547 /* DataExt.swift in Sources */,
 				BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */,
 				BBE7DCB823A23EF7009A650F /* BaseViewController.swift in Sources */,
 				BBBB060D239F58820004613C /* Drop.swift in Sources */,

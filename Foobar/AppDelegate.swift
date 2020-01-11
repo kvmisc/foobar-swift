@@ -22,12 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     ThirdMedia.setup()
 
-    let str = "1.0"
-    print("dt: \(str.extTimestampDate())")
-
-
-
-
     let window = UIWindow()
 //    let nc = UINavigationController(rootViewController: TestHierachyRedVC())
 //    nc.isNavigationBarHidden = true
