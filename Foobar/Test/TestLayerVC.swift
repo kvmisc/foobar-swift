@@ -43,7 +43,27 @@ class TestLayerVC: UIViewController {
 
   }
 
+  var lb1 = UILabel()
+  var lb2 = UILabel()
+
   @objc func clicked(_ sender: UIButton) {
+
+    print(lb1.attributes)
+    print(lb2.attributes)
+    lb1.attributes = 101
+    lb2.attributes = 201
+    print(lb1.attributes)
+    print(lb2.attributes)
+
+    lb1 = UILabel()
+    lb2 = UILabel()
+
+    print(lb1.attributes)
+    print(lb2.attributes)
+    lb1.attributes = 1001
+    lb2.attributes = 2001
+    print(lb1.attributes)
+    print(lb2.attributes)
 
 //    let sheet = TheSheet()
 //    sheet.backgroundColor = .red

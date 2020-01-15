@@ -167,3 +167,39 @@ extension UIView {
     layer.sublayers?.first { $0.name == "rounded_border_layer" }?.removeFromSuperlayer()
   }
 }
+
+extension UIView {
+  @IBInspectable var cornerRadius: CGFloat {
+    get {
+      layer.cornerRadius
+    }
+    set {
+      layer.cornerRadius = newValue
+      layer.masksToBounds = newValue > 0.0
+    }
+  }
+
+  @IBInspectable var borderWidth: CGFloat {
+    get {
+      return layer.borderWidth
+    }
+    set {
+      layer.borderWidth = newValue
+    }
+  }
+  @IBInspectable var borderColor: String? {
+    get {
+      return ""
+    }
+    set {
+      guard let newValue = newValue else { return }
+      if newValue.hasPrefix("#") {
+        layer.borderColor = ccc(newValue).cgColor
+      } else {
+        //layer.theme_borderColor = ...
+      }
+    }
+  }
+}
+
+
