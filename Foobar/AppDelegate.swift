@@ -23,10 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     ThemeWorker.setup()
 
-    let str1 = "#14"
-    let str2: String = String(str1.dropFirst())
-//    print()
-
+    testValue("")
 
 
 
@@ -40,6 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window.makeKeyAndVisible()
     self.window = window
     return true
+  }
+
+  func testValue(_ newValue: String?) {
+    guard let newValue = newValue, !newValue.isEmpty else { return }
+    print(newValue)
   }
 
 
