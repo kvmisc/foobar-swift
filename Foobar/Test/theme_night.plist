@@ -11,6 +11,10 @@
 	<dict>
 		<key>bg</key>
 		<string>#0000FF</string>
+		<key>bt_n</key>
+		<string>#0000FF</string>
+		<key>bt_h</key>
+		<string>#0000AA</string>
 	</dict>
 </dict>
 </plist>

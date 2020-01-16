@@ -21,7 +21,7 @@ extension UIColor {
     var fgG: CGFloat = 0
     var fgB: CGFloat = 0
     var fgA: CGFloat = 0
-    let overlay = UIColor.white.withAlphaComponent(0.15)
+    let overlay = UIColor.white.withAlphaComponent(0.25)
     overlay.getRed(&fgR, green: &fgG, blue: &fgB, alpha: &fgA)
 
     let r = fgA * fgR + (1 - fgA) * bgR
@@ -29,6 +29,15 @@ extension UIColor {
     let b = fgA * fgB + (1 - fgA) * bgB
 
     return UIColor(red: r, green: g, blue: b, alpha: 1.0)
+  }
+
+  func extHexString() -> String {
+    var r: CGFloat = 0
+    var g: CGFloat = 0
+    var b: CGFloat = 0
+    var a: CGFloat = 0
+    self.getRed(&r, green: &g, blue: &b, alpha: &a)
+    return String(format: "#%02X%02X%02X%02X", Int(r*255), Int(g*255), Int(b*255), Int(a*255))
   }
 
 }

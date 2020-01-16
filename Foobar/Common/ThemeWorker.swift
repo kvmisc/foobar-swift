@@ -40,8 +40,16 @@ class ThemeWorker {
     return name + "_" + themeNames[currentIndex]
   }
 
-  func getImagePicker(_ name: String) -> ThemeImagePicker {
-    return ThemeImagePicker.pickerWithNames(getImageNames(name))
+  func getImagePicker(image: String) -> ThemeImagePicker {
+    return ThemeImagePicker.pickerWithNames(getImageNames(image))
+  }
+  func getImagePicker(color: String) -> ThemeImagePicker {
+    let images = getColorValues(color).map { UIImage.extColored(ccc($0), ccs(6.0)) }
+    return ThemeImagePicker.pickerWithImages(images)
+  }
+  func getImagePicker(hicolor: String) -> ThemeImagePicker {
+    let images = getColorValues(hicolor).map { UIImage.extColored(ccc($0).extOverlayWhite(), ccs(6.0)) }
+    return ThemeImagePicker.pickerWithImages(images)
   }
 
 
@@ -75,11 +83,15 @@ class ThemeWorker {
     return value
   }
 
-  func getColorPicker(_ name: String) -> ThemeColorPicker {
-    return ThemeColorPicker.pickerWithColors(getColorValues(name))
+  func getColorPicker(color: String) -> ThemeColorPicker {
+    return ThemeColorPicker.pickerWithColors(getColorValues(color))
   }
-  func getCGColorPicker(_ name: String) -> ThemeCGColorPicker {
-    return ThemeCGColorPicker.pickerWithColors(getColorValues(name))
+  func getColorPicker(hicolor: String) -> ThemeColorPicker {
+    let colors = getColorValues(hicolor).map { ccc($0).extOverlayWhite().extHexString() }
+    return ThemeColorPicker.pickerWithColors(colors)
+  }
+  func getColorPicker(cgcolor: String) -> ThemeCGColorPicker {
+    return ThemeCGColorPicker.pickerWithColors(getColorValues(cgcolor))
   }
 
 }

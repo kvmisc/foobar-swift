@@ -17,7 +17,7 @@ extension UIView {
       if newValue.hasPrefix("#") {
         backgroundColor = ccc(newValue)
       } else {
-        theme_backgroundColor = ThemeWorker.shared.getColorPicker(newValue)
+        theme_backgroundColor = ThemeWorker.shared.getColorPicker(color: newValue)
       }
     }
   }
@@ -28,7 +28,7 @@ extension UIView {
       if newValue.hasPrefix("#") {
         tintColor = ccc(newValue)
       } else {
-        theme_tintColor = ThemeWorker.shared.getColorPicker(newValue)
+        theme_tintColor = ThemeWorker.shared.getColorPicker(color: newValue)
       }
     }
   }
@@ -53,7 +53,7 @@ extension UIView {
       if newValue.hasPrefix("#") {
         layer.borderColor = ccc(newValue).cgColor
       } else {
-        layer.theme_borderColor = ThemeWorker.shared.getCGColorPicker(newValue)
+        layer.theme_borderColor = ThemeWorker.shared.getColorPicker(cgcolor: newValue)
       }
     }
   }
@@ -66,7 +66,7 @@ extension UIImageView {
       if newValue.hasPrefix("#") {
         image = cci(String(newValue.dropFirst()))
       } else {
-        theme_image = ThemeWorker.shared.getImagePicker(newValue)
+        theme_image = ThemeWorker.shared.getImagePicker(image: newValue)
       }
     }
   }
@@ -91,7 +91,7 @@ extension UILabel {
       if newValue.hasPrefix("#") {
         textColor = ccc(newValue)
       } else {
-        theme_textColor = ThemeWorker.shared.getColorPicker(newValue)
+        theme_textColor = ThemeWorker.shared.getColorPicker(color: newValue)
       }
     }
   }
@@ -115,7 +115,7 @@ extension UITextField {
       if newValue.hasPrefix("#") {
         textColor = ccc(newValue)
       } else {
-        theme_textColor = ThemeWorker.shared.getColorPicker(newValue)
+        theme_textColor = ThemeWorker.shared.getColorPicker(color: newValue)
       }
     }
   }
@@ -139,13 +139,60 @@ extension UITextView {
       if newValue.hasPrefix("#") {
         textColor = ccc(newValue)
       } else {
-        theme_textColor = ThemeWorker.shared.getColorPicker(newValue)
+        theme_textColor = ThemeWorker.shared.getColorPicker(color: newValue)
       }
     }
   }
 }
 
 extension UIButton {
+  @IBInspectable var nm_ttl_color: String? {
+    get { return "" }
+    set {
+      guard let newValue = newValue, !newValue.isEmpty else { return }
+      if newValue.hasPrefix("#") {
+        setTitleColor(ccc(newValue), for: .normal)
+      } else {
+        theme_setTitleColor(ThemeWorker.shared.getColorPicker(color: newValue), forState: .normal)
+      }
+    }
+  }
+  @IBInspectable var hi_ttl_color: String? {
+    get { return "" }
+    set {
+      guard let newValue = newValue, !newValue.isEmpty else { return }
+      if newValue.hasPrefix("#") {
+        setTitleColor(ccc(newValue), for: .highlighted)
+      } else {
+        theme_setTitleColor(ThemeWorker.shared.getColorPicker(color: newValue), forState: .highlighted)
+      }
+    }
+  }
+  @IBInspectable var ds_ttl_color: String? {
+    get { return "" }
+    set {
+      guard let newValue = newValue, !newValue.isEmpty else { return }
+      if newValue.hasPrefix("#") {
+        setTitleColor(ccc(newValue), for: .disabled)
+      } else {
+        theme_setTitleColor(ThemeWorker.shared.getColorPicker(color: newValue), forState: .disabled)
+      }
+    }
+  }
+  @IBInspectable var ttl_color: String? {
+    get { return "" }
+    set {
+      guard let newValue = newValue, !newValue.isEmpty else { return }
+      if newValue.hasPrefix("#") {
+        setTitleColor(ccc(newValue), for: .normal)
+        setTitleColor(ccc(newValue).extOverlayWhite(), for: .highlighted)
+      } else {
+        theme_setTitleColor(ThemeWorker.shared.getColorPicker(color: newValue), forState: .normal)
+        theme_setTitleColor(ThemeWorker.shared.getColorPicker(hicolor: newValue), forState: .highlighted)
+      }
+    }
+  }
+
   @IBInspectable var nm_image: String? {
     get { return "" }
     set {
@@ -153,7 +200,7 @@ extension UIButton {
       if newValue.hasPrefix("#") {
         setImage(cci(String(newValue.dropFirst())), for: .normal)
       } else {
-        theme_setImage(ThemeWorker.shared.getImagePicker(newValue), forState: .normal)
+        theme_setImage(ThemeWorker.shared.getImagePicker(image: newValue), forState: .normal)
       }
     }
   }
@@ -164,7 +211,7 @@ extension UIButton {
       if newValue.hasPrefix("#") {
         setImage(cci(String(newValue.dropFirst())), for: .highlighted)
       } else {
-        theme_setImage(ThemeWorker.shared.getImagePicker(newValue), forState: .highlighted)
+        theme_setImage(ThemeWorker.shared.getImagePicker(image: newValue), forState: .highlighted)
       }
     }
   }
@@ -175,7 +222,7 @@ extension UIButton {
       if newValue.hasPrefix("#") {
         setImage(cci(String(newValue.dropFirst())), for: .disabled)
       } else {
-        theme_setImage(ThemeWorker.shared.getImagePicker(newValue), forState: .disabled)
+        theme_setImage(ThemeWorker.shared.getImagePicker(image: newValue), forState: .disabled)
       }
     }
   }
@@ -187,7 +234,7 @@ extension UIButton {
       if newValue.hasPrefix("#") {
         setBackgroundImage(cci(String(newValue.dropFirst())), for: .normal)
       } else {
-        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(newValue), forState: .normal)
+        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(image: newValue), forState: .normal)
       }
     }
   }
@@ -198,7 +245,7 @@ extension UIButton {
       if newValue.hasPrefix("#") {
         setBackgroundImage(cci(String(newValue.dropFirst())), for: .highlighted)
       } else {
-        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(newValue), forState: .highlighted)
+        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(image: newValue), forState: .highlighted)
       }
     }
   }
@@ -209,7 +256,7 @@ extension UIButton {
       if newValue.hasPrefix("#") {
         setBackgroundImage(cci(String(newValue.dropFirst())), for: .disabled)
       } else {
-        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(newValue), forState: .disabled)
+        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(image: newValue), forState: .disabled)
       }
     }
   }
@@ -218,8 +265,11 @@ extension UIButton {
     get { return "" }
     set {
       guard let newValue = newValue, !newValue.isEmpty else { return }
-
-      theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(newValue), forState: .normal)
+      if newValue.hasPrefix("#") {
+        setBackgroundImage(UIImage.extColored(ccc(newValue), ccs(6.0)), for: .normal)
+      } else {
+        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(color: newValue), forState: .normal)
+      }
     }
   }
   @IBInspectable var hi_clr_image: String? {
@@ -227,9 +277,9 @@ extension UIButton {
     set {
       guard let newValue = newValue, !newValue.isEmpty else { return }
       if newValue.hasPrefix("#") {
-        setBackgroundImage(cci(String(newValue.dropFirst())), for: .highlighted)
+        setBackgroundImage(UIImage.extColored(ccc(newValue), ccs(6.0)), for: .highlighted)
       } else {
-        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(newValue), forState: .highlighted)
+        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(color: newValue), forState: .highlighted)
       }
     }
   }
@@ -238,9 +288,22 @@ extension UIButton {
     set {
       guard let newValue = newValue, !newValue.isEmpty else { return }
       if newValue.hasPrefix("#") {
-        setBackgroundImage(cci(String(newValue.dropFirst())), for: .disabled)
+        setBackgroundImage(UIImage.extColored(ccc(newValue), ccs(6.0)), for: .disabled)
       } else {
-        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(newValue), forState: .disabled)
+        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(color: newValue), forState: .disabled)
+      }
+    }
+  }
+  @IBInspectable var clr_image: String? {
+    get { return "" }
+    set {
+      guard let newValue = newValue, !newValue.isEmpty else { return }
+      if newValue.hasPrefix("#") {
+        setBackgroundImage(UIImage.extColored(ccc(newValue), ccs(6.0)), for: .normal)
+        setBackgroundImage(UIImage.extColored(ccc(newValue).extOverlayWhite(), ccs(6.0)), for: .highlighted)
+      } else {
+        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(color: newValue), forState: .normal)
+        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(hicolor: newValue), forState: .highlighted)
       }
     }
   }
