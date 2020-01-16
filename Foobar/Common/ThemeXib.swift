@@ -146,164 +146,122 @@ extension UITextView {
 }
 
 extension UIButton {
-  @IBInspectable var nm_ttl_color: String? {
+  // @ 开头, 通过普通颜色自动设置高亮颜色
+  //   # 开头为固定值, 不能根据主题切换
+  //   其它的值会根据主题切换
+
+  @IBInspectable var fnt: String? {
     get { return "" }
     set {
       guard let newValue = newValue, !newValue.isEmpty else { return }
       if newValue.hasPrefix("#") {
-        setTitleColor(ccc(newValue), for: .normal)
+        titleLabel?.font = ccf(CGFloat(Int(String(newValue.dropFirst()))!))
       } else {
-        theme_setTitleColor(ThemeWorker.shared.getColorPicker(color: newValue), forState: .normal)
+        // ...
       }
     }
   }
-  @IBInspectable var hi_ttl_color: String? {
-    get { return "" }
-    set {
-      guard let newValue = newValue, !newValue.isEmpty else { return }
-      if newValue.hasPrefix("#") {
-        setTitleColor(ccc(newValue), for: .highlighted)
-      } else {
-        theme_setTitleColor(ThemeWorker.shared.getColorPicker(color: newValue), forState: .highlighted)
-      }
-    }
-  }
-  @IBInspectable var ds_ttl_color: String? {
-    get { return "" }
-    set {
-      guard let newValue = newValue, !newValue.isEmpty else { return }
-      if newValue.hasPrefix("#") {
-        setTitleColor(ccc(newValue), for: .disabled)
-      } else {
-        theme_setTitleColor(ThemeWorker.shared.getColorPicker(color: newValue), forState: .disabled)
-      }
-    }
-  }
+
+  // normal,highlighted,disabled,selected
   @IBInspectable var ttl_color: String? {
     get { return "" }
     set {
       guard let newValue = newValue, !newValue.isEmpty else { return }
-      if newValue.hasPrefix("#") {
-        setTitleColor(ccc(newValue), for: .normal)
-        setTitleColor(ccc(newValue).extOverlayWhite(), for: .highlighted)
+      if newValue.hasPrefix("@") {
+        let value = String(newValue.dropFirst())
+        if value.hasPrefix("#") {
+          setTitleColor(ccc(value), for: .normal)
+          setTitleColor(ccc(value).extOverlayWhite(), for: .highlighted)
+        } else {
+          theme_setTitleColor(ThemeWorker.shared.getColorPicker(color: value), forState: .normal)
+          theme_setTitleColor(ThemeWorker.shared.getColorPicker(hicolor: value), forState: .highlighted)
+        }
       } else {
-        theme_setTitleColor(ThemeWorker.shared.getColorPicker(color: newValue), forState: .normal)
-        theme_setTitleColor(ThemeWorker.shared.getColorPicker(hicolor: newValue), forState: .highlighted)
+        let list = newValue.components(separatedBy: ",")
+        let states: [UIControl.State] = [.normal, .highlighted, .disabled, .selected]
+        for (index,state) in states.enumerated() {
+          if list.count > index {
+            let value = list[index]
+            if value.isEmpty { continue }
+            if value.hasPrefix("#") {
+              setTitleColor(ccc(value), for: state)
+            } else {
+              theme_setTitleColor(ThemeWorker.shared.getColorPicker(color: value), forState: state)
+            }
+          }
+        }
       }
     }
   }
 
-  @IBInspectable var nm_image: String? {
+  // normal,highlighted,disabled,selected
+  @IBInspectable var img: String? {
     get { return "" }
     set {
       guard let newValue = newValue, !newValue.isEmpty else { return }
-      if newValue.hasPrefix("#") {
-        setImage(cci(String(newValue.dropFirst())), for: .normal)
-      } else {
-        theme_setImage(ThemeWorker.shared.getImagePicker(image: newValue), forState: .normal)
+      let list = newValue.components(separatedBy: ",")
+      let states: [UIControl.State] = [.normal, .highlighted, .disabled, .selected]
+      for (index,state) in states.enumerated() {
+        if list.count > index {
+          let value = list[index]
+          if value.isEmpty { continue }
+          if value.hasPrefix("#") {
+            setImage(cci(String(value.dropFirst())), for: state)
+          } else {
+            theme_setImage(ThemeWorker.shared.getImagePicker(image: value), forState: state)
+          }
+        }
       }
     }
   }
-  @IBInspectable var hi_image: String? {
+  // normal,highlighted,disabled,selected
+  @IBInspectable var bg_img: String? {
     get { return "" }
     set {
       guard let newValue = newValue, !newValue.isEmpty else { return }
-      if newValue.hasPrefix("#") {
-        setImage(cci(String(newValue.dropFirst())), for: .highlighted)
-      } else {
-        theme_setImage(ThemeWorker.shared.getImagePicker(image: newValue), forState: .highlighted)
+      let list = newValue.components(separatedBy: ",")
+      let states: [UIControl.State] = [.normal, .highlighted, .disabled, .selected]
+      for (index,state) in states.enumerated() {
+        if list.count > index {
+          let value = list[index]
+          if value.isEmpty { continue }
+          if value.hasPrefix("#") {
+            setBackgroundImage(cci(String(value.dropFirst())), for: state)
+          } else {
+            theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(image: value), forState: state)
+          }
+        }
       }
     }
   }
-  @IBInspectable var ds_image: String? {
-    get { return "" }
-    set {
-      guard let newValue = newValue, !newValue.isEmpty else { return }
-      if newValue.hasPrefix("#") {
-        setImage(cci(String(newValue.dropFirst())), for: .disabled)
-      } else {
-        theme_setImage(ThemeWorker.shared.getImagePicker(image: newValue), forState: .disabled)
-      }
-    }
-  }
-
-  @IBInspectable var nm_bg_image: String? {
-    get { return "" }
-    set {
-      guard let newValue = newValue, !newValue.isEmpty else { return }
-      if newValue.hasPrefix("#") {
-        setBackgroundImage(cci(String(newValue.dropFirst())), for: .normal)
-      } else {
-        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(image: newValue), forState: .normal)
-      }
-    }
-  }
-  @IBInspectable var hi_bg_image: String? {
-    get { return "" }
-    set {
-      guard let newValue = newValue, !newValue.isEmpty else { return }
-      if newValue.hasPrefix("#") {
-        setBackgroundImage(cci(String(newValue.dropFirst())), for: .highlighted)
-      } else {
-        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(image: newValue), forState: .highlighted)
-      }
-    }
-  }
-  @IBInspectable var ds_bg_image: String? {
-    get { return "" }
-    set {
-      guard let newValue = newValue, !newValue.isEmpty else { return }
-      if newValue.hasPrefix("#") {
-        setBackgroundImage(cci(String(newValue.dropFirst())), for: .disabled)
-      } else {
-        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(image: newValue), forState: .disabled)
-      }
-    }
-  }
-
-  @IBInspectable var nm_clr_image: String? {
-    get { return "" }
-    set {
-      guard let newValue = newValue, !newValue.isEmpty else { return }
-      if newValue.hasPrefix("#") {
-        setBackgroundImage(UIImage.extColored(ccc(newValue), ccs(6.0)), for: .normal)
-      } else {
-        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(color: newValue), forState: .normal)
-      }
-    }
-  }
-  @IBInspectable var hi_clr_image: String? {
-    get { return "" }
-    set {
-      guard let newValue = newValue, !newValue.isEmpty else { return }
-      if newValue.hasPrefix("#") {
-        setBackgroundImage(UIImage.extColored(ccc(newValue), ccs(6.0)), for: .highlighted)
-      } else {
-        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(color: newValue), forState: .highlighted)
-      }
-    }
-  }
-  @IBInspectable var ds_clr_image: String? {
-    get { return "" }
-    set {
-      guard let newValue = newValue, !newValue.isEmpty else { return }
-      if newValue.hasPrefix("#") {
-        setBackgroundImage(UIImage.extColored(ccc(newValue), ccs(6.0)), for: .disabled)
-      } else {
-        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(color: newValue), forState: .disabled)
-      }
-    }
-  }
+  // normal,highlighted,disabled,selected
   @IBInspectable var clr_image: String? {
     get { return "" }
     set {
       guard let newValue = newValue, !newValue.isEmpty else { return }
-      if newValue.hasPrefix("#") {
-        setBackgroundImage(UIImage.extColored(ccc(newValue), ccs(6.0)), for: .normal)
-        setBackgroundImage(UIImage.extColored(ccc(newValue).extOverlayWhite(), ccs(6.0)), for: .highlighted)
+      if newValue.hasPrefix("@") {
+        let value = String(newValue.dropFirst())
+        if value.hasPrefix("#") {
+          setBackgroundImage(UIImage.extColored(ccc(value), ccs(6.0)), for: .normal)
+          setBackgroundImage(UIImage.extColored(ccc(value).extOverlayWhite(), ccs(6.0)), for: .highlighted)
+        } else {
+          theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(color: value), forState: .normal)
+          theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(hicolor: value), forState: .highlighted)
+        }
       } else {
-        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(color: newValue), forState: .normal)
-        theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(hicolor: newValue), forState: .highlighted)
+        let list = newValue.components(separatedBy: ",")
+        let states: [UIControl.State] = [.normal, .highlighted, .disabled, .selected]
+        for (index,state) in states.enumerated() {
+          if list.count > index {
+            let value = list[index]
+            if value.isEmpty { continue }
+            if value.hasPrefix("#") {
+              setBackgroundImage(UIImage.extColored(ccc(value), ccs(6.0)), for: .normal)
+            } else {
+              theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(color: value), forState: state)
+            }
+          }
+        }
       }
     }
   }

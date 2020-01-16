@@ -73,7 +73,9 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="bd_radius">
                             <real key="value" value="4"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="ttl_color" value="view.bt_n"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="ttl_color" value="#00FF00"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="fnt" value="#32"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="clr_image" value="view.bt_n,view.bt_h"/>
                     </userDefinedRuntimeAttributes>
                 </button>
             </subviews>

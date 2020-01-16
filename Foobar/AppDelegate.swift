@@ -23,7 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     ThemeWorker.setup()
 
-    testValue("")
+    let list = ["A","B"]
+    if list.count > 1, !list[1].isEmpty {
+      print(list[1])
+    }
 
 
 
