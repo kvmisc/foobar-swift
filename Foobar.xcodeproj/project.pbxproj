@@ -30,7 +30,7 @@
 		0A9B191923A12E47008906F0 /* TestViewStateRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9B191823A12E47008906F0 /* TestViewStateRootVC.swift */; };
 		0A9B191B23A13434008906F0 /* PageStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9B191A23A13434008906F0 /* PageStateView.swift */; };
 		0AACE9C223A27497004A1BC1 /* theme_red.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AACE9C123A27497004A1BC1 /* theme_red.plist */; };
-		0AACE9C423A274DB004A1BC1 /* theme_blue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AACE9C323A274DB004A1BC1 /* theme_blue.plist */; };
+		0AACE9C423A274DB004A1BC1 /* theme_bluefas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AACE9C323A274DB004A1BC1 /* theme_bluefas.plist */; };
 		0AACE9C623A27A6A004A1BC1 /* EdgeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AACE9C523A27A6A004A1BC1 /* EdgeBar.swift */; };
 		0ACBB21223A4A1BD0069F4D7 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACBB21123A4A1BD0069F4D7 /* AccountManager.swift */; };
 		0ACBB21823A5EF590069F4D7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0ACBB21423A5EF590069F4D7 /* Localizable.strings */; };
@@ -59,6 +59,13 @@
 		BB5885A3239E44650051220C /* TestLoadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5885A2239E44650051220C /* TestLoadView.xib */; };
 		BB5885A5239E44780051220C /* TestLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5885A4239E44780051220C /* TestLoadView.swift */; };
 		BB5D0D8B239F655B002CEA09 /* TestEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5D0D8A239F655B002CEA09 /* TestEntryView.swift */; };
+		BB673A3B23CFF535002DF451 /* TestThemeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB673A3923CFF535002DF451 /* TestThemeVC.swift */; };
+		BB673A3C23CFF535002DF451 /* TestThemeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB673A3A23CFF535002DF451 /* TestThemeVC.xib */; };
+		BB673A3E23D00CC3002DF451 /* theme_day.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB673A3D23D00CC3002DF451 /* theme_day.plist */; };
+		BB673A4023D00CD3002DF451 /* theme_night.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB673A3F23D00CD3002DF451 /* theme_night.plist */; };
+		BB673A4323D037B8002DF451 /* ThemeXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB673A4223D037B8002DF451 /* ThemeXib.swift */; };
+		BB673A4523D05B64002DF451 /* ThemeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB673A4423D05B64002DF451 /* ThemeWorker.swift */; };
+		BB673A4723D066F7002DF451 /* theme_blue.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB673A4623D066F7002DF451 /* theme_blue.plist */; };
 		BB6C9A61239DF3F300822180 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6C9A60239DF3F300822180 /* Core.swift */; };
 		BB6C9A63239DF52400822180 /* RichText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6C9A62239DF52400822180 /* RichText.swift */; };
 		BB6C9A65239E06DA00822180 /* TestThen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6C9A64239E06DA00822180 /* TestThen.swift */; };
@@ -80,7 +87,7 @@
 		BBBB0608239F2DB60004613C /* ThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB0607239F2DB60004613C /* ThroughView.swift */; };
 		BBBB060A239F403B0004613C /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB0609239F403B0004613C /* Overlay.swift */; };
 		BBBB060D239F58820004613C /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB060C239F58820004613C /* Drop.swift */; };
-		BBD0A81523CF1D5400D94786 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0A81423CF1D5400D94786 /* Theme.swift */; };
+		BBD0A81523CF1D5400D94786 /* UITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0A81423CF1D5400D94786 /* UITheme.swift */; };
 		BBE7DCB223A23351009A650F /* TestCodingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCB123A23351009A650F /* TestCodingObject.swift */; };
 		BBE7DCB423A23BE7009A650F /* Expiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCB323A23BE7009A650F /* Expiration.swift */; };
 		BBE7DCB823A23EF7009A650F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCB723A23EF7009A650F /* BaseViewController.swift */; };
@@ -116,7 +123,7 @@
 		0A9B191823A12E47008906F0 /* TestViewStateRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewStateRootVC.swift; sourceTree = "<group>"; };
 		0A9B191A23A13434008906F0 /* PageStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStateView.swift; sourceTree = "<group>"; };
 		0AACE9C123A27497004A1BC1 /* theme_red.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_red.plist; sourceTree = "<group>"; };
-		0AACE9C323A274DB004A1BC1 /* theme_blue.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_blue.plist; sourceTree = "<group>"; };
+		0AACE9C323A274DB004A1BC1 /* theme_bluefas.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_bluefas.plist; sourceTree = "<group>"; };
 		0AACE9C523A27A6A004A1BC1 /* EdgeBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeBar.swift; sourceTree = "<group>"; };
 		0ACBB21123A4A1BD0069F4D7 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		0ACBB21523A5EF590069F4D7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -148,6 +155,13 @@
 		BB5885A2239E44650051220C /* TestLoadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestLoadView.xib; sourceTree = "<group>"; };
 		BB5885A4239E44780051220C /* TestLoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoadView.swift; sourceTree = "<group>"; };
 		BB5D0D8A239F655B002CEA09 /* TestEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEntryView.swift; sourceTree = "<group>"; };
+		BB673A3923CFF535002DF451 /* TestThemeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestThemeVC.swift; sourceTree = "<group>"; };
+		BB673A3A23CFF535002DF451 /* TestThemeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestThemeVC.xib; sourceTree = "<group>"; };
+		BB673A3D23D00CC3002DF451 /* theme_day.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_day.plist; sourceTree = "<group>"; };
+		BB673A3F23D00CD3002DF451 /* theme_night.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_night.plist; sourceTree = "<group>"; };
+		BB673A4223D037B8002DF451 /* ThemeXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeXib.swift; sourceTree = "<group>"; };
+		BB673A4423D05B64002DF451 /* ThemeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeWorker.swift; sourceTree = "<group>"; };
+		BB673A4623D066F7002DF451 /* theme_blue.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = theme_blue.plist; path = ../../../../Desktop/theme_blue.plist; sourceTree = "<group>"; };
 		BB6C9A60239DF3F300822180 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		BB6C9A62239DF52400822180 /* RichText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichText.swift; sourceTree = "<group>"; };
 		BB6C9A64239E06DA00822180 /* TestThen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestThen.swift; sourceTree = "<group>"; };
@@ -171,7 +185,7 @@
 		BBBB0607239F2DB60004613C /* ThroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughView.swift; sourceTree = "<group>"; };
 		BBBB0609239F403B0004613C /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		BBBB060C239F58820004613C /* Drop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drop.swift; sourceTree = "<group>"; };
-		BBD0A81423CF1D5400D94786 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		BBD0A81423CF1D5400D94786 /* UITheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITheme.swift; sourceTree = "<group>"; };
 		BBE7DCB123A23351009A650F /* TestCodingObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCodingObject.swift; sourceTree = "<group>"; };
 		BBE7DCB323A23BE7009A650F /* Expiration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expiration.swift; sourceTree = "<group>"; };
 		BBE7DCB723A23EF7009A650F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +230,7 @@
 		0A19DCD0239B447F00CA5D24 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BB673A4123D0379D002DF451 /* Theme */,
 				0A1388F723C8BB5600A1ADDE /* ThirdMedia */,
 				0A19DCD5239B44A800CA5D24 /* Message */,
 				BB46288F239E54A600989126 /* PageState */,
@@ -255,7 +270,7 @@
 				BBBB0607239F2DB60004613C /* ThroughView.swift */,
 				BB5D0D8A239F655B002CEA09 /* TestEntryView.swift */,
 				0AACE9C123A27497004A1BC1 /* theme_red.plist */,
-				0AACE9C323A274DB004A1BC1 /* theme_blue.plist */,
+				0AACE9C323A274DB004A1BC1 /* theme_bluefas.plist */,
 			);
 			name = TestWindow;
 			sourceTree = "<group>";
@@ -271,7 +286,7 @@
 				BB8D53D52399E07D008BA419 /* DateTime.swift */,
 				BB8D53DD2399F931008BA419 /* Layout.swift */,
 				0A300D20239C90310025FC04 /* UIElement.swift */,
-				BBD0A81423CF1D5400D94786 /* Theme.swift */,
+				BBD0A81423CF1D5400D94786 /* UITheme.swift */,
 				BB6C9A62239DF52400822180 /* RichText.swift */,
 				BB3C5AEE23AB1EED0078F953 /* GlobalImport.swift */,
 			);
@@ -358,6 +373,27 @@
 			name = TestViewState;
 			sourceTree = "<group>";
 		};
+		BB673A3823CFF51A002DF451 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				BB673A3923CFF535002DF451 /* TestThemeVC.swift */,
+				BB673A3A23CFF535002DF451 /* TestThemeVC.xib */,
+				BB673A3D23D00CC3002DF451 /* theme_day.plist */,
+				BB673A3F23D00CD3002DF451 /* theme_night.plist */,
+				BB673A4623D066F7002DF451 /* theme_blue.plist */,
+			);
+			name = Theme;
+			sourceTree = "<group>";
+		};
+		BB673A4123D0379D002DF451 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				BB673A4423D05B64002DF451 /* ThemeWorker.swift */,
+				BB673A4223D037B8002DF451 /* ThemeXib.swift */,
+			);
+			name = Theme;
+			sourceTree = "<group>";
+		};
 		BB6C9A68239E425600822180 /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +434,7 @@
 				BB7959C923A8D6C000A21343 /* TestProtocolVC.swift */,
 				BB3C5AEC23AB1DD40078F953 /* TestScrollPageVC.swift */,
 				BB2AD5FC23C5BCA00055E82C /* TestLayerVC.swift */,
+				BB673A3823CFF51A002DF451 /* Theme */,
 				BB3C5AF223AB47560078F953 /* StaticTableView */,
 			);
 			path = Test;
@@ -589,16 +626,20 @@
 				BB11C65823A3AB7E00008938 /* navbar_back_light@2x.png in Resources */,
 				0AACE9C223A27497004A1BC1 /* theme_red.plist in Resources */,
 				BB11C65923A3AB7E00008938 /* navbar_back_light@3x.png in Resources */,
+				BB673A4723D066F7002DF451 /* theme_blue.plist in Resources */,
 				0A2CF40B2391530D00F914C5 /* FBRootVC.xib in Resources */,
 				0A2CF41A23916DA400F914C5 /* FBRootCell.xib in Resources */,
 				BB462888239E477900989126 /* TestReusableVC.xib in Resources */,
-				0AACE9C423A274DB004A1BC1 /* theme_blue.plist in Resources */,
+				0AACE9C423A274DB004A1BC1 /* theme_bluefas.plist in Resources */,
 				BB1B259A23C9987500949532 /* eagle.gif in Resources */,
+				BB673A3E23D00CC3002DF451 /* theme_day.plist in Resources */,
 				0ACBB21823A5EF590069F4D7 /* Localizable.strings in Resources */,
 				BB91D2C8238E35160048D384 /* Assets.xcassets in Resources */,
 				BB46288C239E478E00989126 /* TestReusableTC.xib in Resources */,
 				BB5885A3239E44650051220C /* TestLoadView.xib in Resources */,
+				BB673A3C23CFF535002DF451 /* TestThemeVC.xib in Resources */,
 				BB91D2C6238E35130048D384 /* Main.storyboard in Resources */,
+				BB673A4023D00CD3002DF451 /* theme_night.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,6 +695,7 @@
 				0A768A4E239955A90027A68A /* Metrics.swift in Sources */,
 				BB8D53DE2399F931008BA419 /* Layout.swift in Sources */,
 				BB8D53D62399E07D008BA419 /* DateTime.swift in Sources */,
+				BB673A4523D05B64002DF451 /* ThemeWorker.swift in Sources */,
 				BB91D2C3238E35130048D384 /* ViewController.swift in Sources */,
 				BB8B0DE823C98E6A00BAA547 /* DataExt.swift in Sources */,
 				BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */,
@@ -673,10 +715,11 @@
 				0A19DCDB239B465300CA5D24 /* IconLabel.swift in Sources */,
 				0A8E76BA23A4845D00AFA2BA /* TestAutolayoutView.swift in Sources */,
 				0ACBB21C23A5FDEE0069F4D7 /* TestJSONVC.swift in Sources */,
+				BB673A3B23CFF535002DF451 /* TestThemeVC.swift in Sources */,
 				BB462887239E477900989126 /* TestReusableVC.swift in Sources */,
 				BB462893239E5BE900989126 /* PageState.swift in Sources */,
 				BB8D53D42399E04A008BA419 /* Base64.swift in Sources */,
-				BBD0A81523CF1D5400D94786 /* Theme.swift in Sources */,
+				BBD0A81523CF1D5400D94786 /* UITheme.swift in Sources */,
 				BBE7DCB423A23BE7009A650F /* Expiration.swift in Sources */,
 				BBE7DCDE23A24C9B009A650F /* TestCircleView.swift in Sources */,
 				0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */,
@@ -695,6 +738,7 @@
 				BB2EF0F323C6CF0A005B693A /* UIFontExt.swift in Sources */,
 				BBEA347523A866DE00FBC575 /* TestPullToRefreshVC.swift in Sources */,
 				0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */,
+				BB673A4323D037B8002DF451 /* ThemeXib.swift in Sources */,
 				BB3C5AEF23AB1EED0078F953 /* GlobalImport.swift in Sources */,
 				0A8E76BD23A48F4F00AFA2BA /* TestHierachyRedVC.swift in Sources */,
 				BB2AD5FD23C5BCA00055E82C /* TestLayerVC.swift in Sources */,

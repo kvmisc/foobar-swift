@@ -1,8 +1,8 @@
 //
-//  Theme.swift
+//  ThemeXib.swift
 //  Foobar
 //
-//  Created by Kevin Wu on 1/15/20.
+//  Created by Kevin Wu on 1/16/20.
 //  Copyright (c) firefly.com. All rights reserved.
 //
 
@@ -17,7 +17,18 @@ extension UIView {
       if newValue.hasPrefix("#") {
         backgroundColor = ccc(newValue)
       } else {
-        theme_backgroundColor = ThemeColorPicker.pickerWithKeyPath(newValue)
+        theme_backgroundColor = ThemeColorPicker.pickerWithColors(ThemeWorker.shared.getValues(newValue))
+      }
+    }
+  }
+  @IBInspectable var tnt_color: String? {
+    get { return "" }
+    set {
+      guard let newValue = newValue else { return }
+      if newValue.hasPrefix("#") {
+        tintColor = ccc(newValue)
+      } else {
+        theme_tintColor = ThemeColorPicker(keyPath: newValue)
       }
     }
   }
@@ -28,8 +39,9 @@ extension UIImageView {
     set {
       guard let newValue = newValue else { return }
       if newValue.hasPrefix("#") {
+        image = cci(String(newValue.dropFirst()))
       } else {
-        theme_image = ThemeImagePicker.pickerWithNames([newValue])
+        theme_image = [newValue+"_day", newValue+"_night"]
       }
     }
   }

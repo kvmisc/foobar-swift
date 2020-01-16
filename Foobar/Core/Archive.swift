@@ -13,26 +13,21 @@ class Archive {
   @discardableResult
   static func toJSONFile<EncodableType: Encodable>(_ object: EncodableType, _ path: String) -> Bool {
     let encoder = JSONEncoder()
-    do {
-
-      let dat = try encoder.encode(object)
-
+    let dat = try? encoder.encode(object)
+    if let dat = dat {
       do {
         try dat.write(to: URL(fileURLWithPath: path))
         return true
       } catch {
         return false
       }
-      
-    } catch {
-      return false
     }
+    return false
   }
 
   static func fromJSONFile<DecodableType: Decodable>(_ path: String) -> DecodableType? {
-    do {
-      let dat = try Data(contentsOf: URL(fileURLWithPath: path))
-
+    let dat = try? Data(contentsOf: URL(fileURLWithPath: path))
+    if let dat = dat {
       do {
         let decoder = JSONDecoder()
         let ret = try decoder.decode(DecodableType.self, from: dat)
@@ -40,10 +35,38 @@ class Archive {
       } catch {
         return nil
       }
-
-    } catch {
-      return nil
     }
+    return nil
+  }
+
+
+  @discardableResult
+  static func toPlistFile<EncodableType: Encodable>(_ object: EncodableType, _ path: String) -> Bool {
+    let encoder = PropertyListEncoder()
+    let dat = try? encoder.encode(object)
+    if let dat = dat {
+      do {
+        try dat.write(to: URL(fileURLWithPath: path))
+        return true
+      } catch {
+        return false
+      }
+    }
+    return false
+  }
+
+  static func fromPlistFile<DecodableType: Decodable>(_ path: String) -> DecodableType? {
+    let dat = try? Data(contentsOf: URL(fileURLWithPath: path))
+    if let dat = dat {
+      do {
+        let decoder = PropertyListDecoder()
+        let ret = try decoder.decode(DecodableType.self, from: dat)
+        return ret
+      } catch {
+        return nil
+      }
+    }
+    return nil
   }
 
 }

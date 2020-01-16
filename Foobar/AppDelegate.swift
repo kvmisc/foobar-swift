@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftTheme
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,13 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     print(Path.document())
 
 
+    ThemeWorker.setup()
+
+
     ThirdMedia.setup()
 
     let window = UIWindow()
 //    let nc = UINavigationController(rootViewController: TestHierachyRedVC())
 //    nc.isNavigationBarHidden = true
 //    window.rootViewController = nc
-    window.rootViewController = TestLayerVC()
+    window.rootViewController = TestThemeVC()
     window.makeKeyAndVisible()
     self.window = window
     return true
