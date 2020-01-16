@@ -32,6 +32,38 @@ extension UIView {
       }
     }
   }
+
+  @IBInspectable var bd_radius: CGFloat {
+    get {
+      layer.cornerRadius
+    }
+    set {
+      layer.cornerRadius = newValue
+      layer.masksToBounds = newValue > 0.0
+    }
+  }
+
+  @IBInspectable var bd_width: CGFloat {
+    get {
+      return layer.borderWidth
+    }
+    set {
+      layer.borderWidth = newValue
+    }
+  }
+  @IBInspectable var bd_color: String? {
+    get {
+      return ""
+    }
+    set {
+      guard let newValue = newValue else { return }
+      if newValue.hasPrefix("#") {
+        layer.borderColor = ccc(newValue).cgColor
+      } else {
+        layer.theme_borderColor = ThemeCGColorPicker.pickerWithColors(ThemeWorker.shared.getBodyValues(newValue))
+      }
+    }
+  }
 }
 extension UIImageView {
   @IBInspectable var img: String? {
@@ -48,7 +80,7 @@ extension UIImageView {
 }
 
 extension UILabel {
-  var fnt: String? {
+  @IBInspectable var fnt: String? {
     get { return "" }
     set {
       guard let newValue = newValue else { return }
@@ -72,6 +104,17 @@ extension UILabel {
   }
 }
 extension UITextField {
+  @IBInspectable var fnt: String? {
+    get { return "" }
+    set {
+      guard let newValue = newValue else { return }
+      if newValue.hasPrefix("#") {
+        font = ccf(CGFloat(Int(String(newValue.dropFirst()))!))
+      } else {
+        // ...
+      }
+    }
+  }
   @IBInspectable var txt_color: String? {
     get { return "" }
     set {
@@ -85,6 +128,17 @@ extension UITextField {
   }
 }
 extension UITextView {
+  @IBInspectable var fnt: String? {
+    get { return "" }
+    set {
+      guard let newValue = newValue else { return }
+      if newValue.hasPrefix("#") {
+        font = ccf(CGFloat(Int(String(newValue.dropFirst()))!))
+      } else {
+        // ...
+      }
+    }
+  }
   @IBInspectable var txt_color: String? {
     get { return "" }
     set {
