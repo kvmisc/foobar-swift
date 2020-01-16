@@ -11,14 +11,17 @@ import UIKit
 class ThemeWorker {
   static let shared = ThemeWorker()
 
+  var currentIndex = -1
 
   static func setup() {
     let path1 = Path.findPath("theme_day.plist")!
-    //let path2 = Path.findPath("theme_night.plist")!
-    let path3 = Path.findPath("theme_blue.plist")!
-
+    let path2 = Path.findPath("theme_night.plist")!
+    //let path3 = Path.findPath("theme_blue.plist")!
     ThemeWorker.shared.removeAllThemes()
-    ThemeWorker.shared.addThemes([path1, path3])
+    ThemeWorker.shared.addThemes([path1, path2])
+
+    ThemeWorker.shared.themeNames = ["day", "night"]
+
     ThemeWorker.shared.currentIndex = 0
   }
 
@@ -42,10 +45,7 @@ class ThemeWorker {
     themeBodys = []
   }
 
-
-  var currentIndex = -1
-
-  func getValues(_ key: String) -> [String] {
+  func getBodyValues(_ key: String) -> [String] {
     var ret: [String] = []
     for body in themeBodys {
       let value = (body as NSDictionary).value(forKeyPath: key) as? String ?? ""
@@ -54,11 +54,19 @@ class ThemeWorker {
     }
     return ret
   }
-  func getValue(_ key: String) -> String {
+  func getBodyValue(_ key: String) -> String {
     let body = themeBodys[currentIndex] as NSDictionary
     let value = body.value(forKeyPath: key) as? String ?? ""
     if value.isEmpty { print("WARNING: Can't find \(key) in theme") }
     return value
+  }
+
+  var themeNames: [String] = []
+  func getImageNames(_ name: String) -> [String] {
+    return themeNames.map { name + "_" + $0 }
+  }
+  func getImageName(_ name: String) -> String {
+    return name + "_" + themeNames[currentIndex]
   }
 
 }

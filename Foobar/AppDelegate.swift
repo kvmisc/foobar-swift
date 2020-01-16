@@ -23,6 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     ThemeWorker.setup()
 
+    let str1 = "#14"
+    let str2: String = String(str1.dropFirst())
+//    print()
+
+
+
 
     ThirdMedia.setup()
 

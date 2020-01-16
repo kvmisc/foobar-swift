@@ -17,7 +17,7 @@ extension UIView {
       if newValue.hasPrefix("#") {
         backgroundColor = ccc(newValue)
       } else {
-        theme_backgroundColor = ThemeColorPicker.pickerWithColors(ThemeWorker.shared.getValues(newValue))
+        theme_backgroundColor = ThemeColorPicker.pickerWithColors(ThemeWorker.shared.getBodyValues(newValue))
       }
     }
   }
@@ -28,7 +28,7 @@ extension UIView {
       if newValue.hasPrefix("#") {
         tintColor = ccc(newValue)
       } else {
-        theme_tintColor = ThemeColorPicker(keyPath: newValue)
+        theme_tintColor = ThemeColorPicker.pickerWithColors(ThemeWorker.shared.getBodyValues(newValue))
       }
     }
   }
@@ -41,13 +41,24 @@ extension UIImageView {
       if newValue.hasPrefix("#") {
         image = cci(String(newValue.dropFirst()))
       } else {
-        theme_image = [newValue+"_day", newValue+"_night"]
+        theme_image = ThemeImagePicker.pickerWithNames(ThemeWorker.shared.getImageNames(newValue))
       }
     }
   }
 }
 
 extension UILabel {
+  var fnt: String? {
+    get { return "" }
+    set {
+      guard let newValue = newValue else { return }
+      if newValue.hasPrefix("#") {
+        font = ccf(CGFloat(Int(String(newValue.dropFirst()))!))
+      } else {
+        // ...
+      }
+    }
+  }
   @IBInspectable var txt_color: String? {
     get { return "" }
     set {
@@ -55,7 +66,7 @@ extension UILabel {
       if newValue.hasPrefix("#") {
         textColor = ccc(newValue)
       } else {
-        theme_textColor = ThemeColorPicker.pickerWithKeyPath(newValue)
+        theme_textColor = ThemeColorPicker.pickerWithColors(ThemeWorker.shared.getBodyValues(newValue))
       }
     }
   }
@@ -68,10 +79,9 @@ extension UITextField {
       if newValue.hasPrefix("#") {
         textColor = ccc(newValue)
       } else {
-        theme_textColor = ThemeColorPicker.pickerWithKeyPath(newValue)
+        theme_textColor = ThemeColorPicker.pickerWithColors(ThemeWorker.shared.getBodyValues(newValue))
       }
     }
-
   }
 }
 extension UITextView {
@@ -82,9 +92,8 @@ extension UITextView {
       if newValue.hasPrefix("#") {
         textColor = ccc(newValue)
       } else {
-        theme_textColor = ThemeColorPicker.pickerWithKeyPath(newValue)
+        theme_textColor = ThemeColorPicker.pickerWithColors(ThemeWorker.shared.getBodyValues(newValue))
       }
     }
-
   }
 }

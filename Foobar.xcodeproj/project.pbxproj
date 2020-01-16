@@ -30,7 +30,7 @@
 		0A9B191923A12E47008906F0 /* TestViewStateRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9B191823A12E47008906F0 /* TestViewStateRootVC.swift */; };
 		0A9B191B23A13434008906F0 /* PageStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9B191A23A13434008906F0 /* PageStateView.swift */; };
 		0AACE9C223A27497004A1BC1 /* theme_red.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AACE9C123A27497004A1BC1 /* theme_red.plist */; };
-		0AACE9C423A274DB004A1BC1 /* theme_bluefas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AACE9C323A274DB004A1BC1 /* theme_bluefas.plist */; };
+		0AACE9C423A274DB004A1BC1 /* theme_blue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AACE9C323A274DB004A1BC1 /* theme_blue.plist */; };
 		0AACE9C623A27A6A004A1BC1 /* EdgeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AACE9C523A27A6A004A1BC1 /* EdgeBar.swift */; };
 		0ACBB21223A4A1BD0069F4D7 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACBB21123A4A1BD0069F4D7 /* AccountManager.swift */; };
 		0ACBB21823A5EF590069F4D7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0ACBB21423A5EF590069F4D7 /* Localizable.strings */; };
@@ -41,6 +41,7 @@
 		BB11C65723A3AB7E00008938 /* navbar_back_dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65323A3AB7E00008938 /* navbar_back_dark@2x.png */; };
 		BB11C65823A3AB7E00008938 /* navbar_back_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65423A3AB7E00008938 /* navbar_back_light@2x.png */; };
 		BB11C65923A3AB7E00008938 /* navbar_back_light@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65523A3AB7E00008938 /* navbar_back_light@3x.png */; };
+		BB1600E623D0724C001FF31C /* theme_night.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB1600E523D0724C001FF31C /* theme_night.plist */; };
 		BB1B259A23C9987500949532 /* eagle.gif in Resources */ = {isa = PBXBuildFile; fileRef = BB1B259923C9987500949532 /* eagle.gif */; };
 		BB2AD5FD23C5BCA00055E82C /* TestLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2AD5FC23C5BCA00055E82C /* TestLayerVC.swift */; };
 		BB2EF0F123C6CEFB005B693A /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2EF0F023C6CEFB005B693A /* UIColorExt.swift */; };
@@ -62,10 +63,9 @@
 		BB673A3B23CFF535002DF451 /* TestThemeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB673A3923CFF535002DF451 /* TestThemeVC.swift */; };
 		BB673A3C23CFF535002DF451 /* TestThemeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB673A3A23CFF535002DF451 /* TestThemeVC.xib */; };
 		BB673A3E23D00CC3002DF451 /* theme_day.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB673A3D23D00CC3002DF451 /* theme_day.plist */; };
-		BB673A4023D00CD3002DF451 /* theme_night.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB673A3F23D00CD3002DF451 /* theme_night.plist */; };
+		BB673A4023D00CD3002DF451 /* theme_green.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB673A3F23D00CD3002DF451 /* theme_green.plist */; };
 		BB673A4323D037B8002DF451 /* ThemeXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB673A4223D037B8002DF451 /* ThemeXib.swift */; };
 		BB673A4523D05B64002DF451 /* ThemeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB673A4423D05B64002DF451 /* ThemeWorker.swift */; };
-		BB673A4723D066F7002DF451 /* theme_blue.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB673A4623D066F7002DF451 /* theme_blue.plist */; };
 		BB6C9A61239DF3F300822180 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6C9A60239DF3F300822180 /* Core.swift */; };
 		BB6C9A63239DF52400822180 /* RichText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6C9A62239DF52400822180 /* RichText.swift */; };
 		BB6C9A65239E06DA00822180 /* TestThen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6C9A64239E06DA00822180 /* TestThen.swift */; };
@@ -123,7 +123,7 @@
 		0A9B191823A12E47008906F0 /* TestViewStateRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewStateRootVC.swift; sourceTree = "<group>"; };
 		0A9B191A23A13434008906F0 /* PageStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStateView.swift; sourceTree = "<group>"; };
 		0AACE9C123A27497004A1BC1 /* theme_red.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_red.plist; sourceTree = "<group>"; };
-		0AACE9C323A274DB004A1BC1 /* theme_bluefas.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_bluefas.plist; sourceTree = "<group>"; };
+		0AACE9C323A274DB004A1BC1 /* theme_blue.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_blue.plist; sourceTree = "<group>"; };
 		0AACE9C523A27A6A004A1BC1 /* EdgeBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeBar.swift; sourceTree = "<group>"; };
 		0ACBB21123A4A1BD0069F4D7 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		0ACBB21523A5EF590069F4D7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -137,6 +137,7 @@
 		BB11C65323A3AB7E00008938 /* navbar_back_dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_dark@2x.png"; sourceTree = "<group>"; };
 		BB11C65423A3AB7E00008938 /* navbar_back_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_light@2x.png"; sourceTree = "<group>"; };
 		BB11C65523A3AB7E00008938 /* navbar_back_light@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_light@3x.png"; sourceTree = "<group>"; };
+		BB1600E523D0724C001FF31C /* theme_night.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = theme_night.plist; sourceTree = "<group>"; };
 		BB1B259923C9987500949532 /* eagle.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = eagle.gif; sourceTree = "<group>"; };
 		BB2AD5FC23C5BCA00055E82C /* TestLayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLayerVC.swift; sourceTree = "<group>"; };
 		BB2EF0F023C6CEFB005B693A /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
@@ -158,10 +159,9 @@
 		BB673A3923CFF535002DF451 /* TestThemeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestThemeVC.swift; sourceTree = "<group>"; };
 		BB673A3A23CFF535002DF451 /* TestThemeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestThemeVC.xib; sourceTree = "<group>"; };
 		BB673A3D23D00CC3002DF451 /* theme_day.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_day.plist; sourceTree = "<group>"; };
-		BB673A3F23D00CD3002DF451 /* theme_night.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_night.plist; sourceTree = "<group>"; };
+		BB673A3F23D00CD3002DF451 /* theme_green.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theme_green.plist; sourceTree = "<group>"; };
 		BB673A4223D037B8002DF451 /* ThemeXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeXib.swift; sourceTree = "<group>"; };
 		BB673A4423D05B64002DF451 /* ThemeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeWorker.swift; sourceTree = "<group>"; };
-		BB673A4623D066F7002DF451 /* theme_blue.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = theme_blue.plist; path = ../../../../Desktop/theme_blue.plist; sourceTree = "<group>"; };
 		BB6C9A60239DF3F300822180 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		BB6C9A62239DF52400822180 /* RichText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichText.swift; sourceTree = "<group>"; };
 		BB6C9A64239E06DA00822180 /* TestThen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestThen.swift; sourceTree = "<group>"; };
@@ -270,7 +270,7 @@
 				BBBB0607239F2DB60004613C /* ThroughView.swift */,
 				BB5D0D8A239F655B002CEA09 /* TestEntryView.swift */,
 				0AACE9C123A27497004A1BC1 /* theme_red.plist */,
-				0AACE9C323A274DB004A1BC1 /* theme_bluefas.plist */,
+				0AACE9C323A274DB004A1BC1 /* theme_blue.plist */,
 			);
 			name = TestWindow;
 			sourceTree = "<group>";
@@ -379,8 +379,8 @@
 				BB673A3923CFF535002DF451 /* TestThemeVC.swift */,
 				BB673A3A23CFF535002DF451 /* TestThemeVC.xib */,
 				BB673A3D23D00CC3002DF451 /* theme_day.plist */,
-				BB673A3F23D00CD3002DF451 /* theme_night.plist */,
-				BB673A4623D066F7002DF451 /* theme_blue.plist */,
+				BB1600E523D0724C001FF31C /* theme_night.plist */,
+				BB673A3F23D00CD3002DF451 /* theme_green.plist */,
 			);
 			name = Theme;
 			sourceTree = "<group>";
@@ -623,14 +623,14 @@
 				BB91D2CB238E35160048D384 /* LaunchScreen.storyboard in Resources */,
 				BB11C65723A3AB7E00008938 /* navbar_back_dark@2x.png in Resources */,
 				0A384B4D239EA8E600CBE1F8 /* TestWindowVC.xib in Resources */,
+				BB1600E623D0724C001FF31C /* theme_night.plist in Resources */,
 				BB11C65823A3AB7E00008938 /* navbar_back_light@2x.png in Resources */,
 				0AACE9C223A27497004A1BC1 /* theme_red.plist in Resources */,
 				BB11C65923A3AB7E00008938 /* navbar_back_light@3x.png in Resources */,
-				BB673A4723D066F7002DF451 /* theme_blue.plist in Resources */,
 				0A2CF40B2391530D00F914C5 /* FBRootVC.xib in Resources */,
 				0A2CF41A23916DA400F914C5 /* FBRootCell.xib in Resources */,
 				BB462888239E477900989126 /* TestReusableVC.xib in Resources */,
-				0AACE9C423A274DB004A1BC1 /* theme_bluefas.plist in Resources */,
+				0AACE9C423A274DB004A1BC1 /* theme_blue.plist in Resources */,
 				BB1B259A23C9987500949532 /* eagle.gif in Resources */,
 				BB673A3E23D00CC3002DF451 /* theme_day.plist in Resources */,
 				0ACBB21823A5EF590069F4D7 /* Localizable.strings in Resources */,
@@ -639,7 +639,7 @@
 				BB5885A3239E44650051220C /* TestLoadView.xib in Resources */,
 				BB673A3C23CFF535002DF451 /* TestThemeVC.xib in Resources */,
 				BB91D2C6238E35130048D384 /* Main.storyboard in Resources */,
-				BB673A4023D00CD3002DF451 /* theme_night.plist in Resources */,
+				BB673A4023D00CD3002DF451 /* theme_green.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

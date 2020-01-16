@@ -5,12 +5,12 @@
 	<key>label</key>
 	<dict>
 		<key>light</key>
-		<string>#0000AA</string>
+		<string>#00AA00</string>
 	</dict>
 	<key>view</key>
 	<dict>
 		<key>bg</key>
-		<string>#0000FF</string>
+		<string>#00FF00</string>
 	</dict>
 </dict>
 </plist>
