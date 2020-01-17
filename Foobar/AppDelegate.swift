@@ -22,6 +22,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ThemeWorker.setup()
 
 
+    Settings.TestSettings()
+
+
+//    var entries: [String:AnyCodable] = [:]
+//    entries["a"] = 1
+//    entries["b"] = "ak"
+//
+//    Archive.toJSONFile(entries, Path.document("abc.json"))
+
+
+//    let encoder = JSONEncoder()
+//    let dat = try? encoder.encode(entries)
+
+
+//    let decoder = JSONDecoder()
+//    decoder.decode(<#T##type: Decodable.Protocol##Decodable.Protocol#>, from: <#T##Data#>)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     let window = UIWindow()
 //    let nc = UINavigationController(rootViewController: TestHierachyRedVC())
 //    nc.isNavigationBarHidden = true

@@ -30,4 +30,6 @@ target 'Foobar' do
 
   pod 'MonkeyKing'
 
+  pod 'AnyCodable-FlightSchool'
+
 end

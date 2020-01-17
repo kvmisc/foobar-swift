@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
+  - AnyCodable-FlightSchool (0.2.3)
   - AppVersionMonitor (1.4.0)
   - AsyncSwift (2.0.4)
   - DeviceKit (2.3.0)
@@ -30,6 +31,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AnyCodable-FlightSchool
   - AppVersionMonitor
   - AsyncSwift
   - DeviceKit
@@ -53,6 +55,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AnyCodable-FlightSchool
     - AppVersionMonitor
     - AsyncSwift
     - DeviceKit
@@ -76,6 +79,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AnyCodable-FlightSchool: cf53737f4bd1d9187cea453679734506e478fff3
   AppVersionMonitor: 0227cbd70c78b787190afd5e959c0280718bac8e
   AsyncSwift: 65775a7b32e740609b24969ece3de58723b9dc3e
   DeviceKit: da103891aa928d89f64ea8dd8aca738c5f3d8ac0
@@ -97,6 +101,6 @@ SPEC CHECKSUMS:
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: ca0b8c79c387d8709e2354253cabd9d92553f141
+PODFILE CHECKSUM: a59d63b89d960a8b1fd603ec961ccb39a3bdb80d
 
 COCOAPODS: 1.8.4
