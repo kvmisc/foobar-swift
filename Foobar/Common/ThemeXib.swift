@@ -9,6 +9,8 @@
 import UIKit
 import SwiftTheme
 
+// # 开头为固定值, 不能根据主题切换
+
 extension UIView {
   @IBInspectable var bg_color: String? {
     get { return "" }
@@ -73,7 +75,7 @@ extension UIImageView {
 }
 
 extension UILabel {
-  @IBInspectable var fnt: String? {
+  @IBInspectable var txt_font: String? {
     get { return "" }
     set {
       guard let newValue = newValue, !newValue.isEmpty else { return }
@@ -97,7 +99,7 @@ extension UILabel {
   }
 }
 extension UITextField {
-  @IBInspectable var fnt: String? {
+  @IBInspectable var txt_font: String? {
     get { return "" }
     set {
       guard let newValue = newValue, !newValue.isEmpty else { return }
@@ -121,7 +123,7 @@ extension UITextField {
   }
 }
 extension UITextView {
-  @IBInspectable var fnt: String? {
+  @IBInspectable var txt_font: String? {
     get { return "" }
     set {
       guard let newValue = newValue, !newValue.isEmpty else { return }
@@ -146,11 +148,7 @@ extension UITextView {
 }
 
 extension UIButton {
-  // @ 开头, 通过普通颜色自动设置高亮颜色
-  //   # 开头为固定值, 不能根据主题切换
-  //   其它的值会根据主题切换
-
-  @IBInspectable var fnt: String? {
+  @IBInspectable var ttl_font: String? {
     get { return "" }
     set {
       guard let newValue = newValue, !newValue.isEmpty else { return }
@@ -161,8 +159,12 @@ extension UIButton {
       }
     }
   }
-
-  // normal,highlighted,disabled,selected
+  // 多个状态颜色通过逗号分隔, normal,highlighted,disabled,selected
+  // @ 开头, 通过普通色自动产生高亮色
+  // @#FF0000, 固定色, 高亮色自动产生
+  // @btn.n, 主题色, 高亮色自动产生
+  // #FF0000, 固定色, 仅设普通色
+  // btn.n,btn.h, 主题色, 设普通色和高亮色
   @IBInspectable var ttl_color: String? {
     get { return "" }
     set {
@@ -194,8 +196,7 @@ extension UIButton {
     }
   }
 
-  // normal,highlighted,disabled,selected
-  @IBInspectable var img: String? {
+  @IBInspectable var fr_image: String? {
     get { return "" }
     set {
       guard let newValue = newValue, !newValue.isEmpty else { return }
@@ -214,8 +215,7 @@ extension UIButton {
       }
     }
   }
-  // normal,highlighted,disabled,selected
-  @IBInspectable var bg_img: String? {
+  @IBInspectable var bg_image: String? {
     get { return "" }
     set {
       guard let newValue = newValue, !newValue.isEmpty else { return }
@@ -234,7 +234,6 @@ extension UIButton {
       }
     }
   }
-  // normal,highlighted,disabled,selected
   @IBInspectable var clr_image: String? {
     get { return "" }
     set {
