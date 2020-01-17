@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftTheme
 
 class Askf: Codable {
   var name = ""

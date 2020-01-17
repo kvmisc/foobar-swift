@@ -132,14 +132,14 @@ class ThemeWorker {
     if let value = themeColors[key] {
       return value
     }
-    print("WARNING: Can't find \(key) in theme")
+    print("[theme]: Can't find \(key) in theme")
     return Array(repeating: "", count: themeNames.count)
   }
   func getColorValue(_ key: String) -> String {
     if let value = themeColors[key] {
       return value[currentIndex]
     }
-    print("WARNING: Can't find \(key) in theme")
+    print("[theme]: Can't find \(key) in theme")
     return ""
   }
 
