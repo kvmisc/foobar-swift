@@ -20,8 +20,8 @@ class TestThemeVC: UIViewController {
 
   @IBAction func buttonAction(_ sender: Any) {
 
-    index = (index + 1) % 2
-    ThemeManager.setTheme(index: index)
+    //index = (index + 1) % 2
+    ThemeWorker.shared.changeTheme( (ThemeWorker.shared.currentIndex + 1) % 2)
 
 //    if index == 0 {
 //      ThemeManager.setTheme(plistName: "theme_day", path: .mainBundle)
@@ -39,6 +39,8 @@ class TestThemeVC: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    index = ThemeWorker.shared.currentIndex
 
     bgView.bg_color = "view.bg"
     iconView.img = "date"

@@ -20,15 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     print(Path.document())
 
-    let ary = Array(repeating: "", count: 0)
-    print(ary)
-
     ThemeWorker.setup()
 
-
-
-
-    ThirdMedia.setup()
 
     let window = UIWindow()
 //    let nc = UINavigationController(rootViewController: TestHierachyRedVC())

@@ -9,8 +9,6 @@
 import UIKit
 import SwiftTheme
 
-// # 开头为固定值, 不能根据主题切换
-
 extension UIView {
   @IBInspectable var bg_color: String? {
     get { return "" }

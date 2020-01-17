@@ -22,12 +22,46 @@ class ThemeWorker {
       Path.findPath("theme_night.plist")!
     ])
 
-    ThemeWorker.shared.currentIndex = 0
+    ThemeWorker.shared.loadLastTheme()
   }
 
 
   var currentIndex = -1
-  var totalIndex = 0
+  var defaultTheme = "night"
+
+  @discardableResult
+  func changeTheme(_ index: Int) -> Bool {
+    if index < themeNames.count {
+      currentIndex = index
+      ThemeManager.setTheme(index: currentIndex)
+      print("[Theme] change theme success: \(currentIndex)")
+      saveLastTheme()
+      return true
+    }
+    print("[Theme] change theme failed: \(index)")
+    return false
+  }
+  func loadLastTheme() {
+    var lastIndex = 0
+    print("[Theme] LastThemekey:\(UserDefaults.standard.string(forKey: "LastThemeKey") ?? "")")
+    if let theme = UserDefaults.standard.string(forKey: "LastThemeKey") {
+      if let index = themeNames.firstIndex(of: theme) {
+        lastIndex = index
+        print("[Theme] found last theme: \(lastIndex):\(theme)")
+      }
+    }
+    currentIndex = lastIndex
+    print("[Theme] load theme: \(lastIndex)")
+    ThemeManager.setTheme(index: currentIndex)
+  }
+  func saveLastTheme() {
+    let theme = themeNames[currentIndex]
+    print("[Theme] LastThemekey:\(UserDefaults.standard.string(forKey: "LastThemeKey") ?? "")")
+    print("[Theme] save theme: \(currentIndex):\(theme)")
+    UserDefaults.standard.set(theme, forKey: "LastThemeKey")
+    let result = UserDefaults.standard.synchronize()
+    print("[Theme] LastThemekey:\(UserDefaults.standard.string(forKey: "LastThemeKey") ?? "") \(result)")
+  }
 
 
 
@@ -58,7 +92,6 @@ class ThemeWorker {
     themeColors = [:]
 
     let list: [[String:[String:String]]] = paths.map { Archive.fromPlistFile($0)! }
-    totalIndex = list.count
 
     for (key1,value1) in list.first! {
       for (key2,_) in value1 {
@@ -73,7 +106,7 @@ class ThemeWorker {
       return value
     }
     print("WARNING: Can't find \(key) in theme")
-    return Array(repeating: "", count: totalIndex)
+    return Array(repeating: "", count: themeNames.count)
   }
   func getColorValue(_ key: String) -> String {
     if let value = themeColors[key] {
