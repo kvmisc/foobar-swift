@@ -17,19 +17,23 @@ let SEPARATOR_PARAGRAPH = "\u{2029}"
 class RichText {
   var attributedText = NSMutableAttributedString()
 
-  func append(_ text: String, _ config: (TextAttributes)->Void) {
+  func append(_ text: String, _ config: (TextAttributes)->Void) -> RichText {
     let attribute = TextAttributes()
     config(attribute)
     attributedText.append(NSAttributedString(string: text, attributes: attribute))
+    return self
   }
-  func appendSeparatorLine() {
+  func appendSeparatorLine() -> RichText {
     attributedText.append(NSAttributedString(string: SEPARATOR_LINE))
+    return self
   }
-  func appendSeparatorParagraph() {
+  func appendSeparatorParagraph() -> RichText {
     attributedText.append(NSAttributedString(string: SEPARATOR_PARAGRAPH))
+    return self
   }
 
   func reset() {
     attributedText = NSMutableAttributedString()
   }
+
 }

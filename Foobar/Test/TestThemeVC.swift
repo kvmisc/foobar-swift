@@ -39,6 +39,7 @@ class TestThemeVC: UIViewController {
   @IBOutlet weak var bgView: UIView!
   @IBOutlet weak var iconView: UIImageView!
   @IBOutlet weak var infoLabel: UILabel!
+  @IBOutlet weak var testLabel: UILabel!
 
   var index = 0
 
@@ -49,7 +50,33 @@ class TestThemeVC: UIViewController {
 
     bgView.bg_color = "view.bg"
     iconView.img = "date"
-    
+
+//    testLabel.text = "更多返回错误代码请看首页的错误代码描述更多返回错误代码请看首页的错误代码描述更多返回错误代码请看首页的错误代码描述"
+//    testLabel.font = ccf(17)
+
+//    let rt = RichText()
+//    rt.append("更多") { (ta) in
+//      ta.font(ccf(17))
+//      ta.foregroundColor(.blue)
+//      ta.lineSpacing(5.0)
+//    }
+//    testLabel.attributedText = rt.attributedText
+
+    testLabel.attributedText =
+      RichText()
+        .append("aa", {
+          $0.font(ccf(17)).foregroundColor(.blue)
+        })
+        .append("bb", {
+          $0.font(ccf(12)).foregroundColor(.green)
+        })
+        .attributedText
+
+//    testLabel.attributedText = RichText.build({ (rt) in
+//      rt.append("AA") { (ta) in
+//        ta.font(ccf(12))
+//      }
+//    })
 
 //    let a = Askf()
 //    a.name = "aa"

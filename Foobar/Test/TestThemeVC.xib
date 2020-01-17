@@ -13,6 +13,7 @@
                 <outlet property="bgView" destination="kbw-IT-1XO" id="0jo-tc-LHL"/>
                 <outlet property="iconView" destination="29f-Qn-BCG" id="3xO-ud-dpx"/>
                 <outlet property="infoLabel" destination="rK4-8K-Ghi" id="nO3-F0-lSq"/>
+                <outlet property="testLabel" destination="cm6-37-ieu" id="C2w-Ue-brB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -56,7 +57,7 @@
                     <nil key="highlightedColor"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="bd_width">
-                            <real key="value" value="2"/>
+                            <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="bd_color" value="view.bg"/>
                     </userDefinedRuntimeAttributes>
@@ -76,19 +77,31 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="clr_image" value="view.bt_n,view.bt_h"/>
                     </userDefinedRuntimeAttributes>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cm6-37-ieu">
+                    <rect key="frame" x="50" y="54" width="314" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="bg_color" value="#f00"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="bWr-CY-XeK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="60c-kd-fN5"/>
                 <constraint firstItem="29f-Qn-BCG" firstAttribute="top" secondItem="kbw-IT-1XO" secondAttribute="bottom" constant="10" id="7JS-vy-GAg"/>
                 <constraint firstItem="bWr-CY-XeK" firstAttribute="top" secondItem="rK4-8K-Ghi" secondAttribute="bottom" constant="10" id="9W1-oU-G8E"/>
+                <constraint firstItem="cm6-37-ieu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Dfz-1p-KtN"/>
                 <constraint firstItem="rK4-8K-Ghi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Hxr-g3-iJI"/>
                 <constraint firstItem="kbw-IT-1XO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TVc-Er-mWg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cm6-37-ieu" secondAttribute="trailing" constant="50" id="Z4G-An-T6p"/>
                 <constraint firstItem="kbw-IT-1XO" firstAttribute="top" secondItem="Cih-Zo-EEU" secondAttribute="bottom" constant="23" id="aGM-1d-zvP"/>
                 <constraint firstItem="Cih-Zo-EEU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ctf-o6-tmq"/>
                 <constraint firstItem="rK4-8K-Ghi" firstAttribute="top" secondItem="29f-Qn-BCG" secondAttribute="bottom" constant="10" id="gDD-0k-oYo"/>
                 <constraint firstItem="29f-Qn-BCG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kRo-T8-CK5"/>
                 <constraint firstItem="Cih-Zo-EEU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="m9G-Hw-OY1"/>
+                <constraint firstItem="cm6-37-ieu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="tCC-YB-Fh1"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="-248" y="31"/>
