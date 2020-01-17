@@ -37,6 +37,7 @@
 		0ACBB21C23A5FDEE0069F4D7 /* TestJSONVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACBB21B23A5FDEE0069F4D7 /* TestJSONVC.swift */; };
 		0ACBB21E23A6319C0069F4D7 /* TestJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACBB21D23A6319C0069F4D7 /* TestJSON.swift */; };
 		51ED5B58178026AF3ADCE160 /* Pods_Foobar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */; };
+		BB0FCC2D23D1D1BA00015857 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0FCC2C23D1D1BA00015857 /* Setting.swift */; };
 		BB11C65623A3AB7E00008938 /* navbar_back_dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65223A3AB7E00008938 /* navbar_back_dark@3x.png */; };
 		BB11C65723A3AB7E00008938 /* navbar_back_dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65323A3AB7E00008938 /* navbar_back_dark@2x.png */; };
 		BB11C65823A3AB7E00008938 /* navbar_back_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB11C65423A3AB7E00008938 /* navbar_back_light@2x.png */; };
@@ -131,6 +132,7 @@
 		0ACBB21D23A6319C0069F4D7 /* TestJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJSON.swift; sourceTree = "<group>"; };
 		2BCD74F1A55A7280F3DB3800 /* Pods-Foobar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.release.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.release.xcconfig"; sourceTree = "<group>"; };
 		B939E3EA71620A7E4506A704 /* Pods_Foobar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foobar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB0FCC2C23D1D1BA00015857 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		BB11C65223A3AB7E00008938 /* navbar_back_dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_dark@3x.png"; sourceTree = "<group>"; };
 		BB11C65323A3AB7E00008938 /* navbar_back_dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_dark@2x.png"; sourceTree = "<group>"; };
 		BB11C65423A3AB7E00008938 /* navbar_back_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_back_light@2x.png"; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				BB8D53DD2399F931008BA419 /* Layout.swift */,
 				0A300D20239C90310025FC04 /* UIElement.swift */,
 				BB6C9A62239DF52400822180 /* RichText.swift */,
+				BB0FCC2C23D1D1BA00015857 /* Setting.swift */,
 				BB3C5AEE23AB1EED0078F953 /* GlobalImport.swift */,
 			);
 			path = Core;
@@ -736,6 +739,7 @@
 				BB2AD5FD23C5BCA00055E82C /* TestLayerVC.swift in Sources */,
 				0ACBB21223A4A1BD0069F4D7 /* AccountManager.swift in Sources */,
 				0A300D25239D04F00025FC04 /* UIButtonExt.swift in Sources */,
+				BB0FCC2D23D1D1BA00015857 /* Setting.swift in Sources */,
 				0A300D23239CBB470025FC04 /* UIViewControllerExt.swift in Sources */,
 				0A11FDA123A7C65B00BF4BED /* UserModel.swift in Sources */,
 				0A2CF41923916DA400F914C5 /* FBRootCell.swift in Sources */,
