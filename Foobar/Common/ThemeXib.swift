@@ -160,36 +160,22 @@ extension UIButton {
     }
   }
   // 多个状态颜色通过逗号分隔, normal,highlighted,disabled,selected
-  // @ 开头, 通过普通色自动产生高亮色
-  // @#FF0000, 固定色, 高亮色自动产生
-  // @btn.n, 主题色, 高亮色自动产生
-  // #FF0000, 固定色, 仅设普通色
-  // btn.n,btn.h, 主题色, 设普通色和高亮色
+  // #FF0000,#AA0000, 固定色
+  // view.btn_n,view.btn_h, 主题色
   @IBInspectable var ttl_color: String? {
     get { return "" }
     set {
       guard let newValue = newValue, !newValue.isEmpty else { return }
-      if newValue.hasPrefix("@") {
-        let value = String(newValue.dropFirst())
-        if value.hasPrefix("#") {
-          setTitleColor(ccc(value), for: .normal)
-          setTitleColor(ccc(value).extOverlayWhite(), for: .highlighted)
-        } else {
-          theme_setTitleColor(ThemeWorker.shared.getColorPicker(color: value), forState: .normal)
-          theme_setTitleColor(ThemeWorker.shared.getColorPicker(hicolor: value), forState: .highlighted)
-        }
-      } else {
-        let list = newValue.components(separatedBy: ",")
-        let states: [UIControl.State] = [.normal, .highlighted, .disabled, .selected]
-        for (index,state) in states.enumerated() {
-          if list.count > index {
-            let value = list[index]
-            if value.isEmpty { continue }
-            if value.hasPrefix("#") {
-              setTitleColor(ccc(value), for: state)
-            } else {
-              theme_setTitleColor(ThemeWorker.shared.getColorPicker(color: value), forState: state)
-            }
+      let list = newValue.components(separatedBy: ",")
+      let states: [UIControl.State] = [.normal, .highlighted, .disabled, .selected]
+      for (index,state) in states.enumerated() {
+        if list.count > index {
+          let value = list[index]
+          if value.isEmpty { continue }
+          if value.hasPrefix("#") {
+            setTitleColor(ccc(value), for: state)
+          } else {
+            theme_setTitleColor(ThemeWorker.shared.getColorPicker(color: value), forState: state)
           }
         }
       }
@@ -238,27 +224,16 @@ extension UIButton {
     get { return "" }
     set {
       guard let newValue = newValue, !newValue.isEmpty else { return }
-      if newValue.hasPrefix("@") {
-        let value = String(newValue.dropFirst())
-        if value.hasPrefix("#") {
-          setBackgroundImage(UIImage.extColored(ccc(value), ccs(6.0)), for: .normal)
-          setBackgroundImage(UIImage.extColored(ccc(value).extOverlayWhite(), ccs(6.0)), for: .highlighted)
-        } else {
-          theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(color: value), forState: .normal)
-          theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(hicolor: value), forState: .highlighted)
-        }
-      } else {
-        let list = newValue.components(separatedBy: ",")
-        let states: [UIControl.State] = [.normal, .highlighted, .disabled, .selected]
-        for (index,state) in states.enumerated() {
-          if list.count > index {
-            let value = list[index]
-            if value.isEmpty { continue }
-            if value.hasPrefix("#") {
-              setBackgroundImage(UIImage.extColored(ccc(value), ccs(6.0)), for: .normal)
-            } else {
-              theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(color: value), forState: state)
-            }
+      let list = newValue.components(separatedBy: ",")
+      let states: [UIControl.State] = [.normal, .highlighted, .disabled, .selected]
+      for (index,state) in states.enumerated() {
+        if list.count > index {
+          let value = list[index]
+          if value.isEmpty { continue }
+          if value.hasPrefix("#") {
+            setBackgroundImage(UIImage.extColored(ccc(value), ccs(6.0)), for: .normal)
+          } else {
+            theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(color: value), forState: state)
           }
         }
       }

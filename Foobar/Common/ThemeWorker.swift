@@ -27,6 +27,7 @@ class ThemeWorker {
 
 
   var currentIndex = -1
+  var totalIndex = 0
 
 
 
@@ -47,48 +48,43 @@ class ThemeWorker {
     let images = getColorValues(color).map { UIImage.extColored(ccc($0), ccs(6.0)) }
     return ThemeImagePicker.pickerWithImages(images)
   }
-  func getImagePicker(hicolor: String) -> ThemeImagePicker {
-    let images = getColorValues(hicolor).map { UIImage.extColored(ccc($0).extOverlayWhite(), ccs(6.0)) }
-    return ThemeImagePicker.pickerWithImages(images)
-  }
 
 
 
   // MARK: Theme colors
-  var themeColors: [[String:[String:String]]] = []
+  var themeColors: [String:[String]] = [:]
 
   func reloadColors(_ paths: [String]) {
-    themeColors = []
-    for path in paths {
-      let body: [String:[String:String]]? = Archive.fromPlistFile(path)
-      if let body = body {
-        themeColors.append(body)
+    themeColors = [:]
+
+    let list: [[String:[String:String]]] = paths.map { Archive.fromPlistFile($0)! }
+    totalIndex = list.count
+
+    for (key1,value1) in list.first! {
+      for (key2,_) in value1 {
+        let key = "\(key1).\(key2)"
+        themeColors[key] = list.map { ($0 as NSDictionary).value(forKeyPath: key) as? String ?? "" }
       }
     }
   }
 
   func getColorValues(_ key: String) -> [String] {
-    var ret: [String] = []
-    for color in themeColors {
-      let value = (color as NSDictionary).value(forKeyPath: key) as? String ?? ""
-      if value.isEmpty { print("WARNING: Can't find \(key) in theme") }
-      ret.append(value)
+    if let value = themeColors[key] {
+      return value
     }
-    return ret
+    print("WARNING: Can't find \(key) in theme")
+    return Array(repeating: "", count: totalIndex)
   }
   func getColorValue(_ key: String) -> String {
-    let color = themeColors[currentIndex] as NSDictionary
-    let value = color.value(forKeyPath: key) as? String ?? ""
-    if value.isEmpty { print("WARNING: Can't find \(key) in theme") }
-    return value
+    if let value = themeColors[key] {
+      return value[currentIndex]
+    }
+    print("WARNING: Can't find \(key) in theme")
+    return ""
   }
 
   func getColorPicker(color: String) -> ThemeColorPicker {
     return ThemeColorPicker.pickerWithColors(getColorValues(color))
-  }
-  func getColorPicker(hicolor: String) -> ThemeColorPicker {
-    let colors = getColorValues(hicolor).map { ccc($0).extOverlayWhite().extHexString() }
-    return ThemeColorPicker.pickerWithColors(colors)
   }
   func getColorPicker(cgcolor: String) -> ThemeCGColorPicker {
     return ThemeCGColorPicker.pickerWithColors(getColorValues(cgcolor))

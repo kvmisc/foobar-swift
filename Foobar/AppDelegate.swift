@@ -20,13 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     print(Path.document())
 
+    let ary = Array(repeating: "", count: 0)
+    print(ary)
 
     ThemeWorker.setup()
 
-    let list = ["A","B"]
-    if list.count > 1, !list[1].isEmpty {
-      print(list[1])
-    }
 
 
 
