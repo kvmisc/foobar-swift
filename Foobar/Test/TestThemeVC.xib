@@ -78,6 +78,14 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="clr_image" value="view.bt_n,view.bt_h"/>
                     </userDefinedRuntimeAttributes>
                 </button>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="smg-f2-7j6">
+                    <rect key="frame" x="126" y="489" width="150" height="2"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="trk_color" value="view.ctl_n"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="prs_color" value="#00FF00"/>
+                    </userDefinedRuntimeAttributes>
+                </progressView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>

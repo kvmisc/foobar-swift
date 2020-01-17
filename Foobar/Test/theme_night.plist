@@ -9,6 +9,10 @@
 	</dict>
 	<key>view</key>
 	<dict>
+		<key>ctl_h</key>
+		<string>#000066</string>
+		<key>ctl_n</key>
+		<string>#0000FF</string>
 		<key>bg</key>
 		<string>#0000FF</string>
 		<key>bt_n</key>

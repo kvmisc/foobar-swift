@@ -265,3 +265,38 @@ extension UIButton {
     }
   }
 }
+
+////////////////////////////////////////////////////////////////////////////////
+// UIProgressView
+// UIPageControl
+// UIActivityIndicatorView
+// UISegmentedControl
+// UISwitch
+// UISlider
+
+//extension UIProgressView {
+//  // 底色
+//  @IBInspectable var trk_color: String? {
+//    get { return "" }
+//    set {
+//      guard let newValue = newValue, !newValue.isEmpty else { return }
+//      if newValue.hasPrefix("#") {
+//        trackTintColor = ccc(newValue)
+//      } else {
+//        theme_trackTintColor = ThemeWorker.shared.getColorPicker(color: newValue)
+//      }
+//    }
+//  }
+//  // 进度色
+//  @IBInspectable var prs_color: String? {
+//    get { return "" }
+//    set {
+//      guard let newValue = newValue, !newValue.isEmpty else { return }
+//      if newValue.hasPrefix("#") {
+//        progressTintColor = ccc(newValue)
+//      } else {
+//        theme_progressTintColor = ThemeWorker.shared.getColorPicker(color: newValue)
+//      }
+//    }
+//  }
+//}
