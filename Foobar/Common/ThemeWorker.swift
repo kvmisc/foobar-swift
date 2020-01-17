@@ -15,20 +15,68 @@ class ThemeWorker {
 
   static func setup() {
 
-    ThemeWorker.shared.themeNames = ["day", "night"]
+    ThemeWorker.shared.themeNames = [
+      Theme.Day.rawValue,
+      Theme.Night.rawValue
+    ]
 
     ThemeWorker.shared.reloadColors([
       Path.findPath("theme_day.plist")!,
       Path.findPath("theme_night.plist")!
     ])
 
-    ThemeWorker.shared.loadLastTheme()
+    ThemeWorker.shared.loadLastTheme(.Day)
   }
 
 
-  var currentIndex = -1
-  var defaultTheme = "night"
+  enum Theme: String {
+    case Day = "day"
+    case Night = "night"
+  }
 
+  var currentIndex = -1
+
+  func loadLastTheme(_ preferred: Theme) {
+    var lastIndex = -1
+    print("[Theme] LastThemeKey:\(UserDefaults.standard.string(forKey: "LastThemeKey") ?? "")")
+    if let theme = UserDefaults.standard.string(forKey: "LastThemeKey") {
+      if let index = themeNames.firstIndex(of: theme) {
+        lastIndex = index
+        print("[Theme] use last theme: \(lastIndex):\(theme)")
+      }
+    }
+    if lastIndex < 0 {
+      if let index = themeNames.firstIndex(of: preferred.rawValue) {
+        lastIndex = index
+        print("[Theme] use preferred theme: \(lastIndex):\(preferred.rawValue)")
+      }
+    }
+    if lastIndex < 0 {
+      lastIndex = 0
+      print("[Theme] use 0 theme")
+    }
+    currentIndex = lastIndex
+    print("[Theme] load theme: \(lastIndex)")
+    ThemeManager.setTheme(index: currentIndex)
+  }
+  func saveLastTheme() {
+    let theme = themeNames[currentIndex]
+    print("[Theme] LastThemeKey:\(UserDefaults.standard.string(forKey: "LastThemeKey") ?? "")")
+    print("[Theme] save theme: \(currentIndex):\(theme)")
+    UserDefaults.standard.set(theme, forKey: "LastThemeKey")
+    let result = UserDefaults.standard.synchronize()
+    print("[Theme] LastThemeKey:\(UserDefaults.standard.string(forKey: "LastThemeKey") ?? "") \(result)")
+  }
+
+  var isDay: Bool { themeNames[currentIndex] == Theme.Day.rawValue }
+  var isNight: Bool { themeNames[currentIndex] == Theme.Night.rawValue }
+  @discardableResult
+  func changeTheme(_ theme: Theme) -> Bool {
+    if let index = themeNames.firstIndex(of: theme.rawValue) {
+      return changeTheme(index)
+    }
+    return false
+  }
   @discardableResult
   func changeTheme(_ index: Int) -> Bool {
     if index < themeNames.count {
@@ -40,27 +88,6 @@ class ThemeWorker {
     }
     print("[Theme] change theme failed: \(index)")
     return false
-  }
-  func loadLastTheme() {
-    var lastIndex = 0
-    print("[Theme] LastThemekey:\(UserDefaults.standard.string(forKey: "LastThemeKey") ?? "")")
-    if let theme = UserDefaults.standard.string(forKey: "LastThemeKey") {
-      if let index = themeNames.firstIndex(of: theme) {
-        lastIndex = index
-        print("[Theme] found last theme: \(lastIndex):\(theme)")
-      }
-    }
-    currentIndex = lastIndex
-    print("[Theme] load theme: \(lastIndex)")
-    ThemeManager.setTheme(index: currentIndex)
-  }
-  func saveLastTheme() {
-    let theme = themeNames[currentIndex]
-    print("[Theme] LastThemekey:\(UserDefaults.standard.string(forKey: "LastThemeKey") ?? "")")
-    print("[Theme] save theme: \(currentIndex):\(theme)")
-    UserDefaults.standard.set(theme, forKey: "LastThemeKey")
-    let result = UserDefaults.standard.synchronize()
-    print("[Theme] LastThemekey:\(UserDefaults.standard.string(forKey: "LastThemeKey") ?? "") \(result)")
   }
 
 
