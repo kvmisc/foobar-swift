@@ -42,6 +42,31 @@ class HTTPManager: NSObject {
     case CodeError      = "code_error"      // has no code
   }
 
+  enum Ejrror: Error {
+    case Unknown
+    case Cancelled
+    case NetworkError
+    case HTTPError
+    case ResponseEmpty
+    case FormatError    // not json
+    case DataError      // not dictionary
+    case CodeError      // has no code
+
+    var message: String {
+      switch self {
+      case .Unknown:        return ""
+      case .Cancelled:      return ""
+      case .NetworkError:   return ""
+      case .HTTPError:      return ""
+      case .ResponseEmpty:  return ""
+      case .FormatError:    return ""
+      case .DataError:      return ""
+      case .CodeError:      return ""
+      }
+    }
+
+  }
+
   typealias CompletionHandler = (DataResponse<Data>, [String:Any], NSError?, Any?) -> Void
 
   @discardableResult
