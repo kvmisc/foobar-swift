@@ -19,10 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     print(Path.document())
 
+    Settings.shared.reload()
     ThemeWorker.setup()
 
-
-    Settings.TestSettings()
 
 
 //    var entries: [String:AnyCodable] = [:]
@@ -38,21 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //    let decoder = JSONDecoder()
 //    decoder.decode(<#T##type: Decodable.Protocol##Decodable.Protocol#>, from: <#T##Data#>)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     let window = UIWindow()

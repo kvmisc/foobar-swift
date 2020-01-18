@@ -38,8 +38,8 @@ class ThemeWorker {
 
   func loadLastTheme(_ preferred: Theme) {
     var lastIndex = -1
-    print("[Theme] LastThemeKey:\(UserDefaults.standard.string(forKey: "LastThemeKey") ?? "")")
-    if let theme = UserDefaults.standard.string(forKey: "LastThemeKey") {
+    print("[Theme] LastThemeKey:\(getLastTheme() ?? "")")
+    if let theme = getLastTheme() {
       if let index = themeNames.firstIndex(of: theme) {
         lastIndex = index
         print("[Theme] use last theme: \(lastIndex):\(theme)")
@@ -61,11 +61,24 @@ class ThemeWorker {
   }
   func saveLastTheme() {
     let theme = themeNames[currentIndex]
-    print("[Theme] LastThemeKey:\(UserDefaults.standard.string(forKey: "LastThemeKey") ?? "")")
+    print("[Theme] LastThemeKey:\(getLastTheme() ?? "")")
     print("[Theme] save theme: \(currentIndex):\(theme)")
-    UserDefaults.standard.set(theme, forKey: "LastThemeKey")
-    let result = UserDefaults.standard.synchronize()
-    print("[Theme] LastThemeKey:\(UserDefaults.standard.string(forKey: "LastThemeKey") ?? "") \(result)")
+    setLastTheme(theme)
+    print("[Theme] LastThemeKey:\(getLastTheme() ?? "")")
+  }
+  private func getLastTheme() -> String? {
+    return Settings.shared.string("LastThemeKey")
+    //return UserDefaults.standard.string(forKey: "LastThemeKey")
+  }
+  private func setLastTheme(_ theme: String?) {
+    if let theme = theme {
+      Settings.shared.set("LastThemeKey", theme)
+    } else {
+      Settings.shared.remove("LastThemeKey")
+    }
+    Settings.shared.synchronize()
+    //UserDefaults.standard.set(theme, forKey: "LastThemeKey")
+    //UserDefaults.standard.synchronize()
   }
 
   var isDay: Bool { themeNames[currentIndex] == Theme.Day.rawValue }
