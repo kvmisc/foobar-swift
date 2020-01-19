@@ -25,7 +25,11 @@ class TestThemeVC: UIViewController {
 //      ThemeWorker.shared.changeTheme(.Day)
 //    }
 
-    Overlay.hudActivity()
+//    Overlay.hudActivity()
+//    Overlay.hudActivity(info: "Loading...")
+    Overlay.hudMessage(info: "done") {
+      print("completion")
+    }
 
   }
 

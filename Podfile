@@ -24,6 +24,7 @@ target 'Foobar' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'ESPullToRefresh'
+  pod 'MBProgressHUD'
   pod 'PKHUD'
 
   pod 'YYText'
