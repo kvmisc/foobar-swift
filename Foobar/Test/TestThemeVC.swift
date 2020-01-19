@@ -19,19 +19,13 @@ class TestThemeVC: UIViewController {
 
   @IBAction func buttonAction(_ sender: Any) {
 
-    //index = (index + 1) % 2
-    //ThemeWorker.shared.changeTheme( (ThemeWorker.shared.currentIndex + 1) % 2)
-    if ThemeWorker.shared.isDay {
-      ThemeWorker.shared.changeTheme(.Night)
-    } else {
-      ThemeWorker.shared.changeTheme(.Day)
-    }
-
-//    if index == 0 {
-//      ThemeManager.setTheme(plistName: "theme_day", path: .mainBundle)
+//    if ThemeWorker.shared.isDay {
+//      ThemeWorker.shared.changeTheme(.Night)
 //    } else {
-//      ThemeManager.setTheme(plistName: "theme_night", path: .mainBundle)
+//      ThemeWorker.shared.changeTheme(.Day)
 //    }
+
+    Overlay.hudActivity()
 
   }
 
