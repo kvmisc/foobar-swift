@@ -9,14 +9,18 @@
 import UIKit
 import Alamofire
 
-//HTTPManager.shared.request("https://httpstat.us/200?sleep=5000")
-//{ (response, result, error, context) in
-//  if let error = error {
-//    print(error)
-//  } else {
-//    print(result)
-//  }
-//}
+// HTTPManager.shared.operations[201] = {
+//   print("show login page")
+// }
+//
+// HTTPManager.shared.request("https://httpstat.us/200?sleep=5000")
+// { (response, result, error, context) in
+//   if let error = error {
+//     print(error)
+//   } else {
+//     print(result)
+//   }
+// }
 
 class HTTPManager: NSObject {
 
@@ -59,6 +63,8 @@ class HTTPManager: NSObject {
     }
   }
 
+  var operations: [Int:()->Void] = [:]
+
   typealias CompletionHandler = (DataResponse<Data>, [String:Any], (FailureReason,String)?, Any?) -> Void
 
   @discardableResult
@@ -89,6 +95,7 @@ class HTTPManager: NSObject {
                            encoding: encoding,
                            headers: headers).validate().responseData() { [weak self](response) in
                             guard let self = self else { return }
+                            print("HTTPManager response on main thread: \(Thread.isMainThread)")
 
                             switch response.result {
 
@@ -128,16 +135,17 @@ class HTTPManager: NSObject {
 
         if let object = json as? [String:Any] {
           if let code = object["code"] as? Int {
+            let message = object["message"] as? String ?? ""
 
             switch code {
             case 200:
               completion(response, object, nil, context)
-            //case 201:
-            //  show login page
+            case 201: //show login page
+              completion(response, [:], (.CustomError(code),message), context)
+              operations[201]?()
             //case xxx:
             //  do something else
             default:
-              let message = object["message"] as? String ?? ""
               completion(response, [:], (.CustomError(code),message), context)
             }
 

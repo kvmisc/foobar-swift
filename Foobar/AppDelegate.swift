@@ -22,13 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    Settings.shared.reload()
 //    ThemeWorker.setup()
 
+//    HTTPManager.shared.operations[201] = {
+//      print("show login page")
+//    }
 
     HTTPManager.shared.request("http://www.mocky.io/v2/5e23c674340000d501012b5f")
     { (response, result, error, context) in
       if let error = error {
-        //print(error)
-        print(error.0)
-        print(error.0.code)
+        print(error)
       } else {
         print(result)
       }
