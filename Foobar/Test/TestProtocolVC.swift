@@ -8,29 +8,28 @@
 
 import UIKit
 import Async
-import PKHUD
 
-class TestHUDView: PKHUDSquareBaseView {
-//  override var intrinsicContentSize: CGSize {
-//    return ccs(50)
+//class TestHUDView: PKHUDSquareBaseView {
+////  override var intrinsicContentSize: CGSize {
+////    return ccs(50)
+////  }
+////  override init(frame: CGRect) {
+////    super.init(frame: frame)
+////    setup()
+////  }
+////  required init?(coder: NSCoder) {
+////    super.init(coder: coder)
+////    setup()
+////  }
+//  func setup() {
+//    let bt = UIButton(type: .system)
+//    bt.extSetTitle("asdf")
+//    addSubview(bt)
+//    bt.snp.makeConstraints { (make) in
+//      make.edges.equalToSuperview()
+//    }
 //  }
-//  override init(frame: CGRect) {
-//    super.init(frame: frame)
-//    setup()
-//  }
-//  required init?(coder: NSCoder) {
-//    super.init(coder: coder)
-//    setup()
-//  }
-  func setup() {
-    let bt = UIButton(type: .system)
-    bt.extSetTitle("asdf")
-    addSubview(bt)
-    bt.snp.makeConstraints { (make) in
-      make.edges.equalToSuperview()
-    }
-  }
-}
+//}
 
 class TestProtocolVC: UIViewController {
 
@@ -56,12 +55,12 @@ class TestProtocolVC: UIViewController {
 
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
-    let hud = TestHUDView(image: nil, title: nil, subtitle: nil)
-    hud.setup()
-    hud.backgroundColor = .red
-    PKHUD.sharedHUD.contentView = hud
-    PKHUD.sharedHUD.show()
-    return
+//    let hud = TestHUDView(image: nil, title: nil, subtitle: nil)
+//    hud.setup()
+//    hud.backgroundColor = .red
+//    PKHUD.sharedHUD.contentView = hud
+//    PKHUD.sharedHUD.show()
+//    return
 
     if count > 5 {
       flowView.removeLine(2)

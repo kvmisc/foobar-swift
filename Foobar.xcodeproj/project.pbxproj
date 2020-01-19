@@ -95,6 +95,7 @@
 		BBEA347523A866DE00FBC575 /* TestPullToRefreshVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEA347423A866DE00FBC575 /* TestPullToRefreshVC.swift */; };
 		BBEA347923A8A0A400FBC575 /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEA347823A8A0A400FBC575 /* PullToRefresh.swift */; };
 		BBEA347C23A8BA4700FBC575 /* TestAutolayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEA347B23A8BA4700FBC575 /* TestAutolayoutVC.swift */; };
+		BBF2687523D42B7D00D3448E /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF2687423D42B7D00D3448E /* URL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -192,6 +193,7 @@
 		BBEA347423A866DE00FBC575 /* TestPullToRefreshVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPullToRefreshVC.swift; sourceTree = "<group>"; };
 		BBEA347823A8A0A400FBC575 /* PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
 		BBEA347B23A8BA4700FBC575 /* TestAutolayoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAutolayoutVC.swift; sourceTree = "<group>"; };
+		BBF2687423D42B7D00D3448E /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		F83B494BE851057FCED14615 /* Pods-Foobar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foobar.debug.xcconfig"; path = "Target Support Files/Pods-Foobar/Pods-Foobar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -286,6 +288,7 @@
 				0A300D20239C90310025FC04 /* UIElement.swift */,
 				BB6C9A62239DF52400822180 /* RichText.swift */,
 				BB0FCC2C23D1D1BA00015857 /* Settings.swift */,
+				BBF2687423D42B7D00D3448E /* URL.swift */,
 				BB3C5AEE23AB1EED0078F953 /* GlobalImport.swift */,
 			);
 			path = Core;
@@ -726,6 +729,7 @@
 				0A1388F923C8BB9400A1ADDE /* ThirdMedia.swift in Sources */,
 				BB8A3A21239DD5A000DF3125 /* TestMultiLineButton.swift in Sources */,
 				BB6C9A63239DF52400822180 /* RichText.swift in Sources */,
+				BBF2687523D42B7D00D3448E /* URL.swift in Sources */,
 				0ACBB21E23A6319C0069F4D7 /* TestJSON.swift in Sources */,
 				BB3C5AED23AB1DD40078F953 /* TestScrollPageVC.swift in Sources */,
 				BB9D82E523A9F46B00CE73A1 /* ArrayExt.swift in Sources */,

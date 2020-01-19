@@ -71,16 +71,6 @@ extension String {
   }
 }
 
-// MARK: URL encoding
-extension String {
-  var extURLEncodedString: String {
-    return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self
-  }
-  var extURLDecodedString: String {
-    return removingPercentEncoding ?? self
-  }
-}
-
 // MARK: Sizing
 extension String {
   func extSizeWith(_ font: UIFont) -> CGSize {
