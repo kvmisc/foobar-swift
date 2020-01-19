@@ -27,7 +27,7 @@ class TestThemeVC: UIViewController {
 
 //    Overlay.hudActivity()
 //    Overlay.hudActivity(info: "Loading...")
-    Overlay.hudMessage(info: "done") {
+    Overlay.hudMessage(info: "Done") {
       print("completion")
     }
 

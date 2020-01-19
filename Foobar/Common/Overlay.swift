@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PKHUD
 import MBProgressHUD
 import SwiftEntryKit
 
@@ -75,54 +74,22 @@ class Overlay {
   }
 
   // MARK: HUD
-//  static func hudActivity(_ view: UIView? = nil) {
-//    PKHUD.sharedHUD.hide(false)
-//    PKHUD.sharedHUD.contentView = PKHUDSystemActivityIndicatorView()
-//    //PKHUD.sharedHUD.dimsBackground = false
-//    //PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = false
-//    PKHUD.sharedHUD.show(onView: view ?? MainWindow())
-//  }
-//  static func hudInfo(_ view: UIView? = nil, info: String, completion: (()->Void)? = nil) {
-//    PKHUD.sharedHUD.hide(false)
-//    PKHUD.sharedHUD.contentView = PKHUDTextView(text: info)
-//    //PKHUD.sharedHUD.dimsBackground = false
-//    //PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = false
-//    PKHUD.sharedHUD.show(onView: view ?? MainWindow())
-//    PKHUD.sharedHUD.hide(afterDelay: 3.0) { success in completion?() }
-//  }
-//  static func hudHide(_ animated: Bool = false) {
-//    PKHUD.sharedHUD.hide(animated)
-//  }
   static func hudActivity(view: UIView? = nil, info: String? = nil) {
     hudHide(view: view, animated: false)
 
     let inView = view ?? MainWindow()
     let hud = MBProgressHUD(view: inView)
 
-    hud.mode = .customView
+    hud.mode = .indeterminate
     hud.removeFromSuperViewOnHide = true
     hud.isSquare = true
-    hud.contentColor = nil
     hud.margin = 15.0
 
-    hud.bezelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
-
-    if #available(iOS 13.0, *) {
-      let aiv = UIActivityIndicatorView(style: .large)
-      aiv.color = .white
-      aiv.hidesWhenStopped = false
-      aiv.startAnimating()
-      hud.customView = aiv
-    } else {
-      let aiv = UIActivityIndicatorView(style: .whiteLarge)
-      aiv.hidesWhenStopped = false
-      aiv.startAnimating()
-      hud.customView = aiv
-    }
-
     hud.label.font = UIFont.preferredFont(forTextStyle: .subheadline)
-    hud.label.textColor = .white
     hud.label.text = info
+
+    //hud.contentColor = UIColor.white.withAlphaComponent(0.7)
+    //hud.bezelView.backgroundColor = .black
 
     inView.addSubview(hud)
     hud.show(animated: true)
@@ -136,15 +103,13 @@ class Overlay {
     hud.mode = .text
     hud.removeFromSuperViewOnHide = true
     hud.isSquare = false
-    hud.contentColor = nil
     hud.margin = 15.0
 
-    //hud.bezelView.layer.cornerRadius = 0.0
-    hud.bezelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
-
     hud.label.font = UIFont.preferredFont(forTextStyle: .subheadline)
-    hud.label.textColor = .white
     hud.label.text = info
+
+    //hud.contentColor = UIColor.white.withAlphaComponent(0.7)
+    //hud.bezelView.backgroundColor = .black
 
     hud.completionBlock = completion
 

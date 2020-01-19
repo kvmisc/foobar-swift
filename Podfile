@@ -25,9 +25,9 @@ target 'Foobar' do
   pod 'SwiftyJSON'
   pod 'ESPullToRefresh'
   pod 'MBProgressHUD'
-  pod 'PKHUD'
 
   pod 'YYText'
+
 
   pod 'MonkeyKing'
 
