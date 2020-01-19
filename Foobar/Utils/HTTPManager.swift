@@ -13,10 +13,21 @@ import Alamofire
 //   print("show login page")
 // }
 //
-// HTTPManager.shared.request("https://httpstat.us/200?sleep=5000")
+// HTTPManager.shared.request("http://www.mocky.io/v2/5e23c674340000d501012b5f")
 // { (response, result, error, context) in
 //   if let error = error {
-//     print(error)
+//     if let code = error.0.code {
+//       // 201 has been dealed globally, just check any other error
+//       if code == 202 {
+//         print("deal with 202")
+//       } else if code == 203 {
+//         print("deal with 203")
+//       }
+//     } else {
+//       print("show error: \(error.1)")
+//     }
+//     // or
+//     print("show error: \(error.1)")
 //   } else {
 //     print(result)
 //   }

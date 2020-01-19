@@ -22,14 +22,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    Settings.shared.reload()
 //    ThemeWorker.setup()
 
-//    HTTPManager.shared.operations[201] = {
-//      print("show login page")
-//    }
+    HTTPManager.shared.operations[201] = {
+      print("show login page")
+    }
 
     HTTPManager.shared.request("http://www.mocky.io/v2/5e23c674340000d501012b5f")
     { (response, result, error, context) in
       if let error = error {
-        print(error)
+        if let code = error.0.code {
+          // 201 has been dealed globally, do nothing here
+          // just pick up any other error you want to deal with
+          if code == 202 {
+            print("deal with 202")
+          } else if code == 203 {
+            print("deal with 203")
+          }
+        } else {
+          print("show error: \(error.1)")
+        }
       } else {
         print(result)
       }
