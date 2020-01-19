@@ -19,9 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     print(Path.document())
 
-    Settings.shared.reload()
-    ThemeWorker.setup()
+//    Settings.shared.reload()
+//    ThemeWorker.setup()
 
+
+    HTTPManager.shared.request("http://www.mocky.io/v2/5e23c674340000d501012b5f")
+    { (response, result, error, context) in
+      if let error = error {
+        //print(error)
+        print(error.0)
+        print(error.0.code)
+      } else {
+        print(result)
+      }
+    }
 
 
 //    var entries: [String:AnyCodable] = [:]

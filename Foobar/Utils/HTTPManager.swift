@@ -31,43 +31,35 @@ class HTTPManager: NSObject {
     return ret
   }()
 
-  enum FailureReason: String {
-    case Unknown        = "unknown"
-    case Cancelled      = "cancelled"
-    case NetworkError   = "network_error"
-    case HTTPError      = "http_error"
-    case ResponseEmpty  = "response_empty"
-    case FormatError    = "format_error"    // not json
-    case DataError      = "data_error"      // not dictionary
-    case CodeError      = "code_error"      // has no code
-  }
-
-  enum Ejrror: Error {
-    case Unknown
+  enum FailureReason {
+    // cancelled by user or program
     case Cancelled
+    // may be have no WiFi
     case NetworkError
+    // server error, 404 or something
     case HTTPError
+    // response empty
     case ResponseEmpty
-    case FormatError    // not json
-    case DataError      // not dictionary
-    case CodeError      // has no code
+    // not json
+    case FormatError
+    // not dictionary
+    case DataError
+    // has no code
+    case CodeError
+    // param error or something
+    case CustomError(_ code: Int)
 
-    var message: String {
+    var code: Int? {
       switch self {
-      case .Unknown:        return ""
-      case .Cancelled:      return ""
-      case .NetworkError:   return ""
-      case .HTTPError:      return ""
-      case .ResponseEmpty:  return ""
-      case .FormatError:    return ""
-      case .DataError:      return ""
-      case .CodeError:      return ""
+      case .CustomError(let code):
+        return code
+      default:
+        return nil
       }
     }
-
   }
 
-  typealias CompletionHandler = (DataResponse<Data>, [String:Any], NSError?, Any?) -> Void
+  typealias CompletionHandler = (DataResponse<Data>, [String:Any], (FailureReason,String)?, Any?) -> Void
 
   @discardableResult
   func request(_ url: String,
@@ -106,16 +98,16 @@ class HTTPManager: NSObject {
                             case .failure:
                               if let error = response.result.error as NSError?, error.code == NSURLErrorCancelled {
                                 // 因取消而产生的错误
-                                completion(response, [:], self.makeError(reason: FailureReason.Cancelled.rawValue), context)
+                                completion(response, [:], (.Cancelled,"请求错误"), context)
                               } else {
                                 if let reachability = self.reachability,
                                   reachability.networkReachabilityStatus != .unknown,
                                   !reachability.isReachable
                                 {
                                   // 有 reachability, 有状态, 状态是无法访问网络
-                                  completion(response, [:], self.makeError(reason: FailureReason.NetworkError.rawValue), context)
+                                  completion(response, [:], (.NetworkError,"请求错误"), context)
                                 } else {
-                                  completion(response, [:], self.makeError(reason: FailureReason.HTTPError.rawValue), context)
+                                  completion(response, [:], (.HTTPError,"请求错误"), context)
                                 }
                               }
 
@@ -145,30 +137,21 @@ class HTTPManager: NSObject {
             //case xxx:
             //  do something else
             default:
-              completion(response, [:], makeError(description: object["message"] as? String), context)
+              let message = object["message"] as? String ?? ""
+              completion(response, [:], (.CustomError(code),message), context)
             }
 
           } else {
-            completion(response, [:], makeError(reason: FailureReason.CodeError.rawValue), context)
+            completion(response, [:], (.CodeError,"请求错误"), context)
           }
         } else {
-          completion(response, [:], makeError(reason: FailureReason.DataError.rawValue), context)
+          completion(response, [:], (.DataError,"请求错误"), context)
         }
       } catch {
-        completion(response, [:], makeError(reason: FailureReason.FormatError.rawValue), context)
+        completion(response, [:], (.FormatError,"请求错误"), context)
       }
     } else {
-      completion(response, [:], makeError(reason: FailureReason.ResponseEmpty.rawValue), context)
+      completion(response, [:], (.ResponseEmpty,"请求错误"), context)
     }
-  }
-
-  func makeError(description: String? = nil, reason: String? = nil) -> NSError {
-    let userInfo = [
-      NSLocalizedDescriptionKey:description ?? "请求错误",
-      NSLocalizedFailureReasonErrorKey:reason ?? FailureReason.Unknown.rawValue
-    ]
-    return NSError(domain: "com.firefly.http",
-                   code: 0,
-                   userInfo: userInfo)
   }
 }
