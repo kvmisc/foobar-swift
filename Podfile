@@ -20,6 +20,7 @@ target 'Foobar' do
   pod 'IHKeyboardAvoiding'
   pod 'SwiftTheme'
   pod 'Reusable'
+  pod 'URLNavigator'
 
   pod 'Alamofire'
   pod 'SwiftyJSON'

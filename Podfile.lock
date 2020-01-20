@@ -26,6 +26,7 @@ PODS:
   - SwiftyJSON (5.0.0)
   - TextAttributes (2.0.2)
   - Then (2.6.0)
+  - URLNavigator (2.3.0)
   - YYText (1.0.7)
 
 DEPENDENCIES:
@@ -48,6 +49,7 @@ DEPENDENCIES:
   - SwiftyJSON
   - TextAttributes
   - Then
+  - URLNavigator
   - YYText
 
 SPEC REPOS:
@@ -72,6 +74,7 @@ SPEC REPOS:
     - SwiftyJSON
     - TextAttributes
     - Then
+    - URLNavigator
     - YYText
 
 SPEC CHECKSUMS:
@@ -95,8 +98,9 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TextAttributes: 89905fb52c36de587010f335bd4071463d9c6d9b
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
+  URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: cc1795e7e53c5a1418be2d47257bf57af62e7258
+PODFILE CHECKSUM: 2051c4c30b12e663a28c45990d2d499451239230
 
 COCOAPODS: 1.8.4

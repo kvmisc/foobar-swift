@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    ThemeWorker.setup()
 
 //    String.TestAddQueryString()
-    [:].TestQueryString()
+//    [:].TestQueryString()
 
 
 //    var str = "!*'();:@&=+$,/?%#[]\" "

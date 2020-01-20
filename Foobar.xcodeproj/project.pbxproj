@@ -84,11 +84,11 @@
 		BB91D2CB238E35160048D384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB91D2C9238E35160048D384 /* LaunchScreen.storyboard */; };
 		BB91D2E0238E451E0048D384 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB91D2DF238E451E0048D384 /* UIViewExt.swift */; };
 		BB9D82E523A9F46B00CE73A1 /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D82E423A9F46B00CE73A1 /* ArrayExt.swift */; };
+		BBA60E4823D57E94007AD18C /* Expiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA60E4723D57E94007AD18C /* Expiration.swift */; };
 		BBBB0608239F2DB60004613C /* ThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB0607239F2DB60004613C /* ThroughView.swift */; };
 		BBBB060A239F403B0004613C /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB0609239F403B0004613C /* Overlay.swift */; };
 		BBBB060D239F58820004613C /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB060C239F58820004613C /* Drop.swift */; };
 		BBE7DCB223A23351009A650F /* TestCodingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCB123A23351009A650F /* TestCodingObject.swift */; };
-		BBE7DCB423A23BE7009A650F /* Expiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCB323A23BE7009A650F /* Expiration.swift */; };
 		BBE7DCB823A23EF7009A650F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCB723A23EF7009A650F /* BaseViewController.swift */; };
 		BBE7DCDE23A24C9B009A650F /* TestCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCDD23A24C9B009A650F /* TestCircleView.swift */; };
 		BBE7DCE023A25423009A650F /* TestLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7DCDF23A25423009A650F /* TestLabel.swift */; };
@@ -182,11 +182,11 @@
 		BB91D2CC238E35160048D384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB91D2DF238E451E0048D384 /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		BB9D82E423A9F46B00CE73A1 /* ArrayExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExt.swift; sourceTree = "<group>"; };
+		BBA60E4723D57E94007AD18C /* Expiration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expiration.swift; sourceTree = "<group>"; };
 		BBBB0607239F2DB60004613C /* ThroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughView.swift; sourceTree = "<group>"; };
 		BBBB0609239F403B0004613C /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		BBBB060C239F58820004613C /* Drop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drop.swift; sourceTree = "<group>"; };
 		BBE7DCB123A23351009A650F /* TestCodingObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCodingObject.swift; sourceTree = "<group>"; };
-		BBE7DCB323A23BE7009A650F /* Expiration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expiration.swift; sourceTree = "<group>"; };
 		BBE7DCB723A23EF7009A650F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BBE7DCDD23A24C9B009A650F /* TestCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCircleView.swift; sourceTree = "<group>"; };
 		BBE7DCDF23A25423009A650F /* TestLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLabel.swift; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 			children = (
 				BBB14E772394A1C400E6E5D9 /* Network */,
 				0ACBB21023A4A19A0069F4D7 /* AccountManager */,
-				BBE7DCB523A23DD7009A650F /* Expiration */,
+				BBA60E4623D57E64007AD18C /* URLNavigation */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -278,18 +278,19 @@
 		0A533037238EBBEC009B5375 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				BB6C9A60239DF3F300822180 /* Core.swift */,
 				BB41B29823A78EB400BD1EF4 /* Archive.swift */,
-				0A768A4D239955A90027A68A /* Metrics.swift */,
-				BB8D53D12399DFFB008BA419 /* Path.swift */,
 				BB8D53D32399E04A008BA419 /* Base64.swift */,
+				BB6C9A60239DF3F300822180 /* Core.swift */,
 				BB8D53D52399E07D008BA419 /* DateTime.swift */,
 				BB8D53DD2399F931008BA419 /* Layout.swift */,
+				0A768A4D239955A90027A68A /* Metrics.swift */,
+				BB8D53D12399DFFB008BA419 /* Path.swift */,
 				0A300D20239C90310025FC04 /* UIElement.swift */,
-				BB6C9A62239DF52400822180 /* RichText.swift */,
-				BB0FCC2C23D1D1BA00015857 /* Settings.swift */,
 				BBF2687423D42B7D00D3448E /* URL.swift */,
 				BB3C5AEE23AB1EED0078F953 /* GlobalImport.swift */,
+				BBA60E4723D57E94007AD18C /* Expiration.swift */,
+				BB6C9A62239DF52400822180 /* RichText.swift */,
+				BB0FCC2C23D1D1BA00015857 /* Settings.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -497,20 +498,19 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
+		BBA60E4623D57E64007AD18C /* URLNavigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = URLNavigation;
+			sourceTree = "<group>";
+		};
 		BBB14E772394A1C400E6E5D9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				0A01F7682392400800A6E5E6 /* HTTPManager.swift */,
 			);
 			name = Network;
-			sourceTree = "<group>";
-		};
-		BBE7DCB523A23DD7009A650F /* Expiration */ = {
-			isa = PBXGroup;
-			children = (
-				BBE7DCB323A23BE7009A650F /* Expiration.swift */,
-			);
-			name = Expiration;
 			sourceTree = "<group>";
 		};
 		BBE7DCB623A23ED5009A650F /* Views */ = {
@@ -702,6 +702,7 @@
 				BBBB060D239F58820004613C /* Drop.swift in Sources */,
 				BB7959CC23A8ECA900A21343 /* FlowView.swift in Sources */,
 				BB5885A5239E44780051220C /* TestLoadView.swift in Sources */,
+				BBA60E4823D57E94007AD18C /* Expiration.swift in Sources */,
 				0A300D1F239C8C030025FC04 /* FloatingPointExt.swift in Sources */,
 				BB6C9A61239DF3F300822180 /* Core.swift in Sources */,
 				BB46289A239E5CDF00989126 /* TestViewStateVC.swift in Sources */,
@@ -718,7 +719,6 @@
 				BB462887239E477900989126 /* TestReusableVC.swift in Sources */,
 				BB462893239E5BE900989126 /* PageState.swift in Sources */,
 				BB8D53D42399E04A008BA419 /* Base64.swift in Sources */,
-				BBE7DCB423A23BE7009A650F /* Expiration.swift in Sources */,
 				BBE7DCDE23A24C9B009A650F /* TestCircleView.swift in Sources */,
 				0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */,
 				BB3C5AF123AB46270078F953 /* TestStaticVC.swift in Sources */,
