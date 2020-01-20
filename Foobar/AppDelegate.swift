@@ -19,39 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     print(Path.document())
 
-//    Settings.shared.reload()
-//    ThemeWorker.setup()
-
-//    String.TestAddQueryString()
-//    [:].TestQueryString()
-
-
-//    var str = "!*'();:@&=+$,/?%#[]\" "
-//    str = "1+2-_.~"
-//    print(str.extURLEncodedString())
-    //print(str.addingPercentEncoding(withAllowedCharacters: CharacterSet(charactersIn: "!*'();:@&=+$,/?#[]%\" ").inverted))
-
-
-//    var entries: [String:AnyCodable] = [:]
-//    entries["a"] = 1
-//    entries["b"] = "ak"
-//
-//    Archive.toJSONFile(entries, Path.document("abc.json"))
-
-
-//    let encoder = JSONEncoder()
-//    let dat = try? encoder.encode(entries)
-
-
-//    let decoder = JSONDecoder()
-//    decoder.decode(<#T##type: Decodable.Protocol##Decodable.Protocol#>, from: <#T##Data#>)
-
+    URLNavigation.setup()
 
     let window = UIWindow()
-//    let nc = UINavigationController(rootViewController: TestHierachyRedVC())
-//    nc.isNavigationBarHidden = true
-//    window.rootViewController = nc
-    window.rootViewController = TestThemeVC()
+    let nc = UINavigationController(rootViewController: TestNavVC())
+    nc.isNavigationBarHidden = true
+    window.rootViewController = nc
+    //window.rootViewController = TestThemeVC()
     window.makeKeyAndVisible()
     self.window = window
     return true
