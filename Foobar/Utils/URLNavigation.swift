@@ -38,9 +38,9 @@ class URLNavigation {
 
   static func info(_ aa: String, _ bb: String) {
     let url = "theapp://info?aa=\(aa)&bb=\(bb)"
-    //navigator.push(url)
+    navigator.push(url)
     //navigator.present(url, wrap: UINavigationController.self)
-    navigator.present(url, context: true)
+    //navigator.present(url, context: true)
   }
 
 }

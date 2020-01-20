@@ -22,10 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     URLNavigation.setup()
 
     let window = UIWindow()
-    let nc = UINavigationController(rootViewController: TestNavVC())
-    nc.isNavigationBarHidden = true
-    window.rootViewController = nc
-    //window.rootViewController = TestThemeVC()
+//    let nc = UINavigationController(rootViewController: TestNavVC())
+//    nc.isNavigationBarHidden = true
+//    window.rootViewController = nc
+    window.rootViewController = TestNavVC()
     window.makeKeyAndVisible()
     self.window = window
     return true

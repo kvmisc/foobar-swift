@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TestNavVC: UIViewController {
+class TestNavVC: UIViewController, LanguageChangeProtocol {
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -18,7 +18,9 @@ class TestNavVC: UIViewController {
   @IBAction func alert(_ sender: Any) {
 
 //    URLNavigation.shared.alert("aaa", "bbb")
-    URLNavigation.info("as", "bs")
+//    URLNavigation.info("as", "bs")
+
+    print(add(1, 2))
   }
 
 }
