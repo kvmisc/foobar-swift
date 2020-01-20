@@ -11,17 +11,16 @@ import URLNavigator
 
 class URLNavigation {
 
-  static let shared = URLNavigation()
-
-  private let navigator = Navigator()
+  static let navigator = Navigator()
 
   static func setup() {
-    URLNavigation.shared.navigator.register("") { url, values, context in
-      guard let username = values["username"] as? String else { return nil }
-      return UIViewController()
+    URLNavigation.navigator.register("theapp://info") { url, values, context in
+      let vc = TestNavSubVC()
+      vc.should = context as? Bool ?? false
+      return vc
     }
 
-    URLNavigation.shared.navigator.handle("navigator://alert") { (url, values, context) -> Bool in
+    URLNavigation.navigator.handle("theapp://alert") { (url, values, context) -> Bool in
       let title = url.queryParameters["title"]
       let message = url.queryParameters["message"]
       print("alert: \(title) | \(message)")
@@ -29,9 +28,19 @@ class URLNavigation {
     }
   }
 
-  func alert(_ title: String, _ message: String) {
-    let url = "navigator://alert?title=\(title)&message=\(message)"
+
+
+
+  static func alert(_ title: String, _ message: String) {
+    let url = "theapp://alert?title=\(title)&message=\(message)"
     navigator.open(url)
+  }
+
+  static func info(_ aa: String, _ bb: String) {
+    let url = "theapp://info?aa=\(aa)&bb=\(bb)"
+    //navigator.push(url)
+    //navigator.present(url, wrap: UINavigationController.self)
+    navigator.present(url, context: true)
   }
 
 }

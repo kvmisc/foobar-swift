@@ -1,5 +1,5 @@
 //
-//  TestNavVC.swift
+//  TestNavSubVC.swift
 //  Foobar
 //
 //  Created by Kevin Wu on 1/20/20.
@@ -8,17 +8,18 @@
 
 import UIKit
 
-class TestNavVC: UIViewController {
+class TestNavSubVC: BaseViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    contentView?.backgroundColor = .red
   }
 
-  @IBAction func alert(_ sender: Any) {
+  var should = false
 
-//    URLNavigation.shared.alert("aaa", "bbb")
-    URLNavigation.info("as", "bs")
+  override func shouldOccupySafeArea() -> Bool {
+    return should
   }
 
 }
