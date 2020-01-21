@@ -37,12 +37,11 @@ class TestHierachyRedVC: BaseViewController {
     return ret
   }()
 
-  override func shouldLoadToolBar() -> Bool {
-    return (count % 2) == 0
-  }
-
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    shouldLoadToolBar = (count % 2) == 0
+
 
     navBar?.backgroundColor = .lightGray
     navBar?.contentView?.backgroundColor = .darkGray

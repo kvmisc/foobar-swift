@@ -35,6 +35,7 @@ class BaseViewController: UIViewController {
     reloadPage()
   }
 
+
   func observeLanguageChange() {
     NotificationCenter.default.addObserver(self,
                                            selector: #selector(languageChange(_:)),
@@ -49,9 +50,8 @@ class BaseViewController: UIViewController {
   func reloadPage() {
   }
 
-  func shouldOccupySafeArea() -> Bool {
-    return false
-  }
+
+  var shouldOccupySafeArea = false
 
   override func updateViewConstraints() {
     navBar?.snp.remakeConstraints { (make) in
@@ -66,14 +66,14 @@ class BaseViewController: UIViewController {
       if let navBar = navBar {
         make.top.equalTo(navBar.snp.bottom)
       } else {
-        let offset = shouldOccupySafeArea() ? 0.0 : STATUS_BAR_HET
+        let offset = shouldOccupySafeArea ? 0.0 : STATUS_BAR_HET
         make.top.equalToSuperview().offset(offset)
       }
       make.left.right.equalToSuperview()
       if let toolBar = toolBar {
         make.bottom.equalTo(toolBar.snp.top)
       } else {
-        let offset = shouldOccupySafeArea() ? 0.0 : SAFE_AREA_BOT
+        let offset = shouldOccupySafeArea ? 0.0 : SAFE_AREA_BOT
         make.bottom.equalToSuperview().offset(-offset)
       }
     })
@@ -83,11 +83,9 @@ class BaseViewController: UIViewController {
 
   // MARK: NavBar
   var navBar: EdgeBar? = nil
-  func shouldLoadNavBar() -> Bool {
-    return true
-  }
+  var shouldLoadNavBar = true
   func loadNavBarIfNeeded() {
-    if shouldLoadNavBar() {
+    if shouldLoadNavBar {
       if navBar == nil {
         navBar = EdgeBar()
         navBar?.extUseAutoLayout()
@@ -100,7 +98,7 @@ class BaseViewController: UIViewController {
         navBar?.contentView = cv
 
         navBar?.preferredHeight = EdgeBar.defaultNavHeight
-        navBar?.safeAreaHeight = shouldOccupySafeArea() ? 0.0 : STATUS_BAR_HET
+        navBar?.safeAreaHeight = shouldOccupySafeArea ? 0.0 : STATUS_BAR_HET
 
         navBar?.alignment = .Bottom(offset: 0.0)
 
@@ -161,18 +159,16 @@ class BaseViewController: UIViewController {
 
   // MARK: ToolBar
   var toolBar: EdgeBar? = nil
-  func shouldLoadToolBar() -> Bool {
-    return false
-  }
+  var shouldLoadToolBar = false
   func loadToolBarIfNeeded() {
-    if shouldLoadToolBar() {
+    if shouldLoadToolBar {
       if toolBar == nil {
         toolBar = EdgeBar()
         toolBar?.extUseAutoLayout()
         view.extAddSubviewIfNeeded(toolBar)
 
         toolBar?.preferredHeight = EdgeBar.defaultToolHeight
-        toolBar?.safeAreaHeight = shouldOccupySafeArea() ? 0.0 : SAFE_AREA_BOT
+        toolBar?.safeAreaHeight = shouldOccupySafeArea ? 0.0 : SAFE_AREA_BOT
 
         toolBar?.alignment = .Top(offset: 0.0)
 
@@ -188,11 +184,9 @@ class BaseViewController: UIViewController {
 
   // MARK: ContentView
   var contentView: UIView? = nil
-  func shouldLoadContentView() -> Bool {
-    return true
-  }
+  var shouldLoadContentView = true
   func loadContentViewIfNeeded() {
-    if shouldLoadContentView() {
+    if shouldLoadContentView {
       if contentView == nil {
         contentView = UIView()
         contentView?.extUseAutoLayout()

@@ -15,11 +15,4 @@ class TestNavSubVC: BaseViewController {
 
     contentView?.backgroundColor = .red
   }
-
-  var should = false
-
-  override func shouldOccupySafeArea() -> Bool {
-    return should
-  }
-
 }

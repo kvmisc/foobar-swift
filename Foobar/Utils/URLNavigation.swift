@@ -16,7 +16,6 @@ class URLNavigation {
   static func setup() {
     URLNavigation.navigator.register("theapp://info") { url, values, context in
       let vc = TestNavSubVC()
-      vc.should = context as? Bool ?? false
       return vc
     }
 
@@ -29,6 +28,9 @@ class URLNavigation {
   }
 
 
+  // Push, 固定动作
+  // Present, 固定动作
+  // Open, 跳转到其它地方
 
 
   static func alert(_ title: String, _ message: String) {
