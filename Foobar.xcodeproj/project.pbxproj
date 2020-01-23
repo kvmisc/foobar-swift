@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01F7682392400800A6E5E6 /* HTTPManager.swift */; };
 		0A11FDA123A7C65B00BF4BED /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11FDA023A7C65B00BF4BED /* UserModel.swift */; };
-		0A1388F923C8BB9400A1ADDE /* ThirdMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1388F823C8BB9400A1ADDE /* ThirdMedia.swift */; };
 		0A19DCDB239B465300CA5D24 /* IconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19DCDA239B465300CA5D24 /* IconLabel.swift */; };
 		0A2CF40A2391530D00F914C5 /* FBRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF4082391530D00F914C5 /* FBRootVC.swift */; };
 		0A2CF40B2391530D00F914C5 /* FBRootVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CF4092391530D00F914C5 /* FBRootVC.xib */; };
@@ -89,6 +88,7 @@
 		BBA60E5023D58579007AD18C /* TestNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA60E4E23D58579007AD18C /* TestNavVC.swift */; };
 		BBA60E5123D58579007AD18C /* TestNavVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA60E4F23D58579007AD18C /* TestNavVC.xib */; };
 		BBA60E5323D58C33007AD18C /* TestNavSubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA60E5223D58C33007AD18C /* TestNavSubVC.swift */; };
+		BBACD28423D7DA5300FA3768 /* ThirdMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACD28323D7DA5300FA3768 /* ThirdMedia.swift */; };
 		BBBB0608239F2DB60004613C /* ThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB0607239F2DB60004613C /* ThroughView.swift */; };
 		BBBB060A239F403B0004613C /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB0609239F403B0004613C /* Overlay.swift */; };
 		BBBB060D239F58820004613C /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB060C239F58820004613C /* Drop.swift */; };
@@ -105,7 +105,6 @@
 /* Begin PBXFileReference section */
 		0A01F7682392400800A6E5E6 /* HTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
 		0A11FDA023A7C65B00BF4BED /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		0A1388F823C8BB9400A1ADDE /* ThirdMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdMedia.swift; sourceTree = "<group>"; };
 		0A19DCDA239B465300CA5D24 /* IconLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLabel.swift; sourceTree = "<group>"; };
 		0A2CF4082391530D00F914C5 /* FBRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRootVC.swift; sourceTree = "<group>"; };
 		0A2CF4092391530D00F914C5 /* FBRootVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBRootVC.xib; sourceTree = "<group>"; };
@@ -191,6 +190,7 @@
 		BBA60E4E23D58579007AD18C /* TestNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNavVC.swift; sourceTree = "<group>"; };
 		BBA60E4F23D58579007AD18C /* TestNavVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestNavVC.xib; sourceTree = "<group>"; };
 		BBA60E5223D58C33007AD18C /* TestNavSubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNavSubVC.swift; sourceTree = "<group>"; };
+		BBACD28323D7DA5300FA3768 /* ThirdMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdMedia.swift; sourceTree = "<group>"; };
 		BBBB0607239F2DB60004613C /* ThroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughView.swift; sourceTree = "<group>"; };
 		BBBB0609239F403B0004613C /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		BBBB060C239F58820004613C /* Drop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drop.swift; sourceTree = "<group>"; };
@@ -220,6 +220,7 @@
 		0A01F7672392400800A6E5E6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BBACD28223D7DA4300FA3768 /* ThirdMedia */,
 				BBB14E772394A1C400E6E5D9 /* Network */,
 				0ACBB21023A4A19A0069F4D7 /* AccountManager */,
 				BBA60E4623D57E64007AD18C /* URLNavigation */,
@@ -227,19 +228,10 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		0A1388F723C8BB5600A1ADDE /* ThirdMedia */ = {
-			isa = PBXGroup;
-			children = (
-				0A1388F823C8BB9400A1ADDE /* ThirdMedia.swift */,
-			);
-			name = ThirdMedia;
-			sourceTree = "<group>";
-		};
 		0A19DCD0239B447F00CA5D24 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				BB673A4123D0379D002DF451 /* Theme */,
-				0A1388F723C8BB5600A1ADDE /* ThirdMedia */,
 				0A19DCD5239B44A800CA5D24 /* Message */,
 				BB46288F239E54A600989126 /* PageState */,
 				BBE7DCB623A23ED5009A650F /* Views */,
@@ -525,6 +517,14 @@
 			name = Navigator;
 			sourceTree = "<group>";
 		};
+		BBACD28223D7DA4300FA3768 /* ThirdMedia */ = {
+			isa = PBXGroup;
+			children = (
+				BBACD28323D7DA5300FA3768 /* ThirdMedia.swift */,
+			);
+			name = ThirdMedia;
+			sourceTree = "<group>";
+		};
 		BBB14E772394A1C400E6E5D9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -743,11 +743,11 @@
 				BBE7DCDE23A24C9B009A650F /* TestCircleView.swift in Sources */,
 				0A01F7692392400800A6E5E6 /* HTTPManager.swift in Sources */,
 				BB3C5AF123AB46270078F953 /* TestStaticVC.swift in Sources */,
+				BBACD28423D7DA5300FA3768 /* ThirdMedia.swift in Sources */,
 				BB8D53D22399DFFB008BA419 /* Path.swift in Sources */,
 				0A53303D238EC965009B5375 /* StringExt.swift in Sources */,
 				BBE7DCE023A25423009A650F /* TestLabel.swift in Sources */,
 				0AACE9C623A27A6A004A1BC1 /* EdgeBar.swift in Sources */,
-				0A1388F923C8BB9400A1ADDE /* ThirdMedia.swift in Sources */,
 				BB8A3A21239DD5A000DF3125 /* TestMultiLineButton.swift in Sources */,
 				BB6C9A63239DF52400822180 /* RichText.swift in Sources */,
 				BBF2687523D42B7D00D3448E /* URL.swift in Sources */,
