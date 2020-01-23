@@ -45,8 +45,10 @@ class BaseViewController: UIViewController {
   @objc func languageChange(_ notification: NSNotification) {
     reloadPage()
   }
+  // 增减视图
   func setup() {
   }
+  // 更新视图内的数据
   func reloadPage() {
   }
 
