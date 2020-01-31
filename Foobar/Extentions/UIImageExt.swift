@@ -30,6 +30,43 @@ extension UIImage {
     }
   }
 
+  func extQRCodeImage(_ code: String, _ size: CGSize) -> UIImage? {
+    guard !code.isEmpty else { return nil }
+
+    // Need to convert the string to a UTF-8 encoded NSData object
+    let data = code.extToUTF8Data()
+
+    // Create the filter
+    let filter = CIFilter(name: "CIQRCodeGenerator")
+    // Set the message content and error-correction level
+    filter?.setValue(data, forKey: "inputMessage")
+    filter?.setValue("H", forKey: "inputCorrectionLevel")
+
+    // Send the image back
+    let ciImage = filter?.outputImage
+    //NSLog(@"ciImage: (%d, %d)", (int)(ciImage.extent.size.width), (int)(ciImage.extent.size.height));
+
+    if let ciImage = ciImage {
+
+      // Render the CIImage into a CGImage
+      let cgImage = CIContext(options: nil).createCGImage(ciImage, from: ciImage.extent)
+      //NSLog(@"cgImage: (%d, %d)", (int)CGImageGetWidth(cgImage), (int)CGImageGetHeight(cgImage));
+
+      if let cgImage = cgImage {
+        // Now we'll rescale using CoreGraphics
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        let renderer = UIGraphicsImageRenderer(bounds: rect)
+        return renderer.image { (ctx) in
+          ctx.cgContext.interpolationQuality = .none
+          ctx.cgContext.draw(cgImage, in: rect)
+        }
+      }
+
+    }
+
+    return nil
+  }
+
   // TODO: 圆角
   // ...
 }
