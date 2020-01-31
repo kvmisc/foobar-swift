@@ -32,7 +32,8 @@ class BaseViewController: UIViewController {
 
     observeLanguageChange()
     setup()
-    reloadPage()
+    reloadView()
+    reloadData()
   }
 
 
@@ -43,13 +44,16 @@ class BaseViewController: UIViewController {
                                            object: nil)
   }
   @objc func languageChange(_ notification: NSNotification) {
-    reloadPage()
+    reloadData()
   }
-  // 增减视图
+  // 初始化视图
   func setup() {
   }
-  // 更新视图内的数据
-  func reloadPage() {
+  // 根据状态, 增减视图
+  func reloadView() {
+  }
+  // 根据状态, 更新视图的数据
+  func reloadData() {
   }
 
 
