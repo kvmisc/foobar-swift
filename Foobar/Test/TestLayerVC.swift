@@ -41,6 +41,10 @@ class TestLayerVC: UIViewController {
     view.addSubview(bt)
     doTestMultiLineButton(bt)
 
+    doit { (o) in
+      o.name = "faksd"
+    }
+
   }
 
   var lb1 = UILabel()
@@ -72,10 +76,22 @@ class TestLayerVC: UIViewController {
 
   }
 
+  func doit(_ config: ((inout klajd)->Void)? = nil) {
+    var obj = klajd()
+    obj.age = 18
+    config?(&obj)
+    print("\(obj.age) \(obj.name)")
+  }
+
 }
 
 class TheSheet: UIView {
   override var intrinsicContentSize: CGSize {
     return ccs(UIView.noIntrinsicMetric, 200.0)
   }
+}
+
+struct klajd {
+  var age = 0
+  var name = ""
 }
