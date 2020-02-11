@@ -184,8 +184,7 @@ class Overlay {
   static func entrySheet(_ view: UIView,
                          width: EKAttributes.PositionConstraints.Edge = .ratio(value: 1.0),
                          offset: CGFloat = 0.0,
-                         interaction: EKAttributes.UserInteraction = .dismiss,
-                         dismissed: EKAttributes.LifecycleEvents.Event? = nil)
+                         interaction: EKAttributes.UserInteraction = .absorbTouches)
   {
     HideKeyboard()
 
@@ -215,8 +214,6 @@ class Overlay {
     let animation = EKAttributes.Animation(translate: translate)
     attributes.entranceAnimation = animation
     attributes.exitAnimation = animation
-
-    attributes.lifecycleEvents.didDisappear = dismissed
 
     SwiftEntryKit.display(entry: view, using: attributes, presentInsideKeyWindow: false, rollbackWindow: .main)
   }

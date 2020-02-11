@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    let nc = UINavigationController(rootViewController: TestNavVC())
 //    nc.isNavigationBarHidden = true
 //    window.rootViewController = nc
-    window.rootViewController = TestNavVC()
+    window.rootViewController = TestLayerVC()
     window.makeKeyAndVisible()
     self.window = window
     return true

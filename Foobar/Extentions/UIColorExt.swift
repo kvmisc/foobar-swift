@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
 
-  func extOverlayWhite() -> UIColor {
+  func extOverlayWhite(_ alpha: Double = 0.25) -> UIColor {
     var bgR: CGFloat = 0
     var bgG: CGFloat = 0
     var bgB: CGFloat = 0
@@ -21,7 +21,7 @@ extension UIColor {
     var fgG: CGFloat = 0
     var fgB: CGFloat = 0
     var fgA: CGFloat = 0
-    let overlay = UIColor.white.withAlphaComponent(0.25)
+    let overlay = UIColor.white.withAlphaComponent(CGFloat(alpha))
     overlay.getRed(&fgR, green: &fgG, blue: &fgB, alpha: &fgA)
 
     let r = fgA * fgR + (1 - fgA) * bgR

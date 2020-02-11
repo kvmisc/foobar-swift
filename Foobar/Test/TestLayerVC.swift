@@ -65,12 +65,10 @@ class TestLayerVC: UIViewController {
 //    print(lb1.attributes)
 //    print(lb2.attributes)
 
-//    let sheet = TheSheet()
-//    sheet.backgroundColor = .red
+    let sheet = TheSheet()
+    sheet.backgroundColor = .red
 ////    Overlay.entrySheet(sheet, width: .ratio(value: 0.8), offset: 10.0, interaction: .absorbTouches, config: )
-//    Overlay.entrySheet(sheet, width: .ratio(value: 0.8), offset: 10.0, interaction: .dismiss) {
-//      print("xxx")
-//    }
+    Overlay.entrySheet(sheet, width: .ratio(value: 0.8), offset: 10.0, interaction: .dismiss)
 
   }
 
