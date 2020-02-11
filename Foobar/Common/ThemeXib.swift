@@ -229,7 +229,7 @@ extension UIButton {
           let value = list[index]
           if value.isEmpty { continue }
           if value.hasPrefix("#") {
-            setBackgroundImage(UIImage.extColored(ccc(value), ccs(6.0)), for: .normal)
+            setBackgroundImage(UIImage.extColorImage(ccc(value), ccs(6.0)), for: .normal)
           } else {
             theme_setBackgroundImage(ThemeWorker.shared.getImagePicker(color: value), forState: state)
           }

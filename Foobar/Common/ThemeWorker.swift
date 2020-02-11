@@ -119,7 +119,7 @@ class ThemeWorker {
     return ThemeImagePicker.pickerWithNames(getImageNames(image))
   }
   func getImagePicker(color: String) -> ThemeImagePicker {
-    let images = getColorValues(color).map { UIImage.extColored(ccc($0), ccs(6.0)) }
+    let images = getColorValues(color).map { UIImage.extColorImage(ccc($0), ccs(6.0)) }
     return ThemeImagePicker.pickerWithImages(images)
   }
 

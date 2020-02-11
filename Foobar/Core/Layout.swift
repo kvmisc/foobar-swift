@@ -146,6 +146,30 @@ extension CGSize {
   func with(height: CGFloat) -> CGSize {
     return CGSize(width: width, height: height)
   }
+
+  enum ScaleMode {
+    case Fill
+    case AspectFit
+    case AspectFill
+  }
+  func scaled(_ size: CGSize, _ mode: ScaleMode, _ force: Bool = false) -> CGSize {
+    if width.extEqual(size.width) && height.extEqual(size.height) {
+      return self
+    }
+    if width < size.width && height < size.height {
+      if !force { return self }
+    }
+    switch mode {
+    case .Fill:
+      return CGSize(width: floor(size.width), height: floor(size.height))
+    case .AspectFit:
+      let ratio = min(size.width/width, size.height/height)
+      return CGSize(width: floor(width * ratio), height: floor(height * ratio))
+    case .AspectFill:
+      let ratio = max(size.width/width, size.height/height)
+      return CGSize(width: floor(width * ratio), height: floor(height * ratio))
+    }
+  }
 }
 
 extension CGRect {

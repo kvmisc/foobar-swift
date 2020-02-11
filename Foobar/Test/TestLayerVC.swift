@@ -45,6 +45,9 @@ class TestLayerVC: UIViewController {
       o.name = "faksd"
     }
 
+    let iv = UIImageView()
+    iv.contentMode = .scaleAspectFit
+
   }
 
   var lb1 = UILabel()
