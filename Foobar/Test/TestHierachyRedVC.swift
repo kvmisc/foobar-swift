@@ -108,7 +108,7 @@ class TestHierachyRedVC: BaseViewController {
 //      self.toolBar?.preferredHeight = 200
     }
   }
-  override func reloadPage() {
+  override func reloadView() {
     infoLabel.text = "some_key".localized() + " " + info + ": " + String(count)
   }
 

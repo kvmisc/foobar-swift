@@ -34,7 +34,7 @@ extension UIImage {
     guard !code.isEmpty else { return nil }
 
     // Need to convert the string to a UTF-8 encoded NSData object
-    let data = code.extToUTF8Data()
+    let data = code.extUTF8Data()
 
     // Create the filter
     let filter = CIFilter(name: "CIQRCodeGenerator")

@@ -43,7 +43,7 @@ class DateTime {
 
 extension String {
   func extTimestampDate() -> Date? {
-    let timestamp = extDouble()
+    let timestamp = extDoubleValue
     if timestamp >= 1.0 {
       return Date(timeIntervalSince1970: timestamp)
     }

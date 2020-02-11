@@ -13,8 +13,8 @@ extension String {
 
   static func extRandomString(_ length: Int) -> String {
     guard length > 0 else { return "" }
-    let base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
     var result = ""
+    let base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
     for _ in 1...length {
       result.append(base.randomElement()!)
     }
@@ -46,7 +46,7 @@ extension String {
 // MARK: Validation
 extension String {
   // 纯数字, 不包括小数点
-  var extIsNumber: Bool {
+  var extIsDigit: Bool {
     return CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: self))
   }
   // "123" -> true
@@ -54,7 +54,7 @@ extension String {
   // "1,3" -> true (fr_FR)
   // "abc" -> false
   // 数字
-  var extIsNumeric: Bool {
+  var extIsNumber: Bool {
     let scanner = Scanner(string: self)
     scanner.locale = NSLocale.current
     return scanner.scanDecimal(nil) && scanner.isAtEnd
@@ -65,7 +65,7 @@ extension String {
   }
 
   // http://emailregex.com/
-  var extIsValidEmail: Bool {
+  var extIsEmail: Bool {
     let regex = "^(?:[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[\\p{L}0-9](?:[a-z0-9-]*[\\p{L}0-9])?\\.)+[\\p{L}0-9](?:[\\p{L}0-9-]*[\\p{L}0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[\\p{L}0-9-]*[\\p{L}0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])$"
     return extMatchs(regex)
   }
@@ -115,7 +115,7 @@ extension String {
   // " 12a" -> 12
   // "a123" -> 0
   // "0x12" -> 0
-  func extInt() -> Int {
+  var extIntValue: Int {
     var value: Int = 0
     Scanner(string: self).scanInt(&value)
     return value
@@ -124,7 +124,7 @@ extension String {
   // " .2a" -> 0.2
   // "a123" -> 0.0
   // " 123" -> 123.0
-  func extDouble() -> Double {
+  var extDoubleValue: Double {
     var value: Double = 0.0
     Scanner(string: self).scanDouble(&value)
     return value
@@ -132,13 +132,13 @@ extension String {
   #if DEBUG
   static func extTestNumber() {
     print("exInt() ============")
-    print("1234".extInt())
-    print(" 123".extInt())
-    print("a123".extInt())
-    print("123a".extInt())
-    print("0x12".extInt())
-    print("-123".extInt())
-    print(" -12".extInt())
+    print("1234".extIntValue)
+    print(" 123".extIntValue)
+    print("a123".extIntValue)
+    print("123a".extIntValue)
+    print("0x12".extIntValue)
+    print("-123".extIntValue)
+    print(" -12".extIntValue)
 
     print("Int() ==============")
     print(Int("1234") ?? 0)
@@ -150,14 +150,14 @@ extension String {
     print(Int(" -12") ?? 0)
 
     print("exDouble() =========")
-    print("1.23".extDouble())
-    print(" 1.2".extDouble())
-    print(".234".extDouble())
-    print("a1.2".extDouble())
-    print("1234".extDouble())
-    print("123a".extDouble())
-    print("-1.2".extDouble())
-    print(" -12".extDouble())
+    print("1.23".extDoubleValue)
+    print(" 1.2".extDoubleValue)
+    print(".234".extDoubleValue)
+    print("a1.2".extDoubleValue)
+    print("1234".extDoubleValue)
+    print("123a".extDoubleValue)
+    print("-1.2".extDoubleValue)
+    print(" -12".extDoubleValue)
 
     print("Double() ===========")
     print(Double("1.23") ?? 0.0)

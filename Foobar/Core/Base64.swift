@@ -14,25 +14,25 @@ class Base64 {
     return from.base64EncodedString(options: [])
   }
   static func encodedString(_ from: String) -> String {
-    return from.extToUTF8Data().base64EncodedString(options: [])
+    return from.extUTF8Data().base64EncodedString(options: [])
   }
 
   static func encodedData(_ from: Data) -> Data {
     return from.base64EncodedData(options: [])
   }
   static func encodedData(_ from: String) -> Data {
-    return from.extToUTF8Data().base64EncodedData(options: [])
+    return from.extUTF8Data().base64EncodedData(options: [])
   }
 
   static func decodedString(_ from: Data) -> String {
     if let dat = Data(base64Encoded: from, options: []) {
-      return dat.extToUTF8String()
+      return dat.extUTF8String()
     }
     return ""
   }
   static func decodedString(_ from: String) -> String {
     if let dat = Data(base64Encoded: from, options: []) {
-      return dat.extToUTF8String()
+      return dat.extUTF8String()
     }
     return ""
   }
