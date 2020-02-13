@@ -75,7 +75,8 @@ class TestLayerVC: UIViewController {
     let sheet = TheSheet()
     sheet.backgroundColor = .red
 ////    Overlay.entrySheet(sheet, width: .ratio(value: 0.8), offset: 10.0, interaction: .absorbTouches, config: )
-    Overlay.entrySheet(sheet, width: .ratio(value: 0.8), offset: 10.0, interaction: .dismiss)
+    Overlay.entrySheet(sheet, width: .ratio(value: 0.8), offset: 10, interaction: .init(defaultAction: .dismissEntry, customTapActions: [{print("asdf")}]))
+    //Overlay.entrySheet(sheet, width: .ratio(value: 0.8), offset: 10.0, interaction: .dismiss, cancelled: { print("cancelled") })
 
   }
 
@@ -91,6 +92,11 @@ class TestLayerVC: UIViewController {
 class TheSheet: UIView {
   override var intrinsicContentSize: CGSize {
     return ccs(UIView.noIntrinsicMetric, 200.0)
+  }
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    Overlay.entryHide {
+      print("done")
+    }
   }
 }
 

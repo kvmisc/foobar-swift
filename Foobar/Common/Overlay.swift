@@ -188,6 +188,7 @@ class Overlay {
                          width: EKAttributes.PositionConstraints.Edge = .ratio(value: 1.0),
                          offset: CGFloat = 0.0,
                          interaction: EKAttributes.UserInteraction = .dismiss,
+                         cancelled: EKAttributes.UserInteraction.Action? = nil,
                          config: ((inout EKAttributes)->Void)? = nil)
   {
     HideKeyboard()
@@ -201,6 +202,9 @@ class Overlay {
       EKAttributes.PositionConstraints.Size(width: width, height: .intrinsic)
     attributes.positionConstraints.verticalOffset = offset
     attributes.screenInteraction = interaction
+    if let cancelled = cancelled {
+      attributes.screenInteraction.customTapActions.append(cancelled)
+    }
     attributes.entryInteraction = .absorbTouches
     attributes.scroll = .disabled
     //attributes.hapticFeedbackType = .none
