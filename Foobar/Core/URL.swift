@@ -8,7 +8,15 @@
 
 import UIKit
 
-// MARK: URL encoding
+extension String {
+  func extURL() -> URL? {
+    return URL(string: self)
+  }
+  func extFileURL() -> URL {
+    return URL(fileURLWithPath: self)
+  }
+}
+
 extension String {
   func extURLEncodedString() -> String {
     //return addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? self
@@ -69,7 +77,6 @@ extension String {
   }
   #endif
 }
-
 
 extension String {
   // 字符串只能是纯粹的查询字符串

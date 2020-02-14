@@ -21,6 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     URLNavigation.setup()
 
+    var str = ""
+    var ary: [Int] = []
+    var map: [Int:Int] = [:]
+
+    print(str.extIsNonempty)
+    print(ary.extIsNonempty)
+    print(map.extIsNonempty)
+
+
     let window = UIWindow()
 //    let nc = UINavigationController(rootViewController: TestNavVC())
 //    nc.isNavigationBarHidden = true

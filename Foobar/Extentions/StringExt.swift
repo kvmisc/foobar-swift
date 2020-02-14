@@ -33,16 +33,6 @@ extension String {
   }
 }
 
-// MARK: URL
-extension String {
-  func extURL() -> URL? {
-    return URL(string: self)
-  }
-  func extFileURL() -> URL {
-    return URL(fileURLWithPath: self)
-  }
-}
-
 // MARK: Validation
 extension String {
   // 纯数字, 不包括小数点
@@ -77,9 +67,9 @@ extension String {
     let size = (self as NSString).size(withAttributes: [.font:font])
     return CGSize(width: ceil(size.width), height: ceil(size.height))
   }
-  func extSizeWith(_ attributes: [NSAttributedString.Key:Any], _ width: CGFloat) -> CGSize {
+  func extSizeWith(_ attributes: [NSAttributedString.Key:Any], _ width: Double) -> CGSize {
     let context = NSStringDrawingContext()
-    let rect = (self as NSString).boundingRect(with: CGSize(width: floor(width), height: CGFloat.greatestFiniteMagnitude),
+    let rect = (self as NSString).boundingRect(with: CGSize(width: floor(CGFloat(width)), height: CGFloat.greatestFiniteMagnitude),
                                                options: .usesLineFragmentOrigin,
                                                attributes: attributes,
                                                context: context)
@@ -174,12 +164,6 @@ extension String {
 
 // MARK: Substring
 extension String {
-  // 第 xxx 个字符, 第一个字符序号是 0
-  func extSubstring(at: Int) -> String {
-    guard at >= 0  else { return "" }
-    return extSubstring(from: at, length: 1)
-  }
-
   // 前 xxx 个字符
   func extSubstring(leading: Int) -> String {
     guard leading > 0  else { return "" }
@@ -203,17 +187,6 @@ extension String {
     return result
   }
 
-  // 从 xxx 到 xxx, 返回区间内的
-  func extSubstring(from: Int, to: Int) -> String {
-    guard from < to else { return "" }
-    if to <= 0 {
-      // from -1, to 0
-      return ""
-    } else {
-      let begin = max(from, 0)
-      return extSubstring(from: begin, length: to-begin)
-    }
-  }
   // 从 xxx 开始, 长度 xxx, 仅当长度不足时, 返回长度才会变小, 当起点为负, 从 0 开始数长度
   func extSubstring(from: Int, length: Int) -> String {
     guard length > 0 else { return "" }
