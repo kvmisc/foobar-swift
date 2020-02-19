@@ -46,7 +46,7 @@ class Path {
   }
   static func document(_ relativePath: String = "") -> String {
     let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-    guard !paths.isEmpty else { return "" }
+    if paths.isEmpty { return "" }
     return paths[0].extAppendingPathComponent(relativePath)
   }
   static func user(_ uid: String, _ relativePath: String = "") -> String {

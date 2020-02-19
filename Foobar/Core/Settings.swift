@@ -51,7 +51,7 @@ class Settings {
   }
 
   func set(_ key: String, _ value: Any) {
-    guard !key.isEmpty else { return }
+    if key.isEmpty { return }
     entries[key] = value
   }
   func remove(_ key: String) {

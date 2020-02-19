@@ -31,7 +31,7 @@ class AccountManager {
 
   // 登录成功以后，保存用户对象到用户个人目录
   func setCurrentAccount(_ username: String, _ user: UserModel) {
-    guard !username.isEmpty else { return }
+    if username.isEmpty { return }
     createPathForAccount(username)
     self.username = username
     self.user = user
@@ -54,7 +54,7 @@ class AccountManager {
   // MARK: Ever account (only username)
   // 曾经登录过的帐号列表，只是帐号，没有密码，第一个为最近登录的帐号（登录成功可以保存，失败也可以保存，看需求决定）
   func everAccountListAdd(_ username: String) {
-    guard !username.isEmpty else { return }
+    if username.isEmpty { return }
     var list = everAccountList()
     if let i = list.firstIndex(of: username) {
       list.remove(at: i)
@@ -64,7 +64,7 @@ class AccountManager {
     UserDefaults.standard.synchronize()
   }
   func everAccountListRemove(_ username: String) {
-    guard !username.isEmpty else { return }
+    if username.isEmpty { return }
     var list = everAccountList()
     if let i = list.firstIndex(of: username) {
       list.remove(at: i)
@@ -86,8 +86,8 @@ class AccountManager {
     return keychain["password"]
   }
   func lastAccountUpdate(_ username: String, _ password: String) {
-    guard !username.isEmpty else { return }
-    guard !password.isEmpty else { return }
+    if username.isEmpty { return }
+    if password.isEmpty { return }
     let keychain = Keychain(service: "com.firefly.account")
     keychain["username"] = username
     keychain["password"] = password

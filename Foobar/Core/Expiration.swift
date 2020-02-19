@@ -34,7 +34,7 @@ class Expiration {
     return ret
   }
   func setKey(_ key: String, _ timeout: TimeInterval) {
-    guard !key.isEmpty else { return }
+    if key.isEmpty { return }
     lock.lock()
     if timeout > 0.0 {
       pool[key] = Date().timeIntervalSince1970 + timeout
@@ -46,7 +46,7 @@ class Expiration {
     delayClean()
   }
   func removeKey(_ key: String) {
-    guard !key.isEmpty else { return }
+    if key.isEmpty { return }
     lock.lock()
     pool[key] = nil
     Archive.toJSONFile(pool, path)

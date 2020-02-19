@@ -162,33 +162,33 @@ extension String {
   #endif
 }
 
-// MARK: Substring
+// MARK: Substring & replace
 extension String {
   // 前 xxx 个字符
-  func extSubstring(leading: Int) -> String {
-    guard leading > 0  else { return "" }
-    return String(prefix(leading))
+  func extPrefix(_ length: Int) -> String {
+    guard length > 0  else { return "" }
+    return String(prefix(length))
   }
   // 后 xxx 个字符
-  func extSubstring(trailing: Int) -> String {
-    guard trailing > 0 else { return "" }
-    return String(suffix(trailing))
+  func extSuffix(_ length: Int) -> String {
+    guard length > 0 else { return "" }
+    return String(suffix(length))
   }
 
   // 去掉前 xxx 个字符, 后 xxx 个字符
-  func extSubstring(trimLeading: Int = 0, trimTrailing: Int = 0) -> String {
+  func extTrim(_ leading: Int = 0, _ trailing: Int = 0) -> String {
     var result = self
-    if trimLeading > 0 {
-      result = String(result.dropFirst(trimLeading))
+    if leading > 0 {
+      result = String(result.dropFirst(leading))
     }
-    if trimTrailing > 0 {
-      result = String(result.dropLast(trimTrailing))
+    if trailing > 0 {
+      result = String(result.dropLast(trailing))
     }
     return result
   }
 
   // 从 xxx 开始, 长度 xxx, 仅当长度不足时, 返回长度才会变小, 当起点为负, 从 0 开始数长度
-  func extSubstring(from: Int, length: Int) -> String {
+  func extSub(_ from: Int, _ length: Int) -> String {
     guard length > 0 else { return "" }
     if let fromIndex = index(startIndex, offsetBy: max(from, 0), limitedBy: endIndex) {
       if let toIndex = index(fromIndex, offsetBy: length, limitedBy: endIndex) {
@@ -201,33 +201,79 @@ extension String {
     }
   }
 
-  #if DEBUG
-  static func extTestSubstring() {
-    let str = "abcdef"
-    print("leading:")
-    print(str.extSubstring(leading: 1))
-    print(str.extSubstring(leading: 2))
-    print(str.extSubstring(leading: 20))
+  // 替换 xxx -> yyy
+  func extReplace(_ string: String, _ by: String) -> String {
+    if string.isEmpty { return self }
+    if by.isEmpty { return self }
+    if let range = range(of: string) {
+      return replacingCharacters(in: range, with: by)
+    }
+    return self
+  }
+  // 替换 (0-1) -> yyy
+  // 插入 (0-0) -> yyy
+  // 删除
+  func extReplace(_ from: Int, _ length: Int, _ by: String) -> String {
+    if let fromIndex = index(startIndex, offsetBy: max(from, 0), limitedBy: endIndex) {
+      if let toIndex = index(fromIndex, offsetBy: max(length, 0), limitedBy: endIndex) {
+        return replacingCharacters(in: fromIndex..<toIndex, with: by)
+      } else {
+        return replacingCharacters(in: fromIndex..<endIndex, with: by)
+      }
+    } else {
+      return self
+    }
+  }
 
-    print("trailing:")
-    print(str.extSubstring(trailing: 1))
-    print(str.extSubstring(trailing: 2))
-    print(str.extSubstring(trailing: 20))
+
+  #if DEBUG
+  static func extTestString() {
+    let str = "abcdef"
+    print("prefix:")
+    print(str.extPrefix(1))
+    print(str.extPrefix(2))
+    print(str.extPrefix(20))
+
+    print("suffix:")
+    print(str.extSuffix(1))
+    print(str.extSuffix(2))
+    print(str.extSuffix(20))
 
     print("trim:")
-    print(str.extSubstring(trimLeading: 2, trimTrailing: 2))
-    print("H\(str.extSubstring(trimLeading: 20, trimTrailing: 2))H")
-    print("H\(str.extSubstring(trimLeading: 2, trimTrailing: 20))H")
+    print(str.extTrim(2, 2))
+    print("H\(str.extTrim(20, 2))H")
+    print("H\(str.extTrim(2, 20))H")
 
     print("from length:")
     //print(str.extSubstring(from: 0, length: 2))
-    print(str.extSubstring(from: 0, length: 20))
-    print(str.extSubstring(from: 1, length: 2))
-    print(str.extSubstring(from: 1, length: 20))
-    print(str.extSubstring(from: 2, length: 2))
-    print(str.extSubstring(from: 2, length: 20))
-    print("H\(str.extSubstring(from: 6, length: 20))H")
-    print("H\(str.extSubstring(from: 9, length: 20))H")
+    print(str.extSub(0, 20))
+    print(str.extSub(1, 2))
+    print(str.extSub(1, 20))
+    print(str.extSub(2, 2))
+    print(str.extSub(2, 20))
+    print("H\(str.extSub(6, 20))H")
+    print("H\(str.extSub(9, 20))H")
+
+    print("replace:")
+    print(str.extReplace(0, 0, ""))
+    print(str.extReplace(0, 0, "_"))
+    print(str.extReplace(0, 0, "__"))
+    print(str.extReplace(2, 0, ""))
+    print(str.extReplace(2, 0, "_"))
+    print(str.extReplace(2, 0, "__"))
+    print(str.extReplace(2, 1, ""))
+    print(str.extReplace(2, 1, "_"))
+    print(str.extReplace(2, 1, "__"))
+    print(str.extReplace(2, 10, ""))
+    print(str.extReplace(2, 10, "_"))
+    print(str.extReplace(2, 10, "__"))
+    print(str.extReplace(20, 10, ""))
+    print(str.extReplace(20, 10, "_"))
+    print(str.extReplace(20, 10, "__"))
+    print(str.extReplace(2, -1, "__"))
+    print(str.extReplace("bc", ""))
+//    print("H\(str.extTrim(20, 2))H")
+//    print("H\(str.extTrim(2, 20))H")
   }
   #endif
 }

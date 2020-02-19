@@ -35,10 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     URLNavigation.setup()
 
-    let a = TwelveOrLess()
-//    let b = TwelveOrLess(number: 0, name: "")
-
-    doit()
+    String.extTestString()
 
 
     let window = UIWindow()
