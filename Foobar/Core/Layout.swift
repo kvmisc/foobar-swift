@@ -24,45 +24,57 @@ extension UIView {
 
 extension UIView {
 
-  var extMin: CGPoint {
+//  var extMin: CGPoint {
+//    get { return frame.origin }
+//    set { frame.origin = newValue }
+//  }
+//  var extMinX: CGFloat {
+//    get { return frame.minX }
+//    set { frame.origin.x = newValue }
+//  }
+//  var extMinY: CGFloat {
+//    get { return frame.minY }
+//    set { frame.origin.y = newValue }
+//  }
+//
+//  var extMid: CGPoint {
+//    get { return CGPoint(x: frame.midX, y: frame.midY) }
+//    set { frame.origin = CGPoint(x: newValue.x - frame.width / 2.0, y: newValue.y - frame.height / 2.0) }
+//  }
+//  var extMidX: CGFloat {
+//    get { return frame.midX }
+//    set { frame.origin.x = newValue - frame.width / 2.0 }
+//  }
+//  var extMidY: CGFloat {
+//    get { return frame.midY }
+//    set { frame.origin.y = newValue - frame.height / 2.0 }
+//  }
+//
+//  var extMax: CGPoint {
+//    get { return CGPoint(x: frame.maxX, y: frame.maxY) }
+//    set { frame.origin = CGPoint(x: newValue.x - frame.width, y: newValue.y - frame.height) }
+//  }
+//  var extMaxX: CGFloat {
+//    get { return frame.maxX }
+//    set { frame.origin.x = newValue - frame.width }
+//  }
+//  var extMaxY: CGFloat {
+//    get { return frame.maxY }
+//    set { frame.origin.y = newValue - frame.height }
+//  }
+
+  var extOrigin: CGPoint {
     get { return frame.origin }
     set { frame.origin = newValue }
   }
-  var extMinX: CGFloat {
-    get { return frame.minX }
+  var extX: CGFloat {
+    get { return frame.origin.x }
     set { frame.origin.x = newValue }
   }
-  var extMinY: CGFloat {
-    get { return frame.minY }
+  var extY: CGFloat {
+    get { return frame.origin.y }
     set { frame.origin.y = newValue }
   }
-
-  var extMid: CGPoint {
-    get { return CGPoint(x: frame.midX, y: frame.midY) }
-    set { frame.origin = CGPoint(x: newValue.x - frame.width / 2.0, y: newValue.y - frame.height / 2.0) }
-  }
-  var extMidX: CGFloat {
-    get { return frame.midX }
-    set { frame.origin.x = newValue - frame.width / 2.0 }
-  }
-  var extMidY: CGFloat {
-    get { return frame.midY }
-    set { frame.origin.y = newValue - frame.height / 2.0 }
-  }
-
-  var extMax: CGPoint {
-    get { return CGPoint(x: frame.maxX, y: frame.maxY) }
-    set { frame.origin = CGPoint(x: newValue.x - frame.width, y: newValue.y - frame.height) }
-  }
-  var extMaxX: CGFloat {
-    get { return frame.maxX }
-    set { frame.origin.x = newValue - frame.width }
-  }
-  var extMaxY: CGFloat {
-    get { return frame.maxY }
-    set { frame.origin.y = newValue - frame.height }
-  }
-
 
   var extSize: CGSize {
     get { return frame.size }

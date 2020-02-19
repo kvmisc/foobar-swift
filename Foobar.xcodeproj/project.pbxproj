@@ -278,6 +278,7 @@
 		0A533037238EBBEC009B5375 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BB3C5AEE23AB1EED0078F953 /* GlobalImport.swift */,
 				BB41B29823A78EB400BD1EF4 /* Archive.swift */,
 				BB8D53D32399E04A008BA419 /* Base64.swift */,
 				BB6C9A60239DF3F300822180 /* Core.swift */,
@@ -287,7 +288,6 @@
 				BB8D53D12399DFFB008BA419 /* Path.swift */,
 				0A300D20239C90310025FC04 /* UIElement.swift */,
 				BBF2687423D42B7D00D3448E /* URL.swift */,
-				BB3C5AEE23AB1EED0078F953 /* GlobalImport.swift */,
 				BBA60E4723D57E94007AD18C /* Expiration.swift */,
 				BB6C9A62239DF52400822180 /* RichText.swift */,
 				BB0FCC2C23D1D1BA00015857 /* Settings.swift */,

@@ -8,6 +8,20 @@
 
 import UIKit
 
+struct TwelveOrLess {
+  var number = 0
+  var name = ""
+}
+extension TwelveOrLess {
+  init(_ v: String) {
+//self.init()
+    number = 0
+    name = v
+
+  }
+}
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -21,13 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     URLNavigation.setup()
 
-    var str = ""
-    var ary: [Int] = []
-    var map: [Int:Int] = [:]
+    let a = TwelveOrLess()
+//    let b = TwelveOrLess(number: 0, name: "")
 
-    print(str.extIsNonempty)
-    print(ary.extIsNonempty)
-    print(map.extIsNonempty)
+    doit()
 
 
     let window = UIWindow()
@@ -38,6 +49,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window.makeKeyAndVisible()
     self.window = window
     return true
+  }
+
+  func doit() {
+    defer {
+      print("i leave")
+    }
+    print("before")
   }
 
   func testValue(_ newValue: String?) {

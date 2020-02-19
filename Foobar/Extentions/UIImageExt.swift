@@ -31,7 +31,7 @@ extension UIImage {
   }
 
   func extQRCodeImage(_ code: String, _ size: CGSize) -> UIImage? {
-    guard !code.isEmpty else { return nil }
+    if code.isEmpty { return nil }
 
     // Need to convert the string to a UTF-8 encoded NSData object
     let data = code.extUTF8Data()
@@ -54,7 +54,7 @@ extension UIImage {
 
       if let cgImage = cgImage {
         // Now we'll rescale using CoreGraphics
-        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        let rect = CGRect(x: 0, y: 0, width: floor(size.width), height: floor(size.height))
         let renderer = UIGraphicsImageRenderer(bounds: rect)
         return renderer.image { (ctx) in
           ctx.cgContext.interpolationQuality = .none

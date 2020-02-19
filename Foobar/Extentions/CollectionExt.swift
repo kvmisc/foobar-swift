@@ -8,14 +8,6 @@
 
 import UIKit
 
-extension Collection {
-
-  var extIsNonempty: Bool {
-    return !isEmpty
-  }
-
-}
-
 extension Array where Element: Equatable {
 
 //  subscript (safe index: Int) -> Element? {

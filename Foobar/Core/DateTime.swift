@@ -49,9 +49,19 @@ extension String {
     }
     return nil
   }
-  func extTimestampFormat(_ df: DateFormatter) -> String {
+  func extTimestampFormatted(_ df: DateFormatter) -> String {
     if let date = extTimestampDate() {
       return df.string(from: date)
+    }
+    return ""
+  }
+
+  func extDate(_ df: DateFormatter) -> Date? {
+    return df.date(from: self)
+  }
+  func extDateFormatted(_ df1: DateFormatter, _ df2: DateFormatter) -> String {
+    if let date = extDate(df1) {
+      return df2.string(from: date)
     }
     return ""
   }
@@ -59,7 +69,7 @@ extension String {
 
 extension Date {
 
-  func extHumanPreferredString(_ formatter: DateFormatter? = nil) -> String {
+  func extHumanPreferredString(_ df: DateFormatter? = nil) -> String {
     let currentTime = Date().timeIntervalSince1970
     let timestamp = self.timeIntervalSince1970
     let reduceTime = Int(currentTime - timestamp)
@@ -84,14 +94,10 @@ extension Date {
       return "\(days)天前"
     }
     // 不满足以上条件直接返回日期
-    if let formatter = formatter {
-      return formatter.string(from: self)
+    if let df = df {
+      return df.string(from: self)
     }
-    let df = DateFormatter()
-    df.locale = Locale(identifier: "en_US_POSIX")
-    df.timeZone = TimeZone.current
-    df.dateFormat = "yyyy/MM/dd"
-    return df.string(from: self)
+    return DateTime.date_02.string(from: self)
   }
 
 }
