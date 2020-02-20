@@ -188,7 +188,7 @@ extension String {
   }
 
   // 从 xxx 开始, 长度 xxx, 仅当长度不足时, 返回长度才会变小, 当起点为负, 从 0 开始数长度
-  func extSub(_ from: Int, _ length: Int) -> String {
+  func extCrop(_ from: Int, _ length: Int) -> String {
     guard length > 0 else { return "" }
     if let fromIndex = index(startIndex, offsetBy: max(from, 0), limitedBy: endIndex) {
       if let toIndex = index(fromIndex, offsetBy: length, limitedBy: endIndex) {
@@ -246,13 +246,13 @@ extension String {
 
     print("from length:")
     //print(str.extSubstring(from: 0, length: 2))
-    print(str.extSub(0, 20))
-    print(str.extSub(1, 2))
-    print(str.extSub(1, 20))
-    print(str.extSub(2, 2))
-    print(str.extSub(2, 20))
-    print("H\(str.extSub(6, 20))H")
-    print("H\(str.extSub(9, 20))H")
+    print(str.extCrop(0, 20))
+    print(str.extCrop(1, 2))
+    print(str.extCrop(1, 20))
+    print(str.extCrop(2, 2))
+    print(str.extCrop(2, 20))
+    print("H\(str.extCrop(6, 20))H")
+    print("H\(str.extCrop(9, 20))H")
 
     print("replace:")
     print(str.extReplace(0, 0, ""))
