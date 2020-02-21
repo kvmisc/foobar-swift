@@ -220,9 +220,9 @@
 		0A01F7672392400800A6E5E6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				BBACD28223D7DA4300FA3768 /* ThirdMedia */,
 				BBB14E772394A1C400E6E5D9 /* Network */,
 				0ACBB21023A4A19A0069F4D7 /* AccountManager */,
+				BBACD28223D7DA4300FA3768 /* ThirdMedia */,
 				BBA60E4623D57E64007AD18C /* URLNavigation */,
 			);
 			path = Utils;

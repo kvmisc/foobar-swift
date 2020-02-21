@@ -49,7 +49,7 @@ extension String {
     }
     return nil
   }
-  func extTimestampFormatted(_ df: DateFormatter) -> String {
+  func extTimestampDateFormatted(_ df: DateFormatter) -> String {
     if let date = extTimestampDate() {
       return df.string(from: date)
     }

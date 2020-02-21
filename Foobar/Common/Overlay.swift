@@ -201,6 +201,7 @@ class Overlay {
     attributes.positionConstraints.size =
       EKAttributes.PositionConstraints.Size(width: width, height: .intrinsic)
     attributes.positionConstraints.verticalOffset = offset
+    attributes.positionConstraints.safeArea = .overridden
     attributes.screenInteraction = interaction
     if let cancelled = cancelled {
       attributes.screenInteraction.customTapActions.append(cancelled)
