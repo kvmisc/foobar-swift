@@ -8,16 +8,17 @@
 
 import UIKit
 
-let LINE_SPACING_RATIO_MIN: CGFloat = 0.2
-let LINE_SPACING_RATIO_MAX: CGFloat = 0.45
+// TODO: CGFloat
 
 extension UIFont {
 
-  func extLineSpacing(_ ratio: CGFloat = LINE_SPACING_RATIO_MIN) -> CGFloat {
+  // Ratio: 0.2 - 0.45
+
+  func extLineSpacing(_ ratio: CGFloat = 0.2) -> CGFloat {
     return lineHeight * ratio
   }
 
-  func extLineHeight(_ ratio: CGFloat = LINE_SPACING_RATIO_MIN) -> CGFloat {
+  func extLineHeight(_ ratio: CGFloat = 0.2) -> CGFloat {
     return lineHeight * (1.0 + ratio)
   }
 

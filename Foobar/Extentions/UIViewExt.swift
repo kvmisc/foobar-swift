@@ -9,12 +9,6 @@
 import UIKit
 
 extension UIView {
-  func extSendToBack() {
-    self.superview?.sendSubviewToBack(self)
-  }
-  func extBringToFront() {
-    self.superview?.bringSubviewToFront(self)
-  }
 
   func extImageRep() -> UIImage {
     let renderer = UIGraphicsImageRenderer(bounds: bounds)
@@ -27,11 +21,13 @@ extension UIView {
     translatesAutoresizingMaskIntoConstraints = false
   }
 
-  func extAddSubviews(_ views : [UIView]) {
-    for view in views {
-      addSubview(view)
-    }
+  func extSendToBack() {
+    self.superview?.sendSubviewToBack(self)
   }
+  func extBringToFront() {
+    self.superview?.bringSubviewToFront(self)
+  }
+
   func extAddSubviewIfNeeded(_ view: UIView?) {
     guard let view = view else { return }
     if view.superview != self {
@@ -39,13 +35,15 @@ extension UIView {
       addSubview(view)
     }
   }
+  func extAddSubviews(_ views : [UIView]) {
+    views.forEach { addSubview($0) }
+  }
   func extRemoveAllSubviews() {
-    subviews.forEach { (view) in
-      view.removeFromSuperview()
-    }
+    subviews.forEach { $0.removeFromSuperview() }
   }
 }
 
+// TODO: CGFloat
 extension UIView {
 
   //////////////////////////////////////////////////////////////////////////////
@@ -102,14 +100,14 @@ extension UIView {
 
   // 设置阴影
   func extSetShadow(color: UIColor = .black,
-                    opacity: Float = 0.5,
+                    opacity: CGFloat = 0.5,
                     radius: CGFloat = 5.0,
                     offset: CGSize = .zero)
   {
     layer.masksToBounds = false
 
     layer.shadowColor = color.cgColor
-    layer.shadowOpacity = opacity
+    layer.shadowOpacity = Float(opacity)
     layer.shadowRadius = radius
     layer.shadowOffset = offset
   }

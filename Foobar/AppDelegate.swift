@@ -33,9 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     print(Path.document())
 
-    URLNavigation.setup()
 
-    String.extTestString()
+    print(floor(5.2))
+    print(floor(-5.2))
+    print(ceil(5.2))
+    print(ceil(-5.2))
 
 
     let window = UIWindow()

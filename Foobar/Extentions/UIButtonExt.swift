@@ -10,10 +10,6 @@ import UIKit
 
 extension UIButton {
 
-  func extRemoveAllTargets() {
-    removeTarget(nil, action: nil, for: .allEvents)
-  }
-
   func extSetImage(_ image: UIImage?, _ state: UIControl.State = .normal) {
     setImage(image, for: state)
   }
@@ -37,8 +33,12 @@ extension UIButton {
   func extAddTarget(_ target: Any?, _ action: Selector, _ events: UIControl.Event = .touchUpInside) {
     addTarget(target, action: action, for: events)
   }
+  func extRemoveAllTargets() {
+    removeTarget(nil, action: nil, for: .allEvents)
+  }
 }
 
+// TODO: CGFloat
 extension UIButton {
 
   func extCenterHorizontally(_ spacing: CGFloat, _ swap: Bool = false) {

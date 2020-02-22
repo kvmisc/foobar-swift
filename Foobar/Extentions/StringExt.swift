@@ -11,21 +11,11 @@ import UIKit
 // MARK: Common
 extension String {
 
-  static func extRandomString(_ length: Int) -> String {
-    guard length > 0 else { return "" }
-    var result = ""
-    let base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-    for _ in 1...length {
-      result.append(base.randomElement()!)
-    }
-    return result
-  }
-
   func extContains(_ string: String, _ caseSensitive: Bool = true) -> Bool {
-    if !caseSensitive {
-      return range(of: string, options: .caseInsensitive) != nil
+    if caseSensitive {
+      return range(of: string) != nil
     }
-    return range(of: string) != nil
+    return range(of: string, options: .caseInsensitive) != nil
   }
 
   func extMatchs(_ regex: String) -> Bool {
@@ -162,6 +152,49 @@ extension String {
   #endif
 }
 
+// MARK: QRCode
+extension String {
+  func extQRCodeImage(_ size: CGSize) -> UIImage? {
+    let width = floor(size.width)
+    let height = floor(size.height)
+    if width < 1 || height < 1 { return nil }
+
+    // Need to convert the string to a UTF-8 encoded NSData object
+    let data = self.extUTF8Data()
+    if data.isEmpty { return nil }
+
+    // Create the filter
+    let filter = CIFilter(name: "CIQRCodeGenerator")
+    // Set the message content and error-correction level
+    filter?.setValue(data, forKey: "inputMessage")
+    filter?.setValue("H", forKey: "inputCorrectionLevel")
+
+    // Send the image back
+    let ciImage = filter?.outputImage
+    //NSLog(@"ciImage: (%d, %d)", (int)(ciImage.extent.size.width), (int)(ciImage.extent.size.height));
+
+    if let ciImage = ciImage {
+
+      // Render the CIImage into a CGImage
+      let cgImage = CIContext(options: nil).createCGImage(ciImage, from: ciImage.extent)
+      //NSLog(@"cgImage: (%d, %d)", (int)CGImageGetWidth(cgImage), (int)CGImageGetHeight(cgImage));
+
+      if let cgImage = cgImage {
+        // Now we'll rescale using CoreGraphics
+        let rect = CGRect(x: 0, y: 0, width: width, height: height)
+        let renderer = UIGraphicsImageRenderer(bounds: rect)
+        return renderer.image { (ctx) in
+          ctx.cgContext.interpolationQuality = .none
+          ctx.cgContext.draw(cgImage, in: rect)
+        }
+      }
+
+    }
+
+    return nil
+  }
+}
+
 // MARK: Substring & replace
 extension String {
   // 前 xxx 个字符
@@ -176,7 +209,7 @@ extension String {
   }
 
   // 去掉前 xxx 个字符, 后 xxx 个字符
-  func extTrim(_ leading: Int = 0, _ trailing: Int = 0) -> String {
+  func extTrim(_ leading: Int, _ trailing: Int) -> String {
     var result = self
     if leading > 0 {
       result = String(result.dropFirst(leading))
@@ -272,8 +305,6 @@ extension String {
     print(str.extReplace(20, 10, "__"))
     print(str.extReplace(2, -1, "__"))
     print(str.extReplace("bc", ""))
-//    print("H\(str.extTrim(20, 2))H")
-//    print("H\(str.extTrim(2, 20))H")
   }
   #endif
 }

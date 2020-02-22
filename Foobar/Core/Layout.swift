@@ -165,7 +165,7 @@ extension CGSize {
     case AspectFill
   }
   func scaled(_ size: CGSize, _ mode: ScaleMode, _ force: Bool = false) -> CGSize {
-    if width.extEqual(size.width) && height.extEqual(size.height) {
+    if width.extIsEqual(size.width) && height.extIsEqual(size.height) {
       return self
     }
     if width < size.width && height < size.height {

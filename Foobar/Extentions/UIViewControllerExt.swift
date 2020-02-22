@@ -20,19 +20,19 @@ extension UIViewController {
     child.removeFromParent()
   }
 
-  func extCanBePopped() -> Bool {
+  var extCanBePopped: Bool {
     if let nav = navigationController {
       return self != nav.viewControllers.first
     }
     return false
   }
-  func extCanBeDismissed() -> Bool {
+  var extCanBeDismissed: Bool {
     return presentingViewController != nil
   }
 }
 
 extension UINavigationController {
-  func extRootViewController() -> UIViewController? {
+  var extRootViewController: UIViewController? {
     return viewControllers.first
   }
   func extPopViewController(_ count: Int, _ animated: Bool) {

@@ -47,6 +47,16 @@ func HideKeyboard() {
   }
 }
 
+func RandomString(_ length: Int) -> String {
+  guard length > 0 else { return "" }
+  var result = ""
+  let base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+  for _ in 1...length {
+    result.append(base.randomElement()!)
+  }
+  return result
+}
+
 
 #if DEBUG
 // Print object as json via lldb

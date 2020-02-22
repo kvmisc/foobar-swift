@@ -1,5 +1,5 @@
 //
-//  CollectionExt.swift
+//  ArrayExt.swift
 //  Foobar
 //
 //  Created by Kevin Wu on 2020/2/14.

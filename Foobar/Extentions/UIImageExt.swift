@@ -8,73 +8,27 @@
 
 import UIKit
 
-// MARK: Common
 extension UIImage {
 
-  // 图片 scale 为屏幕 scale
-  static func extColorImage(_ color: UIColor, _ size: CGSize) -> UIImage {
-    let bounds = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-    let renderer = UIGraphicsImageRenderer(bounds: bounds)
-    return renderer.image { (ctx) in
-      color.setFill()
-      ctx.fill(bounds)
-    }
-  }
+  // TODO: 圆角
+  // ...
 
-  func extMerge(_ image: UIImage, _ at: CGPoint) -> UIImage {
+  func extMerged(_ with: UIImage, _ at: CGPoint) -> UIImage {
     let bounds = CGRect(x: 0, y: 0, width: floor(size.width), height: floor(size.height))
     let renderer = UIGraphicsImageRenderer(bounds: bounds)
     return renderer.image { (ctx) in
       self.draw(at: .zero)
-      image.draw(at: at)
+      with.draw(at: at)
     }
   }
 
-  func extQRCodeImage(_ code: String, _ size: CGSize) -> UIImage? {
-    if code.isEmpty { return nil }
-
-    // Need to convert the string to a UTF-8 encoded NSData object
-    let data = code.extUTF8Data()
-
-    // Create the filter
-    let filter = CIFilter(name: "CIQRCodeGenerator")
-    // Set the message content and error-correction level
-    filter?.setValue(data, forKey: "inputMessage")
-    filter?.setValue("H", forKey: "inputCorrectionLevel")
-
-    // Send the image back
-    let ciImage = filter?.outputImage
-    //NSLog(@"ciImage: (%d, %d)", (int)(ciImage.extent.size.width), (int)(ciImage.extent.size.height));
-
-    if let ciImage = ciImage {
-
-      // Render the CIImage into a CGImage
-      let cgImage = CIContext(options: nil).createCGImage(ciImage, from: ciImage.extent)
-      //NSLog(@"cgImage: (%d, %d)", (int)CGImageGetWidth(cgImage), (int)CGImageGetHeight(cgImage));
-
-      if let cgImage = cgImage {
-        // Now we'll rescale using CoreGraphics
-        let rect = CGRect(x: 0, y: 0, width: floor(size.width), height: floor(size.height))
-        let renderer = UIGraphicsImageRenderer(bounds: rect)
-        return renderer.image { (ctx) in
-          ctx.cgContext.interpolationQuality = .none
-          ctx.cgContext.draw(cgImage, in: rect)
-        }
-      }
-
-    }
-
-    return nil
+  enum ScaleMode {
+    case Fill
+    case AspectFit
+    case AspectFill
   }
-
-  // TODO: 圆角
-  // ...
-}
-
-// MARK: Scale
-extension UIImage {
-  func extScaledImage(_ size: CGSize, _ mode: CGSize.ScaleMode, _ force: Bool = false) -> UIImage {
-    if self.size.width.extEqual(size.width) && self.size.height.extEqual(size.height) {
+  func extScaled(_ size: CGSize, _ mode: ScaleMode, _ force: Bool = false) -> UIImage {
+    if self.size.width.extIsEqual(size.width) && self.size.height.extIsEqual(size.height) {
       return self
     }
     if self.size.width < size.width && self.size.height < size.height {
@@ -113,6 +67,7 @@ extension UIImage {
       self.draw(in: bounds)
     }
   }
+
 //  func extScaleToFill(_ size: CGSize, _ force: Bool = false) -> UIImage {
 //    if self.size.width.extEqual(size.width)
 //      && self.size.height.extEqual(size.height)
