@@ -49,12 +49,12 @@ func HideKeyboard() {
 
 func RandomString(_ length: Int) -> String {
   guard length > 0 else { return "" }
-  var result = ""
+  var ret = ""
   let base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
   for _ in 1...length {
-    result.append(base.randomElement()!)
+    ret.append(base.randomElement()!)
   }
-  return result
+  return ret
 }
 
 

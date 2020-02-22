@@ -42,24 +42,19 @@ class DateTime {
 }
 
 extension String {
-  func extTimestampDate() -> Date? {
-    let timestamp = extDoubleValue
-    if timestamp >= 1.0 {
-      return Date(timeIntervalSince1970: timestamp)
+  // df 为空表示 timestamp
+  func extDate(_ df: DateFormatter?) -> Date? {
+    if let df = df {
+      return df.date(from: self)
+    } else {
+      let timestamp = extDoubleValue
+      if timestamp >= 1.0 {
+        return Date(timeIntervalSince1970: timestamp)
+      }
+      return nil
     }
-    return nil
   }
-  func extTimestampDateFormatted(_ df: DateFormatter) -> String {
-    if let date = extTimestampDate() {
-      return df.string(from: date)
-    }
-    return ""
-  }
-
-  func extDate(_ df: DateFormatter) -> Date? {
-    return df.date(from: self)
-  }
-  func extDateFormatted(_ df1: DateFormatter, _ df2: DateFormatter) -> String {
+  func extDateFormatted(_ df1: DateFormatter?, _ df2: DateFormatter) -> String {
     if let date = extDate(df1) {
       return df2.string(from: date)
     }
