@@ -9,11 +9,11 @@
 import UIKit
 
 extension String {
-  func extURL() -> URL? {
+  func extURL(_ file: Bool = false) -> URL? {
+    if file {
+      return URL(fileURLWithPath: self)
+    }
     return URL(string: self)
-  }
-  func extFileURL() -> URL {
-    return URL(fileURLWithPath: self)
   }
 }
 

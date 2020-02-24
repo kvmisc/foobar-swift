@@ -15,9 +15,9 @@
 		0A2CF41923916DA400F914C5 /* FBRootCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CF41723916DA400F914C5 /* FBRootCell.swift */; };
 		0A2CF41A23916DA400F914C5 /* FBRootCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CF41823916DA400F914C5 /* FBRootCell.xib */; };
 		0A300D1F239C8C030025FC04 /* FloatingPointExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A300D1E239C8C030025FC04 /* FloatingPointExt.swift */; };
-		0A300D21239C90310025FC04 /* UIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A300D20239C90310025FC04 /* UIElement.swift */; };
 		0A300D23239CBB470025FC04 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A300D22239CBB470025FC04 /* UIViewControllerExt.swift */; };
 		0A300D25239D04F00025FC04 /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A300D24239D04F00025FC04 /* UIButtonExt.swift */; };
+		0A37FCF22400E87600B184B1 /* ThemeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37FCF12400E87600B184B1 /* ThemeElement.swift */; };
 		0A384B4C239EA8E600CBE1F8 /* TestWindowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A384B4A239EA8E600CBE1F8 /* TestWindowVC.swift */; };
 		0A384B4D239EA8E600CBE1F8 /* TestWindowVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A384B4B239EA8E600CBE1F8 /* TestWindowVC.xib */; };
 		0A53303B238EC957009B5375 /* DataStringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A53303A238EC957009B5375 /* DataStringExt.swift */; };
@@ -112,9 +112,9 @@
 		0A2CF41723916DA400F914C5 /* FBRootCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRootCell.swift; sourceTree = "<group>"; };
 		0A2CF41823916DA400F914C5 /* FBRootCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBRootCell.xib; sourceTree = "<group>"; };
 		0A300D1E239C8C030025FC04 /* FloatingPointExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPointExt.swift; sourceTree = "<group>"; };
-		0A300D20239C90310025FC04 /* UIElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElement.swift; sourceTree = "<group>"; };
 		0A300D22239CBB470025FC04 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		0A300D24239D04F00025FC04 /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
+		0A37FCF12400E87600B184B1 /* ThemeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeElement.swift; sourceTree = "<group>"; };
 		0A384B4A239EA8E600CBE1F8 /* TestWindowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWindowVC.swift; sourceTree = "<group>"; };
 		0A384B4B239EA8E600CBE1F8 /* TestWindowVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestWindowVC.xib; sourceTree = "<group>"; };
 		0A53303A238EC957009B5375 /* DataStringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStringExt.swift; sourceTree = "<group>"; };
@@ -283,9 +283,8 @@
 				BB41B29823A78EB400BD1EF4 /* Archive.swift */,
 				BB8D53D32399E04A008BA419 /* Base64.swift */,
 				BB8D53D52399E07D008BA419 /* DateTime.swift */,
-				BB8D53DD2399F931008BA419 /* Layout.swift */,
 				0A768A4D239955A90027A68A /* Metrics.swift */,
-				0A300D20239C90310025FC04 /* UIElement.swift */,
+				BB8D53DD2399F931008BA419 /* Layout.swift */,
 				BB8D53D12399DFFB008BA419 /* Path.swift */,
 				BBF2687423D42B7D00D3448E /* URL.swift */,
 				BBA60E4723D57E94007AD18C /* Expiration.swift */,
@@ -392,6 +391,7 @@
 			children = (
 				BB673A4423D05B64002DF451 /* ThemeWorker.swift */,
 				BB673A4223D037B8002DF451 /* ThemeXib.swift */,
+				0A37FCF12400E87600B184B1 /* ThemeElement.swift */,
 			);
 			name = Theme;
 			sourceTree = "<group>";
@@ -728,6 +728,7 @@
 				BB6C9A61239DF3F300822180 /* Core.swift in Sources */,
 				BB46289A239E5CDF00989126 /* TestViewStateVC.swift in Sources */,
 				0A53303B238EC957009B5375 /* DataStringExt.swift in Sources */,
+				0A37FCF22400E87600B184B1 /* ThemeElement.swift in Sources */,
 				BB2EF0F123C6CEFB005B693A /* UIColorExt.swift in Sources */,
 				BBBB060A239F403B0004613C /* Overlay.swift in Sources */,
 				BBE7DCB223A23351009A650F /* TestCodingObject.swift in Sources */,
@@ -781,7 +782,6 @@
 				BB46288E239E49A400989126 /* TestReusableXXTC.swift in Sources */,
 				BBA60E4A23D57FEE007AD18C /* URLNavigation.swift in Sources */,
 				BBA60E5323D58C33007AD18C /* TestNavSubVC.swift in Sources */,
-				0A300D21239C90310025FC04 /* UIElement.swift in Sources */,
 				0A53A528239E7E9C00A51A54 /* UIImageExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

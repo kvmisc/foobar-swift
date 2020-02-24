@@ -1,12 +1,27 @@
 //
-//  UIElement.swift
+//  ThemeElement.swift
 //  Foobar
 //
-//  Created by Kevin Wu on 12/8/19.
+//  Created by Kevin Wu on 2020/2/22.
 //  Copyright (c) firefly.com. All rights reserved.
 //
 
 import UIKit
+
+// TODO: ...
+class ThemeColor {
+  static let nav: UIColor = .red
+}
+
+class ThemeFont {
+  static let big: UIFont = ccf(18)
+  static let median: UIFont = ccf(18)
+}
+
+class ThemeImage {
+  static let nav: UIColor = .red
+}
+
 
 // MARK: Color
 func ccc(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Int = 255) -> UIColor {
