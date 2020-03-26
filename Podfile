@@ -27,6 +27,9 @@ target 'Foobar' do
   pod 'ESPullToRefresh'
   pod 'MBProgressHUD'
 
+  pod 'RxSwift'
+  pod 'RxCocoa'
+
   pod 'YYText'
 
 
